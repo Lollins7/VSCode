@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.6)  9 NOV 2023 11:03
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.6)  15 NOV 2023 21:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -778,28 +778,22 @@ Overfull \hbox (21.28993pt too wide) in paragraph at lines 1009--1010
 第四章
 [33
 
-] [34] [35] [36] [37] [38
+] [34] [35] [36] [37] [38] [39] [40
 
 ] (./TSA.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-Package rerunfilecheck Warning: File `TSA.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `TSA.out':
-(rerunfilecheck)             Before: 7A61BE93D9057CAD51E2973D2EB4B71C;5937
-(rerunfilecheck)             After:  178B3839F191F790D28291EF59A7236E;6157.
+Package rerunfilecheck Info: File `TSA.out' has not changed.
+(rerunfilecheck)             Checksum: F8B930EBFD71B81194A09DE7DA11F0AD;6496.
  ) 
 Here is how much of TeX's memory you used:
- 19907 strings out of 476179
- 421627 string characters out of 5813073
- 735702 words of memory out of 5000000
- 40306 multiletter control sequences out of 15000+600000
+ 19928 strings out of 476179
+ 422872 string characters out of 5813073
+ 736311 words of memory out of 5000000
+ 40327 multiletter control sequences out of 15000+600000
  485494 words of font info for 131 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,15n,97p,390b,651s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on TSA.pdf (43 pages).
+Output written on TSA.pdf (45 pages).

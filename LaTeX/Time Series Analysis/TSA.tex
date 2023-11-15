@@ -1268,9 +1268,64 @@ $H_0:\{x_t - \alpha -\beta t\}$非平稳。
     $$
 }
 
+\subsubsection{ARMA(p,q)的矩估计}
+\begin{example}
+    求ARMA(1,1)模型$x_t = \phi_1 x_{t-1} + \varepsilon_t - \theta_1\varepsilon_{t-1}$中
+    $\phi_1$和$\theta_1$的估计。
+\end{example}
+\jie{解}{
+    ARMA(1,1)模型的Yule-Walker方程组为
+    \begin{equation*}
+        \begin{cases}
+            \rho_1=\dfrac{\gamma_1}{\gamma_0}=\dfrac{(\phi_1-\theta_1)(1-\theta_1\phi_1)}{1+\theta_1^2-2\theta_1\phi_1} \\
+            \rho_2=\phi_1\rho_1
+        \end{cases}
+    \end{equation*}
+    把样本自相关系数带入Yule-Walker方程组，得到ARMA(1,1)模型参数的矩估计
+    $$
+        \hat{\phi}_1=\frac{\hat{\rho}_2}{\hat{\rho}_1}\quad,
+        \hat{\theta}_1=
+        \begin{cases}
+            \dfrac{c+\sqrt{c^2-4}}2,c\leq-2 \\
+            \dfrac{c-\sqrt{c^2-4}}2,c\geq2
+        \end{cases}
+        \quad,c=\dfrac{1-\phi_1^2-2\hat{\rho}_2}{\phi_1-\hat{\rho}_1}
+    $$
+}
+
 \subsection{极大似然估计}
+\textbf{原理：}在极大似然准则下，认为样本来自使样本出现概率最大的总体。
 
 \subsection{最小二乘估计}
+
+\section{模型检验}
+\subsection{模型的显著性检验}
+\begin{enumerate}[1、]
+    \item 目标：序列的相关信息是否提取充分。
+    \item 对象：残差序列。
+    \item 残差序列是否为白噪声——纯随机行检验。
+    \item 步骤：设$\Phi(B)x_t=\Theta(B)\varepsilon_t$，则残差$\varepsilon_t=\Theta(B)^{-1}\Phi(B)x_t$，
+          \begin{center}
+              $H_0:\rho_1 = ... = \rho = 0$ vs
+              $H_1: \exists k, \rho_k \neq 0$
+          \end{center}
+          检验统计量
+          $$
+              LB=n(n+2)\sum_{k=1}^m(\frac{\hat{\rho}_k^2}{n-k})\sim\chi^2(m)
+          $$
+\end{enumerate}
+给定$\alpha$，若拒绝$H_0$，就说明残差序列中还残留着相关信息，拟合的模型不显著。
+
+\subsection{参数的显著性检验}
+\begin{center}
+    $H_0:\beta_j= 0$ vs
+    $H_1:\beta_j \neq 0$
+\end{center}
+在正态分布假设下，$\hat{\beta}_j\sim N(0,(X^TX)_{jj}^{-1}\sigma_{\varepsilon}^2)$
+\begin{equation*}
+    t = \frac{\hat{\beta}_j}{S_{\hat{\beta}_j}} \sim t(n-m)
+\end{equation*}
+给定$\alpha$，若拒绝原假设$H_0$，认为$\beta_j$显著非零。
 
 
 \begin{thebibliography}{4}

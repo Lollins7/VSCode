@@ -90,5 +90,9 @@
 \contentsline {subsection}{\numberline {4.4.1}矩估计}{36}{subsection.4.4.1}%
 \contentsline {subsubsection}{AR(p)的矩估计}{36}{subsubsection*.51}%
 \contentsline {subsubsection}{MA(q)的矩估计}{37}{subsubsection*.52}%
-\contentsline {subsection}{\numberline {4.4.2}极大似然估计}{37}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}最小二乘估计}{37}{subsection.4.4.3}%
+\contentsline {subsubsection}{ARMA(p,q)的矩估计}{37}{subsubsection*.53}%
+\contentsline {subsection}{\numberline {4.4.2}极大似然估计}{38}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}最小二乘估计}{38}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}模型检验}{38}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}模型的显著性检验}{38}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}参数的显著性检验}{39}{subsection.4.5.2}%
