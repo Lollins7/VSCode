@@ -482,7 +482,56 @@ H-L估计对称中心步骤如下：
           $\{\frac{x_i+x_j}{2},1\leq i\leq j\leq n\}$的中位数。
 \end{enumerate}
 
+\chapter{两样本问题}
+\section{Mood中位数检验法($2\times 2$列联表检验法)}
+\subsection{Mood中位数检验法}
+样本$x_1,...,x_m$和$y_1,...,y_n$分别来自相互独立的连续型总体X和Y，分别记其中位数
+为$me_x,me_y$。($H_0:me_x = me_y$)
 
+首先将样本$x_1,..,x_m$和$y_1,...,y_n$合在一起，并从小到大排列，计算混合样本中位数$m_n$，
+得四格表
+\begin{table}[hp]
+    \centering
+    \caption{}
+    \begin{tabular}{c|c|c|c}
+              & $\leq m_n$ & $\geq m_n$ & 合计     \\
+        \hline
+        X样本 & $N_{11}$   & $N_{12}$   & $N_{1+}$ \\
+        \hline
+        Y样本 & $N_{21}$   & $N_{22}$   & $N_{2+}$ \\
+        \hline
+              & $N_{+1}$   & $N_{+2}$   & $N$      \\
+    \end{tabular}
+\end{table}
+
+\textbf{1、}备择假设为$H_1:me_x> me_y$
+
+当$N_{11}$较小时，拒绝$H_0$，检验$p$值为
+$$
+    \sum_{k\leq N_{11}}P(k,N_{1+},N_{+1},N)
+$$
+
+\textbf{2、}备择假设为$H_1:me_x< me_y$
+
+当$N_{11}$较大时，拒绝$H_0$，检验$p$值为
+$$
+    \sum_{k\geq N_{11}}P(k,N_{1+},N_{+1},N)
+$$
+
+其中$P(k,N_{1+},N_{+1},N) = \frac{{N_{+1} \choose N_{11}}{N_{+2} \choose N_{12}}}
+    {{N \choose N_{1+}}}$。
+
+\subsection{大样本情形}
+当样本容量较大时，超几何分布可以近似服从正态分布，过程与上一章大样本情形类似，此处过程省去。
+
+\section{Wilcoxon秩和检验法}
+\subsection{秩}
+\begin{definition}
+    设$x_1,...,x_{N}$是取自总体X的简单随机样本，我们定义$x_{i}$的秩$R_i$为
+    \begin{equation}
+        R_i = \sum_{j=1}^{N}I_{(x_{j}\leq{x_{i}})}
+    \end{equation}
+\end{definition}
 
 \begin{thebibliography}{3}
     \bibitem{ref1}孙山泽.非参数统计讲义.北京大学出版社

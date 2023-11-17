@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.6)  9 NOV 2023 12:04
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.6)  17 NOV 2023 11:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1443,6 +1443,9 @@ LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/n' will be
  [1
 
 ]
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 9.0pt on input line 65.
+ [2]
 Chapter 1.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/n' will be
 (Font)              scaled to size 12.0pt on input line 71.
@@ -1463,8 +1466,6 @@ LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
 (Font)              scaled to size 7.0pt on input line 159.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
 (Font)              scaled to size 5.0pt on input line 159.
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 201.
  [3] [4]
 Chapter 3.
 [5
@@ -1537,25 +1538,52 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 403.
 
-[9] [10] [11
+[9] [10]
+Chapter 5.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 486.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\times' on input line 486.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 486.
+
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 522.
+
+[11
+
+] [12
 
 ] (./非参数统计分析.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `非参数统计分析.out' has not changed.
-(rerunfilecheck)             Checksum: 18E5CEE842ED1FE89EBF16157363043D;4973.
+
+Package rerunfilecheck Warning: File `非参数统计分析.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `非参数统计分析.out':
+(rerunfilecheck)             Before: EC4817A0E1E26E6C2B1FE0A55C577C4D;5584
+(rerunfilecheck)             After:  EE30CC70A42368607B7B6A1E33EB5EFB;5741.
 Package logreq Info: Writing requests to '非参数统计分析.run.xml'.
 \openout1 = `非参数统计分析.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45238 strings out of 476179
- 959422 string characters out of 5813073
- 1867715 words of memory out of 5000000
- 65192 multiletter control sequences out of 15000+600000
+ 45240 strings out of 476179
+ 959446 string characters out of 5813073
+ 1868381 words of memory out of 5000000
+ 65194 multiletter control sequences out of 15000+600000
  480980 words of font info for 116 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,12n,107p,736b,1315s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 非参数统计分析.pdf (14 pages).
+Output written on 非参数统计分析.pdf (16 pages).

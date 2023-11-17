@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.6)  13 OCT 2023 15:49
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.6)  17 NOV 2023 10:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -64,40 +64,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 7.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 7.
-
-Missing character: There is no 观 (U+89C2) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 察 (U+5BDF) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 值 (U+503C) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 符 (U+7B26) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 号 (U+53F7) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 绝 (U+7EDD) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 对 (U+5BF9) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 值 (U+503C) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 绝 (U+7EDD) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 对 (U+5BF9) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 值 (U+503C) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 的 (U+7684) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 秩 (U+79E9) in font [lmroman10-regular]:mapping=t
-ex-text;!
-[1
+ [1
 
 ] (./demo.aux) ) 
 Here is how much of TeX's memory you used:
  457 strings out of 476179
  9216 string characters out of 5813073
- 311044 words of memory out of 5000000
+ 307044 words of memory out of 5000000
  21286 multiletter control sequences out of 15000+600000
  469267 words of font info for 29 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
