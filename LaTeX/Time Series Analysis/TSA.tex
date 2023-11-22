@@ -1327,6 +1327,24 @@ $H_0:\{x_t - \alpha -\beta t\}$非平稳。
 \end{equation*}
 给定$\alpha$，若拒绝原假设$H_0$，认为$\beta_j$显著非零。
 
+\section{模型优化}
+\subsection{AIC准则}
+$AIC = n\ln(\hat{\sigma}_{\varepsilon}) + 2(\text{未知参数个数})$
+使AIC函数达到最小的模型被认为是最优模型。
+
+\subsection{BIC准则}
+$BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
+使BIC函数达到最小的模型被认为是最优模型。
+
+\textbf{注：}样本量很大时，选用SBC准则。
+
+\section{序列预测}
+\begin{definition}
+    根据现有的序列值估计未来某时刻的序列值。（核心：将来的扰动视为误差）设$x_t,x_{t-1},...$为观察值，
+    令$\hat{x}_t(l)$表示$x_{t+l}$的观察值，其中$l$为预测步长。
+\end{definition}
+
+
 
 \begin{thebibliography}{4}
     \bibitem{ref1}詹姆斯.D.汉密尔顿 {,} 时间序列分析（上册） {,} 中国人民大学出版社

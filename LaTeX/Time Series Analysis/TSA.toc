@@ -96,3 +96,7 @@
 \contentsline {section}{\numberline {4.5}模型检验}{38}{section.4.5}%
 \contentsline {subsection}{\numberline {4.5.1}模型的显著性检验}{38}{subsection.4.5.1}%
 \contentsline {subsection}{\numberline {4.5.2}参数的显著性检验}{39}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}模型优化}{39}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}AIC准则}{39}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}BIC准则}{39}{subsection.4.6.2}%
+\contentsline {section}{\numberline {4.7}序列预测}{39}{section.4.7}%
