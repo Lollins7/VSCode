@@ -464,7 +464,7 @@ Python中可以用statsmodels库来绘制自相关图，如图\ref{im2_3}所示�
 \end{equation}
 如果序列不满足方差齐性，就称该序列具有\textbf{异方差性质}。
 
-\subsection{纯随机性检验}
+\subsection{纯随机性检验}\label{subse2.3.3}
 如果一个序列是纯随机的，那么它的序列值之间应该没有任何相关关系，即式\ref{eq2.8}所示。
 
 Bartlett证明，如果一个时间序列是纯随机的，得到一个观察期数为n的观察序列$\{x_t,~t = 1,2,...,n\}$，那么该序列的延迟非零期的样本自相关系数
@@ -1204,6 +1204,14 @@ $H_0:\{x_t - \alpha -\beta t\}$非平稳。
 \end{equation}
 随后的过程与DF检验类似。
 
+\subsection{纯随机性检验}
+可以参考章节\ref{subse2.3.3}，构造LB检验统计量。
+\begin{center}
+    $H_0:\rho_1=..=\rho_m=0,\{x_t\}$纯随机 $~vs~$ $H_1:\exists \rho_k \neq 0,\{x_t\}$非纯随机
+\end{center}
+
+
+
 \section{模型识别}
 设$x_1,x_2,...,x_N$为样本观察值。
 
@@ -1343,6 +1351,127 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
     根据现有的序列值估计未来某时刻的序列值。（核心：将来的扰动视为误差）设$x_t,x_{t-1},...$为观察值，
     令$\hat{x}_t(l)$表示$x_{t+l}$的观察值，其中$l$为预测步长。
 \end{definition}
+
+\subsection{线性预测函数}
+\begin{proposition}
+    给定观测值$x_t,x_{t-1},...$，未来任一时刻的估计值都可表示为$x_i(i = t, t-1,...)$
+    的线性函数。
+\end{proposition}
+事实上，设$ARMA(p,q)$的逆转形式为
+\begin{equation*}
+    \begin{aligned}
+                    & \varepsilon_t = \sum_{j=0}^{\infty}I_{j}x_{t-j}=x_t +\sum_{j=1}^{\infty}I_{j}x_{t-j} \\
+        \Rightarrow & x_t = \varepsilon_t - \sum_{j=0}^{\infty}I_{j}x_{t-j}
+    \end{aligned}
+\end{equation*}
+由于$\varepsilon_{t+j}(i\geq 1)$不可观测，故
+\begin{equation*}
+    \begin{aligned}
+         & \hat{x}_{t+1}=-I_1x_t-I_2x_{t-1}-I_3x_{t-2}-...                                   \\
+         & \hat{x}_{t+2}=-I_{1}\hat{x}_{t+1}-I_{2}x_{t}-I_{3}x_{t-1}-\cdots                  \\
+         & \hat{x}_{t+3}=-I_{1}\hat{x}_{t+2}-I_{2}\hat{x}_{t+1}-I_{3}x_{t}-...               \\
+         & \hat{x}_{t+l}=-I_{1}\hat{x}_{t+l-1}-I_{2}\hat{x}_{t+l-2}-I_{3}\hat{x}_{t+l-3}-...
+    \end{aligned}
+\end{equation*}
+
+\subsection{预测方差最小原则}
+\begin{enumerate}[1、]
+    \item 预测误差：$e_t(l) = x_{t+l} - \hat{x}_t(l)$
+    \item 预测方差最小：$\mathrm{Var}[e_t(l)] = min\{\mathrm{Var}[e_t(l)]\}$
+    \item ARMA(p,q)预测
+
+          由线性预测函数及传递形式，我们可以推导出当$\mathrm{Var}[e_t(l)]$最小时，预测值为
+          \begin{equation}
+              \hat{x}_t(l) = \sum_{i = 0}^{\infty}G_{l+i}\varepsilon_{t-i},~\forall ~l\geq 1
+          \end{equation}
+    \item 误差分析：
+          \begin{equation}
+              \begin{aligned}
+                  \text{估计误差：} & e_t(l) = \sum_{i = 0}^{l-1}G_{i}\varepsilon_{t+l-i}        \\
+                  \text{期望：}     & \mathrm{E}[e_t(l)] = 0                                     \\
+                  \text{方差：}     & Var[e_t(l)]=\sum_{i=0}^{l-1}G_i^2\cdot\sigma_\varepsilon^2
+              \end{aligned}
+          \end{equation}
+\end{enumerate}
+
+\subsection{线性最小方差预测的性质}
+\textbf{1、条件均值：}
+\begin{proposition}
+    在$x_t,x_{t-1},...$已知条件下，由预测方差最小原则得到的$\hat{x}_t(l)$是$x_{t+l}$的条件无偏估计。
+    即
+    \begin{equation}
+        \left.E\left(x_{t+l}\right|x_{t},x_{t-1},\cdots\right)=\hat{x}_t(l)
+    \end{equation}
+\end{proposition}
+
+\textbf{2、条件方差}
+
+\begin{proposition}
+    在$x_t,x_{t-1},...$已知条件下，由预测方差最小原则得到的$\hat{x}_t(l)$是$x_{t+l}$的条件无偏最小方差
+    的估计值。即
+    \begin{equation}
+        Var(x_{t+l}|x_t,x_{t-1},\cdots)=Var[e_t(l)] = \sum_{i=0}^{l-1} G_{i}^{2}\delta_{\varepsilon}^2
+    \end{equation}
+\end{proposition}
+
+\textbf{3、置信区间}
+在正态分布假设下，给定$\alpha$，$x_{t+l}|x_t,x_{t-1},... \sim
+    N(\hat{x}_t(l),\sum_{i=0}^{l-1} G_{i}^{2}\delta_{\varepsilon}^2)$。
+
+置信度为$1-\alpha$的置信区间为：$\hat{x}_t(l)\pm 1.96\sqrt{\sum_{i=0}^{l-1} G_{i}^{2}\delta_{\varepsilon}^2}$
+
+\textbf{4、AR(p)序列预测}
+
+\begin{equation}
+    \hat{x}_t(l) = \sum_{i=1}^{p} \phi_i \hat{x}_t(l-i)
+\end{equation}
+其中$\hat{x}_t(k) = \begin{cases}
+        \hat{x}_t(k) & k \geq 1 \\
+        x_{t+k}      & k < 0
+    \end{cases}$。
+
+预测方差为$Var[e_t(l)]=(1+G_1^2+\cdots+G_{l-1}^2)\sigma_\varepsilon^2$。
+
+\textbf{5、MA(q)序列预测}
+
+\begin{equation}
+    \hat{x}_t\left(l\right)=
+    \begin{cases}
+        \mu-\sum\limits_{i=l}^q\theta_i\varepsilon_{t+l-i} & ,l\leq q \\
+        \mu                                                & ,l>q
+    \end{cases}
+\end{equation}
+
+预测方差为
+\begin{equation}
+    Var[e_t(l)]=
+    \begin{cases}
+        (1+\theta_1^2+\cdots+\theta_{l-1}^2)\sigma_\varepsilon^2 & ,l\leq q \\
+        (1+\theta_1^2+\cdots+\theta_q^2)\sigma_\varepsilon^2     & ,l>q
+    \end{cases}
+\end{equation}
+
+\textbf{6、ARMA(p,q)序列预测}
+
+\begin{equation}
+    \begin{aligned}
+        \hat{x}_{t}(l) & =E(\phi_1x_{t+l-1}+\cdotp\cdotp\cdotp+\phi_px_{t+l-p}+\boldsymbol{\varepsilon}_{t+l}
+        -\theta_1\boldsymbol{\varepsilon}_{t+l-1}-...-\theta_q\varepsilon_{t+l-q}\mid x_t,x_{t-1},...)        \\
+                       & =
+        \begin{cases}
+            \phi_1\hat{x}_t(l-1)+\cdots+\phi_p\hat{x}_t(l-p)-\sum_{i=l}^q\theta_i\varepsilon_{i+l-i}, & l\leqslant q \\
+            \phi_1\hat{x}_t(l-1)+\cdots+\phi_p\hat{x}_t(l-p) ,                                        & l>q
+        \end{cases}
+    \end{aligned}
+\end{equation}
+
+其中，$\hat{x}_t(k) = \begin{cases}
+        \hat{x}_t(k) & k \geq 1 \\
+        x_{t+k}      & k \leq 0
+    \end{cases}$。
+
+预测方差为$\mathrm{Var}[e_t(l)]{=}(G_0^2+G_1^2+\cdotp\cdotp\cdotp+G_{l-1}^2)\sigma_\varepsilon^2$。
+
 
 
 

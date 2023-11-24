@@ -1,0 +1,3 @@
+能否拓展一下论文*Distributed Nash Equilibrium Computation With Uncertain Dynamics and Disturbances*中的方法（对于uncertain dynamics and distrubances的网络博弈，我们基于一阶和二阶的低通滤波器，去建立一个动力学估计器，进而用类梯度的分布式计算来优化目标函数）？
+
+我的想法是，此论文中的方法应用到切换通信拓扑图中，使用低通滤波器，将未知动态和外生变量的扰动限定在一定范围之内，然后建立一个估计器，通过类梯度分布式计算优化目标函数，然后通过构建Lyapunov函数进行Lyapunov稳定性分析，证明想法的可行性。
