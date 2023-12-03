@@ -1485,8 +1485,31 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
             $$
                 e_{t+1}(l-1)=G_0\varepsilon_{t+l}+\cdots+G_{l-2}\varepsilon_{t+2}
             $$
+        \item 预测方差为
+        $$
+        Var[e_{t+1}(l-1)]=(G_0^2+\cdots+G_{l-2}^2)\sigma_\varepsilon^2
+        $$
+    \end{itemize}
+    \item 假设新获得p个观察值$x_{t+1},\cdots,x_{t+p}$，则
+    \begin{itemize}
+        \item $x_{t+l}$的修正预测值为
+        \begin{equation}
+            \hat{x}_{t+p}(l-p)=G_{l-p}\varepsilon_{t+p}+\cdots+G_{l-1}\varepsilon_{t+1}+\hat{x}_t(l)
+        \end{equation}
+        \item 修正预测误差为
+        \begin{equation}
+            e_{t+p}(l-p)=G_0\varepsilon_{t+l}+\cdots+G_{l-p-1}\varepsilon_{t+p+1}
+        \end{equation}
+        \item 预测方差为
+        \begin{equation}
+            Var[e_{t+p}(l-p)]=(G_0^2+\cdots+G_{l-p-1}^2)\sigma_\varepsilon^2
+        \end{equation}
     \end{itemize}
 \end{enumerate}
+
+
+\chapter{无季节效应的非平稳序列分析}
+\section{Crammer分解定理}
 
 
 

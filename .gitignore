@@ -7,5 +7,5 @@
 *.out
 *.toc
 *.bcf
-*.xml
-*.gz
+*.run.xml
+*.synctex.gz
