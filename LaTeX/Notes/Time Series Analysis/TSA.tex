@@ -1421,7 +1421,6 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
 置信度为$1-\alpha$的置信区间为：$\hat{x}_t(l)\pm 1.96\sqrt{\sum_{i=0}^{l-1} G_{i}^{2}\delta_{\varepsilon}^2}$
 
 \textbf{4、AR(p)序列预测}
-
 \begin{equation}
     \hat{x}_t(l) = \sum_{i=1}^{p} \phi_i \hat{x}_t(l-i)
 \end{equation}
@@ -1433,7 +1432,6 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
 预测方差为$Var[e_t(l)]=(1+G_1^2+\cdots+G_{l-1}^2)\sigma_\varepsilon^2$。
 
 \textbf{5、MA(q)序列预测}
-
 \begin{equation}
     \hat{x}_t\left(l\right)=
     \begin{cases}
@@ -1452,7 +1450,6 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
 \end{equation}
 
 \textbf{6、ARMA(p,q)序列预测}
-
 \begin{equation}
     \begin{aligned}
         \hat{x}_{t}(l) & =E(\phi_1x_{t+l-1}+\cdotp\cdotp\cdotp+\phi_px_{t+l-p}+\boldsymbol{\varepsilon}_{t+l}
@@ -1472,8 +1469,24 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
 
 预测方差为$\mathrm{Var}[e_t(l)]{=}(G_0^2+G_1^2+\cdotp\cdotp\cdotp+G_{l-1}^2)\sigma_\varepsilon^2$。
 
-
-
+\textbf{7、修正预测}
+\begin{enumerate}[1、]
+    \item 在旧信息的基础上，$x_{t+l}$的预测值为
+    \begin{equation*}
+        \hat{x}_t(l)=G_l\varepsilon_t+G_{l+1}\varepsilon_{t-1}+\cdots 
+    \end{equation*}
+    \item 假设新获得一个观察值$x_{t+1}$，则
+    \begin{itemize}
+        \item $x_{t+l}$的修正预测值为
+        \begin{equation*}
+            \hat{x}_{t+1}(l-1)=G_{l-1}\boldsymbol{\varepsilon}_{t+1}+G_l\boldsymbol{\varepsilon}_t+G_{l+1}\boldsymbol{\varepsilon}_{t-1}+\cdots=G_{l-1}\boldsymbol{\varepsilon}_{t+1}+\hat{x}_t(l)
+        \end{equation*}
+        \item 修正预测误差为
+            $$
+                e_{t+1}(l-1)=G_0\varepsilon_{t+l}+\cdots+G_{l-2}\varepsilon_{t+2}
+            $$      
+    \end{itemize}
+\end{enumerate}
 
 \begin{thebibliography}{4}
     \bibitem{ref1}詹姆斯.D.汉密尔顿 {,} 时间序列分析（上册） {,} 中国人民大学出版社

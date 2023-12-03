@@ -6,3 +6,6 @@
 *.fls
 *.out
 *.toc
+*.bcf
+*.xml
+*.gz
