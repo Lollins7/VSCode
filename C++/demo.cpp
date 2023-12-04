@@ -1,8 +1,14 @@
 #include <iostream>
-#define sum(x, y) (x + y)
-#define square(x) ((x) * (x))
+using namespace std;
 
-int main()
-{
-    std::cout << sum(1, 2) << ' ' << 2 * sum(3, 5) << std::endl; // 输出 3 16
+int main() {
+    int k,n=1;
+    cin >> k;
+    double s=0;
+    while (s <= k) {
+        s += 1.0/n;
+        n++;
+    }
+    cout << n-1;
+        return 0;
 }
