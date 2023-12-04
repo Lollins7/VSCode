@@ -533,6 +533,41 @@ $$
     \end{equation}
 \end{definition}
 
+\begin{definition}
+    设$x_1,...,x_{N}$是取自总体X的简单随机样本，$R_i$为$x_i$的秩，则$R = (R_1,R_2,...,R_N)$或部分分量$(R_1,R_2,...,R_m)(1\leq m \leq N)$或由$R$构成的统计量统称为秩统计量。
+\end{definition}
+
+\begin{proposition}
+    对于简单随机样本$x_1,...,x_{N}$，秩统计量$R = (R_1,R_2,...,R_N)$等可能的取$(1,2,...,N)$的任意$N!$个排列之一，且$R$是由在$(1,2,...,N)$的所有可能的排列组成的空间$R$上的均匀分布，即
+    \begin{equation}
+        P(R = (r_1,r_2,...,r_N)) = \frac{1}{N!}
+    \end{equation}
+\end{proposition}
+\textbf{注：}对于简单随机样本，R的边缘分布也是均匀分布，如
+\begin{equation}
+    \begin{aligned}
+        & P(R_i = r) = \frac1N, r = 1,2,...,N \\
+        & P(R_i=r_1,R_j=r_2) = \frac1{N(N-1)}, r_1(\text{或}r_2) = 1,2,...,N, r_1\neq r_2
+    \end{aligned}
+\end{equation}
+
+\begin{theorem}
+    对$\forall~i = 1,2,...,N$，有
+    \begin{equation}
+        E(R_i)=\frac{N+1}2,~V(R_i)=\frac{N^2 -1}{12}
+    \end{equation}
+\end{theorem}
+
+\begin{theorem}
+    对$\forall~i \neq j$，有
+    \begin{equation}
+        \mathrm{Cov}(R_i,R_j) = -\frac{N+1}{12}
+    \end{equation}
+\end{theorem}
+
+
+
+
 \begin{thebibliography}{3}
     \bibitem{ref1}孙山泽.非参数统计讲义.北京大学出版社
     \bibitem{ref2}陈希孺.非参数统计.中国科学技术大学出版社
