@@ -2,13 +2,9 @@
 using namespace std;
 
 int main() {
-    int k,n=1;
+    int k;
     cin >> k;
-    double s=0;
-    while (s <= k) {
-        s += 1.0/n;
-        n++;
-    }
-    cout << n-1;
-        return 0;
+    if (k % 2 == 0 && k/2 %2 == 0) cout << "YES";
+    else cout << "NO";
+    return 0;
 }
