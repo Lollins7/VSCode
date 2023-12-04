@@ -1,0 +1,79 @@
+\documentclass[11pt]{beamer}
+\usepackage{comment,caption}
+\usepackage{tikz,verbatim}
+\usepackage{wrapfig}
+\usepackage{graphicx,subfig}
+\usepackage{lipsum}
+\usepackage{mwe}
+
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+\usetheme{Madrid}
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\setbeamertemplate{blocks}[framed]
+\setbeamercolor{block title}{fg=blue, bg=gray!40}
+\setbeamercolor{block body}{fg=black,bg=gray!10}
+\setbeamercolor{block title alerted}{fg=red,bg=gray!40}
+\setbeamercolor{block title example}{fg=black,bg=green!20}
+\setbeamercolor{block body example}{fg=black,bg=green!5}
+%\setbeamerfont{block title}{series=\bfseries}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\makeatletter
+% \g@addto@macro\normalsize{
+%     \setlength\abovedisplayskip{5pt}
+%     \setlength\belowdisplayskip{0pt}
+% }
+
+\title[Coupling of uniform spanning trees]{The coupling of uniform spanning trees on random planar graphs}
+
+\author[Wang]{\large Zijie Wang\\ jieyu8258@gmail.com}
+\institute[AHNU]{\large Anhui Normal University\\
+\vspace*{1cm}
+\large 2020 CMS Winter Meeting, Student Research Talks Session
+}
+
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Summary}
+    \begin{enumerate}
+        \item 1
+        \item 2
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+\centerline{Thank you for listening!}
+\end{frame}
+
+
+
+
+
+\end{document}

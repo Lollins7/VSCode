@@ -9,3 +9,5 @@
 *.bcf
 *.run.xml
 *.synctex.gz
+*.snm
+*.nav
