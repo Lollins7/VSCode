@@ -1346,7 +1346,7 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
 
 \textbf{注：}样本量很大时，选用SBC准则。
 
-\section{序列预测}
+\section{序列预测}\label{se4_7}
 \begin{definition}
     根据现有的序列值估计未来某时刻的序列值。（核心：将来的扰动视为误差）设$x_t,x_{t-1},...$为观察值，
     令$\hat{x}_t(l)$表示$x_{t+l}$的观察值，其中$l$为预测步长。
@@ -1511,15 +1511,111 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
 \chapter{无季节效应的非平稳序列分析}
 \section{Crammer分解定理}
 \begin{definition}
-    任何一个时间序列${x_t}$都可以分解为两部分的叠加：
+    任何一个时间序列${x_t}$都可以分解为两部分的叠加：一部分是由时间t的多项式决定的确定性成分，另一部分是由白噪声序列决定的随机性成分。即
     \begin{equation}
         \begin{aligned}
-            
+            x_t&={\mu}_t+\varepsilon_t\\
+            &=\sum_{j=0}^d\beta_jt^j + \Psi(B)a_t
         \end{aligned}
     \end{equation}
+    其中$\mu_t$为确定性影响，$\varepsilon_t$为随机性影响。
 \end{definition}
 
+\textbf{注1：}Crammer分解定理表明非平稳时间序列分解成的两部分，至少有一部分是平稳的。
 
+\textbf{注2：}$E \varepsilon_t = 0$。
+\section{差分平稳}
+\subsection{差分运算的实质}
+Cramer分解定理在理论上保证了适当阶数的差分一定可以充分提取确定性信息：
+$$
+    \nabla^d\sum_{j=0}^d\beta_jt^j=c,c\text{为某一常数}
+$$
+差分运算的实质是使用自回归的方式提取确定性信息：
+$$
+    \nabla^dx_t=(1-B)^dx_t=\sum_{i=0}^d(-1)^iC_d^ix_{t-i}
+$$
+
+\subsection{差分方式的选择}
+\begin{enumerate}[1、]
+    \item 序列蕴含着显著的线性趋势，通常一阶差分就可以实现趋势平稳；
+    \item 序列蕴含着曲线趋势，通常低阶（二阶或三阶）差分就可以提取出曲线趋势的影响；
+    \item 对于蕴含着固定周期的序列，进行步长为周期长度的差分运算，通常可以较好地提取周期信息。
+\end{enumerate}
+
+\subsection{过差分}
+\begin{itemize}
+    \item 从理论上而言，足够多次的差分运算可以充分地提取原序列中的非平稳确定性信息；
+    \item 但应当注意的是，差分运算的阶数并不是越多越好。因为差分运算是一种对信息的提取、加工过程，每次差分都会有信息的损失，方差变大；
+    \item 在实际应用中差分运算的阶数得适当，应当避免过度差分的现象。
+\end{itemize}
+
+\section{ARIMA模型}
+\subsection{模型结构}
+\begin{equation}
+    \begin{cases}
+        \Phi(B)\nabla^dx_t=\Theta(B)\varepsilon_t\\
+        E(\varepsilon_t)=0,Var(\varepsilon_t)=\sigma_\varepsilon^2,E(\varepsilon_t\varepsilon_s)=0,s\neq t\\
+        Ex_s\varepsilon_t=0,\forall s<t
+    \end{cases}
+\end{equation}
+记作ARIMA(p,d,q)。
+
+当$p=0,d=1,q =0$时，此时的模型称为\textbf{随机游走模型}，模型结构为
+$$
+\begin{cases}
+    x_t=x_{t-1}+\varepsilon_t\\
+    E(\varepsilon_t)=0,Var(\varepsilon_t)=\sigma_\varepsilon^2,E(\varepsilon_t\varepsilon_s)=0,s\neq t\\
+    Ex_s\varepsilon_t=0,\forall s<t
+\end{cases}
+$$
+
+\subsection{ARIMA模型的平稳性}
+$\Phi(B)(1-B)^d = 0$，其中$\Phi(B)$的p个特征根在单位圆内，而$(1-B)^d = 0$有d个为1的重根。故当$d\neq 0$时，ARIMA模型不平稳。
+
+\subsection{ARIMA模型建模步骤}
+具体步骤如图\ref{im5_3}所示。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 10cm]{img/5_3.png}
+    \caption{ARIMA模型建模步骤}
+    \label{im5_3}
+\end{figure}
+
+\subsection{ARIMA模型预测}
+ARIMA(p,d,q)模型的一般表示方法为$\Phi(B)(1-B)^dx_t=\Theta(B)\varepsilon_t$，如果把$\Phi^*(B)$记为广义自相关函数，则有
+$$
+\begin{matrix}
+    \Phi^{*}(B)=\Phi(B)(1-B)^{d}=1-\tilde{\phi}_{1}B-\tilde{\phi}_{2}B^{2}-...
+\end{matrix}
+$$
+
+和ARMA模型一样，也可以用随机扰动项的线性函数表示它(Green函数)
+$$
+x_t=\varepsilon_t+\Psi_1\varepsilon_{t-1}+\Psi_2\varepsilon_{t-2}+\cdotp\cdotp\cdotp 
+$$
+其Green函数的递推公式为
+$$
+\begin{cases}
+    \Psi_1=\widetilde{\boldsymbol{\phi}}_1-\theta_1\\
+    \Psi_2=\widetilde{\boldsymbol{\phi}}_1\Psi_1+\widetilde{\boldsymbol{\phi}}_2-\theta_2\\
+     ~~~~~~\vdots\\
+    \Psi_j=\widetilde{\boldsymbol{\phi}}_1\Psi_{j-1}+\cdotp\cdotp\cdotp+\widetilde{\boldsymbol{\phi}}_{p+d}\Psi_{j-p-d}\boldsymbol{-}\theta_j
+\end{cases}
+$$
+其中$\Psi_j=
+\begin{cases}
+    0,&j<0\\
+    1,&j=0\end{cases}
+    ,\theta_j=0,j>q$
+
+\subsection{预测值}
+与章节\ref{se4_7}类似，对序列值$x_{t+l}$进行分解，得
+$$
+x_{t+l}=(\varepsilon_{t+l}+\Psi_{1}\varepsilon_{t+l-1}+\cdotp\cdotp\cdotp+\Psi_{l-1}\varepsilon_{t+1})+(\Psi_{l}\varepsilon_{t}+\Psi_{l+1}\varepsilon_{t-1}+\cdotp\cdotp\cdotp)
+$$
+其中$e_t(l)=\varepsilon_{t+l}+\Psi_1\varepsilon_{t+l-1}+\cdotp\cdotp\cdotp+\Psi_{l-1}\varepsilon_{t+1}$，
+
+\noindent $\hat{x}_t(l)=\Psi_{l\boldsymbol{\varepsilon}_t}+\Psi_{l+1\boldsymbol{\varepsilon}_{t-1}}+\Psi_{l+2\boldsymbol{\varepsilon}_{t-2}}+...$
 
 
 
