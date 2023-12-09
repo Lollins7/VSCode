@@ -1615,7 +1615,40 @@ x_{t+l}=(\varepsilon_{t+l}+\Psi_{1}\varepsilon_{t+l-1}+\cdotp\cdotp\cdotp+\Psi_{
 $$
 其中$e_t(l)=\varepsilon_{t+l}+\Psi_1\varepsilon_{t+l-1}+\cdotp\cdotp\cdotp+\Psi_{l-1}\varepsilon_{t+1}$，
 
-\noindent $\hat{x}_t(l)=\Psi_{l\boldsymbol{\varepsilon}_t}+\Psi_{l+1\boldsymbol{\varepsilon}_{t-1}}+\Psi_{l+2\boldsymbol{\varepsilon}_{t-2}}+...$
+\noindent $\hat{x}_t(l)=\Psi_l{\varepsilon}_t+\Psi_{l+1}{\varepsilon}_{t-1}+\Psi_{l+2}{\varepsilon}_{t-2}+...$
+
+\section{疏系数模型}
+ARIMA(p,d,q)模型是指d阶差分后自相关最高阶数为p，移动平均最高阶数为q的模型，通常有$p+q$个独立的未知系数：$\phi_1,\cdots,\phi_p,\theta_1,\cdots,\theta_q$。
+
+如果该模型中有部分自相关系数或部分移动平滑系数为零，即原模型中有部分系数省缺了，那么该模型称为\textbf{疏系数模型}。
+
+\subsection{疏系数模型的类型}
+\begin{itemize}
+    \item 如果只是自相关部分有省缺系数，那么该疏系数模型可以简记为
+    $$
+    ARIMA((p_1,\cdotp\cdotp\cdotp,p_m),d,q)
+    $$
+    其中，$p_1,\cdotp\cdotp\cdotp,p_m$为非零自相关系数的阶数。
+    \item 如果只是移动平滑部分有省缺系数，那么该疏系数模型可以简记为
+    $$
+    ARIMA(p,d,(q_1,\cdots,q_n))
+    $$
+    其中，$q_1,\cdots,q_n$为非零移动平滑系数的阶数。
+    \item 如果自相关和移动平滑部分都有省缺，可以简记为
+    $$
+    ARIMA((p_1,\cdots,p_m),d,(q_1,\cdots,q_n))
+    $$
+\end{itemize}
+
+示例见图\ref{im5_4}。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 12cm]{img/5_4.png}
+    \caption{}
+    \label{im5_4}
+\end{figure}
+
+
 
 
 

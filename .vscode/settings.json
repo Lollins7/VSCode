@@ -56,5 +56,9 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    //path-intellisense配置, 路径别名
+    "path-intellisense.mappings": {
+        "@": "${workspaceRoot}/src"
+    },
 }
