@@ -572,6 +572,105 @@ Wilcoxon秩和检验原假设$H_0:X$与$Y$同分布。$H_0$成立时，
 $$
     P(R_1=r_1,R_2=r_2,\cdots,R_n=r_n)=\frac1{N(N-1)\cdots(N-n+1)}
 $$
+其中$(r_1,r_2,...,r_n)$是从$1,2,...,N$中取出的$n$个数的一个排列。
+
+记Y样本$y_1,y_2,...,y_n$的秩和为$W_y$，即
+\begin{equation}
+    W_y = \sum_{j=1}^{n}R_{j}
+\end{equation}
+
+\textbf{1、概率分布}
+
+$W_y$服从离散型分布，最小值为$1+2+\cdots+n=\frac{n(n+1)}{2}$，最大值为$(m+1)+(m+2)+\cdots+(m+n)=mn+\frac{n(n+1)}{2}$。
+
+\begin{proposition}
+    当$H_0$成立时，
+    \begin{equation}
+        \begin{aligned}
+            P(W_y = d) &= P(\sum_{j=1}^{n}R_{j} = d) =  \frac{t_{m,n}(d)}{C_N^n}\\
+            P(W_y \leq d) &= P(\sum_{j=1}^{n}R_{j} \leq d) =  \frac{\sum_{j\leq d}t_{m,n}(j)}{C_N^n}\\
+        \end{aligned}
+    \end{equation}
+    其中$t_{m,n}(d)$表示从$1,2,...,N$中任取n个数，其和恰为d的取法总数。
+\end{proposition}
+
+\textbf{2、对称性}
+
+假设从$1,2,...,N$中任取n个数为$a_1,a_2,...,a_n$，其和为d，若令$b_i = N+1-a_i$，则$1\leq b_i \leq N,~i = 1,2,...,n$，其和为$n(N+1)-d$，则$t_{m,n}(d) = t_{m,n}(n(N+1)-d)$。
+
+故有以下结论：
+\begin{equation}
+    \begin{aligned}
+        P(W_y=d)&=P(W_y=n(N+1)-d)\\
+        P(W_y\leqslant d)&=P(W_y\geqslant n(N+1)-d)
+    \end{aligned}
+\end{equation}
+其中$d = \frac{n(n+1)}{2},1+\frac{n(n+1)}{2},...,mn+\frac{n(n+1)}{2}$。
+
+特别地，我们可以推出
+\begin{equation}
+    \begin{aligned}
+        P(W_y=n(N+1)/2-d)&=P(W_y=n(N+1)/2+d)\\
+        P(W_y\leqslant n(N+1)/2-d)&=P(W_y\geqslant n(N+1)/2+d)
+    \end{aligned}
+\end{equation}
+
+\begin{proposition}
+    当$H_0$成立时，$W_y$服从对称分布，对称中心为$\frac{n(N+1)}{2}$。
+\end{proposition}
+
+\textbf{3、$W_y$的期望和方差}
+\begin{proposition}
+    当$H_0$成立时，
+    \begin{equation}
+        \begin{aligned}
+            E(W_y) &= \frac{n(N+1)}{2} \\
+            D(W_y) &= \frac{mn(N+1)}{12}
+        \end{aligned}
+    \end{equation}
+\end{proposition}
+
+\textbf{4、渐进正态性}
+\begin{proposition}
+    $H_0$成立时，若$min\{m,n\}\rightarrow \infty$，且$\frac{m}N \rightarrow \lambda \in (0,1),~\lambda$为常数，则
+    \begin{equation}
+        \frac{W_y-E(W_y)}{\sqrt{D(W_y)}}=\frac{W_y-n\left(N+1\right)/2}{\sqrt{mn\left(N+1\right)/12}}\xrightarrow{L}N(0,1).
+    \end{equation}
+\end{proposition}
+
+\subsection{Wilcoxon秩和检验的备择假设}
+原假设$H_0:$X和Y同分布。而Wilcoxon秩和检验的备择假设有四种定量描述方法。
+
+\textbf{1}、备择假设：$H_1:P(X>Y)>\frac12;P(X>Y)<\frac12;P(X>Y)\neq \frac12$。
+
+\textbf{2}、设总体X和Y的分布函数、密度函数为$F(x),G(x),f(x),g(x)$，则$H_1:F < G; F > G; F\neq G$。
+\begin{theorem}
+    设总体X和Y相互独立，$\forall c\in \mathrm{R}$，都有$F(c)<G(c)$，则$P(X>Y)>\frac12$。
+\end{theorem}
+
+\textbf{3}、若X+a和Y同分布，则a为位置参数，$H_1:a>0;a<0;a\neq 0$。
+\begin{theorem}
+    X+a与Y同分布，当且仅当$\forall c\in \mathrm{R}$，有$G(c)= F(c-a)$。
+\end{theorem}
+
+\textbf{4}、$H_1:me_x > me_y; me_x < me_y; me_x \neq me_y$。
+\begin{theorem}
+    \begin{enumerate}[(1)]
+        \item $\forall c \in \mathrm{R}$，都有$F(c) < G(c)$，则$me_x > me_y$。
+        \item 假设$X+a\overset{d}{=}Y$或$\forall c \in \mathrm{R}$，都有$F(c-a) = G(c)$，则$me_x+a = me_y$。
+    \end{enumerate}
+\end{theorem}
+
+\textbf{注：}以上四种备择假设的关系：$3 \rightarrow 2 \rightarrow 1,~ 3 \rightarrow 2 \rightarrow 4$。
+
+\subsection{Wilcoxon秩和检验的平均秩}
+$W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结长为1时，$a(r) = r$；结长大于1时，$a(r)$为结长的平均秩。
+
+\textbf{计分函数$a(R_i)$的性质}
+
+
+
+
 
 
 
