@@ -9,5 +9,6 @@
 *.bcf
 *.xml
 *.synctex.gz
+*.gz
 *.snm
 *.nav
