@@ -866,6 +866,70 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
     \item 总平方和：$SST = \sum_{i = 1}^k\sum_{j = 1}^{n_i}(x_{ij} - \bar{x})^2$。
 \end{itemize}
 
+用$x_{ij}$的秩$R_{ij}$来代替$x_{ij}$做方差分析。
+其中$\bar{R} = \sum_{i = 1}^k\sum_{j = 1}^{n_i}\frac{R_{ij}}N = \frac{N+1}2$，那么可以推出$SST = \frac{N(N^2 - 1)}{12}$，则$SSW = SST - SSB$，仅需计算SSB即可。
+
+\textbf{2、Kruskal-Wallis检验}
+
+\begin{center}
+    $H_0:\theta_1 = \theta_2 = \cdots = \theta_k ~vs~ H_1: \theta_1 \theta_2 \cdots \theta_k$不全相等
+\end{center}
+
+检验统计量$H = \frac{12}{N(N+1)}SSB = \frac{12}{N(N+1)}\sum_{i = 1}^k\frac{R_{i+}^2}{n_i} - 3 (N+1)$，其中$R_{i+} = n_i\bar{R}_i = \sum_{j = 1}^{n_i}R_{ij}~~(i = 1,2,...,k)$是来自第i个总体的样本秩和。
+
+\subsection{Kruskal-Wallis检验统计量的渐进分布及修正}
+\textbf{1、Kruskal-Wallis检验统计量的渐进分布}
+
+若$\min\{n_1,n_2,...,n_k\} \rightarrow \infty$，且对所有的$i = 1,2,...,k$，有$\frac{n}{N} \rightarrow \lambda \in (0,1)$，则Kruskal-Wallis检验统计量的渐进分布服从$\chi^2(k-1)$分布。
+
+\textbf{2、修正}
+
+当样本数据有结，取平均秩时，H统计量修正为
+$$
+H_0 = \frac H{1-\frac{\sum_{i = 1}^g (\tau_i^3 - \tau_i)}{N^3 - N}}
+$$
+渐进服从$\chi^2 (k - 1)$分布。
+
+\chapter{区组设计问题}
+\begin{center}
+    k——处理个数 ~~ b——区组数 ~~ SSB$ = b \sum_{i = 1}^{k} (\bar{R}_i - \bar{R})^2$
+\end{center}
+\section{Friedman检验}
+\textbf{1、Friedman检验}
+\begin{itemize}
+    \item $x_{ij}$：第i个处理的第j个区组。
+    \item 检验对象：k个位置参数$\theta_1,\theta_2,\cdots,\theta_k$是否全相等。
+\end{itemize}
+
+\begin{center}
+    $H_0:\theta_1 = \theta_2 = \cdots = \theta_k ~vs~ H_1: \theta_1 \theta_2 \cdots \theta_k$不全相等
+\end{center}
+
+SSB$ = b \sum_{i = 1}^{k} (\bar{R}_i - \bar{R})^2$，其中$\bar{R}_i = \frac1{b} \sum_{j = 1}^{b} R_{ij}$, $\bar{R} = \frac1{bk} \sum_{i = 1}^{k}\sum_{j = 1}^{b} R_{ij}$ = $\frac{k+1}{2}$。
+
+构造检验统计量，
+$$ 
+Q = \frac{12}{k(k+1)}SSB = \frac{12}{bk(k+1)}\sum_{i = 1}^{k} R_{i+}^2 - 3 b(k+1)
+$$
+$Q > c_{\alpha}$时，拒绝$H_0$。
+
+\textbf{2、大样本情形}
+
+$$
+E(R_{ij}) = \frac{k+1}2, ~ D(R_{ij}) = \frac{k^2-1}{12}
+$$
+
+$$
+E(\bar{R}_i) = \frac{k+1}2, ~ D(\bar{R}_i) = \frac{k^2-1}{12b}
+$$
+故$E(Q) = k-1$。若k固定，$b \rightarrow \infty$时，Friedman检验统计量Q渐进服从$\chi^2(k-1)$分布。
+
+\textbf{3、有结样本数据}
+
+Friedman统计量修正为$Q_a$：
+$$
+Q_a = \frac{Q}{1 - \frac{\sum_{j = 1}^{b}\sum_{t = 1}^{g_j} (\tau_{j,t}^3 - \tau_{j,t})}{bk^3 - bk}}
+$$
 
 
 
