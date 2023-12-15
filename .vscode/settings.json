@@ -61,4 +61,5 @@
     "path-intellisense.mappings": {
         "@": "${workspaceRoot}/src"
     },
+    "http.proxyStrictSSL": false,
 }

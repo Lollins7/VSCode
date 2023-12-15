@@ -755,7 +755,117 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
     \begin{equation}
         U_{mn} = \frac1{C_m^{m_1}C_n^{{m}_2}}\sum_{(1\leq i_1\neq\ldots\neq i_{m_1}\leq m)}\sum_{(1\leq j_1\neq\ldots\neq j_{m_2}\leq n)}h(x_{i_1},\ldots,x_{i_{m_1}},y_{j_1},\ldots,y_{j_{m_2}})
     \end{equation}
+    \item 若核函数h不是对称核函数，构造等价的对称核函数
+    \begin{equation}
+        h^*(x_1,\ldots,x_{m_1},y_1,\ldots,y_{m_2})=\frac1{m_1!m_2!}\sum_{(1\leq i_1\neq\ldots\neq i_{m_1}\leq m_1)}\sum_{(1\leq j_1\neq\ldots\neq j_{m_2}\leq m_2)}h(x_{i_1},\ldots,x_{i_{m_1}},y_{j_1},\ldots,y_{j_{m_2}})
+    \end{equation}
 \end{enumerate}
+
+\subsection{Mann-Whitney U统计量$(W_{xy})$和Wilcoxon秩和检验统计量$(W_y)$}
+
+\textbf{1、Mann-Whitney U统计量}
+\begin{equation}
+    \Phi(x_{i},y_{j})=\begin{cases}{1,\quad x_{i}-y_{j}<0}\\{0,\quad\text{其他}}\end{cases}
+\end{equation}
+则$W_{xy} = \sum_{i = 1}^m\sum_{j = 1}^n \Phi(x_i,y_j)$。
+
+\textbf{2、$W_{xy}$和$W_y$}
+\begin{theorem}
+    $W_{xy}$和$W_{y}$仅相差一个常数，即：$W_{xy} = W_y - \frac{n(n+1)}2;W_{yx} = W_x - \frac{m(m+1)}2$。
+\end{theorem}
+\textbf{注：}“用Mann-Whitney U统计量作检验统计量”等价于“用Wilcoxon秩和统计量作检验统计量”。
+
+\subsection{Mann-Whitney U统计量的性质}
+\textbf{1、小样本情形}
+\begin{proposition}
+    若原假设$H_0$成立，则$W_{xy}$服从对称分布，分布中心为$\frac{mn}2$。由此可以推导出如下结论：
+    \begin{equation*}
+        \begin{gathered}
+            P(W_y\leq d_{\alpha}) = \alpha \\
+            P(W_{xy}\leq d_{\alpha} - \frac{n(n+1)}2)= \alpha \\
+            P(W_{xy}\geq mn - d_{\alpha} + \frac{n(n+1)}2)= \alpha
+        \end{gathered}
+    \end{equation*}
+\end{proposition}
+
+\textbf{2、大样本情形}
+\begin{proposition}
+    若原假设$H_0$成立，则有
+    \begin{equation}
+        \begin{aligned}
+            \mathrm{EW_{xy}=EW_y-n(n+1)/2=mn/2}\\
+            \mathrm{DW_{xy}=DW_y=mn(N+1)/12}
+        \end{aligned}
+    \end{equation}
+    且若$min\{m,n\}\rightarrow \infty$，且$\frac{m}N \rightarrow \lambda \in (0,1),~\lambda$为常数，则$W_{xy}$有渐进正态性。
+\end{proposition}
+
+\section{两样本尺度参数的秩检验方法}
+
+\subsection{尺度参数}
+\textbf{1、定义}
+\begin{definition}
+    设总体X和Y的分布函数分别为$F(x)$和$G(x)$，若$F(0) = G(0) = \frac12$，且对任意实数c，有$G(c) = F(\frac{c}b)$，则称b为X与Y的尺度参数$(b >0)$。
+\end{definition}
+
+\begin{theorem}
+    设总体X和Y的分布函数分别为$F(x)$和$G(x)$，若$F(0) = G(0) = \frac12$，且对任意实数c，都有$G(c) = F(\frac{c}b) \Longleftrightarrow $ bX与Y同分布。
+\end{theorem}
+
+\textbf{2、尺度参数b取值大小的意义}
+\begin{enumerate}[(1)]
+    \item $b > 1$，因为$p(Y>c)=p(bX>c)=p(X>c/b)$，则若$b>1$
+    \begin{itemize}
+        \item 当$c>0$时，$p(Y>c)>p(X>c)$；
+        \item 当$c<0$时，$p(Y<c)>p(X<c)$。
+    \end{itemize}
+    \item $b<1$，分析与上面的类似。
+\end{enumerate}
+
+\textbf{3、}
+
+若b为X与Y的尺度参数,则有
+\begin{equation}
+    {\sigma_y}^2={\mathrm{b}}^2{\sigma_x}^2,{\mathrm{IQR}}_y={\mathrm{b}}({\mathrm{IQR}}_x)
+\end{equation}
+
+\subsection{尺度参数的检验问题}
+\begin{center}
+    $H_0: b = 1 ~vs~ H_1: b > 1; b < 1; b \neq 1$ 
+\end{center}
+\begin{definition}
+    积分函数$\alpha(r),r = 1,2,...,n$，$y_i$的秩为$R_i$时，$y_i$的得分为$\alpha(R_i)$。
+\end{definition}
+
+\textbf{1、Mood检验}
+
+取$\alpha(r) = (r - \frac{N+1}2)^2,r = 1,2,...,N$，此时$\alpha(r)$为单谷函数，记$M_y = \sum_{i = 1}^n\alpha(R_i)$。则当$H_0$成立时，有
+\begin{equation}
+    E(M_y) = \frac{n(N^2-1)}{12}, ~ D(M_y) = \frac{nm(N+1)(N^2-4)}{180}
+\end{equation}
+且若$min{m,n} \rightarrow \infty$，且$\frac{m}N \rightarrow \lambda \in (0,1),~\lambda$为常数，则$M_y$有渐进正态性。
+
+\textbf{2、Siegal-Turkey检验}
+
+\textbf{3、Ansari-Bradley检验}
+
+取$\alpha(r)$为单峰函数，令$\alpha(r) = \frac{N+1}2 - \|r - \frac{N+1}2\|,r = 1,2,...,N$，记$A = \sum_{i = 1}^N\alpha(R_i)$。
+
+\textbf{4、Klotz检验}
+
+记标准正态分布的分布函数为$\Phi(x)$，取$\Phi(x)$的反函数$\Phi^{-1}(x)$，取$\alpha(r) = [\Phi^{-1}(\frac{r}{N+1})]^2,r = 1,2,...,N$，则$\alpha(r)$为单谷函数，记$K_y = \sum_{i = 1}^N\alpha(R_i)$。
+
+\chapter{多样本问题}
+\section{Kruskal-Wallis检验法}
+\subsection{Kruskal-Wallis检验}
+\textbf{1、H的分析}
+
+\begin{itemize}
+    \item 组间平方和：$SSB = \sum_{j = 1}^kn_j (\bar{x}_j - \bar{x})^2$；
+    \item 组内平方和：$SSW = \sum_{i = 1}^k\sum_{j = 1}^{n_i}(x_{ij} - \bar{x}_i)^2$；
+    \item 总平方和：$SST = \sum_{i = 1}^k\sum_{j = 1}^{n_i}(x_{ij} - \bar{x})^2$。
+\end{itemize}
+
 
 
 
