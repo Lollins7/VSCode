@@ -1,3 +1,13 @@
-# 把一段utf-8的字符串转换成unicode编码，编码为\u547d\u4ee4\u63d0\u793a\u7b26
+from sympy import symbols, sin, series
 
-print(u'\u547d\u4ee4\u63d0\u793a\u7b26')
+# 定义符号变量
+x = symbols('x')
+
+# 定义要展开的函数
+f = sin(x)
+
+# 计算函数的泰勒展开
+taylor_series = series(f, x, 0, 10)  # 在x=0处展开，展开到5阶
+
+# 打印结果
+print(taylor_series)

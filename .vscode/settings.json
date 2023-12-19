@@ -62,4 +62,5 @@
         "@": "${workspaceRoot}/src"
     },
     "http.proxyStrictSSL": false,
+    "python.analysis.autoImportCompletions": true,
 }
