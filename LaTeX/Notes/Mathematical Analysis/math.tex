@@ -248,6 +248,7 @@ $2023/8/17$，发现用\LaTeX 做笔记还挺舒服的，以前喜欢用iPad，�
 \end{solution}
 
 \section{向量场在曲线上的积分}
+\subsection{向量场在曲线上积分的定义和计算}
 \begin{theorem}
     设向量场$\bv{v}=P(x,y,z)\boldsymbol{i}+Q(x,y,z)\boldsymbol{j}+R(x,y,z)\boldsymbol{k}$在区域$D$上连续，
     曲线$L_{AB} \subset D$具有参数方程表示
@@ -303,6 +304,20 @@ $2023/8/17$，发现用\LaTeX 做笔记还挺舒服的，以前喜欢用iPad，�
         \int_Lxy\operatorname{d}x+x^2\operatorname{d}y=\frac23
     \end{equation*}
 \end{solution}
+
+\subsection{Green定理}
+\begin{theorem}[(Green)]
+    设$D$是有限条逐段光滑的封闭曲线$L$围成的平面闭区域（因此$L = \partial D$），$\bv{v} = P(x,y)\bv{i} + Q(x,y) \bv{j}$是$D$上光滑向量场，则
+    \begin{equation}
+        \oint_{\partial D}P\operatorname{d}x+Q\operatorname{d}y=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\operatorname{d}x\operatorname{d}y,
+    \end{equation}
+    其中曲线积分的方向为$L = \partial D$的逆时针方向。上述公式称之为\textbf{Green公式}。
+\end{theorem}
+
+
+
+
+
 
 
 
