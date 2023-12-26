@@ -6,7 +6,7 @@ typedef struct
     int length;
 } sqlist;
 
-sqlist initsq()
+sqlist initsqlist()
 {
     sqlist L;
     int a;
@@ -23,15 +23,15 @@ sqlist initsq()
 sqlist bubble(sqlist L)
 {
     int i, j, temp;
-    for (i = 0; i < L.length; i++)
+    for (i = 1; i < L.length; i++)
     {
-        for (j = 1; j < L.length - i; j++)
+        for (j = 0; j < L.length - i; j++)
         {
-            if (L.arr[j - 1] > L.arr[j])
+            if (L.arr[j] > L.arr[j + 1])
             {
                 temp = L.arr[j];
-                L.arr[j] = L.arr[j - 1];
-                L.arr[j - 1] = temp;
+                L.arr[j] = L.arr[j + 1];
+                L.arr[j + 1] = temp;
             }
         }
     }
@@ -40,13 +40,13 @@ sqlist bubble(sqlist L)
 
 sqlist select(sqlist L)
 {
-    int i, j, min, temp;
+    int i, j, temp, min;
     for (i = 0; i < L.length - 1; i++)
     {
         min = i;
         for (j = i + 1; j < L.length; j++)
         {
-            if (L.arr[j] < L.arr[min])
+            if (L.arr[min] > L.arr[j])
             {
                 min = j;
             }
@@ -67,7 +67,7 @@ sqlist insert(sqlist L)
     for (i = 1; i < L.length; i++)
     {
         temp = L.arr[i];
-        for (j = i - 1; j >= 0 && L.arr[j] > temp; j--)
+        for (j = i - 1; j >= 0 && temp < L.arr[j]; j--)
         {
             L.arr[j + 1] = L.arr[j];
         }
@@ -88,9 +88,9 @@ void printsqlist(sqlist L)
 
 int main()
 {
-    // 测试数据为：2 5 8 3 100 32 83 72 33 -1
+    // 测试数据为：7 5 8 3 100 32 83 72 33 -1
     sqlist L, L1, L2, L3;
-    L = initsq();
+    L = initsqlist();
     L1 = bubble(L);
     L2 = select(L);
     L3 = insert(L);
