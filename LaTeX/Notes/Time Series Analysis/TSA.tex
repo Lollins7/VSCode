@@ -113,7 +113,7 @@
 
 \subsubsection*{随机序列的特点}
 \begin{itemize}
-    \item 随机序列中数据的位置与实践有关;
+    \item 随机序列中数据的位置与时间有关;
     \item 时间序列是对相关指标变量在不同时间进行观察所得到的结果。是一个观察结果，一个实现;
     \item 时间序列中的数据可以是一个时期内的数据也可以是一个时点上的数据。流量与存量;
     \item 时间序列通常存在前后时间上的相依性.
@@ -203,8 +203,8 @@ Matlab，Eviews，R和SAS等。
 \subsubsection{三、严平稳与宽平稳的关系}
 \begin{equation*}
     \left\{ \begin{array}{l}
-        \text{严平稳} \nRightarrow  \text{宽平稳}            \\
-        \text{严平稳} \nLeftarrow  \text{宽平稳}             \\
+        \text{严平稳} \nRightarrow  \text{宽平稳}       \\
+        \text{严平稳} \nLeftarrow  \text{宽平稳}        \\
         \text{严平稳+二阶矩存在}  \Rightarrow  \text{宽平稳} \\
         \text{在正态分布假设下，(严平稳} \Leftrightarrow \text{宽平稳})
     \end{array} \right.
@@ -484,7 +484,7 @@ Bartlett证明，如果一个时间序列是纯随机的，得到一个观察期
 该假设条件用数学语言描述为：
 \begin{equation}
     \begin{aligned}
-         & H_0:\rho_1=\rho_2=\cdots=\rho_m=0,\forall m\geqslant1                \\
+         & H_0:\rho_1=\rho_2=\cdots=\rho_m=0,\forall m\geqslant1          \\
          & H_1:\text{至少存在某个 }\rho_k\neq0,\forall m\geqslant1,k\leqslant m
     \end{aligned}
 \end{equation}
@@ -1097,7 +1097,7 @@ q阶自回归系数多项式$\Theta(u)=0$的根都在单位圆外，其中$u = \
     \left\{
     \begin{aligned}
          & \text{平稳非白噪声序列}\rightarrow \text{计算(偏)自相关系数} \rightarrow \text{模型识别} \\
-         & \text{白噪声序列(end)}                                                                   \\
+         & \text{白噪声序列(end)}                                                    \\
          & \text{非平稳(见五、六章)}
     \end{aligned}
     \right.
@@ -1388,8 +1388,8 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
           \begin{equation}
               \begin{aligned}
                   \text{估计误差：} & e_t(l) = \sum_{i = 0}^{l-1}G_{i}\varepsilon_{t+l-i}        \\
-                  \text{期望：}     & \mathrm{E}[e_t(l)] = 0                                     \\
-                  \text{方差：}     & Var[e_t(l)]=\sum_{i=0}^{l-1}G_i^2\cdot\sigma_\varepsilon^2
+                  \text{期望：}   & \mathrm{E}[e_t(l)] = 0                                     \\
+                  \text{方差：}   & Var[e_t(l)]=\sum_{i=0}^{l-1}G_i^2\cdot\sigma_\varepsilon^2
               \end{aligned}
           \end{equation}
 \end{enumerate}
@@ -1472,39 +1472,39 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
 \textbf{7、修正预测}
 \begin{enumerate}[1、]
     \item 在旧信息的基础上，$x_{t+l}$的预测值为
-    \begin{equation*}
-        \hat{x}_t(l)=G_l\varepsilon_t+G_{l+1}\varepsilon_{t-1}+\cdots 
-    \end{equation*}
+          \begin{equation*}
+              \hat{x}_t(l)=G_l\varepsilon_t+G_{l+1}\varepsilon_{t-1}+\cdots
+          \end{equation*}
     \item 假设新获得一个观察值$x_{t+1}$，则
-    \begin{itemize}
-        \item $x_{t+l}$的修正预测值为
-        \begin{equation*}
-            \hat{x}_{t+1}(l-1)=G_{l-1}\boldsymbol{\varepsilon}_{t+1}+G_l\boldsymbol{\varepsilon}_t+G_{l+1}\boldsymbol{\varepsilon}_{t-1}+\cdots=G_{l-1}\boldsymbol{\varepsilon}_{t+1}+\hat{x}_t(l)
-        \end{equation*}
-        \item 修正预测误差为
-            $$
-                e_{t+1}(l-1)=G_0\varepsilon_{t+l}+\cdots+G_{l-2}\varepsilon_{t+2}
-            $$
-        \item 预测方差为
-        $$
-        Var[e_{t+1}(l-1)]=(G_0^2+\cdots+G_{l-2}^2)\sigma_\varepsilon^2
-        $$
-    \end{itemize}
+          \begin{itemize}
+              \item $x_{t+l}$的修正预测值为
+                    \begin{equation*}
+                        \hat{x}_{t+1}(l-1)=G_{l-1}\boldsymbol{\varepsilon}_{t+1}+G_l\boldsymbol{\varepsilon}_t+G_{l+1}\boldsymbol{\varepsilon}_{t-1}+\cdots=G_{l-1}\boldsymbol{\varepsilon}_{t+1}+\hat{x}_t(l)
+                    \end{equation*}
+              \item 修正预测误差为
+                    $$
+                        e_{t+1}(l-1)=G_0\varepsilon_{t+l}+\cdots+G_{l-2}\varepsilon_{t+2}
+                    $$
+              \item 预测方差为
+                    $$
+                        Var[e_{t+1}(l-1)]=(G_0^2+\cdots+G_{l-2}^2)\sigma_\varepsilon^2
+                    $$
+          \end{itemize}
     \item 假设新获得p个观察值$x_{t+1},\cdots,x_{t+p}$，则
-    \begin{itemize}
-        \item $x_{t+l}$的修正预测值为
-        \begin{equation}
-            \hat{x}_{t+p}(l-p)=G_{l-p}\varepsilon_{t+p}+\cdots+G_{l-1}\varepsilon_{t+1}+\hat{x}_t(l)
-        \end{equation}
-        \item 修正预测误差为
-        \begin{equation}
-            e_{t+p}(l-p)=G_0\varepsilon_{t+l}+\cdots+G_{l-p-1}\varepsilon_{t+p+1}
-        \end{equation}
-        \item 预测方差为
-        \begin{equation}
-            Var[e_{t+p}(l-p)]=(G_0^2+\cdots+G_{l-p-1}^2)\sigma_\varepsilon^2
-        \end{equation}
-    \end{itemize}
+          \begin{itemize}
+              \item $x_{t+l}$的修正预测值为
+                    \begin{equation}
+                        \hat{x}_{t+p}(l-p)=G_{l-p}\varepsilon_{t+p}+\cdots+G_{l-1}\varepsilon_{t+1}+\hat{x}_t(l)
+                    \end{equation}
+              \item 修正预测误差为
+                    \begin{equation}
+                        e_{t+p}(l-p)=G_0\varepsilon_{t+l}+\cdots+G_{l-p-1}\varepsilon_{t+p+1}
+                    \end{equation}
+              \item 预测方差为
+                    \begin{equation}
+                        Var[e_{t+p}(l-p)]=(G_0^2+\cdots+G_{l-p-1}^2)\sigma_\varepsilon^2
+                    \end{equation}
+          \end{itemize}
 \end{enumerate}
 
 
@@ -1514,8 +1514,8 @@ $BIC = n\ln(\hat{\sigma}_{\varepsilon}) + \ln(n)(\text{未知参数个数})$
     任何一个时间序列${x_t}$都可以分解为两部分的叠加：一部分是由时间t的多项式决定的确定性成分，另一部分是由白噪声序列决定的随机性成分。即
     \begin{equation}
         \begin{aligned}
-            x_t&={\mu}_t+\varepsilon_t\\
-            &=\sum_{j=0}^d\beta_jt^j + \Psi(B)a_t
+            x_t & ={\mu}_t+\varepsilon_t               \\
+                & =\sum_{j=0}^d\beta_jt^j + \Psi(B)a_t
         \end{aligned}
     \end{equation}
     其中$\mu_t$为确定性影响，$\varepsilon_t$为随机性影响。
@@ -1553,8 +1553,8 @@ $$
 \subsection{模型结构}
 \begin{equation}
     \begin{cases}
-        \Phi(B)\nabla^dx_t=\Theta(B)\varepsilon_t\\
-        E(\varepsilon_t)=0,Var(\varepsilon_t)=\sigma_\varepsilon^2,E(\varepsilon_t\varepsilon_s)=0,s\neq t\\
+        \Phi(B)\nabla^dx_t=\Theta(B)\varepsilon_t                                                          \\
+        E(\varepsilon_t)=0,Var(\varepsilon_t)=\sigma_\varepsilon^2,E(\varepsilon_t\varepsilon_s)=0,s\neq t \\
         Ex_s\varepsilon_t=0,\forall s<t
     \end{cases}
 \end{equation}
@@ -1562,11 +1562,11 @@ $$
 
 当$p=0,d=1,q =0$时，此时的模型称为\textbf{随机游走模型}，模型结构为
 $$
-\begin{cases}
-    x_t=x_{t-1}+\varepsilon_t\\
-    E(\varepsilon_t)=0,Var(\varepsilon_t)=\sigma_\varepsilon^2,E(\varepsilon_t\varepsilon_s)=0,s\neq t\\
-    Ex_s\varepsilon_t=0,\forall s<t
-\end{cases}
+    \begin{cases}
+        x_t=x_{t-1}+\varepsilon_t                                                                          \\
+        E(\varepsilon_t)=0,Var(\varepsilon_t)=\sigma_\varepsilon^2,E(\varepsilon_t\varepsilon_s)=0,s\neq t \\
+        Ex_s\varepsilon_t=0,\forall s<t
+    \end{cases}
 $$
 
 \subsection{ARIMA模型的平稳性}
@@ -1584,34 +1584,34 @@ $\Phi(B)(1-B)^d = 0$，其中$\Phi(B)$的p个特征根在单位圆内，而$(1-B
 \subsection{ARIMA模型预测}
 ARIMA(p,d,q)模型的一般表示方法为$\Phi(B)(1-B)^dx_t=\Theta(B)\varepsilon_t$，如果把$\Phi^*(B)$记为广义自相关函数，则有
 $$
-\begin{matrix}
-    \Phi^{*}(B)=\Phi(B)(1-B)^{d}=1-\tilde{\phi}_{1}B-\tilde{\phi}_{2}B^{2}-...
-\end{matrix}
+    \begin{matrix}
+        \Phi^{*}(B)=\Phi(B)(1-B)^{d}=1-\tilde{\phi}_{1}B-\tilde{\phi}_{2}B^{2}-...
+    \end{matrix}
 $$
 
 和ARMA模型一样，也可以用随机扰动项的线性函数表示它(Green函数)
 $$
-x_t=\varepsilon_t+\Psi_1\varepsilon_{t-1}+\Psi_2\varepsilon_{t-2}+\cdotp\cdotp\cdotp 
+    x_t=\varepsilon_t+\Psi_1\varepsilon_{t-1}+\Psi_2\varepsilon_{t-2}+\cdotp\cdotp\cdotp
 $$
 其Green函数的递推公式为
 $$
-\begin{cases}
-    \Psi_1=\widetilde{\boldsymbol{\phi}}_1-\theta_1\\
-    \Psi_2=\widetilde{\boldsymbol{\phi}}_1\Psi_1+\widetilde{\boldsymbol{\phi}}_2-\theta_2\\
-     ~~~~~~\vdots\\
-    \Psi_j=\widetilde{\boldsymbol{\phi}}_1\Psi_{j-1}+\cdotp\cdotp\cdotp+\widetilde{\boldsymbol{\phi}}_{p+d}\Psi_{j-p-d}\boldsymbol{-}\theta_j
-\end{cases}
+    \begin{cases}
+        \Psi_1=\widetilde{\boldsymbol{\phi}}_1-\theta_1                                       \\
+        \Psi_2=\widetilde{\boldsymbol{\phi}}_1\Psi_1+\widetilde{\boldsymbol{\phi}}_2-\theta_2 \\
+        ~~~~~~\vdots                                                                          \\
+        \Psi_j=\widetilde{\boldsymbol{\phi}}_1\Psi_{j-1}+\cdotp\cdotp\cdotp+\widetilde{\boldsymbol{\phi}}_{p+d}\Psi_{j-p-d}\boldsymbol{-}\theta_j
+    \end{cases}
 $$
 其中$\Psi_j=
-\begin{cases}
-    0,&j<0\\
-    1,&j=0\end{cases}
+    \begin{cases}
+        0, & j<0 \\
+        1, & j=0\end{cases}
     ,\theta_j=0,j>q$
 
 \subsection{预测值}
 与章节\ref{se4_7}类似，对序列值$x_{t+l}$进行分解，得
 $$
-x_{t+l}=(\varepsilon_{t+l}+\Psi_{1}\varepsilon_{t+l-1}+\cdotp\cdotp\cdotp+\Psi_{l-1}\varepsilon_{t+1})+(\Psi_{l}\varepsilon_{t}+\Psi_{l+1}\varepsilon_{t-1}+\cdotp\cdotp\cdotp)
+    x_{t+l}=(\varepsilon_{t+l}+\Psi_{1}\varepsilon_{t+l-1}+\cdotp\cdotp\cdotp+\Psi_{l-1}\varepsilon_{t+1})+(\Psi_{l}\varepsilon_{t}+\Psi_{l+1}\varepsilon_{t-1}+\cdotp\cdotp\cdotp)
 $$
 其中$e_t(l)=\varepsilon_{t+l}+\Psi_1\varepsilon_{t+l-1}+\cdotp\cdotp\cdotp+\Psi_{l-1}\varepsilon_{t+1}$，
 
@@ -1625,19 +1625,19 @@ ARIMA(p,d,q)模型是指d阶差分后自相关最高阶数为p，移动平均最
 \subsection{疏系数模型的类型}
 \begin{itemize}
     \item 如果只是自相关部分有省缺系数，那么该疏系数模型可以简记为
-    $$
-    ARIMA((p_1,\cdotp\cdotp\cdotp,p_m),d,q)
-    $$
-    其中，$p_1,\cdotp\cdotp\cdotp,p_m$为非零自相关系数的阶数。
+          $$
+              ARIMA((p_1,\cdotp\cdotp\cdotp,p_m),d,q)
+          $$
+          其中，$p_1,\cdotp\cdotp\cdotp,p_m$为非零自相关系数的阶数。
     \item 如果只是移动平滑部分有省缺系数，那么该疏系数模型可以简记为
-    $$
-    ARIMA(p,d,(q_1,\cdots,q_n))
-    $$
-    其中，$q_1,\cdots,q_n$为非零移动平滑系数的阶数。
+          $$
+              ARIMA(p,d,(q_1,\cdots,q_n))
+          $$
+          其中，$q_1,\cdots,q_n$为非零移动平滑系数的阶数。
     \item 如果自相关和移动平滑部分都有省缺，可以简记为
-    $$
-    ARIMA((p_1,\cdots,p_m),d,(q_1,\cdots,q_n))
-    $$
+          $$
+              ARIMA((p_1,\cdots,p_m),d,(q_1,\cdots,q_n))
+          $$
 \end{itemize}
 
 示例见图\ref{im5_4}。
