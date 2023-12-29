@@ -12,3 +12,6 @@
 *.gz
 *.snm
 *.nav
+
+# MacBook
+*.DS_Store
