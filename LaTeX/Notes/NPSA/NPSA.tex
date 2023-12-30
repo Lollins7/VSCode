@@ -69,8 +69,9 @@
 \chapter{绪论}
 \section{序}
 \subsection{非参数统计概念及学习意义}
-\subsubsection{意义}
-\subsubsection{概念}
+\textbf{1、意义}
+
+\textbf{2、概念}
 \begin{itemize}
     \item \textbf{参数统计方法：}数据样本被视为从分布族的某个参数族抽取出来的总体的代表，
           未知的仅仅是总体分布具体数值，这样推断问题就转化为分布族的若干未知参数的估计问题，
@@ -116,7 +117,8 @@
 我们要求数据的中心位置满足这样一个\textbf{条件：}它到各个数据点的距离的和比较小。
 表示中心位置的数值有平均数、中位数、众数、切尾平均数。
 
-\subsubsection{平均数}
+\textbf{1、平均数}
+
 如果用平方值距离法，则点a到各数据点$x_1,x_2,...,x_n$的距离的和可以用
 $\sum_{i=1}^{n}(x_i-a)^2$来衡量。平均数$\bar{x} = \frac{\sum_{i=1}^{n}x_i}{n}$满足条件：
 \begin{equation}
@@ -124,7 +126,8 @@ $\sum_{i=1}^{n}(x_i-a)^2$来衡量。平均数$\bar{x} = \frac{\sum_{i=1}^{n}x_i
 \end{equation}
 上式表示\textbf{平均数这一点到各个数据点的平方值距离和最短}。所以在\textbf{平方值距离方法下},数据中心位置的代表是\textbf{平均数}。
 
-\subsubsection{中位数}
+\textbf{2、中位数}
+
 如果用绝对值距离法，则点a到各数据点$x_1,x_2,...,x_n$的距离的和可以用$\sum_{i=1}^{n}|x_i-a|$
 来衡量，中位数me满足条件：
 \begin{equation}
@@ -138,7 +141,8 @@ $\sum_{i=1}^{n}(x_i-a)^2$来衡量。平均数$\bar{x} = \frac{\sum_{i=1}^{n}x_i
     \item 中位数不受极大（小）的影响，有时能较好地表示数据的中心位置。
 \end{itemize}
 
-\subsubsection{众数}
+\textbf{3、众数}
+
 众数：一组数据中出现频数最高的数据。
 
 \textbf{注：}
@@ -155,7 +159,8 @@ $\sum_{i=1}^{n}(x_i-a)^2$来衡量。平均数$\bar{x} = \frac{\sum_{i=1}^{n}x_i
     \label{im2_1}
 \end{figure}
 
-\subsubsection{切尾平均数}
+\textbf{4、切尾平均数}
+
 设$X_{(1)},...,X_{(n)}\text{是来自总体X的简单随机样本}X_{1},...,X_{n}$的次序统计值，称
 \begin{equation}
     T_{nk}=\frac{1}{n-2k}(x_{(k+1)}+\ldots+x_{(n-k)})
@@ -217,7 +222,7 @@ $b_s\approx 0$时，倾向认为数据分布是对称的。
 \begin{equation}
     S^+=\sum_{i=1}^nu_i,u_i=
     \begin{cases}
-        1, & x_i-me_0>0   \\
+        1, & x_i-me_0>0 \\
         0, & \text{否则,}
     \end{cases},{\begin{array}{c}
                 i=1,2,\cdots,n \\
@@ -240,7 +245,8 @@ $p$值越小，$S^+$越大。
 \end{enumerate}
 
 \subsection{中位数的估计}
-\subsubsection{点估计}
+\textbf{1、点估计}
+
 \begin{lemma}\label{le3.1}
     设$x_1,x_2,...,x_n$是来自总体X的样本，$t_p$为总体X的p分位数，$m_{np}$
     为样本的p分位数，则
@@ -256,7 +262,8 @@ $p$值越小，$S^+$越大。
     \end{cases}
 \end{equation}
 
-\subsubsection{区间估计}
+\textbf{2、区间估计}
+
 设$x_1,x_2,...,x_n$是来自总体X的样本，$S^+ =
     {}^{\#}\{x_i:x_i-\text{me}_0>0,i=1,2,\cdots,n\}\sim b(n,\frac12)$
 那么有
@@ -289,7 +296,7 @@ $p$值越小，$S^+$越大。
 \textbf{符号检验统计量}
 \begin{equation}\label{eq4.1}
     S^+=\sum_{i=1}^nu_i,u_i=
-    \begin{cases}1,\quad & x_i>0,       \\
+    \begin{cases}1,\quad & x_i>0,     \\
              0,\quad & \text{否则,}
     \end{cases}i=1,2,\cdots,n.
 \end{equation}
@@ -313,11 +320,11 @@ $p$值越小，$S^+$越大。
     \label{ta4.1}
     \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
         \hline
-        观察值     & -7.6 & -5.5 & 4.3 & 2.7 & -4.8 & 2.1 & -1.2 & -6.6 & -3.3 & -8.5 \\
+        观察值   & -7.6 & -5.5 & 4.3 & 2.7 & -4.8 & 2.1 & -1.2 & -6.6 & -3.3 & -8.5 \\
         \hline
-        符号       & -    & -    & +   & +   & -    & +   & -    & -    & -    & -    \\
+        符号    & -    & -    & +   & +   & -    & +   & -    & -    & -    & -    \\
         \hline
-        绝对值     & 7.6  & 5.5  & 4.3 & 2.7 & 4.8  & 2.1 & 1.2  & 6.6  & 3.3  & 8.5  \\
+        绝对值   & 7.6  & 5.5  & 4.3 & 2.7 & 4.8  & 2.1 & 1.2  & 6.6  & 3.3  & 8.5  \\
         \hline
         绝对值的秩 & 9    & 7    & 5   & 3   & 6    & 2   & 1    & 8    & 4    & 10   \\
         \hline
@@ -358,8 +365,8 @@ $p$值越小，$S^+$越大。
 \section{符号秩和检验统计量$W^+$的性质}
 \subsection{概率分布}
 \begin{proposition}
-    令$S=\sum_{i*1}^niu_i$，则在总体关于原点对称时，$W^+$和$S$同分布，
-    即$W^+\overset{d}{\operatorname*{=}}S$。
+    令$S=\sum_{i=1}^niu_i$，则在总体关于原点对称时，$W^+$和$S$同分布，
+    即$W^+\overset{d}{=}S$。
 \end{proposition}
 \textbf{注：}总体X的分布关于原点对称时，$u_1,u_2,...,u_n$相互独立同分布，且$P(u_i=0)=P(u_i=1) = \frac12
     ,i=1,2,..,n $。故$S=\sum_{i=1}^{n}iu_i$为离散型分布，它的取值范围为$0,1,..,\frac{n(n+1)}2$，并且
@@ -494,13 +501,13 @@ H-L估计对称中心步骤如下：
     \centering
     \caption{}
     \begin{tabular}{c|c|c|c}
-              & $\leq m_n$ & $\geq m_n$ & 合计     \\
+            & $\leq m_n$ & $\geq m_n$ & 合计       \\
         \hline
         X样本 & $N_{11}$   & $N_{12}$   & $N_{1+}$ \\
         \hline
         Y样本 & $N_{21}$   & $N_{22}$   & $N_{2+}$ \\
         \hline
-              & $N_{+1}$   & $N_{+2}$   & $N$      \\
+            & $N_{+1}$   & $N_{+2}$   & $N$      \\
     \end{tabular}
 \end{table}
 
@@ -518,7 +525,7 @@ $$
     \sum_{k\geq N_{11}}P(k,N_{1+},N_{+1},N)
 $$
 
-其中$P(k,N_{1+},N_{+1},N) = \frac{{N_{+1} \choose N_{11}}{N_{+2} \choose N_{12}}}
+其中$P(k,N_{1+},N_{+1},N) = \frac{{N_{+1} \choose k}{N_{+2} \choose N_{1+} - k}}
     {{N \choose N_{1+}}}$。
 
 \subsection{大样本情形}
@@ -546,8 +553,8 @@ $$
 \textbf{注：}对于简单随机样本，R的边缘分布也是均匀分布，如
 \begin{equation}
     \begin{aligned}
-        & P(R_i = r) = \frac1N, r = 1,2,...,N \\
-        & P(R_i=r_1,R_j=r_2) = \frac1{N(N-1)}, r_1(\text{或}r_2) = 1,2,...,N, r_1\neq r_2
+         & P(R_i = r) = \frac1N, r = 1,2,...,N                                            \\
+         & P(R_i=r_1,R_j=r_2) = \frac1{N(N-1)}, r_1(\text{或}r_2) = 1,2,...,N, r_1\neq r_2
     \end{aligned}
 \end{equation}
 
@@ -587,8 +594,8 @@ $W_y$服从离散型分布，最小值为$1+2+\cdots+n=\frac{n(n+1)}{2}$，最�
     当$H_0$成立时，
     \begin{equation}
         \begin{aligned}
-            P(W_y = d) &= P(\sum_{j=1}^{n}R_{j} = d) =  \frac{t_{m,n}(d)}{C_N^n}\\
-            P(W_y \leq d) &= P(\sum_{j=1}^{n}R_{j} \leq d) =  \frac{\sum_{j\leq d}t_{m,n}(j)}{C_N^n}\\
+            P(W_y = d)    & = P(\sum_{j=1}^{n}R_{j} = d) =  \frac{t_{m,n}(d)}{C_N^n}                  \\
+            P(W_y \leq d) & = P(\sum_{j=1}^{n}R_{j} \leq d) =  \frac{\sum_{j\leq d}t_{m,n}(j)}{C_N^n} \\
         \end{aligned}
     \end{equation}
     其中$t_{m,n}(d)$表示从$1,2,...,N$中任取n个数，其和恰为d的取法总数。
@@ -601,8 +608,8 @@ $W_y$服从离散型分布，最小值为$1+2+\cdots+n=\frac{n(n+1)}{2}$，最�
 故有以下结论：
 \begin{equation}
     \begin{aligned}
-        P(W_y=d)&=P(W_y=n(N+1)-d)\\
-        P(W_y\leqslant d)&=P(W_y\geqslant n(N+1)-d)
+        P(W_y=d)          & =P(W_y=n(N+1)-d)          \\
+        P(W_y\leqslant d) & =P(W_y\geqslant n(N+1)-d)
     \end{aligned}
 \end{equation}
 其中$d = \frac{n(n+1)}{2},1+\frac{n(n+1)}{2},...,mn+\frac{n(n+1)}{2}$。
@@ -610,8 +617,8 @@ $W_y$服从离散型分布，最小值为$1+2+\cdots+n=\frac{n(n+1)}{2}$，最�
 特别地，我们可以推出
 \begin{equation}
     \begin{aligned}
-        P(W_y=n(N+1)/2-d)&=P(W_y=n(N+1)/2+d)\\
-        P(W_y\leqslant n(N+1)/2-d)&=P(W_y\geqslant n(N+1)/2+d)
+        P(W_y=n(N+1)/2-d)          & =P(W_y=n(N+1)/2+d)          \\
+        P(W_y\leqslant n(N+1)/2-d) & =P(W_y\geqslant n(N+1)/2+d)
     \end{aligned}
 \end{equation}
 
@@ -624,8 +631,8 @@ $W_y$服从离散型分布，最小值为$1+2+\cdots+n=\frac{n(n+1)}{2}$，最�
     当$H_0$成立时，
     \begin{equation}
         \begin{aligned}
-            E(W_y) &= \frac{n(N+1)}{2} \\
-            D(W_y) &= \frac{mn(N+1)}{12}
+            E(W_y) & = \frac{n(N+1)}{2}   \\
+            D(W_y) & = \frac{mn(N+1)}{12}
         \end{aligned}
     \end{equation}
 \end{proposition}
@@ -647,6 +654,19 @@ $W_y$服从离散型分布，最小值为$1+2+\cdots+n=\frac{n(n+1)}{2}$，最�
 \begin{theorem}
     设总体X和Y相互独立，$\forall c\in \mathbb{R} $，都有$F(c)<G(c)$，则$P(X>Y)>\frac12$。
 \end{theorem}
+\begin{proof}
+    由于对任意实数c，都有$F(c) < G(c)$，所以
+    \begin{equation*}
+        \begin{aligned}
+            P(X > Y) & = \iint_{x > y} f(x)g(y) dxdy = \int_{-\infty}^{+\infty} (\int_{-\infty}^{x} g(y) dy )f(x) dx \\
+                     & = \int_{-\infty}^{+\infty}G(x)f(x)dx > \int_{-\infty}^{+\infty} F(x) f(x)dx
+        \end{aligned}
+    \end{equation*}
+    令$t = F(x)$，则有
+    \begin{equation*}
+        P(X > Y) > \int_{0}^{1} t dt = \frac12
+    \end{equation*}
+\end{proof}
 
 \textbf{3}、若X+a和Y同分布，则a为位置参数，$H_1:a>0;a<0;a\neq 0$。
 \begin{theorem}
@@ -669,9 +689,9 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
 \textbf{1、计分函数$a(R_i)$的性质}
 \begin{equation}
     \begin{gathered}
-    E(a(R_{i}))=\bar{a}  \\
-    D(a(R_i))=\frac{1}{N}\sum_{i=1}^{N}(a(i)-\overline{a})^2 \\
-    \mathrm{Cov}\left(a(R_{i}),a(R_{j})\right)=-\frac{1}{N(N-1)}\sum_{i=1}^{N}(a(i)-\overline{a})^{2} 
+        E(a(R_{i}))=\bar{a}  \\
+        D(a(R_i))=\frac{1}{N}\sum_{i=1}^{N}(a(i)-\overline{a})^2 \\
+        \mathrm{Cov}\left(a(R_{i}),a(R_{j})\right)=-\frac{1}{N(N-1)}\sum_{i=1}^{N}(a(i)-\overline{a})^{2}
     \end{gathered}
 \end{equation}
 其中$\bar{a} = \frac{\sum_{i=1}^N a(i)}N$。
@@ -680,8 +700,8 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
     在X和Y同分布时，有
     \begin{equation}
         \begin{aligned}
-            E(\sum_{i=1}^na(R_i))&=n\overline{a}\\
-            D(\sum_{i=1}^na(R_i))&=\frac{nm}{N(N-1)}\sum_{i=1}^n(a(i)-\overline{a})^2
+            E(\sum_{i=1}^na(R_i)) & =n\overline{a}                                      \\
+            D(\sum_{i=1}^na(R_i)) & =\frac{nm}{N(N-1)}\sum_{i=1}^n(a(i)-\overline{a})^2
         \end{aligned}
     \end{equation}
 \end{theorem}
@@ -689,8 +709,8 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
 \textbf{2、$W_y$的数字特征及渐进分布}
 \begin{equation}
     \begin{gathered}
-    E(\alpha(R_i))=\alpha=\frac{n(N+1)}{2} \\
-    D(\alpha(R_i))=\frac{nm(N+1)}{12}-\frac{nm}{12N(N-1)}\sum_{j=1}^{g}(\tau_j^3-\tau_j)
+        E(\alpha(R_i))=\alpha=\frac{n(N+1)}{2} \\
+        D(\alpha(R_i))=\frac{nm(N+1)}{12}-\frac{nm}{12N(N-1)}\sum_{j=1}^{g}(\tau_j^3-\tau_j)
     \end{gathered}
 \end{equation}
 
@@ -706,11 +726,11 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
 \textbf{2、位置参数差的估计}
 \begin{enumerate}[(1)]
     \item 点估计：
-    \begin{enumerate}[(a)]
-        \item 样本均值差估计位置参数差：$\hat{a} = \bar{y}-\bar{x}$；
-        \item 样本中位数差估计位置参数差：$\hat{a} = me_{y}-me_{x}$；
-        \item H-L估计：$\hat{a} = me(Y-X)$，即$\{y_j - x_i,i = 1,...,m,j = 1,...,n\}$的中位数。
-    \end{enumerate}
+          \begin{enumerate}[(a)]
+              \item 样本均值差估计位置参数差：$\hat{a} = \bar{y}-\bar{x}$；
+              \item 样本中位数差估计位置参数差：$\hat{a} = me_{y}-me_{x}$；
+              \item H-L估计：$\hat{a} = me(Y-X)$，即$\{y_j - x_i,i = 1,...,m,j = 1,...,n\}$的中位数。
+          \end{enumerate}
     \item 区间估计。
 \end{enumerate}
 
@@ -728,15 +748,15 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
 \begin{enumerate}[(i)]
     \item U统计量是$\theta$的无偏估计，即$E(U_n) = \theta$；
     \item 若核函数h为对称核函数，即任一$(1,2,...,m)$的排列$\alpha_{1},\alpha_{2},...,\alpha_{m}$，有
-    $h(x_{\alpha_1},x_{\alpha_2},...,x_{\alpha_m})=h(x_1,x_2,...,x_m)$，则U统计量可以简写为：
-    \begin{equation}
-        U_n = \frac1{C_n^m}\sum_{1\leq i_1\neq i_2\neq\ldots\neq i_m\leq n}h(x_{i_1},\ldots x_{i_m})
-    \end{equation}
+          $h(x_{\alpha_1},x_{\alpha_2},...,x_{\alpha_m})=h(x_1,x_2,...,x_m)$，则U统计量可以简写为：
+          \begin{equation}
+              U_n = \frac1{C_n^m}\sum_{1\leq i_1\neq i_2\neq\ldots\neq i_m\leq n}h(x_{i_1},\ldots x_{i_m})
+          \end{equation}
     \item 若核函数h不是对称核函数，可以构造等价的对称核函数
-    \begin{equation}
-        h^*(x_1,\ldots,x_m)=\frac1{m!}\sum_{1\leq i_1\neq i_2\neq\ldots\neq i_m\leq m}h(x_{i_1},\ldots,x_{i_m})
-    \end{equation}
-    其中$(i_1,i_2,...,i_m)$为$(1,2,...,m)$的任意排列。
+          \begin{equation}
+              h^*(x_1,\ldots,x_m)=\frac1{m!}\sum_{1\leq i_1\neq i_2\neq\ldots\neq i_m\leq m}h(x_{i_1},\ldots,x_{i_m})
+          \end{equation}
+          其中$(i_1,i_2,...,i_m)$为$(1,2,...,m)$的任意排列。
 \end{enumerate}
 
 \textbf{2、两样本U统计量}
@@ -752,13 +772,13 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
 \begin{enumerate}
     \item U统计量是$\theta$的无偏估计，即$E(U_{mn}) = \theta$；
     \item 若核函数h为对称核函数，即任一$(1,2,...,m_1)$的排列$(\alpha_{1},\alpha_{2},...,\alpha_{m_1})$和$(1,2,...,m_2)$的排列$(\beta_{1},\beta_{2},...,\beta_{m_2})$，有
-    \begin{equation}
-        U_{mn} = \frac1{C_m^{m_1}C_n^{{m}_2}}\sum_{(1\leq i_1\neq\ldots\neq i_{m_1}\leq m)}\sum_{(1\leq j_1\neq\ldots\neq j_{m_2}\leq n)}h(x_{i_1},\ldots,x_{i_{m_1}},y_{j_1},\ldots,y_{j_{m_2}})
-    \end{equation}
+          \begin{equation}
+              U_{mn} = \frac1{C_m^{m_1}C_n^{{m}_2}}\sum_{(1\leq i_1\neq\ldots\neq i_{m_1}\leq m)}\sum_{(1\leq j_1\neq\ldots\neq j_{m_2}\leq n)}h(x_{i_1},\ldots,x_{i_{m_1}},y_{j_1},\ldots,y_{j_{m_2}})
+          \end{equation}
     \item 若核函数h不是对称核函数，构造等价的对称核函数
-    \begin{equation}
-        h^*(x_1,\ldots,x_{m_1},y_1,\ldots,y_{m_2})=\frac1{m_1!m_2!}\sum_{(1\leq i_1\neq\ldots\neq i_{m_1}\leq m_1)}\sum_{(1\leq j_1\neq\ldots\neq j_{m_2}\leq m_2)}h(x_{i_1},\ldots,x_{i_{m_1}},y_{j_1},\ldots,y_{j_{m_2}})
-    \end{equation}
+          \begin{equation}
+              h^*(x_1,\ldots,x_{m_1},y_1,\ldots,y_{m_2})=\frac1{m_1!m_2!}\sum_{(1\leq i_1\neq\ldots\neq i_{m_1}\leq m_1)}\sum_{(1\leq j_1\neq\ldots\neq j_{m_2}\leq m_2)}h(x_{i_1},\ldots,x_{i_{m_1}},y_{j_1},\ldots,y_{j_{m_2}})
+          \end{equation}
 \end{enumerate}
 
 \subsection{Mann-Whitney U统计量$(W_{xy})$和Wilcoxon秩和检验统计量$(W_y)$}
@@ -793,7 +813,7 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
     若原假设$H_0$成立，则有
     \begin{equation}
         \begin{aligned}
-            \mathrm{EW_{xy}=EW_y-n(n+1)/2=mn/2}\\
+            \mathrm{EW_{xy}=EW_y-n(n+1)/2=mn/2} \\
             \mathrm{DW_{xy}=DW_y=mn(N+1)/12}
         \end{aligned}
     \end{equation}
@@ -815,10 +835,10 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
 \textbf{2、尺度参数b取值大小的意义}
 \begin{enumerate}[(1)]
     \item $b > 1$，因为$p(Y>c)=p(bX>c)=p(X>c/b)$，则若$b>1$
-    \begin{itemize}
-        \item 当$c>0$时，$p(Y>c)>p(X>c)$；
-        \item 当$c<0$时，$p(Y<c)>p(X<c)$。
-    \end{itemize}
+          \begin{itemize}
+              \item 当$c>0$时，$p(Y>c)>p(X>c)$；
+              \item 当$c<0$时，$p(Y<c)>p(X<c)$。
+          \end{itemize}
     \item $b<1$，分析与上面的类似。
 \end{enumerate}
 
@@ -831,7 +851,7 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
 
 \subsection{尺度参数的检验问题}
 \begin{center}
-    $H_0: b = 1 ~vs~ H_1: b > 1; b < 1; b \neq 1$ 
+    $H_0: b = 1 ~vs~ H_1: b > 1; b < 1; b \neq 1$
 \end{center}
 \begin{definition}
     积分函数$\alpha(r),r = 1,2,...,n$，$y_i$的秩为$R_i$时，$y_i$的得分为$\alpha(R_i)$。
@@ -845,11 +865,13 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
 \end{equation}
 且若$min{m,n} \rightarrow \infty$，且$\frac{m}N \rightarrow \lambda \in (0,1),~\lambda$为常数，则$M_y$有渐进正态性。
 
-\textbf{2、Siegal-Turkey检验}
-
-\textbf{3、Ansari-Bradley检验}
+\textbf{2、Ansari-Bradley检验}
 
 取$\alpha(r)$为单峰函数，令$\alpha(r) = \frac{N+1}2 - \|r - \frac{N+1}2\|,r = 1,2,...,N$，记$A = \sum_{i = 1}^N\alpha(R_i)$。
+
+\textbf{3、Siegal-Turkey检验}
+取$a(r)$为单谷函数，令$a(1) = N,a(N) = N-1, a(N-1) = N-2, a(2) = N-3, a(3) = N-4...$。
+
 
 \textbf{4、Klotz检验}
 
@@ -886,7 +908,7 @@ $W_y = \sum_{i = 1}^{n}a(R_i)$，其中$a(r),r = 1,2,...,n$为计分函数。结
 
 当样本数据有结，取平均秩时，H统计量修正为
 $$
-H_0 = \frac H{1-\frac{\sum_{i = 1}^g (\tau_i^3 - \tau_i)}{N^3 - N}}
+    H_0 = \frac H{1-\frac{\sum_{i = 1}^g (\tau_i^3 - \tau_i)}{N^3 - N}}
 $$
 渐进服从$\chi^2 (k - 1)$分布。
 
@@ -908,19 +930,19 @@ $$
 SSB$ = b \sum_{i = 1}^{k} (\bar{R}_i - \bar{R})^2$，其中$\bar{R}_i = \frac1{b} \sum_{j = 1}^{b} R_{ij}$, $\bar{R} = \frac1{bk} \sum_{i = 1}^{k}\sum_{j = 1}^{b} R_{ij}$ = $\frac{k+1}{2}$。
 
 构造检验统计量，
-$$ 
-Q = \frac{12}{k(k+1)}SSB = \frac{12}{bk(k+1)}\sum_{i = 1}^{k} R_{i+}^2 - 3 b(k+1)
+$$
+    Q = \frac{12}{k(k+1)}SSB = \frac{12}{bk(k+1)}\sum_{i = 1}^{k} R_{i+}^2 - 3 b(k+1)
 $$
 $Q > c_{\alpha}$时，拒绝$H_0$。
 
 \textbf{2、大样本情形}
 
 $$
-E(R_{ij}) = \frac{k+1}2, ~ D(R_{ij}) = \frac{k^2-1}{12}
+    E(R_{ij}) = \frac{k+1}2, ~ D(R_{ij}) = \frac{k^2-1}{12}
 $$
 
 $$
-E(\bar{R}_i) = \frac{k+1}2, ~ D(\bar{R}_i) = \frac{k^2-1}{12b}
+    E(\bar{R}_i) = \frac{k+1}2, ~ D(\bar{R}_i) = \frac{k^2-1}{12b}
 $$
 故$E(Q) = k-1$。若k固定，$b \rightarrow \infty$时，Friedman检验统计量Q渐进服从$\chi^2(k-1)$分布。
 
@@ -928,18 +950,9 @@ $$
 
 Friedman统计量修正为$Q_a$：
 $$
-Q_a = \frac{Q}{1 - \frac{\sum_{j = 1}^{b}\sum_{t = 1}^{g_j} (\tau_{j,t}^3 - \tau_{j,t})}{bk^3 - bk}}
+    Q_a = \frac{Q}{1 - \frac{\sum_{j = 1}^{b}\sum_{t = 1}^{g_j} (\tau_{j,t}^3 - \tau_{j,t})}{bk^3 - bk}}
 $$
 
-\chapter{这是我用latex做的笔记}
-
-\begin{definition}
-    定义
-\end{definition}
-
-\begin{theorem}
-    定理
-\end{theorem}
 
 
 
