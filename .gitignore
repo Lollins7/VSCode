@@ -13,5 +13,7 @@
 *.snm
 *.nav
 
+*.json
+
 # MacBook
 *.DS_Store
