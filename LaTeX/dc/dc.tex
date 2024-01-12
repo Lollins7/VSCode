@@ -92,9 +92,9 @@ $2023/9/19$，过去一个月了，最近在网上看到了Elegant\TeX 的模板
 \par 对二元函数$f(x,y)$，我们对其使用Laplace Operator，得到
 \begin{equation*}
 	\begin{aligned}
-		\Delta f & =\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\
-		         & \begin{aligned}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             & \approx\frac{f\left(x+\Delta x,y\right)+f\left(x-\Delta x,y\right)-2f\left(x,y\right)}{\left(\Delta x\right)^2}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \\&+\frac{f\left(x,y+\Delta y\right)+f\left(x,y-\Delta y\right)-2f\left(x,y\right)}{\left(\Delta y\right)^2}\end{aligned}
+		\Delta f & =\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\
+		         & \begin{aligned}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              & \approx\frac{f\left(x+\Delta x,y\right)+f\left(x-\Delta x,y\right)-2f\left(x,y\right)}{\left(\Delta x\right)^2}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\&+\frac{f\left(x,y+\Delta y\right)+f\left(x,y-\Delta y\right)-2f\left(x,y\right)}{\left(\Delta y\right)^2}\end{aligned}
 	\end{aligned}
 \end{equation*}
 \par 把此二元函数离散化，为了简化，假设$x$和$y$的增量即步长为$1$，即
@@ -879,14 +879,16 @@ $\bv{x_e}$在李雅普诺夫意义下是\textbf{大范围内渐进稳定的}（A
 	则函数$f(t)$的Laplace Transform存在。
 \end{theorem}
 
-\subsubsection{线性叠加性}
+\textbf{1、线性叠加性}
+
 \begin{equation}
 	\mathcal{L}\left[af\left(t\right)+bg\left(t\right)\right]=
 	a\mathcal{L}\left[f\left(t\right)\right]+b\mathcal{L}\left[g\left(t\right)\right]
 \end{equation}
 易证，跳过证明。
 
-\subsubsection{微分性质}
+\textbf{2、微分性质}
+
 \begin{equation}\label{eq3.16}
 	\mathcal{L}\left[f^{(n)}\left(t\right)\right]=
 	s^{n}\mathcal{L}\left[f\left(t\right)\right]-s^{n-1}f\left(0\right)-s^{n-2}f^{\prime}\left(0\right)-\ldots-f^{(n-1)}\left(0\right)
@@ -906,7 +908,8 @@ $\bv{x_e}$在李雅普诺夫意义下是\textbf{大范围内渐进稳定的}（A
 	递推，即得式\ref{eq3.16}。
 \end{proof}
 
-\subsubsection{积分性质}
+\textbf{3、积分性质}
+
 \begin{equation}\label{eq3.17}
 	\mathcal{L}\left[\underbrace{\int_0^tdt\int_0^tdt\ldots\int_0^t}_{n\text{重}} f \left ( t \right ) dt \right ]
 	= \frac 1 {s^n}\mathcal{L}\left[f\left(t\right)\right]
@@ -918,25 +921,29 @@ $\bv{x_e}$在李雅普诺夫意义下是\textbf{大范围内渐进稳定的}（A
 	带入式\ref{eq3.16}，即证。
 \end{proof}
 
-\subsubsection{相似性质}
+\textbf{4、相似性质}
+
 \begin{equation}
 	\mathcal{L}[f(at)]=\frac1aF(\frac sa)
 \end{equation}
 相似性质又称为尺度变换，使用Laplace Transform展开，易证。
 
-\subsubsection{平移延迟}
+\textbf{5、平移延迟}
+
 \begin{equation}
 	\mathcal{L}[f(t-\tau)]=e^{-\tau s}F(s)
 \end{equation}
 使用Laplace Transform展开，再使用换元法，易证。
 
-\subsubsection{位移性质}
+\textbf{6、位移性质}
+
 \begin{equation}
 	\mathcal{L}[e^{at}f(t)]=F(s-a)
 \end{equation}
 使用Laplace Transform展开，易证。
 
-\subsubsection{卷积定理}
+\textbf{7、卷积定理}
+
 \begin{definition}[卷积]
 	\begin{equation}
 		f(t)*g(t)=\int_{0}^{t}f(\tau)g(t-\tau)d\tau
@@ -1252,7 +1259,7 @@ $||\mathbf{z}(t)||\leq\sqrt{\frac{\bar{c}_{2}}{\bar{c}_{1}}}e^{-\frac{\delta\lam
 	先证明第一个式子不等式左边，结合式(21)的第一个式子
 	\begin{equation*}
 		\begin{aligned}
-			\|V\| & \geq cc_1||\mathbf{x}-\mathbf{x}^*||^2 + (1-c)\lambda_{min}(P)\|\bv{\overline{y}}\|^2                         \\
+			\|V\| & \geq cc_1||\mathbf{x}-\mathbf{x}^*||^2 + (1-c)\lambda_{min}(P)\|\bv{\overline{y}}\|^2                        \\
 			      & \geq \overline{c}_1 \|\bv{z}\|^2(\text{注}\|\bv{z}\|^2=||\mathbf{x}-\mathbf{x}^*||^2+\|\bv{\overline{y}}\|^2)
 		\end{aligned}
 	\end{equation*}
