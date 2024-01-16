@@ -1,7 +1,7 @@
 import turtle
 
 
-def bdd(speed=11, name='赖艺'):
+def bdd(speed=11, name='name'):
     turtle.title('冰墩墩')
 
     turtle.speed(speed)  # 速度

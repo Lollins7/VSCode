@@ -13,8 +13,8 @@ type_dict = {
     '2楼电子阅览室': [2, 'href="Room.aspx?rid=18&fid=1"'],
     '2楼报刊阅览室': [2, 'href="Room.aspx?rid=1&fid=1"']
 }
-user_name = '20112001xxx'
-pass_word = 'xxxxxxx'
+user_name = '21111202046'
+pass_word = 'qwertyuiop0420!'
 floor_num, room_type = type_dict['2楼电子阅览室']
 specific_seat = ''
 likes_seats = ['ndz185', 'ndz184']
