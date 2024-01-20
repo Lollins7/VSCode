@@ -1,0 +1,78 @@
+\documentclass[12pt, a4paper, oneside]{ctexbook}
+\usepackage{amsmath, amsthm, amssymb, bm, graphicx, hyperref, mathrsfs}
+
+\title{{\Huge{\textbf{草稿}}}}
+\author{Lollins}
+\date{\today}
+\linespread{1.5}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{example}[theorem]{例}
+\newtheorem{proposition}[theorem]{命题}
+
+\begin{document}
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+%  开始文章
+假设条件如下：
+\begin{enumerate}
+    \item $f$为二阶连续可微函数，且$\nabla f$为全局Lipschitz的；
+    \item 拓扑结构为有向强连通图；
+    \item $\nabla f$为强凸函数；
+    \item $\nabla_{ij}^{2}f_{i}(\mathbf{x})=\frac{\partial^{2}f_{i}(\mathbf{x})}{\partial x_{i}\partial x_{j}}$是有界的；
+    \item 误差$d(t)$是有界的。
+\end{enumerate}
+令$\beta_i \geq | d_i(t) |, \dot{\varrho}_i(t) = -\alpha_i \varrho_i(t), \varrho_i > 0, \alpha_i > 0$，且
+$$
+\xi_i(t) = \frac{s_i(t)}{|s_i(t)| + \varrho_i(t)}
+$$
+算法设计如下：
+$$
+\begin{cases}
+    \dot{\mathbf{x}}=\mathbf{v}\\
+    \dot{\mathbf{v}}=-\tau\mathbf{k}\mathbf{s}-[\beta_i\xi_i(t)]_{vec}+\mathbf{d}(t)\\
+    \mathbf{s}=\mathbf{v}+[\nabla_if_i(\mathbf{y}_i)]_{vec}\\
+    \dot{\mathbf{y}}=-\theta\bar{\theta}(\mathcal{L}\otimes\mathbf{I}_{N\times N}+\mathcal{A}_q)\tilde{\mathbf{y}}
+\end{cases}
+$$
+选取Lyapunov函数为
+$$
+V(t) = \frac{1}{2}\tilde{\mathbf{x}}^{T}\tilde{\mathbf{x}}+\frac{1}{2}\mathbf{s}^{T}\mathbf{s}+\tilde{\mathbf{y}}^{T}P\tilde{\mathbf{y}} + \sum_{i = 1}^{N} \frac{\beta_i}{\alpha_i}\varrho_i(t) 
+$$
+证明如下：
+$$
+\begin{aligned}
+    \dot{V}\leq & -m\|\tilde{\mathbf{x}}\|^2-\tau\lambda_{\min}(\mathbf{k})\|\mathbf{s}\|^2  \\
+    &-(\theta\lambda_{\min}(Q)-2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_i\})\|\tilde{\mathbf{y}}\|^2 \\
+    &+(\max_{i\in\mathcal{V}}\{l_i\}+2N\|P\|\max_{i\in\mathcal{V}}\{l_i\})\|\tilde{\mathbf{x}}\|\|\tilde{\mathbf{y}}\| \\
+    &+(2\sqrt{N}\|P\|+\theta L_{1})\|\tilde{\mathbf{y}}\|\|\mathbf{s}\|+\|\tilde{\mathbf{x}}\|\|\mathbf{s}\|\\
+    &-\sum_{i = 1}^{N}\frac{(\beta_i - |d_i(t)|)|s_i(t)|(|s_i(t)|+\varrho_i(t)) + \beta_i\varrho_i^2(t)}{|s_i(t)| + \varrho_i(t)}\\
+    \leq &-\lambda_{\min}(F)\|\mathbf{E}_1\|^2-\tau\lambda_{\min}(\mathbf{k})\|\mathbf{s}\|^2\\
+    &+(1+2\sqrt{N}\|P\|+\theta L_1)\|\mathbf{E}_1\|\|\mathbf{s}\|
+    \end{aligned}
+$$
+其中$\left.F=\left[\begin{array}{cc}m&a\\
+    a&\theta\lambda_{\min}(Q)-2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_i\}\end{array}\right.\right]$，
+    $\mathbf{E} = [\tilde{\mathbf{x}}^T,\tilde{\mathbf{y}}^T]$，
+    ~~~~~$a = -\frac{\max_{i\in\mathcal{V}}\{l_{i}\}+2N\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}}{2}$，当
+    $\theta > \frac{(\max_{i\in\mathcal{V}}\{l_{i}\}+2N\|P\|\max_{i\in\mathcal{V}}(l_{i}\})^{2}}{4m\lambda_{\mathrm{min}}(Q)}+\frac{2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}}{\lambda_{\mathrm{min}}(Q)}$，则
+    $\lambda_{min}(F) > 0$。令$\bar{H}(\mathbf{y})=[h_{ij}]$，在$i = j$时，我们有$h_{ii}=[\nabla_{i1}^{2}f_{i}(\mathbf{y}_{i}),\nabla_{i2}^{2}f_{i}(\mathbf{y}_{i}),\ldots,\nabla_{iN}^{2}f_{i}(\mathbf{y}_{i})]$，$\nabla_{ij}^{2}f_{i}(\mathbf{y}_{i})=\frac{\partial^{2}f_{i}(\mathbf{x})}{\partial x_{i}\partial x_{i}}\mid_{\mathbf{x}=\mathbf{y}_{i}}$，否则$h_{ij} = \mathbf{0}_N^T$，$L_1$满足$\|\bar{H}(\mathbf{y})\|\|\bar{\boldsymbol{\theta}}(\mathcal{L}\otimes \mathbf{I}_{N\times N}+\mathcal{A}_{q})\|\leq L_{1}$。
+
+因此
+$$
+\dot{V}(t) \leq -\lambda_{\min}(G)\|\mathbf{E}\|^2
+$$
+其中$\left.G=\left[\begin{array}{cc}\lambda_{\min}(F)&-\frac{1+2\sqrt{N}\|P\|+\theta L_1}2\\-\frac{1+2\sqrt{N}\|P\|+\theta L_1}2&\tau\lambda_{\min}(\mathbf{k})\end{array}\right.\right], 
+\mathbf{E} = [\tilde{\mathbf{x}}^T,\tilde{\mathbf{y}}^T,\tilde{\mathbf{s}}^T]$，当
+$\tau>\frac{(1+2\sqrt{N}\|P\|+\theta L_{1})^{2}}{4\lambda_{\mathrm{min}}(F)\lambda_{\mathrm{min}}(\mathbf{k})}$，则$\lambda_{min}(G) > 0$。
+
+
+
+\end{document}
