@@ -23,54 +23,128 @@
 %  开始文章
 \section*{I.\quad INTRODUCTION}
 \section*{II.\quad NOTATIONS AND PRELIMINARIES}
-\emph{Notations}: The real number set is denote as $\mathbb{R}$. $\|z\|$ denotes the $\ell_2-$norm of z. $[z_i]_{vec}$ where $i \in \{1,2,...,N\}$ is defined as a column vector whose dimension is $N \times 1$ and the $i$th element is $z_i$. diag$\{k_i\}$ for $i \in \{1,2,...,N\}$ is a diagonal matrix whose dimension is $N\times N$ and the $i$th diagonal element is $k_i$. diag$\{a_{ij}\}$ where $i,j \in \{1,2,...,N\}$ gives a diagonal matrix whose dimension is $N^2 \times N^2$ and diagonal elements are $a_{11},a_{12},...,a_{1N},a_{21},...,a_{NN}$, successively. $\mathcal{A} = [a_{ij}]$ is a matrix whose $(i,j)$th entry is $a_{ij}$. Given that matrix $Q$ is symmetric and real, $\lambda_{min}(Q)(\lambda_{max}(Q))$ stands for the smallest(largest) eigenvalue of $Q$. $max_{i \in \{1,2,...,N\}}\{l_i\}$ denotes the largest value of $l_i$ for $i \in \{1,2,...,N\}$. $\mathsf{I}_{N \times N}$ is an identity matrix with its dimension being $N \times N$ and $\mathbf{1}(\mathbf{0})$ is a column vector with its entries being 1(0). Moreover, $\otimes$ is the Kronecker product.
+\emph{Notations}: The real number set is denote as $\mathbb{R}$. $\|z\|$ denotes the $\ell_2-$norm of z. $[z_i]_{vec}$ where $i \in \{1,2,...,N\}$ is defined as a column vector whose dimension is $N \times 1$ and the $i$th element is $z_i$. diag$\{k_i\}$ for $i \in \{1,2,...,N\}$ is a diagonal matrix whose dimension is $N\times N$ and the $i$th diagonal element is $k_i$. diag$\{a_{ij}\}$ where $i,j \in \{1,2,...,N\}$ gives a diagonal matrix whose dimension is $N^2 \times N^2$ and diagonal elements are $a_{11},a_{12},...,a_{1N},a_{21},...,a_{NN}$, successively. $\mathcal{A} = [a_{ij}]$ is a matrix whose $(i,j)$th entry is $a_{ij}$. Given that matrix $Q$ is symmetric and real, $\lambda_{min}(Q)(\lambda_{max}(Q))$ stands for the smallest(largest) eigenvalue of $Q$. $max_{i \in \{1,2,...,N\}}\{l_i\}$ denotes the largest value of $l_i$ for $i \in \{1,2,...,N\}$. $\mathbf{I}_{N \times N}$ is an identity matrix with its dimension being $N \times N$ and $\mathbf{1}(\mathbf{0})$ is a column vector with its entries being 1(0). Moreover, $\otimes$ is the Kronecker product.
 
-\emph{Algebraic Graph Theory}: A graph $\mathcal{G}$ is given by $\mathcal{G} = (\mathcal{V},\mathcal{E}_g)$, in which $\mathcal{V} = \{1,2,...,N\}$, $\mathcal{E}_g \subseteq \mathcal{V}\times\mathcal{V}$ respectively are the node set and edge set. The edge $(i,j) \in \mathcal{E}_g$ indicates are the node $j$ can receive information from node $i$, but not necessarily vice versa. The
-
-
+\emph{Algebraic Graph Theory}: A graph $\mathcal{G}$ is given by $\mathcal{G} = (\mathcal{V},\mathcal{E}_g)$, in which $\mathcal{V} = \{1,2,...,N\}$, $\mathcal{E}_g \subseteq \mathcal{V}\times\mathcal{V}$ respectively are the node set and edge set. The edge $(i,j) \in \mathcal{E}_g$ indicates are the node $j$ can receive information from node $i$, but not necessarily vice versa. The in-neighbor set of node $i$ is given as $\mathcal{N}_{i}^{in}=\{j|(j,i)\in\mathcal{E}_{g}\}$. A directed path is a sequence of edges of the form $(i_1,i_2), (i_2,i_3),....$ A directed graph is strongly connected if for every pair of two distinct nodes, there is a path. Let $\mathcal{A} = [a_{ij}]$ be the adjacency matrix in which $a_{ij} > 0$ if $(i,j) \in \mathcal{E}_g$ and $a_{ij} = 0$ otherwise. The Laplacian matrix $\mathcal{L}$ is defined as $\mathcal{L} = \mathcal{D} - \mathcal{A}$, where $\mathcal{D} = \text{diag}\{d_i\}$ and $d_i = \sum_{j=1}^{N}a_{ij}$.
 
 \section*{III.\quad PROBLEM STATEMENT}
-
-假设条件如下：
-\begin{enumerate}
-    \item $f$为二阶连续可微函数，且$\nabla f$为全局Lipschitz的；
-    \item 拓扑结构为有向强连通图；
-    \item $\nabla f$为强凸函数；
-    \item $\nabla_{ij}^{2}f_{i}(\mathbf{x})=\frac{\partial^{2}f_{i}(\mathbf{x})}{\partial x_{i}\partial x_{j}}$是有界的；
-    \item 误差$d(t)$是有界的。
-\end{enumerate}
-令$\beta_i \geq | d_i(t) |, \dot{\varrho}_i(t) = -\alpha_i \varrho_i(t), \varrho_i > 0, \alpha_i > 0$，且
-$$
-    \xi_i(t) = \frac{s_i(t)}{|s_i(t)| + \varrho_i(t)}
-$$
-算法设计如下：
-$$
+In the concerned game, $N$ players with labels from $1$ to $N$ are engaged and each player $i$ has a local objective function $f_i(\mathbf{x}):\mathbb{R}^N \rightarrow \mathbb{R}$, in which $\mathbf{x} = [x_1,x_2,...,x_N]^T$ and $x_i \in \mathbb{R}$ is the action of player $i$. Moreover, for second-order players, player $i$'s action is governed by 
+\begin{equation}
     \begin{cases}
-        \dot{\mathbf{x}}=\mathbf{v}                                                      \\
+        \dot{x}_i(t)=v_i(t)\\
+        \dot{v}_i(t)=u_i+d_i(t)
+    \end{cases}
+\end{equation}
+where $v_i(t)$ is the velocity-like state of player $i$, $u_i$ is the control input and $d_i(t)$ is the disturbance for $i \in \mathcal{V}$. Each player $i$ aims to minimize its own objective function $f_i(\mathbf{x})$ by adjusting its action $x_i(t)$, that is
+\begin{equation}
+    \begin{aligned}
+        \min_{x_i}&&f_i(\mathbf{x})\\
+        \text{s.t.}&&(1)&&\text{for second-order players}
+    \end{aligned}
+\end{equation}
+
+\emph{Definition 1}: An action profile $\mathbf{x}^{*}=(x_{i}^{*},\mathbf{x}_{-i}^{*})$ is a Nash equilibrium if for all $i \in \mathcal{V}$, we have
+\begin{equation}
+    f_i(x_i^*,\mathbf{x}_{-i}^*)\leq f_i(x_i,\mathbf{x}_{-i}^*),\forall x_i\in\mathbb{R}
+\end{equation}
+where $\mathbf{x}_{-i}=[x_{1},x_{2},\ldots,x_{i-1},x_{i+1},\ldots,x_{N}]^{T}$.
+
+To facilitate later analysis, we made the following assumptions.
+
+\emph{Assumptions 1}: For $i \in \mathcal{V}$, $f_i(\mathbf{x})$ is $\mathcal{C}^2$ and $\nabla f_i(\mathbf{x})$ is globally Lipschitz with $l_i$.
+
+\emph{Assumptions 2}: The digraph $\mathcal{G}$ is strongly connected.
+
+\emph{Lemma 1}: Let $D$ be a nonnegative diagonal matrix and $\mathcal{H} = \mathcal{L} + D$. Under Assumptions 2, there are symmetric positive definite matrices $P$ and $Q$ such that
+\begin{equation}
+        \mathcal{H}^{T}P+P\mathcal{H}=Q
+\end{equation}
+
+\emph{Assumptions 3}: For $\mathbf{x}, \mathbf{z} \in \mathbb{R}^N$,
+\begin{equation}
+    (\mathbf{x}-\mathbf{z})^T([\nabla_if_i(\mathbf{x})]_{vec}-[\nabla_if_i(\mathbf{z})]_{vec})\geq m\|\mathbf{x}-\mathbf{z}\|^2
+\end{equation}
+where $\nabla_{i}f_{i}(\mathbf{x})=\partial f_{i}(\mathbf{x})/\partial x_{i}$ and $m$ is a positive constant.
+
+\emph{Assumptions 4}: For $i \in \mathcal{V}$, $\nabla_{ij}^{2}f_{i}(\mathbf{x})=\partial^{2}f_{i}(\mathbf{x})/\partial x_{i}\partial x_{j}$ is bounded.
+
+\emph{Assumptions 5}: The disturbance $d(t)$ is bounded, i.e., $\forall i \in \mathcal{V}, |d_i(t)|\leq \bar{d}_i(t)$ for a positive constant $\bar{d}_i$.
+
+To realize asymptotic Nash equilibrium seeking for games with second-order integrator-type players distributively, the control input is designed as
+\begin{equation}
+    \begin{cases}
+    u_i=-\tau k_is_i-\beta_i\xi_i(t)\\
+    s_i=v_i+\nabla_if_i(\mathbf{y}_i)\\
+    \dot{y}_{ij}=-\theta\bar{\theta}_{ij}\Bigg(\sum_{k=1}^Na_{ik}(y_{ij}-y_{kj})+a_{ij}(y_{ij}-x_j)\Bigg)\\
+    \dot{\varrho}_i(t) = -\alpha_i \varrho_i(t)~\text{with}~\varrho_i(t) > 0 
+    \end{cases}
+\end{equation}
+where $i,j \in \mathcal{V}, \theta, \tau$ are adjustable positive parameters, $\bar{\theta}_{ij}, k_i, \alpha_i$ are fixed positive parameters, $\beta_i \geq \bar{d}_i$ is a positive constant, $s_i$ and $\varrho_i(t)$ represents an auxiliary variable for player $i$ and $\xi_i(t) = s_i(t)/(|s_i(t)| + \varrho_i(t))$.
+
+By (1) and (6), the closed-loop system is 
+\begin{equation}
+    \begin{cases}
+        \dot{\mathbf{x}}=\mathbf{v}\\
         \dot{\mathbf{v}}=-\tau\mathbf{k}\mathbf{s}-[\beta_i\xi_i(t)]_{vec}+\mathbf{d}(t) \\
         \mathbf{s}=\mathbf{v}+[\nabla_if_i(\mathbf{y}_i)]_{vec}                          \\
         \dot{\mathbf{y}}=-\theta\bar{\theta}(\mathcal{L}\otimes\mathbf{I}_{N\times N}+\mathcal{A}_q)\tilde{\mathbf{y}}
     \end{cases}
-$$
-选取Lyapunov函数为
-$$
-    V(t) = \frac{1}{2}\tilde{\mathbf{x}}^{T}\tilde{\mathbf{x}}+\frac{1}{2}\mathbf{s}^{T}\mathbf{s}+\tilde{\mathbf{y}}^{T}P\tilde{\mathbf{y}} + \sum_{i = 1}^{N} \frac{\beta_i}{\alpha_i}\varrho_i(t)
-$$
-其中，$\tilde{\mathbf{x}} = \mathbf{x} - \mathbf{x}^*$，$\tilde{\mathbf{y}} = \mathbf{y} - \mathbf{1}_N \otimes \mathbf{x}$。
+\end{equation}
+where $\mathbf{k} = \text{diag}\{k_i\}, 
+\bar{\mathbf{\theta}} = \text{diag}\{\bar{\theta}_{ij}\}, 
+\mathcal{A}_q = \text{diag}\{a_{ij}\}, \mathbf{y} = [\mathbf{y}_1^T,\mathbf{y}_2^T,...,\mathbf{y}_N^T]^T$ and $\tilde{\mathbf{y}} = \mathbf{y} - \mathbf{1}_N \otimes \mathbf{x}$.
 
-证明如下：
+Let $\tilde{\mathbf{x}} = \mathbf{x} - \mathbf{x}^*$.
 
-首先，令$V_1(t) = \frac{1}{2}\tilde{\mathbf{x}}^{T}\tilde{\mathbf{x}}$，
+\emph{Theorem 1}: Under Assumptions 1-5, there exist a $\theta^* > 0$ such that for each $\theta > \theta^*$, there exists a $\tau^* > 0$ such that for each $\tau > \tau^*$, players' actions globally exponentially converge to the Nash equilibrium by (7).
 
-其次，令$V_2(t) = \frac{1}{2}\tilde{\mathbf{y}}^{T}P\tilde{\mathbf{y}}$，
-
-再令$V_3(t) = \frac{1}{2}\mathbf{s}^{T}\mathbf{s} + \sum_{i = 1}^{N} \frac{\beta_i}{\alpha_i}\varrho_i(t)$
-
-
-最后，我们得到
-$$
+\emph{Proof}: Define $V = V_1 + V_2 + V_3$, where
+\begin{equation}
     \begin{aligned}
-        \dot{V}\leq & -m\|\tilde{\mathbf{x}}\|^2-\tau\lambda_{\min}(\mathbf{k})\|\mathbf{s}\|^2                                                    \\
+    V_1(t) &= \frac{1}{2}\tilde{\mathbf{x}}^{T}\tilde{\mathbf{x}}\\
+    V_2(t) &= \frac{1}{2}\tilde{\mathbf{y}}^{T}P\tilde{\mathbf{y}}\\
+    V_3(t) &= \frac{1}{2}\mathbf{s}^{T}\mathbf{s} + \sum_{i = 1}^{N} \frac{\beta_i}{\alpha_i}\varrho_i(t)
+    \end{aligned}
+\end{equation}
+
+Then, taking the time derivative of $V_1$ yields
+\begin{equation}
+    \begin{aligned}
+    \dot{V}_{1}& =\tilde{\mathbf{x}}^{T}(\mathbf{s}-[\nabla_{i}f_{i}(\mathbf{y}_{i})]_{vec})  \\
+    &\leq-m\|\tilde{\mathbf{x}}\|^2+\max_{i\in\mathcal{V}}\{l_i\}\|\tilde{\mathbf{x}}\|\|\tilde{\mathbf{y}}\|+\|\tilde{\mathbf{x}}\|\|\mathbf{s}\|
+    \end{aligned}
+\end{equation}
+where in the inequality, we have used Assumptions 3 and $\|[\nabla_{i}f_{i}(\mathbf{y}_{i})]_{vec}-[\nabla_{i}f_{i}(\mathbf{x})]_{vec}\|\leq\max_{i\in\mathcal{V}}\{l_{i}\}\|\mathbf{\tilde{y}}\|$.
+
+Then, taking the time derivative of $V_2$ yields
+\begin{equation}
+    \begin{aligned}
+        \dot{V}_{2}=&\dot{\tilde{\mathbf{y}}}^{T}P\tilde{\mathbf{y}}+\tilde{\mathbf{y}}^{T}P\dot{\tilde{\mathbf{y}}}  \\
+        =&-\theta\mathbf{\tilde{y}}^TQ\mathbf{\tilde{y}}-2\mathbf{\tilde{y}}^TP\mathbf{1}_N\otimes\mathbf{s} \\
+        &+2\tilde{\mathbf{y}}^TP\mathbf{1}_N\otimes[\nabla_if_i(\mathbf{y}_i)]_{vec} \\
+        \leq&-(\theta\lambda_{\min}(Q)-2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_{i}\})\|\tilde{\mathbf{y}}\|^{2} \\
+        &+2\sqrt{N}\|P\|\|\tilde{\mathbf{y}}\|\|\mathbf{s}\|+2N\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}\|\tilde{\mathbf{y}}\|\|\tilde{\mathbf{x}}\|.
+    \end{aligned}
+\end{equation}
+where in the inequality, by Assumption 2 and Lemma 1, we let $P,Q\in\mathbb{R}^{N^{2}\times N^{2}}$ and $Q = P\bar{\theta}(\mathcal{L}\otimes\mathbf{I}_{N\times N}+\mathcal{A}_q)+(\mathcal{L}\otimes\mathbf{I}_{N\times N}+\mathcal{A}_q)^T\bar{\theta}P=Q$.
+
+Moreover, taking the time derivative of $V_3$ yields
+\begin{equation}
+    \begin{aligned}
+    \dot{V}_3&={\mathbf{s}}^T(\dot{\mathbf{v}}+\bar{H}(\mathbf{y})\dot{\mathbf{y}}) - \sum_{i = 1}^{N} \beta_i\varrho_i(t)\\
+    &={\mathbf{s}}^T(-\tau\mathbf{k}\mathbf{s}-[\beta_i\xi_i(t)]_{vec}+\mathbf{d}(t) +\bar{H}(\mathbf{y})\dot{\mathbf{y}}) - \sum_{i = 1}^{N} \beta_i\varrho_i(t)\\
+    &={\mathbf{s}}^T(-\tau\mathbf{k}\mathbf{s} +\bar{H}(\mathbf{y})\dot{\mathbf{y}}) -\sum_{i = 1}^{N}\frac{(\beta_i - |d_i(t)|)|s_i(t)|(|s_i(t)|+\varrho_i(t)) + \beta_i\varrho_i^2(t)}{|s_i(t)| + \varrho_i(t)}
+    \end{aligned}
+\end{equation}
+where $\bar{H}(\mathbf{y})=[h_{ij}]$ in which for $i \neq j$, $h_{ij} = \mathbf{0}_N^T$ and for $i = j$, $h_{ii}=[\nabla_{i1}^{2}f_{i}(\mathbf{y}_{i}),\nabla_{i2}^{2}f_{i}(\mathbf{y}_{i}),\ldots,\nabla_{iN}^{2}f_{i}(\mathbf{y}_{i})]$，$\nabla_{ij}^{2}f_{i}(\mathbf{y}_{i})=\frac{\partial^{2}f_{i}(\mathbf{x})}{\partial x_{i}\partial x_{i}}\mid_{\mathbf{x}=\mathbf{y}_{i}}$. By Assumption 4, $\|\bar{H}\mathbf{y}\|$ is bounded. Hence, There are some positive constant $L_1$ meet $\|\bar{H}(\mathbf{y})\|\|\bar{\boldsymbol{\theta}}(\mathcal{L}\otimes \mathbf{I}_{N\times N}+\mathcal{A}_{q})\|\leq L_{1}$. Therefore,
+\begin{equation}
+    \dot{V}_3\leq-\tau\lambda_{\min}(\mathbf{k})\|{\mathbf{s}}\|^2+\theta L_1\|{\mathbf{s}}\|\|\tilde{\mathbf{y}}\|
+\end{equation}
+
+Hence,
+\begin{equation}
+    \begin{aligned}
+        \dot{V}\leq & -m\|\tilde{\mathbf{x}}\|^2-\tau\lambda_{\min}(\mathbf{k})\|\mathbf{s}\|^2 \\
                     & -(\theta\lambda_{\min}(Q)-2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_i\})\|\tilde{\mathbf{y}}\|^2                               \\
                     & +(\max_{i\in\mathcal{V}}\{l_i\}+2N\|P\|\max_{i\in\mathcal{V}}\{l_i\})\|\tilde{\mathbf{x}}\|\|\tilde{\mathbf{y}}\|            \\
                     & +(2\sqrt{N}\|P\|+\theta L_{1})\|\tilde{\mathbf{y}}\|\|\mathbf{s}\|+\|\tilde{\mathbf{x}}\|\|\mathbf{s}\|                      \\
@@ -78,21 +152,20 @@ $$
         \leq        & -\lambda_{\min}(F)\|\mathbf{E}_1\|^2-\tau\lambda_{\min}(\mathbf{k})\|\mathbf{s}\|^2                                          \\
                     & +(1+2\sqrt{N}\|P\|+\theta L_1)\|\mathbf{E}_1\|\|\mathbf{s}\|
     \end{aligned}
-$$
-其中$\left.F=\left[\begin{array}{cc}m & a                                                                   \\
+\end{equation}
+where $\left.F=\left[\begin{array}{cc}m & a                                                                   \\
              a     & \theta\lambda_{\min}(Q)-2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_i\}\end{array}\right.\right]$，
-$\mathbf{E} = [\tilde{\mathbf{x}}^T,\tilde{\mathbf{y}}^T]$，
-~~~~~$a = -\frac{\max_{i\in\mathcal{V}}\{l_{i}\}+2N\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}}{2}$，当
-$\theta > \frac{(\max_{i\in\mathcal{V}}\{l_{i}\}+2N\|P\|\max_{i\in\mathcal{V}}(l_{i}\})^{2}}{4m\lambda_{\mathrm{min}}(Q)}+\frac{2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}}{\lambda_{\mathrm{min}}(Q)}$，则
-$\lambda_{min}(F) > 0$。令$\bar{H}(\mathbf{y})=[h_{ij}]$，在$i = j$时，我们有$h_{ii}=[\nabla_{i1}^{2}f_{i}(\mathbf{y}_{i}),\nabla_{i2}^{2}f_{i}(\mathbf{y}_{i}),\ldots,\nabla_{iN}^{2}f_{i}(\mathbf{y}_{i})]$，$\nabla_{ij}^{2}f_{i}(\mathbf{y}_{i})=\frac{\partial^{2}f_{i}(\mathbf{x})}{\partial x_{i}\partial x_{i}}\mid_{\mathbf{x}=\mathbf{y}_{i}}$，否则$h_{ij} = \mathbf{0}_N^T$，$L_1$满足$\|\bar{H}(\mathbf{y})\|\|\bar{\boldsymbol{\theta}}(\mathcal{L}\otimes \mathbf{I}_{N\times N}+\mathcal{A}_{q})\|\leq L_{1}$。
-
-因此
-$$
+$\mathbf{E}_1 = [\tilde{\mathbf{x}}^T,\tilde{\mathbf{y}}^T]^T$，
+~~~$a = -\frac{\max_{i\in\mathcal{V}}\{l_{i}\}+2N\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}}{2}$, choose 
+$\theta > \frac{(\max_{i\in\mathcal{V}}\{l_{i}\}+2N\|P\|\max_{i\in\mathcal{V}}(l_{i}\})^{2}}{4m\lambda_{\mathrm{min}}(Q)}+\frac{2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}}{\lambda_{\mathrm{min}}(Q)}$. Then, $\lambda_{min}(F)$ is a real positive number and $\lambda_{min}(F) > 0$. Thus, 
+\begin{equation}
     \dot{V}(t) \leq -\lambda_{\min}(G)\|\mathbf{E}\|^2
-$$
-其中$\left.G=\left[\begin{array}{cc}\lambda_{\min}(F)&-\frac{1+2\sqrt{N}\|P\|+\theta L_1}2\\-\frac{1+2\sqrt{N}\|P\|+\theta L_1}2&\tau\lambda_{\min}(\mathbf{k})\end{array}\right.\right],
-    \mathbf{E} = [\tilde{\mathbf{x}}^T,\tilde{\mathbf{y}}^T,\tilde{\mathbf{s}}^T]$，当
-$\tau>\frac{(1+2\sqrt{N}\|P\|+\theta L_{1})^{2}}{4\lambda_{\mathrm{min}}(F)\lambda_{\mathrm{min}}(\mathbf{k})}$，则$\lambda_{min}(G) > 0$。
+\end{equation}
+where $\left.G=\left[\begin{array}{cc}\lambda_{\min}(F)&-\frac{1+2\sqrt{N}\|P\|+\theta L_1}2\\-\frac{1+2\sqrt{N}\|P\|+\theta L_1}2&\tau\lambda_{\min}(\mathbf{k})\end{array}\right.\right],
+    \mathbf{E} = [\tilde{\mathbf{x}}^T,\tilde{\mathbf{y}}^T,\tilde{\mathbf{s}}^T]^T$. By choosing 
+$\tau>\frac{(1+2\sqrt{N}\|P\|+\theta L_{1})^{2}}{4\lambda_{\mathrm{min}}(F)\lambda_{\mathrm{min}}(\mathbf{k})}$, $\lambda_{min}(G)$ is a real positive number and $\lambda_{min}(G) > 0$.
+
+The conclusion can be drawn.
 
 
 

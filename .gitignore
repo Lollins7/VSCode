@@ -12,6 +12,7 @@
 *.gz
 *.snm
 *.nav
+*(busy)
 
 .vscode
 
