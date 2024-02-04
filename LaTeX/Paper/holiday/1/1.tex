@@ -114,7 +114,7 @@ Then, taking the time derivative of $V_1$ yields
     &\leq-m\|\tilde{\mathbf{x}}\|^2+\max_{i\in\mathcal{V}}\{l_i\}\|\tilde{\mathbf{x}}\|\|\tilde{\mathbf{y}}\|+\|\tilde{\mathbf{x}}\|\|\mathbf{s}\|
     \end{aligned}
 \end{equation}
-where in the inequality, we have used Assumptions 3 and $\|[\nabla_{i}f_{i}(\mathbf{y}_{i})]_{vec}-[\nabla_{i}f_{i}(\mathbf{x})]_{vec}\|\leq\max_{i\in\mathcal{V}}\{l_{i}\}\|\mathbf{\tilde{y}}\|$.
+where in the inequality, we have used Assumptions 3 and $\|[\nabla_{i}f_{i}(\mathbf{y}_{i})]_{vec}-[\nabla_{i}f_{i}(\mathbf{x})]_{vec}\|\leq\max_{i\in\mathcal{V}}\{l_{i}\}\|\tilde{\mathbf{y}}\|$.
 
 Then, taking the time derivative of $V_2$ yields
 \begin{equation}
@@ -132,13 +132,12 @@ Moreover, taking the time derivative of $V_3$ yields
 \begin{equation}
     \begin{aligned}
     \dot{V}_3&={\mathbf{s}}^T(\dot{\mathbf{v}}+\bar{H}(\mathbf{y})\dot{\mathbf{y}}) - \sum_{i = 1}^{N} \beta_i\varrho_i(t)\\
-    &={\mathbf{s}}^T(-\tau\mathbf{k}\mathbf{s}-[\beta_i\xi_i(t)]_{vec}+\mathbf{d}(t) +\bar{H}(\mathbf{y})\dot{\mathbf{y}}) - \sum_{i = 1}^{N} \beta_i\varrho_i(t)\\
-    &={\mathbf{s}}^T(-\tau\mathbf{k}\mathbf{s} +\bar{H}(\mathbf{y})\dot{\mathbf{y}}) -\sum_{i = 1}^{N}\frac{(\beta_i - |d_i(t)|)|s_i(t)|(|s_i(t)|+\varrho_i(t)) + \beta_i\varrho_i^2(t)}{|s_i(t)| + \varrho_i(t)}
+    &={\mathbf{s}}^T(-\tau\mathbf{k}\mathbf{s}-[\beta_i\xi_i(t)]_{vec}+\mathbf{d}(t) +\bar{H}(\mathbf{y})\dot{\mathbf{y}}) - \sum_{i = 1}^{N} \beta_i\varrho_i(t)
     \end{aligned}
 \end{equation}
 where $\bar{H}(\mathbf{y})=[h_{ij}]$ in which for $i \neq j$, $h_{ij} = \mathbf{0}_N^T$ and for $i = j$, $h_{ii}=[\nabla_{i1}^{2}f_{i}(\mathbf{y}_{i}),\nabla_{i2}^{2}f_{i}(\mathbf{y}_{i}),\ldots,\nabla_{iN}^{2}f_{i}(\mathbf{y}_{i})]$，$\nabla_{ij}^{2}f_{i}(\mathbf{y}_{i})=\frac{\partial^{2}f_{i}(\mathbf{x})}{\partial x_{i}\partial x_{i}}\mid_{\mathbf{x}=\mathbf{y}_{i}}$. By Assumption 4, $\|\bar{H}\mathbf{y}\|$ is bounded. Hence, There are some positive constant $L_1$ meet $\|\bar{H}(\mathbf{y})\|\|\bar{\boldsymbol{\theta}}(\mathcal{L}\otimes \mathbf{I}_{N\times N}+\mathcal{A}_{q})\|\leq L_{1}$. Therefore,
 \begin{equation}
-    \dot{V}_3\leq-\tau\lambda_{\min}(\mathbf{k})\|{\mathbf{s}}\|^2+\theta L_1\|{\mathbf{s}}\|\|\tilde{\mathbf{y}}\|
+    \dot{V}_3\leq-\tau\lambda_{\min}(\mathbf{k})\|{\mathbf{s}}\|^2+\theta L_1\|{\mathbf{s}}\|\|\tilde{\mathbf{y}}\|-\sum_{i = 1}^{N}\frac{(\beta_i - |d_i(t)|)|s_i(t)|(|s_i(t)|+\varrho_i(t)) + \beta_i\varrho_i^2(t)}{|s_i(t)| + \varrho_i(t)}
 \end{equation}
 
 Hence,
