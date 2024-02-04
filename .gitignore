@@ -14,7 +14,11 @@
 *.nav
 *(busy)
 
+# Pycharm
+*.idea/
+
 .vscode
 
 # MacBook
 *.DS_Store
+
