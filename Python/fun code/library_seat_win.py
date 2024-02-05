@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.service import Service
 import logging
 import time
 import re
@@ -9,6 +10,8 @@ import re
 url = 'http://libzwxt.ahnu.edu.cn/SeatWx/login.aspx?url=http%3a%2f%2flibzwxt.ahnu.edu.cn%2fSeatWx%2findex.aspx'
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
+
+
 # 给定的基本信息
 type_dict = {
     '2楼电子阅览室': [2, 'href="Room.aspx?rid=18&fid=1"'],
@@ -19,8 +22,8 @@ pass_word = 'qwertyuiop0420!'
 floor_num, room_type = type_dict['2楼电子阅览室']
 specific_seat = ''
 likes_seats = ['ndz185', 'ndz184']
-select_time = ['09', '00', '21', '00']
-select_date = ['2023', '10', '19']
+select_time = ['18', '00', '21', '00']
+select_date = ['2024', '2', '5']
 select_date = ''.join(select_date)
 re_pattern = re.compile(r'\d+')
 sid_pattern = re.compile(r'sid=(\d+)')
@@ -40,8 +43,9 @@ logger.info('开始执行程序')
 while try_cnt < 100:
     try:
         try_cnt += 1
-        driver = webdriver.Chrome(
-            executable_path='/Users/wenrui/anaconda3/bin/chromedriver', options=chrome_options)
+        # driver = webdriver.Chrome(
+        #     options=chrome_options)
+        driver = webdriver.Chrome()
         driver.get(url)
         user_name_input = driver.find_element(
             By.CSS_SELECTOR, '[id="tbUserName"]')
