@@ -27,7 +27,7 @@ S_t\xrightarrow{A_t}R_{t+1},S_{t+1}\xrightarrow{A_{t+1}}R_{t+2},S_{t+2}\xrightar
 $$
 The **discounted return** is 
 $$
-G_t=R_{t+1}+\gamma R_{t+2}+\gamma^2R_{t+3}+\ldots 
+G_t=R_{t+1}+\gamma R_{t+2}+\gamma^2R_{t+3}+\ldots
 $$
 
 - $\gamma \in [0,1)$ is a discount rate
