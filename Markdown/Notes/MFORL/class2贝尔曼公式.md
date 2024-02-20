@@ -67,3 +67,43 @@ v_{\pi}(s)& \begin{aligned}=\mathbb{E}[G_t|S_t=s]\end{aligned}  \\
 &=\mathbb{E}[R_{t+1}|S_t=s]+\gamma\mathbb{E}[G_{t+1}|S_t=s]
 \end{aligned}
 $$
+Therefore, we have
+$$
+\begin{aligned}
+\color{red}{v_\pi(s)}& \begin{aligned}=\mathbb{E}[R_{t+1}|S_{t}=s]+\gamma\mathbb{E}[G_{t+1}|S_{t}=s],\end{aligned}  \\
+&\begin{aligned}=\underbrace{\sum_a\pi(a|s)\sum_rp(r|s,a)r}_{\text{mean of immediate rewards}}+\underbrace{\gamma\sum_a\pi(a|s)\sum_{s'}p(s'|s,a)v_\pi(s'),}_{\text{mean of future rewards}}\end{aligned} \\
+&\begin{aligned}=\sum_a\pi(a|s)\left[\sum_rp(r|s,a)r+\gamma\sum_{s'}p(s'|s,a)v_\pi(s')\right],\quad\forall s\in\mathcal{S}.\end{aligned}
+\end{aligned}
+$$
+Highlights:
+
+- The above equation is called the *Bellman equation*, which characterizes the relationship among the state-value functions of different states.
+- It consists of two terms: the immediate reward term and the future reward term.
+- A set of equations: every state has an equation like this!!!
+
+#### Matrix-vector form of the Bellman equation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
