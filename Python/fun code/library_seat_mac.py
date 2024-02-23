@@ -18,8 +18,8 @@ pass_word = 'qwertyuiop0420!'
 floor_num, room_type = type_dict['2楼电子阅览室']
 specific_seat = ''
 likes_seats = ['ndz185', 'ndz184']
-select_time = ['09', '00', '21', '00']
-select_date = ['2023', '10', '19']
+select_time = ['19', '00', '20', '00']
+select_date = ['00', '2024', '02', '23']
 select_date = ''.join(select_date)
 re_pattern = re.compile(r'\d+')
 sid_pattern = re.compile(r'sid=(\d+)')
@@ -36,8 +36,7 @@ logger.info('开始执行程序')
 while try_cnt < 100:
     try:
         try_cnt += 1
-        driver = webdriver.Chrome(
-            executable_path='/Users/wenrui/anaconda3/bin/chromedriver', options=chrome_options)
+        driver = webdriver.Chrome(options=chrome_options)
         driver.get(url)
         user_name_input = driver.find_element(
             By.CSS_SELECTOR, '[id="tbUserName"]')
@@ -115,6 +114,7 @@ def set_date(driver, select_date):
 def get_seat(driver, seat):
     print('正在抢座位：%s\t' % get_seat_name(seat), end='')
     see_elem(driver, seat)
+    time.sleep(0.1)
     seat.click()
     set_date(driver, select_date)
     set_time(driver, select_time)
@@ -127,6 +127,7 @@ def get_seat(driver, seat):
     confirm.click()
     alert = driver.switch_to.alert
     alert_text = alert.text  # 获取警告框的文本
+    time.sleep(0.1)
     alert.accept()  # 点击"确定"按钮
 
     if alert_text == accept_all:
