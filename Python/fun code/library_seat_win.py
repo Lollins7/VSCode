@@ -21,8 +21,8 @@ pass_word = 'qwertyuiop0420!'
 floor_num, room_type = type_dict['2楼电子阅览室']
 specific_seat = ''
 likes_seats = ['ndz185', 'ndz184']
-select_time = ['18', '00', '21', '00']
-select_date = ['2024', '2', '5']
+select_time = ['19', '00', '20', '00']
+select_date = ['00', '2024', '02', '23']
 select_date = ''.join(select_date)
 re_pattern = re.compile(r'\d+')
 sid_pattern = re.compile(r'sid=(\d+)')
@@ -42,9 +42,8 @@ logger.info('开始执行程序')
 while try_cnt < 100:
     try:
         try_cnt += 1
-        # driver = webdriver.Chrome(
-        #     options=chrome_options)
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(
+            options=chrome_options)
         driver.get(url)
         user_name_input = driver.find_element(
             By.CSS_SELECTOR, '[id="tbUserName"]')
