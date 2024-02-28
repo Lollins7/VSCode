@@ -13,6 +13,7 @@
 *.snm
 *.nav
 *(busy)
+*.zip
 
 # Pycharm
 *.idea/
