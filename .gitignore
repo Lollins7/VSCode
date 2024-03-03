@@ -14,6 +14,8 @@
 *.nav
 *(busy)
 *.zip
+*.bbl
+*.blg
 
 # Pycharm
 *.idea/
