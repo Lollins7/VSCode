@@ -2,7 +2,6 @@ from math import floor
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-# import logging
 import time
 import re
 
@@ -15,22 +14,28 @@ type_dict = {
     '2楼报刊阅览室': [2, 'href="Room.aspx?rid=1&fid=1"'],
     '3楼公共·东': [3, 'href="Room.aspx?rid=13&fid=3"'],
     '3楼公共·西': [3, 'href="Room.aspx?rid=14&fid=3"'],
-    '社科一': [3, 'href="Room.aspx?rid=5&fid=3"']
+    '社科一': [3, 'href="Room.aspx?rid=5&fid=3"'],
+    '4楼公共·东': [4, 'href="Room.aspx?rid=15&fid=5"'],
+    '4楼公共·西': [4, 'href="Room.aspx?rid=16&fid=5"']
 }
 user_name = '21111202046'
 pass_word = 'qwertyuiop0420!'
 # floor_num, room_type = type_dict['2楼电子阅览室']
 # floor_num, room_type = type_dict['3楼公共·东']
-floor_num, room_type = type_dict['3楼公共·西']
+# floor_num, room_type = type_dict['3楼公共·西']
 # floor_num, room_type = type_dict['社科一']
+# floor_num, room_type = type_dict['4楼公共·东']
+floor_num, room_type = type_dict['4楼公共·西']
 specific_seat = ''
 # likes_seats = ['ndz185', 'ndz184']
-# likes_seats = ['ngg3e064']
-likes_seats = ['ngg3w002']
+# likes_seats = ['ngg3e001']
+# likes_seats = ['ngg3w001']
 # likes_seats = ['nsk1026', 'nsk1027']
+# likes_seats = ['ngg4e001']
+likes_seats = ['ngg4w001']
 unlike_seats = ['ngg3w026', 'ngg3w027']
-select_time = ['15', '30', '22', '00']
-select_date = ['00', '2024', '02', '28']
+select_time = ['20', '00', '22', '00']
+select_date = ['00', '2024', '03', '1']
 select_date = ''.join(select_date)
 re_pattern = re.compile(r'\d+')
 sid_pattern = re.compile(r'sid=(\d+)')

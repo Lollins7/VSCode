@@ -17,7 +17,7 @@
 
 \title{Distributed Nash Equilibrium Seeking For Second-Order Systems With Unknown Dynamics}
 \author{1
-    \thanks{1234567890}}
+  \thanks{1234567890}}
 
 \markboth{Journal of \LaTeX\ Class Files,~Vol.~18, No.~9, September~2020}%
 {How to Use the IEEEtran \LaTeX \ Templates}
@@ -25,11 +25,11 @@
 \maketitle
 
 \begin{abstract}
-    1
+  1
 \end{abstract}
 
 \begin{IEEEkeywords}
-    distributed Nash equilibrium seeking; second-order systems; unknown dynamics; boundary layer technique.
+  1
 \end{IEEEkeywords}
 
 
@@ -38,13 +38,6 @@
 the past two decades, game theory has spread across diverse research fields, including biology, economics, and computer science. As game theory evolves, the quest for Nash equilibrium in noncooperative games gains significance in theory and practice, as evidenced by studies \cite{pozo2011finding}, \cite{ratliff2016characterization}, \cite{lou2015nash}, \cite{stankovic2011distributed}, \cite{liu2011stochastic}, \cite{durr2013lie}.
 Substantial progress has been made in distributed control and optimization of networked systems based on Nash equilibrium seeking and its applications \cite{ding2019distributed}, \cite{wu2021resilient}, \cite{lewis2013cooperative}, \cite{ge2021dynamic}, \cite{ye2022distributed}.
 For example, building upon the framework introduced in \cite{7888532}, numerous consensus-based distributed Nash equilibrium seeking strategies have been devised, such as distributed Nash equilibrium seeking in multiagent game under switching communication topologies digraph \cite{8093754} and fully distributed Nash equilibrium seeking \cite{ye2021adaptive}. Nevertheless, the majority of existing findings don't account for the influence of system disturbances, which is unrealistic considering that many practical engineering systems frequently encounter disturbances.
-
-% 优点
-% 1. 本文通过使用了时变的边界层技术提出了一个连续函数方法，可以实现抗干扰分布式nash均衡搜索对于二阶玩家博弈。相比于《*Distributed Nash Equilibrium Seeking for General Networked Games With Bounded Disturbances*》中符号函数的方法，我们提出的连续函数的方法可以防止chattering在实际的工程应用中。并且在论文【8】中，其不仅需要分布式的估计所有玩家的行动，并且一些由玩家具体的目标函数决定，而在本文中都不需要。因此，相比于论文8，9，29，30的方法，本文所提出的方法所需要的计算量更小。
-% 2. 本文考虑的是更加一般的消费函数，他包含了论文8中的二次情形作为本文的一种特殊情况。相比于论文31，32假设了详细的干扰模型，本文对干扰的约束更少且需要很少关于干扰的知识。
-% 3. 通过lyaponov稳定分析的结果，我们可以知道本文所提出的连续函数的方法通过合理的调整控制增益，可以控制所有玩家的行动收敛到一个小的nash均衡点临域内。
-
-The rest of this paper is organized as follows. Section II gives notations and preliminaries. Problem statement is introduced in Section III and main results are given in Section IV where we utilize boundary layer technique to design a continuous function method for distributed Nash equilibrium seeking for second-order players. Simulation studies are presented in Section V and conclusions are drawn in Section VI.
 
 
 \section{NOTATIONS AND PRELIMINARIES}
@@ -56,22 +49,22 @@ The rest of this paper is organized as follows. Section II gives notations and p
 \section{PROBLEM STATEMENT}
 In the concerned game, $N$ players with labels from $1$ to $N$ are engaged and each player $i$ has a local objective function $f_i(\mathbf{x}):\mathbb{R}^N \rightarrow \mathbb{R}$, in which $\mathbf{x} = [x_1,x_2,...,x_N]^T$ and $x_i \in \mathbb{R}$ is the action of player $i$. Moreover, for second-order players, player $i$'s action is governed by
 \begin{equation}
-    \begin{cases}
-        \dot{x}_i(t)=v_i(t) \\
-        \dot{v}_i(t)=u_i+d_i(t)
-    \end{cases}
+  \begin{cases}
+    \dot{x}_i(t)=v_i(t) \\
+    \dot{v}_i(t)=u_i+d_i(t)
+  \end{cases}
 \end{equation}
 where $v_i(t)$ is the velocity-like state of player $i$, $u_i$ is the control input and $d_i(t)$ is the disturbance for $i \in \mathcal{V}$. Each player $i$ aims to minimize its own objective function $f_i(\mathbf{x})$ by adjusting its action $x_i(t)$, that is
 \begin{equation}
-    \begin{aligned}
-        \min_{x_i}  &  & f_i(\mathbf{x})                                      \\
-        \text{s.t.} &  & (1)             &  & \text{for second-order players}
-    \end{aligned}
+  \begin{aligned}
+    \min_{x_i}  &  & f_i(\mathbf{x})                                      \\
+    \text{s.t.} &  & (1)             &  & \text{for second-order players}
+  \end{aligned}
 \end{equation}
 
 \emph{Definition 1}: An action profile $\mathbf{x}^{*}=(x_{i}^{*},\mathbf{x}_{-i}^{*})$ is a Nash equilibrium if for all $i \in \mathcal{V}$, we have
 \begin{equation}
-    f_i(x_i^*,\mathbf{x}_{-i}^*)\leq f_i(x_i,\mathbf{x}_{-i}^*),\forall x_i\in\mathbb{R}
+  f_i(x_i^*,\mathbf{x}_{-i}^*)\leq f_i(x_i,\mathbf{x}_{-i}^*),\forall x_i\in\mathbb{R}
 \end{equation}
 where $\mathbf{x}_{-i}=[x_{1},x_{2},\ldots,x_{i-1},x_{i+1},\ldots,x_{N}]^{T}$.
 
@@ -83,12 +76,12 @@ To facilitate later analysis, we made the following assumptions.
 
 \emph{Lemma 1}: Let $D$ be a nonnegative diagonal matrix and $\mathcal{H} = \mathcal{L} + D$. Under Assumptions 2, there are symmetric positive definite matrices $P$ and $Q$ such that
 \begin{equation}
-    \mathcal{H}^{T}P+P\mathcal{H}=Q
+  \mathcal{H}^{T}P+P\mathcal{H}=Q
 \end{equation}
 
 \emph{Assumptions 3}: For $\mathbf{x}, \mathbf{z} \in \mathbb{R}^N$,
 \begin{equation}
-    (\mathbf{x}-\mathbf{z})^T([\nabla_if_i(\mathbf{x})]_{vec}-[\nabla_if_i(\mathbf{z})]_{vec})\geq m\|\mathbf{x}-\mathbf{z}\|^2
+  (\mathbf{x}-\mathbf{z})^T([\nabla_if_i(\mathbf{x})]_{vec}-[\nabla_if_i(\mathbf{z})]_{vec})\geq m\|\mathbf{x}-\mathbf{z}\|^2
 \end{equation}
 where $\nabla_{i}f_{i}(\mathbf{x})=\partial f_{i}(\mathbf{x})/\partial x_{i}$ and $m$ is a positive constant.
 
@@ -100,27 +93,27 @@ where $\nabla_{i}f_{i}(\mathbf{x})=\partial f_{i}(\mathbf{x})/\partial x_{i}$ an
 
 To realize asymptotic Nash equilibrium seeking for games with second-order integrator-type players distributively, the control input is designed as
 \begin{equation}
-    \begin{cases}
-        u_i=-\tau k_is_i-\beta_i\xi_i(t)                                                                      \\
-        s_i=v_i+\nabla_if_i(\mathbf{y}_i)                                                                     \\
-        \dot{y}_{ij}=-\theta\bar{\theta}_{ij}\Bigg(\sum_{k=1}^Na_{ik}(y_{ij}-y_{kj})+a_{ij}(y_{ij}-x_j)\Bigg) \\
-        \dot{\varrho}_i(t) = -\alpha_i \varrho_i(t)~\text{with}~\varrho_i(t) > 0
-    \end{cases}
+  \begin{cases}
+    u_i=-\tau k_is_i-\beta_i\xi_i(t)                                                                      \\
+    s_i=v_i+\nabla_if_i(\mathbf{y}_i)                                                                     \\
+    \dot{y}_{ij}=-\theta\bar{\theta}_{ij}\Bigg(\sum_{k=1}^Na_{ik}(y_{ij}-y_{kj})+a_{ij}(y_{ij}-x_j)\Bigg) \\
+    \dot{\varrho}_i(t) = -\alpha_i \varrho_i(t)~\text{with}~\varrho_i(t) > 0
+  \end{cases}
 \end{equation}
 where $i,j \in \mathcal{V}, \theta, \tau$ are adjustable positive parameters, $\bar{\theta}_{ij}, k_i, \alpha_i$ are fixed positive parameters, $\beta_i \geq \bar{d}_i$ is a positive constant, $s_i$ and $\varrho_i(t)$ represents an auxiliary variable for player $i$ and $\xi_i(t) = s_i(t)/(|s_i(t)| + \varrho_i(t))$.
 
 By (1) and (6), the closed-loop system is
 \begin{equation}
-    \begin{cases}
-        \dot{\mathbf{x}}=\mathbf{v}                                                      \\
-        \dot{\mathbf{v}}=-\tau\mathbf{k}\mathbf{s}-[\beta_i\xi_i(t)]_{vec}+\mathbf{d}(t) \\
-        \mathbf{s}=\mathbf{v}+[\nabla_if_i(\mathbf{y}_i)]_{vec}                          \\
-        \dot{\mathbf{y}}=-\theta\bar{\theta}(\mathcal{L}\otimes\mathbf{I}_{N\times N}+\mathcal{A}_q)\tilde{\mathbf{y}}
-    \end{cases}
+  \begin{cases}
+    \dot{\mathbf{x}}=\mathbf{v}                                                      \\
+    \dot{\mathbf{v}}=-\tau\mathbf{k}\mathbf{s}-[\beta_i\xi_i(t)]_{vec}+\mathbf{d}(t) \\
+    \mathbf{s}=\mathbf{v}+[\nabla_if_i(\mathbf{y}_i)]_{vec}                          \\
+    \dot{\mathbf{y}}=-\theta\bar{\theta}(\mathcal{L}\otimes\mathbf{I}_{N\times N}+\mathcal{A}_q)\tilde{\mathbf{y}}
+  \end{cases}
 \end{equation}
 where $\mathbf{k} = \text{diag}\{k_i\},
-    \bar{\mathbf{\theta}} = \text{diag}\{\bar{\theta}_{ij}\},
-    \mathcal{A}_q = \text{diag}\{a_{ij}\}, \mathbf{y} = [\mathbf{y}_1^T,\mathbf{y}_2^T,...,\mathbf{y}_N^T]^T$ and $\tilde{\mathbf{y}} = \mathbf{y} - \mathbf{1}_N \otimes \mathbf{x}$.
+  \bar{\mathbf{\theta}} = \text{diag}\{\bar{\theta}_{ij}\},
+  \mathcal{A}_q = \text{diag}\{a_{ij}\}, \mathbf{y} = [\mathbf{y}_1^T,\mathbf{y}_2^T,...,\mathbf{y}_N^T]^T$ and $\tilde{\mathbf{y}} = \mathbf{y} - \mathbf{1}_N \otimes \mathbf{x}$.
 
 Let $\tilde{\mathbf{x}} = \mathbf{x} - \mathbf{x}^*$.
 
@@ -128,60 +121,60 @@ Let $\tilde{\mathbf{x}} = \mathbf{x} - \mathbf{x}^*$.
 
 \emph{Proof}: Define $V = V_1 + V_2 + V_3$, where
 \begin{equation}
-    \begin{aligned}
-        V_1(t) & = \frac{1}{2}\tilde{\mathbf{x}}^{T}\tilde{\mathbf{x}}                                         \\
-        V_2(t) & = \frac{1}{2}\tilde{\mathbf{y}}^{T}P\tilde{\mathbf{y}}                                        \\
-        V_3(t) & = \frac{1}{2}\mathbf{s}^{T}\mathbf{s} + \sum_{i = 1}^{N} \frac{\beta_i}{\alpha_i}\varrho_i(t)
-    \end{aligned}
+  \begin{aligned}
+    V_1(t) & = \frac{1}{2}\tilde{\mathbf{x}}^{T}\tilde{\mathbf{x}}                                         \\
+    V_2(t) & = \frac{1}{2}\tilde{\mathbf{y}}^{T}P\tilde{\mathbf{y}}                                        \\
+    V_3(t) & = \frac{1}{2}\mathbf{s}^{T}\mathbf{s} + \sum_{i = 1}^{N} \frac{\beta_i}{\alpha_i}\varrho_i(t)
+  \end{aligned}
 \end{equation}
 
 Then, taking the time derivative of $V_1$ yields
 \begin{equation}
-    \begin{aligned}
-        \dot{V}_{1} & =\tilde{\mathbf{x}}^{T}(\mathbf{s}-[\nabla_{i}f_{i}(\mathbf{y}_{i})]_{vec})                                                                   \\
-                    & \leq-m\|\tilde{\mathbf{x}}\|^2+\max_{i\in\mathcal{V}}\{l_i\}\|\tilde{\mathbf{x}}\|\|\tilde{\mathbf{y}}\|+\|\tilde{\mathbf{x}}\|\|\mathbf{s}\|
-    \end{aligned}
+  \begin{aligned}
+    \dot{V}_{1} & =\tilde{\mathbf{x}}^{T}(\mathbf{s}-[\nabla_{i}f_{i}(\mathbf{y}_{i})]_{vec})                                                                   \\
+                & \leq-m\|\tilde{\mathbf{x}}\|^2+\max_{i\in\mathcal{V}}\{l_i\}\|\tilde{\mathbf{x}}\|\|\tilde{\mathbf{y}}\|+\|\tilde{\mathbf{x}}\|\|\mathbf{s}\|
+  \end{aligned}
 \end{equation}
 where in the inequality, we have used Assumptions 3 and $\|[\nabla_{i}f_{i}(\mathbf{y}_{i})]_{vec}-[\nabla_{i}f_{i}(\mathbf{x})]_{vec}\|\leq\max_{i\in\mathcal{V}}\{l_{i}\}\|\tilde{\mathbf{y}}\|$.
 
 Then, taking the time derivative of $V_2$ yields
 \begin{equation}
-    \begin{aligned}
-        \dot{V}_{2}= & \dot{\tilde{\mathbf{y}}}^{T}P\tilde{\mathbf{y}}+\tilde{\mathbf{y}}^{T}P\dot{\tilde{\mathbf{y}}}                                         \\
-        =            & -\theta\tilde{\mathbf{y}}^TQ\tilde{\mathbf{y}}-2\tilde{\mathbf{y}}^TP\mathbf{1}_N\otimes\mathbf{s}                                      \\
-                     & +2\tilde{\mathbf{y}}^TP\mathbf{1}_N\otimes[\nabla_if_i(\mathbf{y}_i)]_{vec}                                                             \\
-        \leq         & -(\theta\lambda_{\min}(Q)-2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_{i}\})\|\tilde{\mathbf{y}}\|^{2}                                      \\
-                     & +2\sqrt{N}\|P\|\|\tilde{\mathbf{y}}\|\|\mathbf{s}\|+2N\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}\|\tilde{\mathbf{y}}\|\|\tilde{\mathbf{x}}\|.
-    \end{aligned}
+  \begin{aligned}
+    \dot{V}_{2}= & \dot{\tilde{\mathbf{y}}}^{T}P\tilde{\mathbf{y}}+\tilde{\mathbf{y}}^{T}P\dot{\tilde{\mathbf{y}}}                                         \\
+    =            & -\theta\tilde{\mathbf{y}}^TQ\tilde{\mathbf{y}}-2\tilde{\mathbf{y}}^TP\mathbf{1}_N\otimes\mathbf{s}                                      \\
+                 & +2\tilde{\mathbf{y}}^TP\mathbf{1}_N\otimes[\nabla_if_i(\mathbf{y}_i)]_{vec}                                                             \\
+    \leq         & -(\theta\lambda_{\min}(Q)-2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_{i}\})\|\tilde{\mathbf{y}}\|^{2}                                      \\
+                 & +2\sqrt{N}\|P\|\|\tilde{\mathbf{y}}\|\|\mathbf{s}\|+2N\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}\|\tilde{\mathbf{y}}\|\|\tilde{\mathbf{x}}\|.
+  \end{aligned}
 \end{equation}
 where in the inequality, by Assumption 2 and Lemma 1, we let $P,Q\in\mathbb{R}^{N^{2}\times N^{2}}$ and $Q = P\bar{\theta}(\mathcal{L}\otimes\mathbf{I}_{N\times N}+\mathcal{A}_q)+(\mathcal{L}\otimes\mathbf{I}_{N\times N}+\mathcal{A}_q)^T\bar{\theta}P=Q$.
 
 Moreover, taking the time derivative of $V_3$ yields
 \begin{equation}
-    \begin{aligned}
-        \dot{V}_3 & ={\mathbf{s}}^T(\dot{\mathbf{v}}+\bar{H}(\mathbf{y})\dot{\mathbf{y}}) - \sum_{i = 1}^{N} \beta_i\varrho_i(t)                                                 \\
-                  & ={\mathbf{s}}^T(-\tau\mathbf{k}\mathbf{s}-[\beta_i\xi_i(t)]_{vec}+\mathbf{d}(t) +\bar{H}(\mathbf{y})\dot{\mathbf{y}}) - \sum_{i = 1}^{N} \beta_i\varrho_i(t)
-    \end{aligned}
+  \begin{aligned}
+    \dot{V}_3 & ={\mathbf{s}}^T(\dot{\mathbf{v}}+\bar{H}(\mathbf{y})\dot{\mathbf{y}}) - \sum_{i = 1}^{N} \beta_i\varrho_i(t)                                                 \\
+              & ={\mathbf{s}}^T(-\tau\mathbf{k}\mathbf{s}-[\beta_i\xi_i(t)]_{vec}+\mathbf{d}(t) +\bar{H}(\mathbf{y})\dot{\mathbf{y}}) - \sum_{i = 1}^{N} \beta_i\varrho_i(t)
+  \end{aligned}
 \end{equation}
 where $\bar{H}(\mathbf{y})=[h_{ij}]$ in which for $i \neq j$, $h_{ij} = \mathbf{0}_N^T$ and for $i = j$, $h_{ii}=[\nabla_{i1}^{2}f_{i}(\mathbf{y}_{i}),\nabla_{i2}^{2}f_{i}(\mathbf{y}_{i}),\ldots,\nabla_{iN}^{2}f_{i}(\mathbf{y}_{i})]$，$\nabla_{ij}^{2}f_{i}(\mathbf{y}_{i})=\frac{\partial^{2}f_{i}(\mathbf{x})}{\partial x_{i}\partial x_{i}}\mid_{\mathbf{x}=\mathbf{y}_{i}}$. By Assumption 4, $\|\bar{H}\mathbf{y}\|$ is bounded. Hence, There are some positive constant $L_1$ meet $\|\bar{H}(\mathbf{y})\|\|\bar{\boldsymbol{\theta}}(\mathcal{L}\otimes \mathbf{I}_{N\times N}+\mathcal{A}_{q})\|\leq L_{1}$. Therefore,
 \begin{equation}
-    \begin{aligned}
-        \dot{V}_3 & \leq-\tau\lambda_{\min}(\mathbf{k})\|{\mathbf{s}}\|^2+\theta L_1\|{\mathbf{s}}\|\|\tilde{\mathbf{y}}\|                       \\
-                  & -\sum_{i = 1}^{N}\frac{(\beta_i - |d_i(t)|)|s_i(t)|(|s_i(t)|+\varrho_i(t)) + \beta_i\varrho_i^2(t)}{|s_i(t)| + \varrho_i(t)}
-    \end{aligned}
+  \begin{aligned}
+    \dot{V}_3 & \leq-\tau\lambda_{\min}(\mathbf{k})\|{\mathbf{s}}\|^2+\theta L_1\|{\mathbf{s}}\|\|\tilde{\mathbf{y}}\|                       \\
+              & -\sum_{i = 1}^{N}\frac{(\beta_i - |d_i(t)|)|s_i(t)|(|s_i(t)|+\varrho_i(t)) + \beta_i\varrho_i^2(t)}{|s_i(t)| + \varrho_i(t)}
+  \end{aligned}
 \end{equation}
 
 Hence,
 \begin{equation}
-    \begin{aligned}
-        \dot{V}\leq & -m\|\tilde{\mathbf{x}}\|^2-\tau\lambda_{\min}(\mathbf{k})\|\mathbf{s}\|^2                                                    \\
-                    & -(\theta\lambda_{\min}(Q)-2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_i\})\|\tilde{\mathbf{y}}\|^2                               \\
-                    & +(\max_{i\in\mathcal{V}}\{l_i\}+2N\|P\|\max_{i\in\mathcal{V}}\{l_i\})\|\tilde{\mathbf{x}}\|\|\tilde{\mathbf{y}}\|            \\
-                    & +(2\sqrt{N}\|P\|+\theta L_{1})\|\tilde{\mathbf{y}}\|\|\mathbf{s}\|+\|\tilde{\mathbf{x}}\|\|\mathbf{s}\|                      \\
-                    & -\sum_{i = 1}^{N}\frac{(\beta_i - |d_i(t)|)|s_i(t)|(|s_i(t)|+\varrho_i(t)) + \beta_i\varrho_i^2(t)}{|s_i(t)| + \varrho_i(t)} \\
-        \leq        & -\lambda_{\min}(F)\|\mathbf{E}_1\|^2-\tau\lambda_{\min}(\mathbf{k})\|\mathbf{s}\|^2                                          \\
-                    & +(1+2\sqrt{N}\|P\|+\theta L_1)\|\mathbf{E}_1\|\|\mathbf{s}\|
-    \end{aligned}
+  \begin{aligned}
+    \dot{V}\leq & -m\|\tilde{\mathbf{x}}\|^2-\tau\lambda_{\min}(\mathbf{k})\|\mathbf{s}\|^2                                                    \\
+                & -(\theta\lambda_{\min}(Q)-2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_i\})\|\tilde{\mathbf{y}}\|^2                               \\
+                & +(\max_{i\in\mathcal{V}}\{l_i\}+2N\|P\|\max_{i\in\mathcal{V}}\{l_i\})\|\tilde{\mathbf{x}}\|\|\tilde{\mathbf{y}}\|            \\
+                & +(2\sqrt{N}\|P\|+\theta L_{1})\|\tilde{\mathbf{y}}\|\|\mathbf{s}\|+\|\tilde{\mathbf{x}}\|\|\mathbf{s}\|                      \\
+                & -\sum_{i = 1}^{N}\frac{(\beta_i - |d_i(t)|)|s_i(t)|(|s_i(t)|+\varrho_i(t)) + \beta_i\varrho_i^2(t)}{|s_i(t)| + \varrho_i(t)} \\
+    \leq        & -\lambda_{\min}(F)\|\mathbf{E}_1\|^2-\tau\lambda_{\min}(\mathbf{k})\|\mathbf{s}\|^2                                          \\
+                & +(1+2\sqrt{N}\|P\|+\theta L_1)\|\mathbf{E}_1\|\|\mathbf{s}\|
+  \end{aligned}
 \end{equation}
 where $\left.F=\left[\begin{array}{cc}m & a                                                                   \\
              a     & \theta\lambda_{\min}(Q)-2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_i\}\end{array}\right.\right]$，
@@ -189,10 +182,10 @@ $\mathbf{E}_1 = [\tilde{\mathbf{x}}^T,\tilde{\mathbf{y}}^T]^T$，
 ~~~$a = -\frac{\max_{i\in\mathcal{V}}\{l_{i}\}+2N\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}}{2}$, choose
 $\theta > \frac{(\max_{i\in\mathcal{V}}\{l_{i}\}+2N\|P\|\max_{i\in\mathcal{V}}(l_{i}\})^{2}}{4m\lambda_{\mathrm{min}}(Q)}+\frac{2\sqrt{N}\|P\|\max_{i\in\mathcal{V}}\{l_{i}\}}{\lambda_{\mathrm{min}}(Q)}$. Then, $\lambda_{min}(F)$ is a real positive number and $\lambda_{min}(F) > 0$. Thus,
 \begin{equation}
-    \dot{V}(t) \leq -\lambda_{\min}(G)\|\mathbf{E}\|^2
+  \dot{V}(t) \leq -\lambda_{\min}(G)\|\mathbf{E}\|^2
 \end{equation}
 where $\left.G=\left[\begin{array}{cc}\lambda_{\min}(F)&-\frac{1+2\sqrt{N}\|P\|+\theta L_1}2\\-\frac{1+2\sqrt{N}\|P\|+\theta L_1}2&\tau\lambda_{\min}(\mathbf{k})\end{array}\right.\right],
-    \mathbf{E} = [\tilde{\mathbf{x}}^T,\tilde{\mathbf{y}}^T,\tilde{\mathbf{s}}^T]^T$. By choosing
+  \mathbf{E} = [\tilde{\mathbf{x}}^T,\tilde{\mathbf{y}}^T,\tilde{\mathbf{s}}^T]^T$. By choosing
 $\tau>\frac{(1+2\sqrt{N}\|P\|+\theta L_{1})^{2}}{4\lambda_{\mathrm{min}}(F)\lambda_{\mathrm{min}}(\mathbf{k})}$, $\lambda_{min}(G)$ is a real positive number and $\lambda_{min}(G) > 0$.
 
 The conclusion can be drawn.
