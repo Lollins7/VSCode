@@ -15,9 +15,9 @@
 
 \begin{document}
 
-\title{Distributed Nash Equilibrium Seeking For Second-Order Systems With Unknown Dynamics}
-\author{1
-    \thanks{1234567890}}
+\title{Distributed Nash Equilibrium Seeking For Second-Order Systems With Boundary Unknown Dynamics}
+\author{author
+    \thanks{thanks}}
 
 \markboth{Journal of \LaTeX\ Class Files,~Vol.~18, No.~9, September~2020}%
 {How to Use the IEEEtran \LaTeX \ Templates}
@@ -25,7 +25,8 @@
 \maketitle
 
 \begin{abstract}
-    1
+    This paper investigates the distributed Nash equilibrium seeking problem for second-order systems with unknown dynamics. A chattering free continuous function method is proposed to achieve distributed Nash equilibrium seeking for second-order players by using a time-varying boundary layer technique. The proposed method is able to prevent chattering in practical engineering applications.
+    Moreover, by Lyapunov stability analysis, which shows that the proposed method can drive the actions of all players to a small neighborhood of a Nash equilibrium point by adjusting the control gains properly. Finally, a simulation example is provided to verify the result.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -39,10 +40,22 @@ the past two decades, game theory has spread across diverse research fields, inc
 Substantial progress has been made in distributed control and optimization of networked systems based on Nash equilibrium seeking and its applications \cite{ding2019distributed}, \cite{wu2021resilient}, \cite{lewis2013cooperative}, \cite{ge2021dynamic}, \cite{ye2022distributed}.
 For example, building upon the framework introduced in \cite{7888532}, numerous consensus-based distributed Nash equilibrium seeking strategies have been devised, such as distributed Nash equilibrium seeking in multiagent game under switching communication topologies digraph \cite{8093754} and fully distributed Nash equilibrium seeking \cite{ye2021adaptive}. Nevertheless, the majority of existing findings don't account for the influence of system disturbances, which is unrealistic considering that many practical engineering systems frequently encounter disturbances.
 
-% 优点
-% 1. 本文通过使用了时变的边界层技术提出了一个连续函数方法，可以实现抗干扰分布式nash均衡搜索对于二阶玩家博弈。相比于《*Distributed Nash Equilibrium Seeking for General Networked Games With Bounded Disturbances*》中符号函数的方法，我们提出的连续函数的方法可以防止chattering在实际的工程应用中。并且在论文【8】中，其不仅需要分布式的估计所有玩家的行动，并且一些由玩家具体的目标函数决定，而在本文中都不需要。因此，相比于论文8，9，29，30的方法，本文所提出的方法所需要的计算量更小。
-% 2. 本文考虑的是更加一般的消费函数，他包含了论文8中的二次情形作为本文的一种特殊情况。相比于论文31，32假设了详细的干扰模型，本文对干扰的约束更少且需要很少关于干扰的知识。
-% 3. 通过lyaponov稳定分析的结果，我们可以知道本文所提出的连续函数的方法通过合理的调整控制增益，可以控制所有玩家的行动收敛到一个小的nash均衡点临域内。
+System dynamics are often influenced by external disturbances, leading to significant interest in disturbance attenuation algorithms in engineering applications \cite{7265050}, \cite{xie2000much}, \cite{li2014disturbance}. Common disturbance estimation and attenuation methods include disturbance observer based control, active disturbance rejection control, disturbance accommodation control and composite hierarchical antidisturbance control just a few \cite{7265050}.
+For instance, disturbance accommodation control has been widely used in trajectory-driven adaptive control of autonomous unmanned aerial vehicles \cite{prabhakar2018trajectory}, floating offshore wind turbines \cite{namik2009disturbance} and integration of a fuel cell into the power system \cite{paradkar2004integration}.
+Furthermore, disturbance attenuation algorithms have been extensively studied in the context of multi-agent systems.
+For instance, .
+
+
+
+
+
+Inspired by the significance of disturbance attenuation algorithms in practical engineering applications, distributed Nash equilibrium seeking strategies were proposed based on reduced-order disturbance observers and signum function \cite{9696299}, extended state observer \cite{ye2020distributed}, unknown dynamics estimator \cite{li2021distributed}.
+This paper aims to address the distributed Nash equilibrium seeking problem for second-order systems with unknown boundary disturbances by a chattering free continuous function method. Compared to most of existing literature, this paper's contributions are summarized as follows:
+\begin{enumerate}
+    \item This paper proposes a chattering free continuous function method by using a time-varying boundary layer technique that achieve disturbance rejection distributed Nash equilibrium seeking for second-order players. The proposed method is able to prevent chattering in practical engineering applications, which is in contrast to the signum function method in \cite{9696299}.Moreover, the method in \cite{8985536} requires distributed estimation of all players' actions and some specific objective functions determined by the players, while the proposed method in this paper does not. Therefore, compared to the methods in \cite{9696299}, \cite{ye2020distributed}, \cite{li2021distributed}, \cite{8985536}, the proposed method in this paper requires less computation.
+    \item Due to high frequency switching of discontinuous terms, the controller may induce chattering in practical implementations which is detrimental to actuators. Compared \cite{9696299}, this paper proposes a continuous function method, chattering is avoided.
+    \item By Lyapunov stability analysis, which shows that the proposed method can drive the actions of all players to a small neighborhood of a Nash equilibrium point by adjusting the control gains properly.
+\end{enumerate}
 
 The rest of this paper is organized as follows. Section II gives notations and preliminaries. Problem statement is introduced in Section III and main results are given in Section IV where we utilize boundary layer technique to design a continuous function method for distributed Nash equilibrium seeking for second-order players. Simulation studies are presented in Section V and conclusions are drawn in Section VI.
 
@@ -54,7 +67,10 @@ The rest of this paper is organized as follows. Section II gives notations and p
 
 
 \section{PROBLEM STATEMENT}
-In the concerned game, $N$ players with labels from $1$ to $N$ are engaged and each player $i$ has a local objective function $f_i(\mathbf{x}):\mathbb{R}^N \rightarrow \mathbb{R}$, in which $\mathbf{x} = [x_1,x_2,...,x_N]^T$ and $x_i \in \mathbb{R}$ is the action of player $i$. Moreover, for second-order players, player $i$'s action is governed by
+In the concerned game, $N$ players with labels from $1$ to $N$ are engaged and each player $i$ has a local objective function $f_i(\mathbf{x}):\mathbb{R}^N \rightarrow \mathbb{R}$, in which $\mathbf{x} = [x_1,x_2,...,x_N]^T$ and $x_i \in \mathbb{R}$ is the action of player $i$\footnote{
+    For the sake of simplicity in presentation, let's assume that $x_i$ is one-dimensional. However, it is important to note that the methods and results presented herein are directly applicable to accommodate games with multi-dimensional actions.
+}.
+Moreover, for second-order players, player $i$'s action is governed by
 \begin{equation}
     \begin{cases}
         \dot{x}_i(t)=v_i(t) \\
@@ -202,7 +218,9 @@ The conclusion can be drawn.
 \section{CONCLUSIONS}
 
 
-\bibliographystyle{unsrt}
+
+
+\bibliographystyle{ieeetr}
 \bibliography{ref.bib}
 
 
