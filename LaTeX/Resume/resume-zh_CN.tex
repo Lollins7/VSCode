@@ -1,0 +1,90 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+% \usepackage{NotoSansSC_external}
+% \usepackage{NotoSerifCJKsc_external}
+% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{王子颉}
+
+\basicInfo{
+  \email{jieyu8258@gmail.com} \textperiodcentered\
+  \phone{(+86) 181-3362-0976} \textperiodcentered\
+  \linkedin[Zijie Wang]{https://www.linkedin.com/in/zijie-wang-b2a70b2ba/}}
+
+\section{\faGraduationCap\  教育背景}
+\datedsubsection{\textbf{安徽师范大学}, 芜湖}{2021 -- 至今}
+\textit{在读本科生}\ 数学与统计学院, 统计学专业, 预计 2025 年 6 月毕业
+
+\section{\faUsers\ 实习/项目经历}
+\datedsubsection{\textbf{黑科技公司} 上海}{2015年3月 -- 2015年5月}
+\role{实习}{经理: 高富帅}
+xxx后端开发
+\begin{itemize}
+  \item 实现了 xxx 特性
+  \item 后台资源占用率减少8\%
+  \item xxx
+\end{itemize}
+
+\datedsubsection{\textbf{分布式科学上网姿势}}{2014年6月 -- 至今}
+\role{Golang, Linux}{个人项目，和富帅糕合作开发}
+\begin{onehalfspacing}
+  分布式负载均衡科学上网姿势, https://github.com/cyfdecyf/cow
+  \begin{itemize}
+    \item 修复了连接未正常关闭导致文件描述符耗尽的 bug
+    \item 使用Chord 哈希 URL, 实现稳定可靠地分流
+    \item xxx (尽量使用量化的客观结果)
+  \end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{\LaTeX\ 简历模板}}{2015 年5月 -- 至今}
+\role{\LaTeX, Python}{个人项目}
+\begin{onehalfspacing}
+  优雅的 \LaTeX\ 简历模板, https://github.com/billryan/resume
+  \begin{itemize}
+    \item 容易定制和扩展
+    \item 完善的 Unicode 字体支持，使用 \XeLaTeX\ 编译
+    \item 支持 FontAwesome 4.5.0
+  \end{itemize}
+\end{onehalfspacing}
+
+% Reference Test
+%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
+%An xxx optimized for xxx\cite{verma2015large}
+%\begin{itemize}
+%  \item main contribution
+%\end{itemize}
+
+\section{\faCogs\ IT 技能}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 编程语言: C == Python > C++ > Java
+  \item 平台: Linux
+  \item 开发: xxx
+\end{itemize}
+
+\section{\faHeartO\ 获奖情况}
+\datedline{\textit{第一名}, xxx 比赛}{2013 年6 月}
+\datedline{其他奖项}{2015}
+
+\section{\faInfo\ 其他}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 技术博客: \href{https://blog.csdn.net/weixin_61210500?spm=1000.2115.3001.5343}{Lollins - CSDN}, \href{https://www.zhihu.com/people/hun-kou-fan-chi-98-73}{Lollins - 知乎}
+  \item GitHub: \href{https://github.com/Lollins7}{Lollins7}
+  \item 语言: 英语 - 熟练(CET4 471)
+\end{itemize}
+
+%% Reference
+%\newpage
+%\bibliographystyle{IEEETran}
+%\bibliography{mycite}
+\end{document}

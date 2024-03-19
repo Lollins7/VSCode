@@ -38,7 +38,7 @@ likes_seats = ['ngg3w001']
 # likes_seats = ['ngg4w001']
 unlike_seats = ['ngg3w026', 'ngg3w027']
 select_time = ['20', '00', '22', '00']
-select_date = ['00', '2024', '03', '10']
+select_date = ['00', '2024', '03', '12']
 select_date = ''.join(select_date)
 re_pattern = re.compile(r'\d+')
 sid_pattern = re.compile(r'sid=(\d+)')
@@ -58,7 +58,7 @@ while try_cnt < 100:
     except Exception as e:
         driver.quit()
         print(f"An error occurred: {e}")
-        # time.sleep(0.1)
+        time.sleep(0.1)
 
 
 # 登陆窗口
@@ -102,7 +102,7 @@ def see_elem(driver, elem):
     element_location = elem.location
     driver.execute_script(
         f"window.scrollTo(0, {element_location['y'] - 300});")
-    # time.sleep(0.1)
+    time.sleep(0.1)
 
 
 def set_time(driver, select_time):
@@ -130,7 +130,7 @@ def set_date(driver, select_date):
 def get_seat(driver, seat):
     print('正在抢座位：%s\t' % get_seat_name(seat), end='')
     see_elem(driver, seat)
-    # time.sleep(0.1)
+    time.sleep(0.1)
     seat.click()
     set_date(driver, select_date)
     set_time(driver, select_time)
@@ -143,7 +143,7 @@ def get_seat(driver, seat):
     confirm.click()
     alert = driver.switch_to.alert
     alert_text = alert.text  # 获取警告框的文本
-    # time.sleep(0.1)
+    time.sleep(0.1)
     alert.accept()  # 点击"确定"按钮
 
     if alert_text == accept_all:
