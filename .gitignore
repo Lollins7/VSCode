@@ -25,4 +25,4 @@
 # MacBook
 *.DS_Store
 
-./Jupyter/pytorch/data/
+Jupyter/pytorch/data/
