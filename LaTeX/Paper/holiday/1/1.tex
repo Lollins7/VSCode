@@ -236,7 +236,36 @@ Let $\tilde{\mathbf{x}} = \mathbf{x} - \mathbf{x}^*$. Then, the subsequent resul
 
 
 \section{SIMULATION STUDIES}
+This section provides a simulation example to verify the effectiveness of the proposed method. Consider a game with $5$ players, where the objective functions are given by
+\begin{equation*}
+    \begin{aligned}
+        f_1(\mathbf{x}) = & \|x_1-\mathbf{1}_2\|^2+(x_{11}+x_{21})^2+(x_{12}-x_{22})^2                                \\
+                          & +\left\|x_1+x_3\right\|^2+\left(x_{11}-x_{41}\right)^2+\left(x_{12}+x_{42}\right)^2       \\
+                          & +\|x_1-\mathbf{1}_2-x_5\|^2                                                               \\
+        f_2(\mathbf{x}) = & (x_{21}+1)^2+(x_{22}-1)^2+(x_{21}+x_{11})^2                                               \\
+                          & +(x_{22}-x_{12})^2+(x_{21}-x_{31})^2+(x_{22}+x_{32})^2                                    \\
+                          & +\|x_2+x_4\|^2+(x_{21}+1-x_{51})^2+(x_{22}-1-x_{52})^2                                    \\
+        f_3(\mathbf{x}) = & \|x_3+\mathbf{1}_2\|^2+\|x_3+x_1\|^2+(x_{31}-x_{21})^2                                    \\
+                          & +(x_{32}+x_{22})^2+(x_{31}+x_{41})^2                                                      \\
+                          & +(x_{32}-x_{42})^2+\|x_3+\mathbf{1}_2-x_5\|^2                                             \\
+        f_4(\mathbf{x}) = & (x_{41}-1)^2+(x_{42}+1)^2+(x_{41}-1-x_{51})^2                                             \\
+                          & +\|x_4+x_2\|^2+(x_{41}+x_{31})^2+(x_{42}-x_{32})^2                                        \\
+                          & +\left(x_{42}+1-x_{52}\right)^2+\left(x_{41}-x_{11}\right)^2+\left(x_{42}+x_{12}\right)^2 \\
+        f_5(\mathbf{x}) = & \|x_5\|^2+\|x_5+\mathbf{1}_2-x_1\|^2+(x_{51}+1+x_{21})^2                                  \\
+                          & +(x_{52}+1-x_{22})^2+\|x_5+\mathbf{1}_2+x_3\|^2                                           \\
+                          & +(x_{51}+1-x_{41})^2+(x_{52}+1+x_{42})^2
+    \end{aligned}
+\end{equation*}
+where $x_i = [x_{i1}, x_{i2}]^T$, and $\mathbf{x}=[x_1^T,x_2^T,x_3^T,x_4^T,x_5^T]^T$. In addition, we study a network consisting of $5$ players whose communication topology is shown in Fig. 1.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{img/fig1.png}
+    \caption{Communication topology of the network}
+\end{figure}
 
+By calculation, it is found that $\mathbf{x}^* = [1,1,-1,1,-1,-1,\\1,-1,0,0]^T$, and the proposed algorithm (\ref{eq7}) will be verified with $\mathbf{x}(0) = [-2.5,3.5,-4,2.5,-2,-4,-6,-4,-2.5,\\-0.5]^T$. Moreover, all the other variables are initialized at zero and the disturbance vector is considered to be $\mathbf{d}(t)=[2\sin(t),2\sin(t),2\cos(t),2\cos(t),4\cos(2t),4\cos(2t),\\4\sin(2t),4\sin(2t),6\sin(3t),6\sin(3t)]^T$.
+
+The algorithm (\ref{eq7}) is simulated with $\tau k_i = 100,~\theta\overline{\theta}_{ij}=100$.
 \section{CONCLUSIONS}
 Anti-disturbance Nash equilibrium seeking algorithms for games with second-order disturbed distributed systems have been developed based on a chattering free continuous function method. It is theoretically proven that the actions of players can be achieved exponential convergence by an appropriate adjustment of control gains. Compared the strategy based on signum function \cite{9696299}, the Nash equilibrium seeking strategy of this paper is able to prevent chattering in practical engineering applications. It's worth mentioning that the proposed method in this paper does not require distributed estimation of all players' actions and some specific objective functions determined by the players, while the method in \cite{8985536} requires.
 
