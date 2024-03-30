@@ -265,7 +265,7 @@ where $x_i = [x_{i1}, x_{i2}]^T$, and $\mathbf{x}=[x_1^T,x_2^T,x_3^T,x_4^T,x_5^T
 
 By calculation, it is found that $\mathbf{x}^* = [1,1,-1,1,-1,-1,\\1,-1,0,0]^T$, and the proposed algorithm (\ref{eq7}) will be verified with $\mathbf{x}(0) = [-2.5,3.5,-4,2.5,-2,-4,-6,-4,-2.5,\\-0.5]^T$. Moreover, all the other variables are initialized at zero and the disturbance vector is considered to be $\mathbf{d}(t)=[2\sin(t),2\sin(t),2\cos(t),2\cos(t),4\cos(2t),4\cos(2t),\\4\sin(2t),4\sin(2t),6\sin(3t),6\sin(3t)]^T$.
 
-The algorithm (\ref{eq7}) is simulated with $\tau k_i = 100,~\theta\overline{\theta}_{ij}=100$.
+The algorithm (\ref{eq7}) is simulated with $\tau k_i = 10,~\theta\overline{\theta}_{ij}=100,~\alpha_i = 1,~i\in \{1,2,3,4,5\},~j\in \{1,2\}$.
 \section{CONCLUSIONS}
 Anti-disturbance Nash equilibrium seeking algorithms for games with second-order disturbed distributed systems have been developed based on a chattering free continuous function method. It is theoretically proven that the actions of players can be achieved exponential convergence by an appropriate adjustment of control gains. Compared the strategy based on signum function \cite{9696299}, the Nash equilibrium seeking strategy of this paper is able to prevent chattering in practical engineering applications. It's worth mentioning that the proposed method in this paper does not require distributed estimation of all players' actions and some specific objective functions determined by the players, while the method in \cite{8985536} requires.
 
