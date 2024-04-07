@@ -196,7 +196,7 @@ Let $\tilde{\mathbf{x}} = \mathbf{x} - \mathbf{x}^*$. Then, the subsequent resul
                          & - \sum_{i = 1}^{N} \beta_i\varrho_i(t)
         \end{aligned}
     \end{equation}
-    where $\bar{H}(\mathbf{y})=[h_{ij}]$ in which for $i \neq j$, $h_{ij} = \mathbf{0}_N^T$ and for $i = j$, $h_{ii}=[\nabla_{i1}^{2}f_{i}(\mathbf{y}_{i}),\nabla_{i2}^{2}f_{i}(\mathbf{y}_{i}),\ldots,\nabla_{iN}^{2}f_{i}(\mathbf{y}_{i})]$, $\nabla_{ij}^{2}f_{i}(\mathbf{y}_{i})=\frac{\partial^{2}f_{i}(\mathbf{x})}{\partial x_{i}\partial x_{i}}\mid_{\mathbf{x}=\mathbf{y}_{i}}$. By Assumption 4, $\|\bar{H}\mathbf{y}\|$ is bounded. Hence, There are some positive constant $L_1$ meet $\|\bar{H}(\mathbf{y})\|\|\bar{\boldsymbol{\theta}}(\mathcal{L}\otimes \mathbf{I}_{N\times N}+\mathcal{A}_{q})\|\leq L_{1}$. Therefore,
+    where $\bar{H}(\mathbf{y})=[h_{ij}]$ in which for $i \neq j$, $h_{ij} = \mathbf{0}_N^T$ and for $i = j$, $h_{ii}=[\nabla_{i1}^{2}f_{i}(\mathbf{y}_{i}),\nabla_{i2}^{2}f_{i}(\mathbf{y}_{i}),\ldots,\nabla_{iN}^{2}f_{i}(\mathbf{y}_{i})]$, $\nabla_{ij}^{2}f_{i}(\mathbf{y}_{i})=\frac{\partial^{2}f_{i}(\mathbf{x})}{\partial x_{i}\partial x_{j}}\mid_{\mathbf{x}=\mathbf{y}_{i}}$. By Assumption 4, $\|\bar{H}\mathbf{y}\|$ is bounded. Hence, There are some positive constant $L_1$ meet $\|\bar{H}(\mathbf{y})\|\|\bar{\boldsymbol{\theta}}(\mathcal{L}\otimes \mathbf{I}_{N\times N}+\mathcal{A}_{q})\|\leq L_{1}$. Therefore,
     \begin{equation}
         \begin{aligned}
             \dot{V}_3 & \leq-\tau\lambda_{\min}(\mathbf{k})\|{\mathbf{h}}\|^2+\theta L_1\|{\mathbf{h}}\|\|\tilde{\mathbf{y}}\|                       \\
@@ -259,19 +259,133 @@ This section provides a simulation example to verify the effectiveness of the pr
 where $x_i = [x_{i1}, x_{i2}]^T$, and $\mathbf{x}=[x_1^T,x_2^T,x_3^T,x_4^T,x_5^T]^T$. In addition, we study a network consisting of $5$ players whose communication topology is shown in Fig. 1.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.3\textwidth]{img/fig1.png}
-    \caption{Communication topology of the network}
+    \includegraphics[width=0.3\textwidth]{img/fig1.eps}
+    \caption{Communication topology of the network.}
 \end{figure}
 
-By calculation, it is found that $\mathbf{x}^* = [1,1,-1,1,-1,-1,\\1,-1,0,0]^T$, and the proposed algorithm (\ref{eq7}) will be verified with $\mathbf{x}(0) = [-2.5,3.5,-4,2.5,-2,-4,-6,-4,-2.5,\\-0.5]^T$. Moreover, all the other variables are initialized at zero and the disturbance vector is considered to be $\mathbf{d}(t)=[2\sin(t),2\sin(t),2\cos(t),2\cos(t),4\cos(2t),4\cos(2t),\\4\sin(2t),4\sin(2t),6\sin(3t),6\sin(3t)]^T$.
+By calculation, it is found that $\mathbf{x}^* = [0.8,0.2,-0.7,0.4,\\
+    -0.7,-0.55,0.8,-0.7,-0.2,-0.4]^T$,
+and the proposed algorithm (\ref{eq7}) will be verified with $\mathbf{x}(0) = [2.5,-2.5,0,2,4,5,\\0.5,-4,-3.5,-2.5]^T$. Moreover, all the other variables are initialized at zero and the disturbance vector is considered to be $\mathbf{d}(t)=[2\sin(t),2\sin(t),2\cos(t),2\cos(t),4\cos(2t),\\4\cos(2t),4\sin(2t),4\sin(2t),6\sin(3t),6\sin(3t)]^T$.
 
-The algorithm (\ref{eq7}) is simulated with $\tau k_i = 10,~\theta\overline{\theta}_{ij}=100,~\alpha_i = 1,~i\in \{1,2,3,4,5\},~j\in \{1,2\}$.
+The algorithm (\ref{eq7}) is simulated with $\tau k_i = 9,~\theta\overline{\theta}_{ij}=70,~\alpha_i = 1,~i\in \{1,2,3,4,5\},~j\in \{1,2\}$. The results are shown in Fig. 2, Fig. 3 and Fig. 4, they represents players' actions $x_{i1}, ~x_{i2}$ and players' velocity-like state $v_{ij}$ for $i\in \{1,2,3,4,5\},~j\in \{1,2\}$.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/xi1.eps}
+    \caption{Players' actions $x_{i1}$ for $i\in \{1,2,3,4,5\}$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/xi2.eps}
+    \caption{Players' actions $x_{i2}$ for $i\in \{1,2,3,4,5\}$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/vij.eps}
+    \caption{Players' velocity-like state $v_{ij}$ for $i\in \{1,2,3,4,5\},~j\in \{1,2\}$.}
+\end{figure}
+
+It is found from Fig. 2, Fig. 3 and Fig. 4 that the proposed algorithm can drive the actions of all players to a small neighborhood of a Nash equilibrium point by adjusting the control gains properly, thereby verifying the conclusion of Theorem 1.
+
 \section{CONCLUSIONS}
 Anti-disturbance Nash equilibrium seeking algorithms for games with second-order disturbed distributed systems have been developed based on a chattering free continuous function method. It is theoretically proven that the actions of players can be achieved exponential convergence by an appropriate adjustment of control gains. Compared the strategy based on signum function \cite{9696299}, the Nash equilibrium seeking strategy of this paper is able to prevent chattering in practical engineering applications. It's worth mentioning that the proposed method in this paper does not require distributed estimation of all players' actions and some specific objective functions determined by the players, while the method in \cite{8985536} requires.
 
-\bibliographystyle{ieeetr}
-\bibliography{ref.bib}
+% \bibliographystyle{ieeetr}
+% \bibliography{ref.bib}
 
+\begin{thebibliography}{10}
+
+    \bibitem{pozo2011finding}
+    D.~Pozo and J.~Contreras, ``Finding multiple nash equilibria in pool-based markets: A stochastic epec approach,'' {\em IEEE Transactions on Power Systems}, vol.~26, no.~3, pp.~1744--1752, 2011.
+
+    \bibitem{ratliff2016characterization}
+    L.~J. Ratliff, S.~A. Burden, and S.~S. Sastry, ``On the characterization of local nash equilibria in continuous games,'' {\em IEEE transactions on automatic control}, vol.~61, no.~8, pp.~2301--2307, 2016.
+
+    \bibitem{lou2015nash}
+    Y.~Lou, Y.~Hong, L.~Xie, G.~Shi, and K.~H. Johansson, ``Nash equilibrium computation in subnetwork zero-sum games with switching communications,'' {\em IEEE Transactions on Automatic Control}, vol.~61, no.~10, pp.~2920--2935, 2015.
+
+    \bibitem{stankovic2011distributed}
+    M.~S. Stankovic, K.~H. Johansson, and D.~M. Stipanovic, ``Distributed seeking of nash equilibria with applications to mobile sensor networks,'' {\em IEEE Transactions on Automatic Control}, vol.~57, no.~4, pp.~904--919, 2011.
+
+    \bibitem{liu2011stochastic}
+    S.-J. Liu and M.~Krsti{\'c}, ``Stochastic nash equilibrium seeking for games with general nonlinear payoffs,'' {\em SIAM Journal on Control and Optimization}, vol.~49, no.~4, pp.~1659--1679, 2011.
+
+    \bibitem{durr2013lie}
+    H.-B. D{\"u}rr, M.~S. Stankovi{\'c}, C.~Ebenbauer, and K.~H. Johansson, ``Lie bracket approximation of extremum seeking systems,'' {\em Automatica}, vol.~49, no.~6, pp.~1538--1552, 2013.
+
+    \bibitem{ding2019distributed}
+    L.~Ding, Q.-L. Han, B.~Ning, and D.~Yue, ``Distributed resilient finite-time secondary control for heterogeneous battery energy storage systems under denial-of-service attacks,'' {\em IEEE Transactions on Industrial Informatics}, vol.~16, no.~7, pp.~4909--4919, 2019.
+
+    \bibitem{wu2021resilient}
+    J.~Wu, Y.~Zhu, Y.~Zheng, and H.~Wang, ``Resilient bipartite consensus of second-order multiagent systems with event-triggered communication,'' {\em IEEE Systems Journal}, 2021.
+
+    \bibitem{ge2021dynamic}
+    X.~Ge, S.~Xiao, Q.-L. Han, X.-M. Zhang, and D.~Ding, ``Dynamic event-triggered scheduling and platooning control co-design for automated vehicles over vehicular ad-hoc networks,'' {\em IEEE/CAA Journal of Automatica Sinica}, vol.~9, no.~1, pp.~31--46, 2021.
+
+    \bibitem{ye2022distributed}
+    M.~Ye, Q.-L. Han, L.~Ding, S.~Xu, and G.~Jia, ``Distributed nash equilibrium seeking strategies under quantized communication,'' {\em IEEE/CAA Journal of Automatica Sinica}, 2022.
+
+    \bibitem{7888532}
+    M.~Ye and G.~Hu, ``Distributed nash equilibrium seeking by a consensus based approach,'' {\em IEEE Transactions on Automatic Control}, vol.~62, no.~9, pp.~4811--4818, 2017.
+
+    \bibitem{8093754}
+    M.~Ye and G.~Hu, ``Distributed nash equilibrium seeking in multiagent games under switching communication topologies,'' {\em IEEE Transactions on Cybernetics}, vol.~48, no.~11, pp.~3208--3217, 2018.
+
+    \bibitem{ye2021adaptive}
+    M.~Ye and G.~Hu, ``Adaptive approaches for fully distributed nash equilibrium seeking in networked games,'' {\em Automatica}, vol.~129, p.~109661, 2021.
+
+    \bibitem{7265050}
+    W.-H. Chen, J.~Yang, L.~Guo, and S.~Li, ``Disturbance-observer-based control and related methods—an overview,'' {\em IEEE Transactions on Industrial Electronics}, vol.~63, no.~2, pp.~1083--1095, 2016.
+
+    \bibitem{xie2000much}
+    L.-L. Xie and L.~Guo, ``How much uncertainty can be dealt with by feedback?,'' {\em IEEE Transactions on Automatic Control}, vol.~45, no.~12, pp.~2203--2217, 2000.
+
+    \bibitem{li2014disturbance}
+    S.~Li, J.~Yang, W.-H. Chen, and X.~Chen, {\em Disturbance observer-based control: methods and applications}.
+    \newblock CRC press, 2014.
+
+    \bibitem{prabhakar2018trajectory}
+    N.~Prabhakar, A.~Painter, R.~Prazenica, and M.~Balas, ``Trajectory-driven adaptive control of autonomous unmanned aerial vehicles with disturbance accommodation,'' {\em Journal of Guidance, Control, and Dynamics}, vol.~41, no.~9, pp.~1976--1989, 2018.
+
+    \bibitem{namik2009disturbance}
+    H.~Namik and K.~Stol, ``Disturbance accommodating control of floating offshore wind turbines,'' in {\em 47th AIAA aerospace sciences meeting including the new horizons forum and aerospace exposition}, p.~483, 2009.
+
+    \bibitem{paradkar2004integration}
+    A.~Paradkar, A.~Davari, A.~Feliachi, and T.~Biswas, ``Integration of a fuel cell into the power system using an optimal controller based on disturbance accommodation control theory,'' {\em Journal of Power Sources}, vol.~128, no.~2, pp.~218--230, 2004.
+
+    \bibitem{9745491}
+    X.-G. Guo, D.-Y. Zhang, J.-L. Wang, J.~H. Park, and L.~Guo, ``Observer-based event-triggered composite anti-disturbance control for multi-agent systems under multiple disturbances and stochastic fdias,'' {\em IEEE Transactions on Automation Science and Engineering}, vol.~20, no.~1, pp.~528--540, 2023.
+
+    \bibitem{9547799}
+    Y.~Wu and L.~Liu, ``Distributed average tracking for linear heterogeneous multi-agent systems with external disturbances,'' {\em IEEE Transactions on Network Science and Engineering}, vol.~8, no.~4, pp.~3491--3500, 2021.
+
+    \bibitem{LU2020338}
+    H.~Lü, W.~He, Q.-L. Han, X.~Ge, and C.~Peng, ``Finite-time containment control for nonlinear multi-agent systems with external disturbances,'' {\em Information Sciences}, vol.~512, pp.~338--351, 2020.
+
+    \bibitem{zhang2013distributed}
+    Y.~Zhang, Y.~Yang, Y.~Zhao, and G.~Wen, ``Distributed finite-time tracking control for nonlinear multi-agent systems subject to external disturbances,'' {\em International Journal of Control}, vol.~86, no.~1, pp.~29--40, 2013.
+
+    \bibitem{9696299}
+    M.~Ye, D.~Li, Q.-L. Han, and L.~Ding, ``Distributed nash equilibrium seeking for general networked games with bounded disturbances,'' {\em IEEE/CAA Journal of Automatica Sinica}, vol.~10, no.~2, pp.~376--387, 2023.
+
+    \bibitem{ye2020distributed}
+    M.~Ye, ``Distributed robust seeking of nash equilibrium for networked games: An extended state observer-based approach,'' {\em IEEE Transactions on Cybernetics}, vol.~52, no.~3, pp.~1527--1538, 2020.
+
+    \bibitem{li2021distributed}
+    D.~Li and M.~Ye, ``Distributed robust nash equilibrium seeking by unknown dynamics estimator based approaches,'' in {\em 2021 4th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS)}, pp.~840--845, IEEE, 2021.
+
+    \bibitem{8985536}
+    B.~Huang, Y.~Zou, and Z.~Meng, ``Distributed-observer-based nash equilibrium seeking algorithm for quadratic games with nonlinear dynamics,'' {\em IEEE Transactions on Systems, Man, and Cybernetics: Systems}, vol.~51, no.~11, pp.~7260--7268, 2021.
+
+    \bibitem{lewis2013cooperative}
+    F.~L. Lewis, H.~Zhang, K.~Hengster-Movric, and A.~Das, {\em Cooperative control of multi-agent systems: optimal and adaptive design approaches}.
+    \newblock Springer Science \& Business Media, 2013.
+
+    \bibitem{10192924}
+    P.~Wang, H.~Tian, D.~Huang, and T.~Huang, ``A continuous neural network adaptive controller for consensus of uncertain multi-agent systems,'' {\em IEEE Transactions on Emerging Topics in Computational Intelligence}, pp.~1--10, 2023.
+
+\end{thebibliography}
 
 
 \end{document}
