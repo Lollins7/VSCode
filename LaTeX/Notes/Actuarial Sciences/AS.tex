@@ -5,12 +5,12 @@
 \usepackage{amsfonts}
 \usepackage{graphicx}
 %\input amssymb.sty
- %\usepackage[notref,notcite]{showkeys}
- \usepackage{mathrsfs,amsfonts,amsmath,amssymb}
+%\usepackage[notref,notcite]{showkeys}
+\usepackage{mathrsfs,amsfonts,amsmath,amssymb}
 %\usepackage[dvips]{color}
 \usepackage{color}
- \usepackage{amssymb}
- \usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{CJK}
 \usepackage{CJK,CJKnumb}
 \usepackage[final]{pdfpages}
@@ -20,16 +20,16 @@
 
 
 \allowdisplaybreaks
- \setlength{\topmargin}{0cm}
- \setlength{\oddsidemargin}{0.0cm}
- \setlength{\evensidemargin}{0.0cm}
- \setlength{\textwidth}{15cm}
- \setlength{\textheight}{20cm}
- \setlength{\parindent}{0.85cm}
- \setlength{\parskip}{4pt}
+\setlength{\topmargin}{0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\setlength{\textwidth}{15cm}
+\setlength{\textheight}{20cm}
+\setlength{\parindent}{0.85cm}
+\setlength{\parskip}{4pt}
 \def\red{\color{red}}
 \def\blue{\color{blue}}
- \renewcommand\baselinestretch{1.2}
+\renewcommand\baselinestretch{1.2}
 
 \newcommand{\song}{\CJKfamily{song}}    % 宋体
 \newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体
@@ -42,14 +42,14 @@
 
 
 
- \def\qed{\hfill$\Box$\medskip}
- \def\rto{\rightarrow\infty}
- \def\z{\left}
- \def\y{\right}
- \def\no{\nonumber}
- \def\mbe{\mathbb{E}}
- \def\mbp{\mathbb{P}}
- \def\ka{{\kappa_1}}
+\def\qed{\hfill$\Box$\medskip}
+\def\rto{\rightarrow\infty}
+\def\z{\left}
+\def\y{\right}
+\def\no{\nonumber}
+\def\mbe{\mathbb{E}}
+\def\mbp{\mathbb{P}}
+\def\ka{{\kappa_1}}
 \usepackage{indentfirst}
 
 %\DeclareRobustCommand{\actuarial}[2][]{%
@@ -435,7 +435,7 @@ $$\frac{d(_tp_x)}{dx}=(e^{-\int_{x}^{x+t}\mu_x(s)ds})^{\prime}=e^{-\int_{x}^{x+t
 
 \begin{proposition}以下结论成立:
 
-    (1) $f_{T(x)}(t)={}_tp_x*\mu_x(t);$
+    (1) $f_{T(x)}(t)={}_tp_x\cdot \mu_x(t);$
 
     (2) $_tp_x={}_sp_x\cdot{}_{t-s}p_{x+s},0\leq s\leq t;$
 
@@ -889,6 +889,8 @@ $$
                                                           & =\frac{l_{0}(l_{0}-1)}{16}-\frac{l_{0}^{2}}{16}                                                                          \\
                                                           & =-\frac{l_{0}}{16}.
 \end{align*}
+(对于$\sum^{l_{0}}_{k=1}\sum_{j\neq k}E(I_{\{0\leq x_{k}\leq 3\}}\cdot I_{\{3\leq x_{k}\leq 6\}}) = \frac{l_{0}(l_{0}-1)}{16}$的理解: 其中$\sum^{l_{0}}_{k=1}\sum_{j\neq k} = l_0(l_0-1)$, 而$p(I_{c\leq x_{k}\leq c+3}) = \frac14$, 故$I_{0\leq x_{k}\leq 3}$与$I_{3\leq x_{k}\leq 6}$同时取1的概率为$\frac{1}{16}$.)
+
 求出协方差即可求相关系数：
 \begin{align*}
     \rho(_{3}\mathscr D _{0},\ _{3}\mathscr D _{3}) & =\frac{\text{Cov}(_{3}\mathscr D_{0},\ _{3}\mathscr D _{3})}{\sqrt{D(_{3}\mathscr D _{0})}\cdot \sqrt{D(_{3}\mathscr D _{3})}} \\
@@ -901,18 +903,23 @@ $$
 \begin{exs}
     设某人现年20岁, 假设他的余命$T(20)$服从$[0,60]$ 上的均分分布, 求$F_{T(20)}(t),$ $ f_{T(20)}(t),$ $\mu_{20}(t),$ $s_{T(20)}(t).$
 \end{exs}
+
 \begin{exs}
     设$\mu(t)=\frac{1}{(t+e)(\ln (t+e))^a},t\ge0.$ 讨论$a$取何值时, $\mu(t)$可作为死亡力函数, 并求出$s_{T(x)}(t),$ $f_{T(x)}(t).$
 \end{exs}
+
 \begin{exs}
     假设新生儿的寿命为$X,$ 死亡力为$\mu(t)=\frac{a}{(t+1)},t\ge0, a>0.$ 讨论$a$何值时, $D(X)$存在并求出$D(X).$
 \end{exs}
+
 \begin{exs}
     证明: $\frac{d}{dx}\mathring e_x=\mathring e_x\mu(x)-1.$
 \end{exs}
+
 \begin{exs}设系统中有$l_0$个新生儿, 它们的寿命独立同分布, 生存函数为
-    64    $$s(t)=1-\frac{t}{16}, 0\le t\le 16.$$ 证明$$({}_4\mathscr D_0, {}_4\mathscr D_4,{}_{4}\mathscr D_8, {}_{4}\mathscr D_{12})$$服从多项分布, 并计算 (1), 每个随机变量的期望; (2) 每个随机变量的方差; (3) 每两个随机变量的相关系数; (4) 对你计算所得的结果进行简要分析.
+    $$s(t)=1-\frac{t}{16}, 0\le t\le 16.$$ 证明$$({}_4\mathscr D_0, {}_4\mathscr D_4,{}_{4}\mathscr D_8, {}_{4}\mathscr D_{12})$$服从多项分布, 并计算 (1) 每个随机变量的期望; (2) 每个随机变量的方差; (3) 每两个随机变量的相关系数; (4) 对你计算所得的结果进行简要分析.
 \end{exs}
+
 \begin{exs}
     你现在多少岁? 请根据303页的附表2.1(男生用)、307页附表2.2(女生用)计算你80岁还活着的概率.
 \end{exs}
@@ -920,9 +927,10 @@ $$
 \begin{exs}
     $i$为复利率, $v=\frac{1}{1+i}$为贴现因子, $\delta=\ln (1+i)$为利息力.
 
-    (1) 设$\mu_{x}(t)\equiv \mu =0.05,\ \delta\equiv 0.04$, 求：$E(v^{T(x)});D(v^{T(x)});E(\int_{0}^{T(x)}v^{t}dt);D(\int_{0}^{T(x)}v^{t}dt)$;
+    (1) 设$\mu_{x}(t)\equiv \mu =0.05, \delta\equiv 0.04$,
+    求：$E(v^{T(x)});D(v^{T(x)}); E(\int_{0}^{T(x)}v^{t}dt); D(\int_{0}^{T(x)}v^{t}dt)$;
 
-    (2) 设UDD成立, 求证：$E(v^{T(x)})=\frac{T}{\delta}E(v^{k(x)+1})$.
+    (2) 设UDD成立, 求证：$E(v^{T(x)})=\frac{i}{\delta}E(v^{K(x)+1})$.
 \end{exs}
 
 
@@ -932,29 +940,32 @@ $$
     \item[{\bf\hei 一.}]{\bf\hei 人寿保险关心的问题}
 \end{itemize}
 \begin{enumerate}
-    \item 支付条件, 支付的时刻(保险金)
-    \item 支付保险金的现值Z是多少?
-    \item 保险金的精算现值EZ
-    \item 风险度量$DZ$
-    \item 精算现值$EZ$、$DZ$的性质
+    \item 支付条件, 支付的时刻(保险金).
+    \item 支付保险金的现值$Z$是多少?
+    \item 保险金的精算现值$EZ$.
+    \item 风险度量$DZ$.
+    \item 精算现值$EZ$, $DZ$的性质.
 \end{enumerate}
 \begin{itemize}
     \item[{\bf\hei 二.}]{\bf\hei 人寿保险的分类}
 \end{itemize}
-$$
-    \text{人寿保险}\left\{ \begin{array}{c}
-        \text{生存保险}                                                                 \\
-        \text{生死合险}                                                                 \\
-        \text{死亡保险}\left\{ \begin{array}{c}
-                               \text{定期死亡保险}                            \\
-                               \text{终身死亡保险}                            \\
-                               \text{延期死亡保险}\left\{ \begin{array}{c}
-                                     \text{延期定期死亡保险} \\
-                                     \text{延期终身死亡保险} \\
-                                 \end{array} \right. \\
-                           \end{array} \right. \\
-    \end{array} \right.
-$$
+
+\begin{equation*}
+    \text{人寿保险}
+    \begin{cases}
+         & \text{生存保险}                                          \\
+         & \text{生死合险}                                          \\
+         & \text{死亡保险}\begin{cases}
+                           & \text{定期死亡保险}                   \\
+                           & \text{终身死亡保险}                   \\
+                           & \text{延期死亡保险}\begin{cases}
+                                 & \text{延期定期死亡保险} \\
+                                 & \text{延期终身死亡保险}
+                            \end{cases}
+                      \end{cases}
+    \end{cases}
+\end{equation*}
+
 \section{生存保险}
 \begin{itemize}
     \item[{\bf\hei 一.}]{\bf\hei 支付方式与支付条件}
@@ -976,18 +987,18 @@ $$
 \end{itemize}
 \begin{align}\label{sf}
     E\left( Z \right) =E\left( v^nI_{\left\{ T\left( x \right) \geqslant n \right\}} \right) =v^nE\left( I_{\left\{ T\left( x \right) \geqslant n \right\}} \right)
-    =v^nP\left( T\left( x \right) \geqslant n \right) =v^n\cdot _np_x
+    =v^nP\left( T\left( x \right) \geqslant n \right) =v^n\cdot{}_np_x
 \end{align}
 
-n年期生存保险的精算现值记为$\overline{A}_{x:}\frac{1}{\annu{n}}$或$_nE_x$
+n年期生存保险的精算现值记为$A_{x:}\frac{1}{\annu{n}}$或$_nE_x$
 
-所以$\overline{A}_{x:}\frac{1}{\annu{n}}\equiv _nE_x=v^n\cdot _np_x$
+所以$A_{x:}\frac{1}{\annu{n}}\equiv {}_nE_x=v^n\cdot{}_np_x$
 \begin{itemize}
     \item[{\bf\hei 四.}]{\bf\hei 二阶矩}
 \end{itemize}
 
-$$E\left( Z^2 \right) =E\left( \left[ v^nI_{\left\{ T\left( x \right) \geqslant n \right\}} \right] ^2 \right) =E\left( v^{2n}I_{\left\{ T\left( x \right) \geqslant n \right\}} \right) =v^{2n}\cdot _np_x$$
-$$DZ=EZ^2-\left( EZ \right) ^2=v^{2n}\cdot _np_x\cdot _nq_x$$
+$$E\left( Z^2 \right) =E\left( \left[ v^nI_{\left\{ T\left( x \right) \geqslant n \right\}} \right] ^2 \right) =E\left( v^{2n}I_{\left\{ T\left( x \right) \geqslant n \right\}} \right) =v^{2n}\cdot{}_np_x$$
+$$DZ=EZ^2-\left( EZ \right) ^2=v^{2n}\cdot{}_np_x\cdot{}_nq_x$$
 
 \begin{proposition}
     $\forall 0\leqslant k\leqslant n$, 有
@@ -1009,13 +1020,9 @@ $$_nE_x=v^k\cdot {}_kp_x\cdot {}_{n-k}E_{x+k}=(\frac{1}{i+1})^k\cdot\frac{l_{x+k
 
 
 \begin{remark}
-    \begin{enumerate}
-        \item 等式$(1+i)^k\cdot l_x\cdot {}_nE_x=l_{x+k}\cdot {}_{n-k}E_{x+k}$的含义是：
+    等式$(1+i)^k\cdot l_x\cdot {}_nE_x=l_{x+k}\cdot {}_{n-k}E_{x+k}$的含义是：
 
-              在0时刻, $l_x$个人各自买了一份n年期的生存保险, 保费总额为$l_x\cdot {}_nE_x$, k年后, 这笔钱的积累值为$(1+i)^k\cdot l_x\cdot {}_nE_x$,若此时保险公司破产不干了, 他分给在k时刻还活着的$l_{x+k}$个人每人$_{n-k}E_{x+k}$元, 这正好够每个人去重新买一份$n-k$ 年期的生存保险.
-
-    \end{enumerate}
-
+    在0时刻, $l_x$个人各自买了一份n年期的生存保险, 保费总额为$l_x\cdot {}_nE_x$, k年后, 这笔钱的积累值为$(1+i)^k\cdot l_x\cdot {}_nE_x$,若此时保险公司破产不干了, 他分给在k时刻还活着的$l_{x+k}$个人每人$_{n-k}E_{x+k}$元, 这正好够每个人去重新买一份$n-k$ 年期的生存保险.
 \end{remark}
 \section{$n$年期(定期)死亡保险}
 
@@ -1025,7 +1032,7 @@ $$_nE_x=v^k\cdot {}_kp_x\cdot {}_{n-k}E_{x+k}=(\frac{1}{i+1})^k\cdot\frac{l_{x+k
 
 死亡年末支付——离散型
 \begin{itemize}
-    \item[{\bf\hei 一.}]{\bf\hei 死亡立即支付的定期寿险}
+    \item[{\bf\hei 一.}]{\bf\hei 死亡立即支付的$n$年期定期寿险}
 \end{itemize}
 \begin{itemize}
     \item[{\bf\hei 1.}]{\bf\hei 支付方式和条件}
@@ -1067,12 +1074,12 @@ $$_nE_x=v^k\cdot {}_kp_x\cdot {}_{n-k}E_{x+k}=(\frac{1}{i+1})^k\cdot\frac{l_{x+k
 \proof
 $(2.4)$
 \begin{align*}
-    \overline{A}_{x:\annu{n}}^1 & =\int_0^{n}{v^{t}\cdot _tp_x\cdot \mu_{x}(t)dt} = \int_0^{k}{v^{t}\cdot  _tp_x\cdot \mu_{x}(t)dt} +\int_k^{n}{v^{t}\cdot  _tp_x\cdot \mu_{x}(t)dt}                                                    \\
-                                & = \overline{A}_{x:}^1{}_{\annu k} +\int_0^{n-k}{v^{t+k}\cdot  _{t+k}p_x\cdot \mu_{x+k}(t)dt}= \overline{A}_{x:}^1{}_{\annu k} +\int_0^{n-k}{v^{k}\cdot v^{t}  _{t}p_x\cdot _{t}p_{x+k}\mu_{x+k}(t)dt} \\
-                                & =\overline{A}_{x:}^1{}_{\annu k} +v^{k}\cdot {}_{k}p_x\int_0^{n-k}{ v^{t} \cdot _{t}p_{x+k}\mu_{x+k}(t)dt}=\overline{A}_{x:}^1{}_{\annu k}+_kE_x\cdot\overline{A}_{x+k:}^1{}_{\annu{n-k}}             \\
+    \overline{A}_{x:\annu{n}}^1 & =\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt} = \int_0^{k}{v^{t}\cdot  _tp_x\cdot \mu_{x}(t)dt} +\int_k^{n}{v^{t}\cdot  _tp_x\cdot \mu_{x}(t)dt}                                                    \\
+                                & = \overline{A}_{x:}^1{}_{\annu k} +\int_0^{n-k}{v^{t+k}\cdot  _{t+k}p_x\cdot \mu_{x+k}(t)dt}= \overline{A}_{x:}^1{}_{\annu k} +\int_0^{n-k}{v^{k}\cdot v^{t}  _{t}p_x\cdot{}_{t}p_{x+k}\mu_{x+k}(t)dt} \\
+                                & =\overline{A}_{x:}^1{}_{\annu k} +v^{k}\cdot {}_{k}p_x\int_0^{n-k}{ v^{t} \cdot{}_{t}p_{x+k}\mu_{x+k}(t)dt}=\overline{A}_{x:}^1{}_{\annu k}+_kE_x\cdot\overline{A}_{x+k:}^1{}_{\annu{n-k}}             \\
 \end{align*}
 $(2.5)$
-$$\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot _tp_x\cdot \mu_{x}(t)dt}=\int_0^{n}{v^{t}\cdot \frac{l_{x+t}}{l_x}\cdot \mu_{x}(t)dt}$$
+$$\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt}=\int_0^{n}{v^{t}\cdot \frac{l_{x+t}}{l_x}\cdot \mu_{x}(t)dt}$$
 
 所以$l_x\cdot\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot l_{x+t}\cdot \mu_{x}(t)dt}$.
 \qed
@@ -1278,7 +1285,7 @@ $$
 
 \section{作业}
 \begin{exs}
-    解释等式$l_x\overline{A}_{x:\annu{n}}^1=l_x\overline{A}_{x:\annu{n}}^1+v^kl_{x+k}\overline{A}_{x:\annu{n}}^1$的含义.
+    解释等式$l_x\overline{A}_{x:\annu{n}}^1=l_x\overline{A}_{x:\annu{k}}^1+v^kl_{x+k}\overline{A}_{x+k:\annu{n-k}}^1$的含义.
 \end{exs}
 
 \begin{exs}
