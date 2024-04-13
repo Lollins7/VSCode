@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+plt.rc('text', usetex=True)
 np.random.seed(0)
 
 T = 20
@@ -83,9 +84,9 @@ plt.ylabel('$x_{i2}(t),$ for $i\in \{1,2,3,4,5\}$', fontsize=16)
 plt.legend(['$x_{12}$', '$x_{22}$', '$x_{32}$', '$x_{42}$', '$x_{52}$'], fontsize=12)
 plt.grid(True)
 
-plt.figure()
-plt.plot(t, v.T, linewidth=1)
-plt.xlabel('$t~\mathrm{(second)}$', fontsize=16)
-plt.ylabel('$v_{ij}(t),$ for $i\in \{1,2,3,4,5\},~j\in \{1,2\}$', fontsize=16)
-plt.grid(True)
-plt.show()
+# plt.figure()
+# plt.plot(t, v.T, linewidth=1)
+# plt.xlabel('$t~\mathrm{(second)}$', fontsize=16)
+# plt.ylabel('$v_{ij}(t),$ for $i\in \{1,2,3,4,5\},~j\in \{1,2\}$', fontsize=16)
+# plt.grid(True)
+# plt.show()
