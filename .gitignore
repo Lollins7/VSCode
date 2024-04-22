@@ -26,3 +26,5 @@
 *.DS_Store
 
 Jupyter/pytorch/data/
+
+*.dSYM
