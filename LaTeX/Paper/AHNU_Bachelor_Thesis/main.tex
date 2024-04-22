@@ -1,0 +1,103 @@
+% capnocolon用于去掉图表标题中的冒号；
+% titleahnuart为AHU文科的章节标题格式，
+%   理科请将titileahnuart改为titleahnuscience，
+%   若要使用USTC格式请改为titlechinese；
+% oneside, openany为单面选项，
+%   若要双面且章节从奇数页开始，
+%   请改为twoside, opentight；
+\documentclass[capnocolon,titleahnuscience,oneside,openany]{ahnuthesis}
+
+\usepackage{metalogo}
+%\usepackage{floatrow}
+\usepackage{verbatim}
+\usepackage{titlesec}
+
+% 设置图形文件的搜索路径
+\graphicspath{{chapter/}{figures/}}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 封面部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 封面内容
+% 当中文标题过长时可以将多余的标题放在\titletail{}中
+\title{安徽师范大学}
+\titletail{本科毕业论文模板示例文档}
+\entitle{An example article of the AHNU-Thesis Template for Undergraduate Students}
+%全角空格可以正常输出
+\author{王子颉}
+\enauthor{Zijie Wang}
+\department{数学与统计学院}
+\No{21111202046}
+\tutor{王佩君}
+\entutor{Prof. Peijun Wang}
+\cntime{二〇二五年　六月}
+\entime{June,2025}
+\major{统计学}
+\enrolltime{二〇二一年　九月}
+\tutordegree{副教授}
+\tutordepartment{数学与统计学院}
+
+
+% 生成封面（USTC制本厂要求的格式，AHU不需要此选项）
+%  \makecover
+
+% 生成USTC格式的中英文合并的扉页，AHU可以使用
+% \maketitle
+
+% 生成带USTC校徽的中英文分开的扉页
+% 安徽大学模板暂不支持此项
+%  \makeseparatetitle
+
+%生成安徽大学格式的扉页
+\makeahnutitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 前言部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+%  % 致谢 %根据安徽大学格式要求，致谢应在文末
+%  \include{chapter/thanks}
+
+% 题目、摘要、关键词
+\include{chapter/abstract}
+% 目录
+% \tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+\include{chapter/user_guid}
+\include{chapter/chap-intro}
+\include{chapter/chap-body}
+\include{chapter/chap-math}
+\include{chapter/chap-figure}
+\include{chapter/chap-table}
+\include{chapter/chap-bib}
+\include{chapter/chap-faq}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 附件部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\backmatter
+
+% 参考文献
+% 使用 BibTeX
+\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
+\bibliography{bib/tex}
+\nocite{*} % for every item
+
+
+% 附录
+\begin{appendix}
+  %这里还需要修改
+  %\titleformat*{\chapter}{}
+  \include{chapter/chap-app}
+\end{appendix}
+
+% 致谢
+\include{chapter/thanks}
+
+\end{document}
