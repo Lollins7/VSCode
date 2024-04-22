@@ -494,74 +494,7 @@
 \newcommand*{\cnkeywords}[1]{\gdef\@cnkeywords{#1}}
 \global\let\@keywords\@empty
 \global\let\@cnkeywords\@empty
-\newcommand{\enabstractname}{Abstract}
-\newcommand{\cnabstractname}{摘$\quad$要}
 \newcommand{\thankspagename}{致$\quad$谢}
-\newenvironment{cnabstract}{%
-  %\newpage  
-  \if@twocolumn
-    \section*{\cnabstractname}%
-  \else
-    \small
-    \chapter*{~~~}
-    \vspace{-150pt}
-    \addcontentsline{toc}{chapter}{\texorpdfstring{摘$\quad$要}{摘要}}
-    \begin{center}%
-      \vskip 4.5cm
-      \heiti\sanhao\textbf{$\qquad$\@title\ifx\@titletail\@empty\else\@titletail\fi$\qquad$}\\
-      \vskip 20pt
-      \phantomsection
-      \setlength{\baselineskip}{16pt}
-      %{\bfseries\sihao \cnabstractname\vspace{.5em}\vspace{\z@}}%
-      {\bfseries\sihao \cnabstractname}%
-    \end{center}%
-    % 作者信息
-    \begin{center}
-      王子颉 $\quad$ 数学与统计学院
-    \end{center}
-    \vspace{-15pt}
-    \wuhao\fangsong\quotation
-  \fi}
-{\if@twocolumn\else\endquotation
-    \vskip 16pt
-    \xiaosihao\songti\textbf{$\qquad$关键字:$\quad$\@cnkeywords}
-    \setlength{\baselineskip}{20pt}
-  \fi}
-
-
-\newenvironment{abstract}{%
-  %\newpage
-  \if@twocolumn
-    \section*{\abstractname}%
-  \else
-    \small
-    %小trick，让新环境在oneside和twoside时均能够生成正确的页面，即双面时openright可以正确生成空白页，下同
-    \chapter*{~~}
-    \vspace{-150pt}
-    \addcontentsline{toc}{chapter}{Abstract}
-    \begin{center}%
-      \setlength{\baselineskip}{20pt}
-      \vskip 4.5cm
-        {\fontspec{Times New Roman}\bfseries\sihao{$\qquad$\@entitle$\qquad$}}\\
-      \vskip 20pt
-      \phantomsection
-      \setlength{\baselineskip}{16pt}
-      %{\fontspec{Times New Roman}\bfseries\sihao \enabstractname\vspace{.5em}\vspace{\z@}}%
-      {\fontspec{Times New Roman}\bfseries\sihao \enabstractname}
-    \end{center}
-    %author information
-    \begin{center}
-      Zijie Wang $\quad$ School of Mathematics and Statistics
-    \end{center}
-    \vspace{-15pt}
-    \fontspec{Times New Roman}\wuhao\quotation
-  \fi}
-{\if@twocolumn\else\endquotation
-    \vskip 16pt
-      {\fontspec{Times New Roman}\bfseries\xiaosihao{$\qquad$Keywords:$\quad$\@keywords}}
-    \setlength{\baselineskip}{20pt}
-  \fi}
-
 
 \newenvironment{thankspage}{%
   \newpage
