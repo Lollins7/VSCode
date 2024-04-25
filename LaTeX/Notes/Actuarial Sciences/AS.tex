@@ -66,13 +66,13 @@
 
 
 \DeclareRobustCommand{\annu}[1]{_{%
-\def\arraystretch{0}%
-\setlength\arraycolsep{1pt}% adjust these
-\setlength\arrayrulewidth{.2pt}% two settings
-\begin{array}[b]{@{}c|}\hline
-\\[\arraycolsep]%
-\scriptstyle #1%
-\end{array}%
+    \def\arraystretch{0}%
+    \setlength\arraycolsep{1pt}% adjust these
+    \setlength\arrayrulewidth{.2pt}% two settings
+    \begin{array}[b]{@{}c|}\hline
+        \\[\arraycolsep]%
+        \scriptstyle #1%
+    \end{array}%
 }}
 
 \begin{document}
@@ -123,7 +123,7 @@
 %\section*{更新日志}
 %2024.2.28
 %
-%由H.M. King老师领导的编写组成立, 由WZJ和LJR完成了初步模板的编写. 
+%由H.M. King老师领导的编写组成立, 由WZJ和LJR完成了初步模板的编写.
 \newpage
 
 \begin{center}
@@ -405,12 +405,12 @@ $s_{T(x)}(t)=e^{-\int_0^t\mu_x(s)ds}.$ 又因为$\mu_x(t)=\mu(x+t),$ 故
 注意到 $ S_{T(x)}(t)=P(T(x)>t)$表示个体$ (x)$在$t$年后还活着的概率; 而$F_{T(x)}(t)=P(T(x)\le t)$表示个体$(x)$在$t$年内死去的概率. 这些记号都很复杂, 书写比较困难. 故精算学中需引入一些简单的记号.
 
 
-定义如下几个记号：
+定义如下几个记号:
 \begin{enumerate}
     \item[$\mathring 1.$] 用$_tp_{x}\stackrel{\text{def}}{=}P(T(x)>t)=S_{T(x)}(t)$
         表示个体$(x)$在$t$年后还活着的概率. 显然有
         $$ {}_tP_x=S_{T(x)}(t)=\mathrm{e}^{-\int_{0}^{t}\mu_x(s)\mathrm{d}s}=\mathrm{e}^{-\int_{0}^{t}\mu(x+s)\mathrm{d}s}=\mathrm{e}^{-\int_{x}^{x+t}\mu(s)\mathrm{d}s}.$$
-    \item[$\mathring 2.$] 用$_tq_{x}\stackrel{\text{def}}{=}P(T(x\leq t)=F_{T(x)}(t))$
+    \item[$\mathring 2.$] 用$_tq_{x}\stackrel{\text{def}}{=}P(T(x)\leq t)=F_{T(x)}(t)$
         表示一个$x$岁的人在$t$年内死亡的概率. 易知
         $$_tp_{x}+{}_tq_{x}=1.$$
     \item[$\mathring 3.$] 用$ _{u|t}q_x=P(u<T(x)\leq u+t)$
@@ -495,7 +495,7 @@ $\mathscr{L}(x)$ 为在$x$ 岁还活着的总人数;
 
 $_t \mathscr{D}_x$为$[x,x+t]$内死去的总人数.
 
-设系统中初始时刻的$l_0$个人的寿命分别为$X_1,X_2,⋯,X_n$, 则他们独立同分布, 且
+设系统中初始时刻的$l_0$个人的寿命分别为$X_1,X_2,?,X_n$, 则他们独立同分布, 且
 $$P(X_i>t)=s(t), i=1,...,n.$$
 显然有
 \begin{align*}
@@ -720,12 +720,12 @@ $${}_nm_x=\dfrac{{}_nq_x}{\int_0^n{}_tp_xdt}=\dfrac{{}_nd_x/l_x}{\int_0^n\dfrac{
     \item[{\bf\hei 一.}]{\bf\hei 为什么引入分数年龄死亡力假设?}
 \end{itemize}
 
-$_{k}P_{x}=\frac{l_{x+k}}{l_{x}},$若$k$为整数, 可查生命表计算$_{k}P_{x},$例如：$_{2}P_{20}=\frac{l_{22}}{l_{20}}.$
+$_{k}P_{x}=\frac{l_{x+k}}{l_{x}},$若$k$为整数, 可查生命表计算$_{k}P_{x},$例如: $_{2}P_{20}=\frac{l_{22}}{l_{20}}.$
 
-但如果$k$不是整数, 例如：$_{2.5}P_{20}=\frac{l_{22.5}}{20},$求$l_{22.5}$的值. 发现无法查表得出.
+但如果$k$不是整数, 例如: $_{2.5}P_{20}=\frac{l_{22.5}}{20},$求$l_{22.5}$的值. 发现无法查表得出.
 则可以令$T(x)=K(x)+S(x),$其中K(x)是整数部分, S(x)是分数部分.
 
-关于S(x)服从的分布可以满足以下两个假设：
+关于S(x)服从的分布可以满足以下两个假设:
 
 {\rm\bf(i)}死亡力均匀分布假设$S(x)\sim U(0,1)$
 
@@ -735,14 +735,14 @@ $_{k}P_{x}=\frac{l_{x+k}}{l_{x}},$若$k$为整数, 可查生命表计算$_{k}P_{
     \item[{\bf\hei 二.}]{\bf\hei 死亡力均匀分布假设(UDD假设)}
 \end{itemize}
 
-{\rm\bf(i)}定义：若$x$为非负整数, $s(t)$是生存函数, 若$\forall t\in [0,1),$都有:
+{\rm\bf(i)}定义: 若$x$为非负整数, $s(t)$是生存函数, 若$\forall t\in [0,1),$都有:
 \begin{align}\label{tul}
      & s(x+t)=(1-t)s(x)+ts(x+1).
 \end{align}
 
 称在$[x,x+1)$上, 死亡力均匀分布假设成立.
 
-{\rm\bf(ii)}设$[x,x+1)$上UDD假设成立, 则有以下结论：
+{\rm\bf(ii)}设$[x,x+1)$上UDD假设成立, 则有以下结论:
 \begin{enumerate}
     \item[$\mathring 1.$] $l_{x+t}=(1-t)l_{x}+tl_{x+1},t\in [0,1).$
 
@@ -817,7 +817,7 @@ $_{k}P_{x}=\frac{l_{x+k}}{l_{x}},$若$k$为整数, 可查生命表计算$_{k}P_{
     \item[{\bf\hei 三.}]{\bf\hei 常数死亡力假设}
 \end{itemize}
 
-{\rm\bf(i)}  定义：设$x$为整数, 若$\forall t\in [0,1)$, 有
+{\rm\bf(i)}  定义: 设$x$为整数, 若$\forall t\in [0,1)$, 有
 \begin{align}\label{tul}
     \ln s(x+t)=(1-t)\ln s(x)+t\ln s(x+1).
 \end{align}
@@ -852,7 +852,7 @@ $_{k}P_{x}=\frac{l_{x+k}}{l_{x}},$若$k$为整数, 可查生命表计算$_{k}P_{
 \end{proposition}
 
 \begin{example}
-    设$S(x)=1-\frac{x}{12},\ 0\leq x\leq 12$, $l_{0}$个个体相互独立, 生存函数都是$S(x)$.问：
+    设$S(x)=1-\frac{x}{12},\ 0\leq x\leq 12$, $l_{0}$个个体相互独立, 生存函数都是$S(x)$.问:
 
     (1) 求$(_{3}\mathscr D _{0},\ _{3}\mathscr D_{3},\ _{3}\mathscr D _{6},\ _{3}\mathscr D _{9})$的联合分布;
 
@@ -868,7 +868,7 @@ $$_{3}\mathscr D _{3}=\sum^{l_{0}}_{k=1}I_{\{3\leq x_k \leq 6\}}$$
 $$_{3}\mathscr D _{6}=\sum^{l_{0}}_{k=1}I_{\{6\leq x_k \leq 9\}}$$
 $$_{3}\mathscr D _{9}=\sum^{l_{0}}_{k=1}I_{\{9\leq x_k \leq 12\}}$$
 
-(1)令事件$A=\{_{3}\mathscr D _{0}=k_{1},\ _{3}\mathscr D _{3}=k_{2},\ _{3}\mathscr D _{6}=k_{3},\ _{3}\mathscr D _{9}=k_{4}\}$, 若事件$A$发生, 则认为在$l_{0}$中, 有$k_{1}$人在$[0,3]$死亡; 有$k_{2}$人在$[3,6]$死亡; 有$k_{3}$人在$[6,9]$死亡; 有$k_{4}$人在$[9,12]$死亡.其中$k_{1}+k_{2}+k_{3}+k_{4}=l_{0}.$从$k_{1}+k_{2}+k_{3}+k_{4}$个人中, 选出$k_{1}$个人在$[0,3]$内死亡, 有$C_{k_{1}+k_{2}+k_{3}+k_{4}}^{k_{1}}$种选法; 从$k_{2}+k_{3}+k_{4}$个人中, 选出$k_{2}$个人在$[3,6]$内死亡, 有$C_{k_{2}+k_{3}+k_{4}}^{k_{2}}$种选法; 从$k_{3}+k_{4}$个人中, 选出$k_{3}$个人在$[6,9]$内死亡, 有$C_{k_{3}+k_{4}}^{k_{3}}$种选法...以此推出：
+(1)令事件$A=\{_{3}\mathscr D _{0}=k_{1},\ _{3}\mathscr D _{3}=k_{2},\ _{3}\mathscr D _{6}=k_{3},\ _{3}\mathscr D _{9}=k_{4}\}$, 若事件$A$发生, 则认为在$l_{0}$中, 有$k_{1}$人在$[0,3]$死亡; 有$k_{2}$人在$[3,6]$死亡; 有$k_{3}$人在$[6,9]$死亡; 有$k_{4}$人在$[9,12]$死亡.其中$k_{1}+k_{2}+k_{3}+k_{4}=l_{0}.$从$k_{1}+k_{2}+k_{3}+k_{4}$个人中, 选出$k_{1}$个人在$[0,3]$内死亡, 有$C_{k_{1}+k_{2}+k_{3}+k_{4}}^{k_{1}}$种选法; 从$k_{2}+k_{3}+k_{4}$个人中, 选出$k_{2}$个人在$[3,6]$内死亡, 有$C_{k_{2}+k_{3}+k_{4}}^{k_{2}}$种选法; 从$k_{3}+k_{4}$个人中, 选出$k_{3}$个人在$[6,9]$内死亡, 有$C_{k_{3}+k_{4}}^{k_{3}}$种选法...以此推出:
 $$
     P(A)=\frac{(k_{1}+k_{2}+k_{3}+k_{4})!}{k_{1}!k_{2}!k_{3}!k_{4}!}\cdot {}_{3}q_{0}^{k_{1}}\cdot {}_{3|3}q_{0}^{k_{2}}\cdot {}_{6|3}q_{0}^{k_{3}}\cdot {}_{9|3}q_{0}^{k_{4}}
 $$
@@ -877,11 +877,11 @@ $$
 
 因此, 对于每个随机变量$_{3}\mathscr D_{k}$:
 
-期望：$$E(_{3}\mathscr D_{k}) = \frac{l_0}{4};$$
+期望: $$E(_{3}\mathscr D_{k}) = \frac{l_0}{4};$$
 
-方差：$$\text{Var}(_{3}\mathscr D_{k}) = l_0 \cdot \frac{1}{4} \cdot \left(1 - \frac{1}{4}\right) = \frac{3l_0}{16}.$$
+方差: $$\text{Var}(_{3}\mathscr D_{k}) = l_0 \cdot \frac{1}{4} \cdot \left(1 - \frac{1}{4}\right) = \frac{3l_0}{16}.$$
 
-(3) 以$_{3}\mathscr D _{0},\ _{3}\mathscr D _{3}$的相关系数为例：
+(3) 以$_{3}\mathscr D _{0},\ _{3}\mathscr D _{3}$的相关系数为例:
 \begin{align*}
     \text{Cov}(_{3}\mathscr D _{0},\ _{3}\mathscr D _{3}) & =E(_{3}\mathscr D _{0}\ _{3}\mathscr D _{3})-E(_{3}\mathscr D _{0})E(_{3}\mathscr D _{3})                                \\
                                                           & =E(\sum ^{l_{0}}_{k=1}I_{\{0\leq x_{k}\leq 3\}}\cdot \sum ^{l_{0}}_{j=1}I_{\{3\leq x_{j}\leq 6\}})-(\frac{l_{0}}{4})^{2} \\
@@ -891,7 +891,7 @@ $$
 \end{align*}
 (对于$\sum^{l_{0}}_{k=1}\sum_{j\neq k}E(I_{\{0\leq x_{k}\leq 3\}}\cdot I_{\{3\leq x_{k}\leq 6\}}) = \frac{l_{0}(l_{0}-1)}{16}$的理解: 其中$\sum^{l_{0}}_{k=1}\sum_{j\neq k} = l_0(l_0-1)$, 而$p(I_{c\leq x_{k}\leq c+3}) = \frac14$, 故$I_{0\leq x_{k}\leq 3}$与$I_{3\leq x_{k}\leq 6}$同时取1的概率为$\frac{1}{16}$.)
 
-求出协方差即可求相关系数：
+求出协方差即可求相关系数:
 \begin{align*}
     \rho(_{3}\mathscr D _{0},\ _{3}\mathscr D _{3}) & =\frac{\text{Cov}(_{3}\mathscr D_{0},\ _{3}\mathscr D _{3})}{\sqrt{D(_{3}\mathscr D _{0})}\cdot \sqrt{D(_{3}\mathscr D _{3})}} \\
                                                     & =\frac{-\frac{l_{0}}{16}}{\sqrt{\frac{3}{16}l_{0}\cdot \frac{3}{16}l_{0}}}                                                     \\
@@ -928,9 +928,9 @@ $$
     $i$为复利率, $v=\frac{1}{1+i}$为贴现因子, $\delta=\ln (1+i)$为利息力.
 
     (1) 设$\mu_{x}(t)\equiv \mu =0.05, \delta\equiv 0.04$,
-    求：$E(v^{T(x)});D(v^{T(x)}); E(\int_{0}^{T(x)}v^{t}dt); D(\int_{0}^{T(x)}v^{t}dt)$;
+    求: $E(v^{T(x)});D(v^{T(x)}); E(\int_{0}^{T(x)}v^{t}dt); D(\int_{0}^{T(x)}v^{t}dt)$;
 
-    (2) 设UDD成立, 求证：$E(v^{T(x)})=\frac{i}{\delta}E(v^{K(x)+1})$.
+    (2) 设UDD成立, 求证: $E(v^{T(x)})=\frac{i}{\delta}E(v^{K(x)+1})$.
 \end{exs}
 
 
@@ -971,7 +971,9 @@ $$
     \item[{\bf\hei 一.}]{\bf\hei 支付方式与支付条件}
 \end{itemize}
 
-若被保险人在$n$年内死亡(即$T(x)<n$), 则不予任何支付; 若他在n年内未死(即$T(x)\geqslant n$), 则在$n$时刻支付他1元保险金.
+若被保险人在$n$年内死亡(即$T(x)<n$), 则不予任何支付;
+
+若他在$n$年内未死(即$T(x)\geqslant n$), 则在$n$时刻支付他1元保险金.
 \begin{itemize}
     \item[{\bf\hei 二.}]{\bf\hei 支付现值$Z$}
 \end{itemize}
@@ -985,12 +987,12 @@ $$
 \begin{itemize}
     \item[{\bf\hei 三.}]{\bf\hei 精算现值EZ}
 \end{itemize}
-\begin{align}\label{sf}
+\begin{align*}
     E\left( Z \right) =E\left( v^nI_{\left\{ T\left( x \right) \geqslant n \right\}} \right) =v^nE\left( I_{\left\{ T\left( x \right) \geqslant n \right\}} \right)
     =v^nP\left( T\left( x \right) \geqslant n \right) =v^n\cdot{}_np_x
-\end{align}
+\end{align*}
 
-n年期生存保险的精算现值记为$A_{x:}\frac{1}{\annu{n}}$或$_nE_x$
+n年期生存保险的精算现值记为$A_{x:\annu{n}^1}$或$_nE_x$
 
 所以$A_{x:}\frac{1}{\annu{n}}\equiv {}_nE_x=v^n\cdot{}_np_x$
 \begin{itemize}
@@ -1010,7 +1012,7 @@ $$DZ=EZ^2-\left( EZ \right) ^2=v^{2n}\cdot{}_np_x\cdot{}_nq_x$$
     \end{align}
 \end{proposition}
 \proof
-$$_nE_x=v^n\cdot {}_np_x=v^k\cdot v^{n-k}\cdot {}_kp_x\cdot {}_{n-k}p_{x+k}=_kE_x\cdot {}_{n-k}E_{x+k}$$
+$$_nE_x=v^n\cdot {}_np_x=v^k\cdot v^{n-k}\cdot {}_kp_x\cdot {}_{n-k}p_{x+k}={}_kE_x\cdot {}_{n-k}E_{x+k}$$
 
 由(2.1)和(2.2)可知,
 $$_nE_x=v^k\cdot {}_kp_x\cdot {}_{n-k}E_{x+k}=(\frac{1}{i+1})^k\cdot\frac{l_{x+k}}{l_x}\cdot {}_{n-k}E_{x+k}$$
@@ -1020,13 +1022,13 @@ $$_nE_x=v^k\cdot {}_kp_x\cdot {}_{n-k}E_{x+k}=(\frac{1}{i+1})^k\cdot\frac{l_{x+k
 
 
 \begin{remark}
-    等式$(1+i)^k\cdot l_x\cdot {}_nE_x=l_{x+k}\cdot {}_{n-k}E_{x+k}$的含义是：
+    等式$(1+i)^k\cdot l_x\cdot {}_nE_x=l_{x+k}\cdot {}_{n-k}E_{x+k}$ 的含义是:
 
     在0时刻, $l_x$个人各自买了一份n年期的生存保险, 保费总额为$l_x\cdot {}_nE_x$, k年后, 这笔钱的积累值为$(1+i)^k\cdot l_x\cdot {}_nE_x$,若此时保险公司破产不干了, 他分给在k时刻还活着的$l_{x+k}$个人每人$_{n-k}E_{x+k}$元, 这正好够每个人去重新买一份$n-k$ 年期的生存保险.
 \end{remark}
 \section{$n$年期(定期)死亡保险}
 
-一个个体$(x)$投了一份n年期死亡保险, 约定：若$(x)$在$n$年内死亡, 则在其死亡时刻立刻支付$1$元保险金或在其死亡年末支付$1$元保险金.
+一个个体$(x)$投了一份n年期死亡保险, 约定: 若$(x)$在$n$年内死亡, 则在其死亡时刻立刻支付$1$元保险金或在其死亡年末支付$1$元保险金.
 
 死亡立即支付——连续型
 
@@ -1053,13 +1055,12 @@ $$_nE_x=v^k\cdot {}_kp_x\cdot {}_{n-k}E_{x+k}=(\frac{1}{i+1})^k\cdot\frac{l_{x+k
 \end{itemize}
 \begin{remark}
     符号$\overline{A}_{x:\annu{n}}^1$中, 上划线表示死亡立即支付(连续型), 1表示保险金为1元, $x$表示保险人为$x$岁, $n$表示$n$年期死亡保险.
-    $$
-        \overline{A}_{x:\annu{n}}^1=EZ=E\left( v^{T\left( x \right)}I_{\left\{ T\left( x \right) <n \right\}} \right) =\int_0^{\infty}{v^{t}I_{\left\{ T\left( x \right) <n \right\}}\cdot f_{T(x)}(t)dt}
-    $$
-    $$
-        =\int_0^{n}{v^{t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}=\int_0^{n}{e^{-\delta t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}
-    $$
+    \begin{align*}
+        \overline{A}_{x:\annu{n}}^1= & EZ=E\left( v^{T\left( x \right)}I_{\left\{ T\left( x \right) <n \right\}} \right) =\int_0^{\infty}{v^{t}I_{\left\{ t <n \right\}}\cdot f_{T(x)}(t)dt} \\
+        =                            & \int_0^{n}{v^{t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}=\int_0^{n}{e^{-\delta t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}
+    \end{align*}
 \end{remark}
+
 \begin{proposition}
     $\forall 0\leqslant k\leqslant n$, 有
     \begin{align}\label{4}
@@ -1083,7 +1084,7 @@ $$\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt}=\i
 
 所以$l_x\cdot\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot l_{x+t}\cdot \mu_{x}(t)dt}$.
 \qed
-\begin{remark}等式$(2.5)$的含义：
+\begin{remark}等式$(2.5)$的含义:
 
     $\mu_x(t)dt$表示在$[x+t.x+t+dt]$内死去的概率, 所以$l_{x+t}\mu_x(t)dt$表示在$[x+t,x+t+dt]$内死去的人数, 在这期间内死去的人每人支付1元保险金, 共$l_{x+t}\mu_x(t)dt$ 元, 这些钱的现值为$v^t l_{x+t}\mu_x(t)dt$,于是$\int_0^n{v^t l_{x+t}\mu_x(t)dt}$表示在$[x,x+n]$内死去的人领取的保险的总现值, 这些钱应等于初始时刻的$l_x$个人的保费总额$l_x\overline{A}_{x:\annu{n}}^1$, 即$l_x\cdot\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot l_{x+t}\cdot \mu_{x}(t)dt}$
 
@@ -1093,10 +1094,10 @@ $$\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt}=\i
     \item[{\bf\hei 5.}]{\bf\hei $Z$的方差$DZ$}
 \end{itemize}
 
-记：$^j\overline{A}_{x:\annu{n}}^1=\int_0^{\infty}{e^{-j\delta t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}$,它表示在计算$\overline{A}_{x:\annu{n}}^1$的过程中, 将$\delta$换成$j\delta$后的值($^j\overline{A}_{x:\annu{n}}^1@\delta=\overline{A}_{x:\annu{n}}^1@j\delta$)
+记: $^j\overline{A}_{x:\annu{n}}^1=\int_0^{\infty}{e^{-j\delta t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}$,它表示在计算$\overline{A}_{x:\annu{n}}^1$的过程中, 将$\delta$换成$j\delta$后的值($^j\overline{A}_{x:\annu{n}}^1@\delta=\overline{A}_{x:\annu{n}}^1@j\delta$)
 \begin{align*}
-    E(Z^2) & =E((v^{T(x)}I_{T(x)<n})^2)=E(v^{2T(x)}I_{T(x)<n})                                  \\
-           & =E(e^{-2\delta T(x)}I_{T(x)<n})=\int_0^{\infty}{e^{-\delta t}I_{t<n}f_{T(x)}(t)dt} \\
+    E(Z^2) & =E((v^{T(x)}I_{T(x)<n})^2)=E(v^{2T(x)}I_{T(x)<n})                                   \\
+           & =E(e^{-2\delta T(x)}I_{T(x)<n})=\int_0^{\infty}{e^{-2\delta t}I_{t<n}f_{T(x)}(t)dt} \\
            & =\int_0^n{e^{-2\delta t}{}_tp_x\mu_x(t)dt}={}^2\overline{A}_{x:\annu{n}}^1
 \end{align*}
 
@@ -1152,7 +1153,7 @@ $$Z=v^{K(x)+1}I_{\{T(x)<n\}}$$
         \hline
     \end{tabular}
 \end{center}
-$P(K\leq T(x) < K+1) = {}_{k|}q_x$, 故$A_{x:\annu{n}}^1 = E(Z) = \sum_{k=0}^{n-1}v^{k+1}{}_{k|}q_x$
+$P(K(x)\leq T(x) < K(x)+1) = {}_{k|}q_x$, 故$A_{x:\annu{n}}^1 = E(Z) = \sum_{k=0}^{n-1}v^{k+1}{}_{k|}q_x$
 
 \begin{itemize}
     \item[{\bf\hei 4.}]{\bf\hei $Z$的方差$DZ$}
@@ -1165,15 +1166,21 @@ $$DZ = {}^2A_{x:\annu{n}}^1 - (A_{x:\annu{n}}^1)^2$$
     \item [{\bf\hei 5.}] {\bf\hei 几个性质: }
 \end{itemize}
 
-{\rm\bf(i)} $A_{x:\annu{n}}^1=A_{x:}^1{}_{\annu m}+{}_mE_x\cdot A_{x+m:}^1{}_{\annu {n-m}}~,\forall~0\leq m\leq n$
+{\rm\bf(i)} \begin{align}\label{eq2.5}
+    A_{x:\annu{n}}^1=A_{x:}^1{}_{\annu m}+{}_mE_x\cdot A_{x+m:}^1{}_{\annu {n-m}}~,\forall~0\leq m\leq n
+\end{align}
 
 特别地, 当$m=1$时, $A_{x:\annu{1}}^1 = vq_x,~E_x = vp_x$.
 
-    {\rm\bf(ii)} $A_{x:\annu{n}}^1=vq_x+vp_x\cdot A_{x:\annu{n-1}}^1$
+    {\rm\bf(ii)} \begin{align}
+    A_{x:\annu{n}}^1=vq_x+vp_x\cdot A_{x:\annu{n-1}}^1
+\end{align}
 
-{\rm\bf(iii)} $(1+i)l_x A_{x:\annu{n}}^1 = d_x + l_{x+1} A_{x+1:\annu{n-1}}^1$
+{\rm\bf(iii)} \begin{align}(1+i)l_x A_{x:\annu{n}}^1 = d_x + l_{x+1} A_{x+1:\annu{n-1}}^1
+\end{align}
 
-\proof
+\proof (\ref{eq2.5})
+
 对于$0\leq m \leq n$, 有
 \begin{align*}
     A_{x:\annu{n}}^1 & = \sum_{k=0}^{n-1}v^{k+1}{}_{k|}q_x                                        \\
@@ -1183,7 +1190,7 @@ $$DZ = {}^2A_{x:\annu{n}}^1 - (A_{x:\annu{n}}^1)^2$$
 \end{align*}
 \qed
 
-等式$(1+i)l_x A_{x:\annu{n}}^1 = d_x + l_{x+1} A_{x+1:\annu{n-1}}^1$的含义:
+等式$(1+i)l_x A_{x:\annu{n}}^1 = d_x + l_{x+1} A_{x+1:\annu{n-1}}^1$ 的含义:
 
 此式的左端表示在0时刻, $l_x$个人各自买了一份$n$年期的死亡保险, 保费总额为$l_x A_{x:\annu{n}}^1$. 一年后, 这笔钱的积累值为$(1+i)l_x A_{x:\annu{n}}^1$. 在$[0,1]$之间有$d_x$个人死去, 保险公司需给他们每人$1$元, 共$d_x$元. 若此时保险公司破产不干了, 他分给在1时刻还活着的$l_{x+1}$个人每人$A_{x+1:\annu{n-1}}^1$元, 这正好够每个人去重新买一份$n-1$年期的死亡保险.
 
@@ -1204,7 +1211,7 @@ $$DZ = {}^2A_{x:\annu{n}}^1 - (A_{x:\annu{n}}^1)^2$$
     \item[{\bf\hei 三.}]{\bf\hei 死亡年末支付与死亡立即支付的关系}
 \end{itemize}
 \begin{proposition}
-    设死亡力均匀分布假设成立, 则$\overline{A}_{x:\annu{n}}^1 = \frac{i}{\delta}A_{x:\annu{n}}^1$
+    设死亡力均匀分布假设成立, 则$\overline{A}_{x:\annu{n}}^1 = \frac{i}{\delta}A_{x:\annu{n}}^1$.
 \end{proposition}
 
 \proof
@@ -1232,35 +1239,36 @@ $$DZ = {}^2A_{x:\annu{n}}^1 - (A_{x:\annu{n}}^1)^2$$
     \item[{\bf\hei 2.}]{\bf\hei 支付现值$Z$: }
 \end{itemize}
 
-$Z = v^{T(x)}$
+$Z = v^{T(x)}.$
 
 \begin{itemize}
     \item[{\bf\hei 3.}]{\bf\hei 精算现值用$\overline{A}_x$表示}
 \end{itemize}
 
-$$
+$
     \overline{A}_x=E(Z)=\int_0^\infty v^t{}_tp_x\mu_x(t)\mathrm{d}t.
-$$
+$
 
 \begin{itemize}
     \item[{\bf\hei 4.}]{\bf\hei $Z$的方差$DZ$}
 \end{itemize}
 
 $E(Z^2) = \int_0^\infty v^{2t}{}_tp_x\mu_x(t)\mathrm{d}t = {}^2\overline{A}_x$, 故
-$$
+$
     DZ = E(Z^2) - E(Z)^2 = {}^2\overline{A}_x - (\overline{A}_x)^2
-$$
+$
 
 \begin{itemize}
     \item[{\bf\hei 5.}]{\bf\hei 几个性质: }
 \end{itemize}
 
-{\rm\bf(i)} $\overline{A}_x = \overline{A}_{x:\annu{n}}^1 + {}_nE_{x}\cdot \overline{A}_{x+n}$
+{\rm\bf(i)} \begin{align}\label{eq2.9}
+    \overline{A}_x = \overline{A}_{x:\annu{n}}^1 + {}_nE_{x}\cdot \overline{A}_{x+n}\end{align}
 
-{\rm\bf(ii)} $\frac{d\overline{A}_x}{dx} = \delta \overline{A}_x + \mu(x)(\overline{A}_x - 1)$
+{\rm\bf(ii)} \begin{align}\label{eq2.10}
+    \frac{d\overline{A}_x}{dx} = \delta \overline{A}_x + \mu(x)(\overline{A}_x - 1)\end{align}
 
-\proof
-{\rm\bf(i)}
+\proof (\ref{eq2.9})
 \begin{align*}
     \overline{A}_x & = E(v^{T(x)})                                                                                           \\
                    & = E(v^{T(x)}I_{T(x)\leq n}) + E(v^{T(x)}I_{T(x)> n})                                                    \\
@@ -1269,7 +1277,8 @@ $$
                    & = \overline{A}_{x:\annu{n}}^1 + {}_nE_{x}\cdot \overline{A}_{x+n}
 \end{align*}
 
-{\rm\bf(ii)}
+(\ref{eq2.10})
+
 已知$\overline{A}_x=\int_0^\infty e^{-\delta t}{}_tp_x\mu_x(t)\mathrm{d}t, \frac{d{}_tp_x}{dt} = -{}_tp_x\mu_x(t)$, 故
 $$
     \overline{A}_x=-\int_0^\infty e^{-\delta t}\mathrm{d}({}_tp_x) = -e^{-\delta t}{}_tp_x|_0^\infty -\int_0^\infty \delta e^{-\delta t}{}_tp_x\mathrm{d}t = 1 - \delta \int_0^\infty e^{-\delta t}{}_tp_x\mathrm{d}t
@@ -1282,10 +1291,510 @@ $$
                                & = \delta \overline{A}_x + \mu(x)(\overline{A}_x - 1)
 \end{align*}
 \qed
+\begin{example}
+    设死亡力为$u$, 利息力为$\delta$,个体$(x)$投了一份死亡立即支付的终身寿险, 求$\overline{A}_{x}, {}^2\overline{A}_{x} $和给付现值$Z$的方差$D(Z)$.
+
+    \solution
+    \begin{align*}
+        \overline{A}_{x}     & =\int_0^{\infty}e^{-\delta t}\cdot {}_tp_x\cdot u_x(t)dt                                \\
+                             & =\int_0^{\infty}e^{-\delta t}\cdot e^{-\int_x^{x+t}u(s)ds}\cdot u_x(t)dt                \\
+                             & =\int_0^{\infty}e^{-\delta t}\cdot e^{-\int_x^{x+t}uds}\cdot udt                        \\
+                             & =\int_0^{\infty}e^{-\delta t}\cdot e^{-ut}\cdot udt                                     \\
+                             & =\frac{u}{\delta +u}                                                                    \\
+        {}^2\overline{A}_{x} & =\frac{u}{2\delta +u}                                                                   \\
+        DZ                   & ={}^2\overline{A}_{x}-(\overline{A}_{x})^2=\frac{u}{2\delta +u}-(\frac{u}{\delta +u})^2
+    \end{align*}
+\end{example}
+\qed
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 死亡年末支付的终身寿险}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}]{\bf\hei 支付方式: }
+\end{itemize}
+
+在个体$(x)$死亡的年末, 保险人支付$1$元保险金.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}]{\bf\hei 支付现值$Z$: }
+\end{itemize}
+
+$Z=v^{K(x)+1}$.
+\begin{itemize}
+    \item[{\bf\hei 3.}]{\bf\hei 精算现值$A_x$: }
+\end{itemize}
+\begin{align*}
+    A_x & =E(Z)=E(v^{K(x)+1})                            \\
+        & =\sum_{k=0}^{\infty }{v^{k+1}P(K(x)=k)}        \\
+        & =\sum_{k=0}^{\infty }{v^{k+1}P(k\le T(x)<k+1)} \\
+        & =\sum_{k=0}^{\infty }{v^{k+1}{}_{k|}q_x}       \\
+\end{align*}
+\begin{itemize}
+    \item[{\bf\hei 4.}]{\bf\hei 性质: }
+\end{itemize}
+
+{\rm\bf(i)} \begin{align}{A}_x = {A}_{x:\annu{n}}^1 + {}_nE_{x}\cdot {A}_{x+n}\end{align}
+
+{\rm\bf(ii)} \begin{align}{A}_x = vq_x + v p_x\cdot {A}_{x+1}\end{align}
+
+{\rm\bf(iii)} \begin{align}(1+i){A}_x = q_x + p_x\cdot {A}_{x+1}\end{align}
+
+{\rm\bf(iv)} \begin{align}(1+i)l_x{A}_x = d_x + l_{x+1}\cdot {A}_{x+1}\end{align}
+
+{\rm\bf(v)} \begin{align}\label{eq2.15}l_x{A}_x = \sum_{k=0}^{\infty }{v^{k+1}\cdot d_{x+k}}\end{align}
+
+\proof (\ref{eq2.15})
+
+因为${}_{k|}q_x=\frac {d_{x+k}}{l_x}$, 所以
+\begin{align*}
+    A_x
+     & =\sum_{k=0}^{\infty }{v^{k+1}{}_{k|}q_x}           \\
+     & =\sum_{k=0}^{\infty }{v^{k+1}\frac {d_{x+k}}{l_x}} \\
+\end{align*}
+即
+$$l_x{A}_x = \sum_{k=0}^{\infty }{v^{k+1}\cdot d_{x+k}}$$
+\qed
+\begin{itemize}
+    \item[{\bf\hei 5.}]{\bf\hei $A_x$与$\overline{A}_x$的关系: }
+\end{itemize}
+
+在UDD假设之下, 有$\overline A_x=A_x \dfrac {i}{\delta}$.
+
+\proof
+\begin{align*}
+    \overline A_x
+     & =E(v^{T(x)})                       \\
+     & =E(v^{K(x)+S(x)})                  \\
+     & =E(v^{K(x)+1}\cdot v^{S(x)-1})     \\
+     & =E(v^{K(x)+1})\cdot E( v^{S(x)-1}) \\
+     & =A_x\cdot \frac {i}{\delta}
+\end{align*}
+\qed
+\section{生死合险(两全保险)}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 死亡后立即支付的生死合险}
+\end{itemize}
+\begin{itemize}
+    \item[{\bf\hei 1.}]{\bf\hei 支付方式与支付时刻:}
+\end{itemize}
+
+若个体$(x)$在$n$年内死亡($T(x)<n$), 则保险人在其死亡时立即支付$1$ 元保险金;
+
+若个体$(x)$在$n$年内未死($T(x)\geqslant n$), 则在$n$时刻支付他1元保险金.
+
+故支付时刻为: $T(x)\wedge n=\min \{T(x),n\}$.
+\begin{itemize}
+    \item[{\bf\hei 2.}]{\bf\hei 支付现值$Z$:}
+\end{itemize}
+\begin{align*}
+    Z & =v^{T(x)\wedge n}                                                             \\
+      & =v^{T(x)\wedge n}\cdot I_{\{T(x)<n\}}+v^{T(x)\wedge n}\cdot I_{\{T(x)\ge n\}} \\
+      & =v^{T(x)}\cdot I_{\{T(x)<n\}}+v^{n}\cdot I_{\{T(x)\ge n\}}                    \\
+      & =Z_1(n\text{年期定期寿险的支付现值})+Z_2(n\text{年期生存保险的支付现值})
+\end{align*}
+\begin{itemize}
+    \item[{\bf\hei 3.}]{\bf\hei 精算现值$\overline{A}_{x:\annu{n}}$:}
+\end{itemize}
+
+$\overline{A}_{x:\annu{n}}=E(Z)=E(Z_1)+E(Z_2)=\overline{A}_{x:\annu{n}}^1+
+    \overline{A}_{x:\annu{n}^1}$
+
+\begin{itemize}
+    \item[{\bf\hei 4.}]{\bf\hei 生死合险特征:}
+\end{itemize}
+
+保险公司推出生死合险的原因是为了降低风险, 理由如下:
+\begin{align*}
+    D(Z) & =D(Z_1+Z_2)                                      \\
+         & =D(Z_1)+D(Z_2)+2Cov(Z_1,Z_2)                     \\
+         & =D(Z_1)+D(Z_2)+2(E(Z_1Z_2)-E(Z_1)E(Z_2))         \\
+         & =D(Z_1)+D(Z_2)-2E(Z_1)E(Z_2)                     \\
+         & =D(Z_1)+D(Z_2)-2\overline{A}_{x:\annu{n}}^1\cdot
+    \overline{A}_{x:\annu{n}^1}                             \\
+         & <D(Z_1)+D(Z_2)
+\end{align*}
+故一份生死合险的风险小于一份生存保险与一份定期死亡保险的风险之和.
+
+\begin{itemize}
+    \item[{\bf\hei 5.}]{\bf\hei 性质:}
+\end{itemize}
+
+对$\forall 0\le m \le n$, 有
+\begin{align}\overline{A}_{x:\annu{n}}=
+    \overline{A}_{x:\annu{m}}^1+{}_mE_x\overline{A}_{{x+m}:\annu{n-m}}\end{align}
+
+\proof
+\begin{align*}
+    \overline{A}_{x:\annu{n}} & =\overline{A}_{x:\annu{n}}^1+\overline{A}_{x:\annu{n}^1}                                           \\
+                              & =\overline{A}_{x:\annu{m}}^1+{}_mE_x\overline{A}_{{x+m}:\annu{n-m}}^1+{}_mE_x\cdot {}_{n-m}E_{x+m} \\
+                              & =\overline{A}_{x:\annu{m}}^1
+    +{}_mE_x(\overline{A}_{{x+m}:\annu{n-m}}^1+{A}_{{x+m}:\annu{n-m}^1})                                                           \\
+                              & =
+    \overline{A}_{x:\annu{m}}^1+{}_mE_x\cdot \overline{A}_{{x+m}:\annu{n-m}}
+\end{align*}
+\qed
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 死亡年末支付的生死合险}
+\end{itemize}
+
+$ \{T(x)<n\}=\{K(x)<n\}=\{K(x)+1\le n\}$
+
+$\{T(x)\ge n\}=\{K(x)\ge n\}=\{K(x)+1> n\}$
+\begin{itemize}
+    \item[{\bf\hei 1.}]{\bf\hei 支付方式: }
+\end{itemize}
+
+若个体$(x)$在$n$年内死亡(即$T(x)<n$), 在死亡年末支付$1$元;
+
+若个体$(x)$在$n$年后还活着(即$T(x) \ge n$), 则在$n$时刻支付$1$元.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}]{\bf\hei 支付现值$Z$: }
+\end{itemize}
+
+若$T(x)<n(\Leftrightarrow K(x)<n \Leftrightarrow K(x)+1\le n)$, 则支付时刻为$K(x)+1$;
+
+若$T(x)\ge n(\Leftrightarrow K(x)+1> n)$, 则支付时刻为$n$.
+
+所以支付时刻为$(K(x)+1)\wedge n=\min \{K(x)+1,n\}$, 支付额为$1$元, 于是支付现值为:
+\begin{align*}
+    Z & =v^{(K(x)+1)\wedge n}                                                                 \\
+      & =v^{(K(x)+1)\wedge n}\cdot I_{\{T(x)<n\}}+v^{(K(x)+1)\wedge n}\cdot I_{\{T(x)\ge n\}} \\
+      & =v^{(K(x)+1)}\cdot I_{\{T(x)<n\}}+v^{n}\cdot I_{\{T(x)\ge n\}}                        \\
+      & =Z_1(n\text{年期定期寿险的支付现值})+Z_2(n\text{年期生存保险的支付现值})
+\end{align*}
+\begin{itemize}
+    \item[{\bf\hei 3.}]{\bf\hei 精算现值${A}_{x:\annu{n}}$: }
+\end{itemize}
+
+${A}_{x:\annu{n}}=E(Z)=E(Z_1)+E(Z_2)={A}_{x:\annu{n}}^1+
+    {A}_{x:\annu{n}^1}$
+\begin{itemize}
+    \item[{\bf\hei 4.}]{\bf\hei 方差:}
+\end{itemize}
+
+
+$D(Z)=D(Z_1)+D(Z_2)-2{A}_{x:\annu{n}}^1\cdot
+    {A}_{x:\annu{n}^1}$
+
+\begin{itemize}
+    \item[{\bf\hei 5.}]{\bf\hei 性质:}
+\end{itemize}
+
+{\rm\bf(i)} \begin{align}{A}_{x:\annu{n}} = {A}_{x:\annu{m}}^1 + {}_mE_x{A}_{{x+m}:\annu{n-m}}\end{align}
+
+{\rm\bf(ii)} \begin{align}{A}_{x:\annu{n}} = vq_x + vp_x {A}_{{x+1}:\annu{n-1}}\end{align}
+
+{\rm\bf(iii)} \begin{align}(1+i){l}_x {A}_{x:\annu{n}} = d_x +{l}_{x+1}  {A}_{{x+1}:\annu{n-1}}\end{align}
+
+\begin{itemize}
+    \item[{\bf\hei 6.}]{\bf\hei $\overline{A}_{x:\annu{n}}$与${A}_{x:\annu{n}}$的关系:}
+\end{itemize}
+
+在UDD假设之下, 有\begin{align}\label{eq2.20}
+    \overline{A}_{x:\annu{n}} ={A}_{x:\annu{n}}^1\frac{i-\delta}{\delta}+{A}_{x:\annu{n}}\end{align}
+
+\proof (\ref{eq2.20})
+\begin{align*}
+    \overline{A}_{x:\annu{n}}
+     & =\overline{A}_{x:\annu{n}}^1+{A}_{x:\annu{n}^1}              \\
+     & =\frac {i}{\delta}{A}_{x:\annu{n}}^1+{A}_{x:\annu{n}^1}      \\
+     & =\frac {i}{\delta}{A}_{x:\annu{n}}^1-{A}_{x:\annu{n}}^1
+    +{A}_{x:\annu{n}}^1+{A}_{x:\annu{n}^1}                          \\
+     & =\frac {i-\delta}{\delta}{A}_{x:\annu{n}}^1+{A}_{x:\annu{n}}
+\end{align*}
+\qed
+\section{延期终身死亡保险}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 死亡后立即支付的延期终身死亡保险}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}]{\bf\hei 支付方式与支付条件: }
+\end{itemize}
+
+若个体$(x)$在$m$年内死亡( 即$T(x)<m$),则不予任何支付;
+
+若个体$(x)$在$m$年后还活着( 即$T(x) \ge m$),则在死亡时立即支付$1$元保险金.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}]{\bf\hei 支付现值$Z$: }
+\end{itemize}
+
+$Z=v^{T(x)}\cdot I_{\{T(x)\ge m\}}$
+\begin{itemize}
+    \item[{\bf\hei 3.}]{\bf\hei 精算现值${}_{m|}\overline {A}_{x}$: }
+\end{itemize}
+
+\begin{align*}
+    {}_{m|}\overline {A}_{x} & =E(Z)                                                                \\
+                             & =E(v^{T(x)}\cdot I_{\{T(x)\ge m\}})                                  \\
+                             & =\int_0^{\infty}v^{t}\cdot I_{\{t\ge m\}}\cdot {}_tp_x\cdot u_x(t)dt \\
+                             & =\int_m^{\infty}v^{t}\cdot {}_tp_x\cdot u_x(t)dt                     \\
+                             & =\int_m^{\infty}e^{-\delta t}\cdot {}_tp_x\cdot u_x(t)dt             \\
+\end{align*}
+记
+\begin{align*}
+    {}_{m|}^2\overline {A}_{x} & =\int_m^{\infty}e^{-2\delta t}\cdot {}_tp_x\cdot u_x(t)dt
+\end{align*}
+\begin{itemize}
+    \item[{\bf\hei 4.}]{\bf\hei 方差:}
+\end{itemize}
+\begin{align*}
+    D(Z) & =E(Z^2)-(E(Z))^2                                                                       \\
+         & =E(v^{2T(x)}\cdot I_{\{T(x)\ge m\}})-({}_{m|}\overline {A}_{x})^2                      \\
+         & =\int_m^{\infty}e^{-2\delta t}\cdot {}_tp_x\cdot u_x(t)dt-({}_{m|}\overline {A}_{x})^2 \\
+         & ={}_{m|}^2\overline {A}_{x}-({}_{m|}\overline {A}_{x})^2
+\end{align*}
+
+\begin{itemize}
+    \item[{\bf\hei 5.}]{\bf\hei 性质:${}_{m|}\overline {A}_{x}={}_mE_x\cdot \overline {A}_{x+m} $}
+
+\end{itemize}
+
+
+\proof
+\begin{align*}
+    {}_{m|}\overline {A}_{x} & =\int_m^{\infty}v^t \cdot {}_tp_x\cdot u_x(t)dt                        \\
+                             & =\int_0^{\infty }v^{t+m} \cdot {}_{t+m}p_x\cdot u_x(t+m)dt             \\
+                             & =v^m{}_mp_x\int_0^{\infty }v^{t} \cdot {}_{t}p_{x+m}\cdot u_{x+m}(t)dt \\
+                             & ={}_mE_x\cdot \overline {A}_{x+m}
+\end{align*}
+\qed
+
+变形: $(1+i)^m\cdot l_x\cdot {}_{m|}\overline {A}_{x}=l_{x+m}\cdot  \overline {A}_{x+m}$.
+
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 死亡年末支付的延期$m$年的终身寿险}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}]{\bf\hei 支付方式: }
+\end{itemize}
+
+若$T(x) \ge m$, 则在死亡年末支付$1$元;
+
+若$T(x)<m$, 则不予任何支付.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}]{\bf\hei 支付额现值$Z$: }
+\end{itemize}
+
+$Z=v^{K(x)+1}\cdot I_{\{T(x)\ge m\}}$
+
+\begin{itemize}
+    \item[{\bf\hei 3.}]{\bf\hei 精算现值用${}_{m|}{A}_{x}$表示}
+\end{itemize}
+\begin{align*}
+    {}_{m|}{A}_{x} & =E(Z)                                                                                \\
+                   & =E\left(v^{K\left(x\right)+1}I_{\left\{T\left(x\right)\geq m\right\}}\right)         \\
+                   & =E\left(v^{K\left(x\right)+1}I_{\left\{1<\left(K(x\right)\geq m\right\}}\right)      \\
+                   & =\sum_{k=0}^{\infty}v^{k+1}I_{\left\{k\geq m\right\}}P\left(K\left(x\right)=k\right) \\
+                   & =\sum_{k=0}^{\infty}v^{k+1}\ _{k|}q_{x}\cdot I_{\left\{k\geq m\right\}}              \\
+                   & =\sum_{k=0}^{\infty}v^{k+1}\ _{k|}q_{x}
+\end{align*}
+
+\begin{itemize}
+    \item[{\bf\hei 4.}]{\bf\hei 性质: }
+\end{itemize}
+
+${}_{m|}{A}_{x}={}_{m}{E}_{x}A_{x+m}$
+
+\proof
+\begin{align*}
+    {}_{m|}{A}_{x} & =\sum_{k=m}^{\infty}v^{k+1}\ _{k|}q_{x}                       \\
+                   & =\sum_{s=0}^{\infty}v^{s+m+1}{}_{s+m|}{q}_{x}                 \\
+                   & =v^{m}{}_{m}{p}_{x}\sum_{s=0}^{\infty}V^{s+1}{}_{s|}{q}_{x+m} \\
+                   & ={}_{m}{E}_{x}A_{x+m}
+\end{align*}
+\qed
+
+\begin{itemize}
+    \item[{\bf\hei 三.}]{\bf\hei 延期$m$年的$n$年期定期寿险}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}]{\bf\hei 死亡立即支付: }
+\end{itemize}
+
+$Z=v^{T(x)}I_{\{m\leq T(x)\leq m+n\}}$
+
+${}_{m|}\overline{A}_{x:\annu{n}}^1=E(Z)=\int_{m}^{m+n}v^{t}{}_{t}{p}_{x}\mu_{x}(t)dt$
+
+${}_{m|}\overline{A}_{x:\annu{n}}^1={}_{m}{E}_{x}\cdot \overline{A}_{x+m:\annu{n}}^1$
+
+\begin{itemize}
+    \item[{\bf\hei 2.}]{\bf\hei 死亡年末支付: }
+\end{itemize}
+
+$Z=v^{K(x)+1}I_{\{m\leq T(x)\leq m+n\}}=v^{K(x)+1}I_{\{m\leq K(x)\leq m+n\}}$
+
+${}_{m|}\overline{A}_{x:\annu{n}}^1=E(Z)=\sum_{k=m}^{m+n-1}v^{k+1}{}_{k|}{q}_{x}$
+
+${}_{m|}\overline{A}_{x:\annu{n}}^1={}_{m}{E}_{x}\cdot \overline{A}_{x+m:\annu{n}}^1$
+
+
+
+\section{将每年分为$m$个区间, 在死亡区间来支付$1$元的终身死亡保险}
+
+$T(x)=K(x)+S(x)$,$S(x)$掉在$m$个小区间的哪一个之中？
+
+\noindent$0 \leq S(x)<1$,$0\leq mS(x)<m$, 令$J(x)=[mS(x)]$, 它表示$mS(x)$的整数部分, 于是有$0\leq J(x)<m-1$, 易知$J(x)\leq mS(x)<J(x)+1$. 从而$\frac{J(x)}{m}\leq S(x)\leq\frac{J(x)+1}{m}$, $K(x)+\frac{J(x)}{m}\leq K(x)+S(x)\leq K(x)+\frac{J(x)+1}{m}$.
+
+\begin{itemize}
+    \item[{\bf\hei 1.}]{\bf\hei 即$K(x)+\frac{J(x)}{m}\leq T(x)\leq K(x)+\frac{J(x)+1}{m}$}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 2.}]{\bf\hei 支付额现值: }
+\end{itemize}
+
+$Z=v^{K(x)+\frac{J(x)+1}{m}}$
+
+\begin{itemize}
+    \item[{\bf\hei 3.}]{\bf\hei 精算现值: 用$A_{x}^{(m)}$表示}
+\end{itemize}
+\begin{align*}
+    A_{x}^{(m)} & =E(Z)                                                                                            \\
+                & =E(v^{K(x)}\frac{J(x)+1}{m})                                                                     \\
+                & =\sum_{k=0}^{\infty}\sum_{j=1}^{m-1}v^{k+\frac{j+1}{m}}P(K(x)=k,J(x)=j)                          \\
+                & =\sum_{k=0}^{\infty}\sum_{j=1}^{m-1}v^{k+\frac{j+1}{m}}P(k+\frac{j}{m}\leq T(x)<k+\frac{j+1}{m}) \\
+                & =\sum_{k=0}^{\infty}\sum_{j=1}^{m-1}v^{k+\frac{j+1}{m}}{}_{k+\frac{j+1}{m}|\frac{1}{m}}q_{x}
+\end{align*}
+
+在UDD假设下, $A_{X}^{(m)}$与$\overline A_{x}$, $A_{x}$之间的关系:
+\begin{proposition}
+    在UDD假设下, $K(x)$与$J(x)$独立, 且$P(J(x)=1)=\frac{1}{m}$, $j=0, 1, ..., m-1.$
+\end{proposition}
+
+\proof
+在UDD假设下, $K(x)$与$S(x)$独立, 且$S(x)\sim U(0,1)$\newline
+所以$K(x)$与$[mS(x)]=J(X)$独立. \newline
+又因$S(x)\sim U(0,1)$,所以J(X)取$0, 1, \dots, m-1$的概率相同, 皆为$\frac{1}{m}$.
+\qed
+
+\begin{proposition}
+    在UDD假设下, $A_{x}^{(m)}=\frac{i}{i^{(m)}}A_{x}$, $\lim_{m\to\infty}A_{x}^{(m)}=\overline{A}_{x}$, 其中$i^{(m)}$为每年换算$m$次的年名义利率, $i^{(m)}=m[(1+i)^{\frac{1}{m}}-1]$
+\end{proposition}
+
+\proof
+$A_{x}^{(m)}=E(v^{K(x)+\frac{J(x)+1}{m}})$, 利用上一题, 有: \newline
+\begin{align*}
+    A_{x}^{(m)} & =E(v^{K(x)+1}\cdot v^{\frac{J(x)+1}{m}-1})                                                                        \\
+                & = E(v^{K(x)+1})\cdot E(v^{\frac{K(x)+1}{m}-1})                                                                    \\
+                & =A_{x}\cdot\sum_{j=0}^{m-1}v^{\frac{K(x)+1}{m-1}}\cdot\frac{1}{m}                                                 \\
+                & =A_{x}\cdot\frac{1}{m}\cdot v^{\frac{1}{m}-1}\cdot\sum_{j=0}^{m-1}v^{\frac{2}{m}}                                 \\
+                & =A_{x}\cdot\frac{1}{m}\cdot v^{\frac{1}{m}-1}\cdot\frac{1-(v^{\frac{1}{m}})^{m}}{1-(v^{\frac{1}{m}})^{m}}         \\
+                & =A\times\frac{1}{m}\cdot(\frac{1}{1+i})^{\frac{1}{m}-1}\cdot\frac{\frac{1}{1+i}}{1-(\frac{1}{1+i})^{\frac{1}{m}}} \\
+                & =A_{x}\frac{1}{m}\cdot(\frac{1}{1+i})^{\frac{1}{m}}\cdot\frac{1}{1-(\frac{1}{1+i})^{\frac{1}{m}}}                 \\
+                & =A_{x}\cdot\frac{1}{m[(1+i)^{\frac{1}{m}}-1]}                                                                     \\
+                & =A_{x}\cdot\frac{i}{i^{(m)}}
+\end{align*}
+
+\begin{align*}
+    \lim_{m\to\infty}A_{x}^{(m)}=\lim_{m\to\infty}A_{x}\cdot\frac{1}{i^{(m)}}=\frac{1}{\delta}A_{x}=\overline{A}_{x}
+\end{align*}
+
+\begin{align*}
+    i^{(m)}=m[(1+i)^{\frac{1}{m}}-1]=m(e^{\frac{1}{m}\delta}-1)\sim m\cdot\frac{\delta}{m}=\delta
+\end{align*}
+\qed
+
+\section{变额人寿保险}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 离散型}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}]{\bf\hei 支付额与支付方式: }
+\end{itemize}
+
+在死亡年度末支付$b_{k(x)+1}$元保险金.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}]{\bf\hei 支付额现值为: }
+\end{itemize}
+
+$Z=b_{k(x)+1}v^{(K(x)+1)}$
+
+\begin{itemize}
+    \item[{\bf\hei 3.}]{\bf\hei 精算现值: }
+\end{itemize}
+\begin{align*}
+    E(Z)=E(b_{K(x)+1}v^{K(x)+1})=\sum_{k=0}^{\infty}b_{k+1}v^{k+1}{}_{k|}q_{x}
+\end{align*}
+
+\begin{itemize}
+    \item[{\bf\hei 4.}]{\bf\hei 当$b_{k(x)+1}$时, 得到标准递增的死亡年末支付的终身寿险}
+\end{itemize}
+
+(1)支付额现值: $E(Z)=(K(x)+1)v^{K(x)+1}$
+
+(2)精算现值记为$1A_{x}$:
+\begin{align*}
+    1A_{x} & =\sum_{k=0}^{\infty}b_{k+1}v^{k+1}{}_{k|}q_{x}               \\
+           & =\sum_{k=0}^{\infty}(k+1)v^{k+1}{}_{k|}q_{x}                 \\
+           & =\sum_{k=0}^{\infty}(\sum_{j=0}^{k}v^{k+1}){}_{k|}q_{x}      \\
+           & =\sum_{j=0}^{\infty}(\sum_{k=j}^{\infty}v^{k+1}{}_{k|}q_{x}) \\
+           & =\sum_{j=0}^{\infty}{}_{j|}{A}_{x}
+\end{align*}
+
+即\begin{align*}
+    1A_{x}=\sum_{k=0}^{\infty}(k+1)v^{k-1}{}_{k|}q_{x}=\sum_{j=0}^{\infty}{}_{j|}A_{x}
+\end{align*}
+
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 连续型}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}]{\bf\hei 支付额与支付方式: }
+\end{itemize}
+
+在死亡时立即支付$b_{T(x)}$元保证金
+
+\begin{itemize}
+    \item[{\bf\hei 2.}]{\bf\hei 支付现值: }
+\end{itemize}
+
+$Z=b_{T(x)}v^{T(x)}$
+
+\begin{itemize}
+    \item[{\bf\hei 3.}]{\bf\hei 精算现值: }
+\end{itemize}
+\begin{align*}
+    E(Z)=E(b_{T(x)}v^{T(x)})=\int_0^{\infty}b_{t}v^{t}{}_{t|}P_{x}\mu_{x}(t)dt
+\end{align*}
+
+\begin{align*}
+    E(Z^2)=E(b_{T(x)}^2v^{2T(x)})=\int_0^{\infty}(b_{t}v^{t})^2{}_{t}P_{x}\mu_{x}(t)dt
+\end{align*}
+
+\begin{itemize}
+    \item[{\bf\hei 4.}]{\bf\hei 若\begin{align*}
+                    b_{T}(x)=\sum_{k=0}^{\infty}(k+1)I_{\{k\leq T(x)<k+1\}}
+                \end{align*}
+                ,即在第(k+1)年死亡, 则死亡时立即支付k+1元, 则得到标准递增的死亡立即支付的终身寿险. }
+\end{itemize}
+
+(1)支付额现值:
+\begin{align*}
+    Z=b_{T(x)}v^{T(x)}=\sum_{k=0}^{\infty}(k+1)I_{\{k\leq T(x)\leq k+1\}}\cdot v^{T(x)}
+\end{align*}
+
+(2)精算现值用$(I\overline{A})_{x}$.
+
+\begin{align*}
+    (I\overline{A})_{x} & =E(Z)                                                                                                 \\
+                        & =E\left(\sum_{k=0}^{\infty}\left(k+1\right)I_{\{k\leq T\left(x\right)\leq k+1\}}\cdot v^{T(x)}\right) \\
+                        & =\sum_{k=0}^{\infty}\left(k+1\right)E\left(v^{T(x)}\right]_{\{k\leq T\left(x\right)\leq k+1\}}        \\
+                        & =\sum_{k=0}^{\infty}\left(k+1\right)\int_{k}^{k+1}v^{t}{}_{t}P_{x}\mu_{x}(t)dt
+\end{align*}
 
 \section{作业}
 \begin{exs}
-    解释等式$l_x\overline{A}_{x:\annu{n}}^1=l_x\overline{A}_{x:\annu{k}}^1+v^kl_{x+k}\overline{A}_{x+k:\annu{n-k}}^1$的含义.
+    解释等式$l_x\overline{A}_{x:\annu{n}}^1=l_x\overline{A}_{x:\annu{k}}^1+v^kl_{x+k}\overline{A}_{x+k:\annu{n-k}}^1$ 的含义.
 \end{exs}
 
 \begin{exs}
@@ -1296,11 +1805,63 @@ $$
     已知$\mu = 0.04, ~\delta = 0.05$, 对于死亡立即支付的寿险, 求精算现值, ${}^2\overline{A}_x$和支付现值的方差.
 \end{exs}
 
+\begin{exs}
+    解释$(1+i){A}_x = q_x + p_x {A}_{x+1}. $ 的含义.
+\end{exs}
+
+\begin{exs}
+    个体$(x)$投了一份三年期寿险保险金死亡年末支付, 已知$q_{x+k}=0.02(k+1),k=0,1,2, $ $i=0.06$, 求该保险的精算现值${A}_{x:\annu{3}}^1$, 及支付现值的方差.
+\end{exs}
+
+\begin{exs}
+    设个体$(x)$买了一份10年期死亡定期寿险, 支付现值为$Z_1=v^{T(x)}I_{\{T(x)<10\}}$ 和1份延期10年的死亡终身寿险, 支付现值为$Z_2=v^{T(x)}I_{\{T(x)\ge 10\}}$.
+
+    设$u=0.02, \delta=0.08$, 求该保险的精算现值$\overline {A}_{x:\annu{10}}^1,  {}_{10|}\overline {A}_{x},  D(Z_1),   D(Z_2),   COV(Z_1,Z_2)$.
+\end{exs}
+
+\begin{exs}
+    设个体$(x)$买了一份特殊寿险, 死亡立即支付保险金$b_{T(x)}=e^{0.03T(x)}.$ 设死亡力$\mu=0.02,$ 利息力$\delta=0.08.$
+
+    (1) 求给付额现值$Z;$
+
+    (2) 求精算现值$E(Z);$
+
+    (3) 求$D(Z).$
+\end{exs}
+
+\begin{exs}
+    设某人生日正好是1月1日, 在他满50周岁生日那天, 他上某保险公司购买一份终身的养老保险. 保单约定从他满60周岁开始, 只要他活着, 每年生日那天他就会去保险公司, 保险公司支付他10000元养老金, 直到他死亡为止(注: 他如果死亡了, 再也不会出现在保险公司, 保险公司也就不用给钱了). 假设他的余命$T(50)$服从[0,50]上的均匀分布, 利率$i=0.05.$
+
+    (1) 写出保险公司所有支付额的总现值$Z$;
+
+    (2) 求出精算现值$E(Z)$(注: 直观上$E(Z)$就是他在购买养老保险时应该交的保费);
+
+    (3) 求$D(Z).$
+\end{exs}
+
+
 \begin{thebibliography}{99}
     %\addtolength{\itemsep}{-0.5em}
     \bibitem{tao}杨静平/编著: 《寿险精算基础》, 北京大学出版社, 2002.
     \bibitem{zz} 吴岚, 黄海, 何洋波/编著: 《金融数学引论》第二版, 北京大学出版社, 2013.
 
 \end{thebibliography}
+
+\begin{appendix}
+    \chapter{利息理论基础知识}
+    \section{利率的基本概念}
+    \begin{itemize}
+        \item[{\bf\hei 一.}]{\bf\hei 利率的定义}
+    \end{itemize}
+
+    设年利率为$i$.
+
+    \textbf{贴现因子}记为$v$, 定义为$v=\frac{1}{1+i}$.
+
+    \textbf{贴现率}记为$d$, 定义为$d=1-v=i$.
+
+    \textbf{利息力}记为$\delta$, 定义为$\delta=\ln(1+i)$.
+
+\end{appendix}
 
 \end{document}
