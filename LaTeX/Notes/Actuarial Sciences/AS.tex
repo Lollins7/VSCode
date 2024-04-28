@@ -1549,10 +1549,12 @@ $Z=v^{T(x)}\cdot I_{\{T(x)\ge m\}}$
 \end{align*}
 
 \begin{itemize}
-    \item[{\bf\hei 5.}]{\bf\hei 性质:${}_{m|}\overline {A}_{x}={}_mE_x\cdot \overline {A}_{x+m} $}
-
+    \item[{\bf\hei 5.}]{\bf\hei 性质: }
 \end{itemize}
 
+\begin{align}
+    {}_{m|}\overline {A}_{x}={}_mE_x\cdot \overline {A}_{x+m}
+\end{align}
 
 \proof
 \begin{align*}
@@ -1589,23 +1591,25 @@ $Z=v^{K(x)+1}\cdot I_{\{T(x)\ge m\}}$
 \begin{align*}
     {}_{m|}{A}_{x} & =E(Z)                                                                                \\
                    & =E\left(v^{K\left(x\right)+1}I_{\left\{T\left(x\right)\geq m\right\}}\right)         \\
-                   & =E\left(v^{K\left(x\right)+1}I_{\left\{1<\left(K(x\right)\geq m\right\}}\right)      \\
+                   & =E\left(v^{K\left(x\right)+1}I_{\left\{K(x)\geq m\right\}}\right)                    \\
                    & =\sum_{k=0}^{\infty}v^{k+1}I_{\left\{k\geq m\right\}}P\left(K\left(x\right)=k\right) \\
                    & =\sum_{k=0}^{\infty}v^{k+1}\ _{k|}q_{x}\cdot I_{\left\{k\geq m\right\}}              \\
-                   & =\sum_{k=0}^{\infty}v^{k+1}\ _{k|}q_{x}
+                   & =\sum_{k=m}^{\infty}v^{k+1}\ _{k|}q_{x}
 \end{align*}
 
 \begin{itemize}
     \item[{\bf\hei 4.}]{\bf\hei 性质: }
 \end{itemize}
 
-${}_{m|}{A}_{x}={}_{m}{E}_{x}A_{x+m}$
+\begin{align}
+    {}_{m|}{A}_{x}={}_{m}{E}_{x}A_{x+m}
+\end{align}
 
 \proof
 \begin{align*}
     {}_{m|}{A}_{x} & =\sum_{k=m}^{\infty}v^{k+1}\ _{k|}q_{x}                       \\
                    & =\sum_{s=0}^{\infty}v^{s+m+1}{}_{s+m|}{q}_{x}                 \\
-                   & =v^{m}{}_{m}{p}_{x}\sum_{s=0}^{\infty}V^{s+1}{}_{s|}{q}_{x+m} \\
+                   & =v^{m}{}_{m}{p}_{x}\sum_{s=0}^{\infty}v^{s+1}{}_{s|}{q}_{x+m} \\
                    & ={}_{m}{E}_{x}A_{x+m}
 \end{align*}
 \qed
@@ -1638,9 +1642,9 @@ ${}_{m|}\overline{A}_{x:\annu{n}}^1={}_{m}{E}_{x}\cdot \overline{A}_{x+m:\annu{n
 
 \section{将每年分为$m$个区间, 在死亡区间来支付$1$元的终身死亡保险}
 
-$T(x)=K(x)+S(x)$,$S(x)$掉在$m$个小区间的哪一个之中？
+$T(x)=K(x)+S(x)$, $S(x)$掉在$m$个小区间的哪一个之中?
 
-\noindent$0 \leq S(x)<1$,$0\leq mS(x)<m$, 令$J(x)=[mS(x)]$, 它表示$mS(x)$的整数部分, 于是有$0\leq J(x)<m-1$, 易知$J(x)\leq mS(x)<J(x)+1$. 从而$\frac{J(x)}{m}\leq S(x)\leq\frac{J(x)+1}{m}$, $K(x)+\frac{J(x)}{m}\leq K(x)+S(x)\leq K(x)+\frac{J(x)+1}{m}$.
+$0 \leq S(x)<1$,$0\leq mS(x)<m$, 令$J(x)=[mS(x)]$, 它表示$mS(x)$的整数部分, 于是有$0\leq J(x)<m-1$, 易知$J(x)\leq mS(x)<J(x)+1$. 从而$\frac{J(x)}{m}\leq S(x)\leq\frac{J(x)+1}{m}$, $K(x)+\frac{J(x)}{m}\leq K(x)+S(x)\leq K(x)+\frac{J(x)+1}{m}$.
 
 \begin{itemize}
     \item[{\bf\hei 1.}]{\bf\hei 即$K(x)+\frac{J(x)}{m}\leq T(x)\leq K(x)+\frac{J(x)+1}{m}$}
@@ -1791,7 +1795,22 @@ $Z=b_{T(x)}v^{T(x)}$
                         & =\sum_{k=0}^{\infty}\left(k+1\right)E\left(v^{T(x)}\right]_{\{k\leq T\left(x\right)\leq k+1\}}        \\
                         & =\sum_{k=0}^{\infty}\left(k+1\right)\int_{k}^{k+1}v^{t}{}_{t}P_{x}\mu_{x}(t)dt
 \end{align*}
+\begin{itemize}
+    \item[{\bf\hei 5.}]当$b_T(x)=T(x)$时，得到{\bf\hei 连续递增}的{\bf\hei 死亡立即支付}的终身寿险
+\end{itemize}
 
+(1)支付现值
+\begin{align*}
+    Z=b_{T(x)}v^{T(x)}=T(x)v^{T(x)}
+\end{align*}
+
+(2)精算现值用$\left( \bar{I}\bar{A} \right) _x$表示
+\begin{align*}
+    \left( \bar{I}\bar{A} \right) _x & =\int_0^{\infty}t v^t\cdot {}_tp_x\cdot u_x(t)dt                    \\
+                                     & =\int_0^{\infty }(\int_0^t1ds)t v^t\cdot {}_tp_x\cdot u_x(t)dt      \\
+                                     & =\int_0^{\infty}(\int_s^{\infty}t v^t\cdot {}_tp_x\cdot u_x(t)dt)ds \\
+                                     & =\int_0^{\infty} {}_{s|}\bar{A}_x ds
+\end{align*}
 \section{作业}
 \begin{exs}
     解释等式$l_x\overline{A}_{x:\annu{n}}^1=l_x\overline{A}_{x:\annu{k}}^1+v^kl_{x+k}\overline{A}_{x+k:\annu{n-k}}^1$ 的含义.
@@ -1838,6 +1857,110 @@ $Z=b_{T(x)}v^{T(x)}$
 
     (3) 求$D(Z).$
 \end{exs}
+
+\chapter{生存年金}
+\section{期初生存年金}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 期初年金}
+\end{itemize}
+\begin{itemize}
+    \item[{\bf\hei 1.}]$n$年期期初年金
+\end{itemize}
+
+现值$\ddot a_{\annu n}=1+v+v^2+...+v^{n-1}=\frac{1-v^n}{1-v}=\frac{1-v^n}{d}$
+
+其中，$d=1-v=1-\frac{1}{1+i}=\frac{i}{1+i}$,为贴现率。
+\begin{itemize}
+    \item[{\bf\hei 2.}]永久期初年金
+\end{itemize}
+
+现值$a_{\annu {\infty}}=1+v+v^2+...+v^n+...=\frac{1}{1-v}=\frac{1}{d}$
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 终身期初生存年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}]支付方式
+\end{itemize}
+
+只要(x)活着，则每年年初支付1元；若(x)已近死亡，则停止支付。
+\begin{itemize}
+    \item[{\bf\hei 2.}]最后支付时刻为K(x)
+\end{itemize}
+\begin{itemize}
+    \item[{\bf\hei 3.}]支付额总现值
+\end{itemize}
+\begin{align*}
+    Z=1+v+v^2+...+v^{K(x)}=\ddot a_{\annu {K(x)+1}}=\sum_{j=0}^{K\left( x \right)}{v^j}
+\end{align*}
+\begin{itemize}
+    \item[{\bf\hei 4.}]精算现值用$\ddot a_x$表示
+\end{itemize}
+\begin{align*}
+    \ddot a_x & =EZ =E(\ddot a_{\annu {K(x)+1}})=E(\sum_{j=0}^{K\left( x \right)}{v^j})                        \\
+              & =\sum_{j=0}^{\infty}{v^j}E(I_{\{j\leqslant K(x)\}})=\sum_{j=0}^{\infty}{v^j}P(j\leqslant K(x)) \\
+              & =\sum_{j=0}^{\infty}{v^j}{}_j P_x                                                              \\
+\end{align*}
+
+因为$Z=\ddot a_{\annu {K(x)+1}}=\frac{1-v^{K(x)+1}}{d}$,所以$\ddot a_x=EZ=E(\ddot a_{\annu {K(x)+1}})=E(\frac{1-v^{K(x)+1}}{d})$
+
+所以$\ddot a_{\annu {K(x)+1}}=\frac{1-E(V^{K(x)+1}}{d}=\frac{1-A_x}{d}$
+
+\begin{itemize}
+    \item[{\bf\hei 5.}]终身初期死亡生存年金和死亡年末支付的终身寿险之间的关系
+\end{itemize}
+\begin{align*}
+    A_x+d \ddot a_x=1
+\end{align*}
+\begin{itemize}
+    \item[{\bf\hei 6.}]支付现值$Z$的方差
+\end{itemize}
+\begin{align*}
+    DZ=D(\ddot a_{\annu {K(x)+1}})=D(\frac{1-v^{K(x)+1}}{d})=\frac{D(v^{K(x)+1})}{d^2}=\frac{{}^2A_x-(A_x)^2}{d^2}
+\end{align*}
+\begin{itemize}
+    \item[{\bf\hei 三.}]{\bf\hei $n$年期初生存年金}
+\end{itemize}
+\begin{itemize}
+    \item[{\bf\hei 1.}]支付方式
+\end{itemize}
+若个体$(x)$在$n$年内死亡，则在他活着时，每年年初支付1元；若$(x)$在$n$年内未死，则每年初支付1元，直到第$n$年。
+
+\begin{itemize}
+    \item[{\bf\hei 2.}]支付额总现值$Z$
+\end{itemize}
+
+(1)$T(x)<n$，(即$K(x)+1\leqslant n$),$Z=\ddot a_{\annu {K(x)+1}}$
+
+(2)$T(x)\geqslant n$，(即$K(x)+1>n$),$Z=\ddot a_{\annu {n}}$
+
+所以$Z=\ddot a_{\annu {(K(x)+1)\land n}}=1+v+v^2+...+v^{(K(x)+1)\land n}$
+\begin{itemize}
+    \item[{\bf\hei 3.}]精算现值用$\ddot a_{x:}{}_{\annu n}$表示
+\end{itemize}
+\begin{align*}
+    \ddot a_{x:}{}_{\annu n} & E(\ddot a_{\annu {(K(x)+1)\land n}})=E(\sum_{j=0}^{(K(x)+1)\land n}{v^j})=\sum_{j=0}^{K(x)\land(n-1)}{v^j}                               \\
+                             & =E(\sum_{j=0}^{\infty}{v^j}I_{\{j\leqslant K(x)\land(n-1)\}})=\sum_{j=0}^{\infty}{v^j}E(I_{\{j\leqslant K(x)\}}I_{\{j\leqslant (n-1)\}}) \\
+                             & =\sum_{j=0}^{n-1}{v^j}P(T(x)\geqslant j)=\sum_{j=0}^{n-1}{v^j}{}_j P_x                                                                   \\
+\end{align*}
+\begin{itemize}
+    \item[{\bf\hei 4.}]$A_{x:}{}_{\annu n}$与$\ddot a_{x:}{}_{\annu n}$的关系
+\end{itemize}
+
+(1)$d\ddot a_{x:}{}_{\annu n}+A_{x:}{}_{\annu n}=1$
+
+(2)$D(\ddot a_{\annu {(K(x)+1)\land n}})=\frac{{}^2A_{x:}{}_{\annu n}-(A_{x:}{}_{\annu n})^2}{d^2}$
+
+\proof
+$Z=\ddot a_{\annu {(K(x)+1)\land n}}=\frac{1-v^{(K(x)+1)\land n}}{d}$,$v^{(K(x)+1)\land n}$是$n$年期生死合险的支付现值
+
+所以有$\ddot a_{x:}{}_{\annu n}=\frac{1-A_{x:}{}_{\annu n}}{d}$,所以(1)得证
+\begin{align*}
+    D(\ddot a_{\annu {(K(x)+1)\land n}})=D(\frac{1-v^{(K(x)+1)\land n}}{d}=\frac{D(v^{(K(x)+1)\land n})}{d^2}=\frac{{}^2A_{x:}{}_{\annu n}-(A_{x:}{}_{\annu n})^2}{d^2}
+\end{align*}
+
+故(2)得证.
+\qed
 
 
 \begin{thebibliography}{99}

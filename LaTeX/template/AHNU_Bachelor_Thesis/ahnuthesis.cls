@@ -171,11 +171,11 @@
   \thispagestyle{empty}
   \null
   \begin{center}%
-    {\includegraphics[scale=0.8]{ustc_name.jpg}\\\yihao{~}\\
+    {\includegraphics[scale=0.3]{ahnu_name.jpg}\\\yihao{~}\\
       \yihao \textit{学士学位论文}\\  \par}%
     \vskip 0.5cm
     \ifx\@titletail\@empty\vskip 0.5cm\else\fi
-    \includegraphics[scale=0.3]{ustc_logo.jpg}
+    \includegraphics[scale=0.3]{ahnu_logo.jpg}
     {\large
       \lineskip .5em%
       \\
@@ -201,10 +201,10 @@
   \null
   \begin{center}%
     \let \footnote \thanks
-    {\LARGE \textrm{Anhui University}\\\vskip 0.5cm
+    {\LARGE \textrm{Anhui Normal University}\\\vskip 0.5cm
       \Large\textrm{A Dissertation for the Bachelor's Degree}\\  \par}%
     \vskip 1cm
-    \includegraphics[scale=0.3]{ustc_logo.jpg}
+    \includegraphics[scale=0.3]{ahnu_logo.jpg}
     \vskip 1cm
     \sanhao\@entitle
     {\large
@@ -218,7 +218,7 @@
           Supervisor     & \underline{\makebox[6cm][c]{\@entutor}}  \\
         \end{tabular}}\par}%
     \vskip3em
-    {\Large Hefei, Anhui 230000, China\\\@entime}
+    {\Large Wuhu, Anhui 241000, China\\\@entime}
   \end{center}
   \newpage\renewcommand\arraystretch{1.0}
 }
@@ -275,18 +275,21 @@
 \newcommand*{\major}[1]{\gdef\@major{#1}}
 \newcommand*{\enrolltime}[1]{\gdef\@enrolltime{#1}}
 \newcommand*{\tutordegree}[1]{\gdef\@tutordegree{#1}}
-\newcommand*{\tutordepartment}[1]{\gdef\@tutordepartment{#1}}
+\newcommand*{\sumwords}[1]{\gdef\@sumwords{#1}}
+\newcommand*{\tutordepartment}[1]
+{\gdef\@tutordepartment{#1}}
 \global\let\@major\@empty
 \global\let\@enrolltime\@empty
 \global\let\@tutordegree\@empty
 \global\let\@tutordepartment\@empty
+\global\let\@sumwords\@empty
 \newcommand\makeahnutitle{%
   \newpage
   \thispagestyle{empty}
   \null
   \begin{center}%
-    {\xiaochuhao\songti\textbf{安徽师范大学}\\\vskip 1cm
-      \xiaochuhao\songti\textbf{本科毕业论文}\\ \par}%
+    {\includegraphics[scale=0.2]{ahnu_name.jpg}\\\vskip 1cm
+      \xiaochuhao\songti\textbf{本科学生毕业论文(设计)}\\ \par}%
     \vskip 5cm
     \ifx\@titletail\@empty\vskip 1cm\else\fi
     {\large
@@ -295,19 +298,25 @@
           \renewcommand\arraystretch{1.2}
           \begin{tabular}[t]{llrr}%
             \songti\textbf{题$\quad$目：}
-                                  & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@title}}}\tabularnewline
+                                       & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@title}}}\tabularnewline
             \ifx\@titletail\@empty\else
-                                  & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@titletail}}}\tabularnewline
+                                       & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@titletail}}}\tabularnewline
             \fi
-            \songti\textbf{学生姓名：} & \underline{\makebox[3.5cm][c]{\@author}}
-                                  & \songti\textbf{学号：}                                                                 & \underline{\makebox[3cm][c]{\@No}}\tabularnewline
-            \songti\textbf{院（系）：} & \underline{\makebox[3.5cm][c]{\@department}}
-                                  & \songti\textbf{专业：}                                                                 & \underline{\makebox[3cm][c]{\@major}}\tabularnewline
-            \songti\textbf{入学时间：} & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@enrolltime}}}\tabularnewline
-            \songti\textbf{导师姓名：} & \underline{\makebox[3.5cm][c]{\@tutor}}
-                                  & \songti\textbf{职称/学位：}                                                              & \underline{\makebox[3cm][c]{\@tutordegree}}\tabularnewline
-            \songti\textbf{导师单位：} & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@tutordepartment}}}\tabularnewline
-            \songti\textbf{完成时间：} & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@cntime}}}\tabularnewline
+            \songti\textbf{学$\quad$院：} & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@department}}}
+            \tabularnewline
+            \songti\textbf{专$\quad$业：} & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@major}}}
+            \tabularnewline
+            \songti\textbf{学生姓名：}      & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@author}}}
+            \tabularnewline
+            \songti\textbf{学$\quad$号：} & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@No}}}
+            \tabularnewline
+            \songti\textbf{指导教师：}      & \underline{\makebox[3.5cm][c]{\@tutor}}
+                                       & \songti\textbf{职$\quad$称：}                                                    & \underline{\makebox[3cm][c]{\@tutordegree}}\tabularnewline
+            \songti\textbf{论文字数：}      & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@sumwords}}}
+            \tabularnewline
+            \tabularnewline
+            \tabularnewline
+            \songti\textbf{完成日期：}      & \multicolumn{3}{l}{\underline{\makebox[10cm][c]{\@cntime}}}\tabularnewline
           \end{tabular}}\par}%
   \end{center}
   \newpage\renewcommand\arraystretch{1.0}
