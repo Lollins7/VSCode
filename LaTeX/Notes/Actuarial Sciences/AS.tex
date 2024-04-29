@@ -1514,9 +1514,9 @@ $D(Z)=D(Z_1)+D(Z_2)-2{A}_{x:\annu{n}}^1\cdot
     \item[{\bf\hei 1.}]{\bf\hei 支付方式与支付条件: }
 \end{itemize}
 
-若个体$(x)$在$m$年内死亡( 即$T(x)<m$),则不予任何支付;
+若个体$(x)$在$m$年内死亡(即$T(x)<m$),则不予任何支付;
 
-若个体$(x)$在$m$年后还活着( 即$T(x) \ge m$),则在死亡时立即支付$1$元保险金.
+若个体$(x)$在$m$年后还活着(即$T(x) \ge m$),则在死亡时立即支付$1$元保险金.
 
 \begin{itemize}
     \item[{\bf\hei 2.}]{\bf\hei 支付现值$Z$: }
@@ -1644,10 +1644,10 @@ ${}_{m|}\overline{A}_{x:\annu{n}}^1={}_{m}{E}_{x}\cdot \overline{A}_{x+m:\annu{n
 
 $T(x)=K(x)+S(x)$, $S(x)$掉在$m$个小区间的哪一个之中?
 
-$0 \leq S(x)<1$,$0\leq mS(x)<m$, 令$J(x)=[mS(x)]$, 它表示$mS(x)$的整数部分, 于是有$0\leq J(x)<m-1$, 易知$J(x)\leq mS(x)<J(x)+1$. 从而$\frac{J(x)}{m}\leq S(x)\leq\frac{J(x)+1}{m}$, $K(x)+\frac{J(x)}{m}\leq K(x)+S(x)\leq K(x)+\frac{J(x)+1}{m}$.
+$0 \leq S(x)<1$,$0\leq mS(x)<m$, 令$J(x)=[mS(x)]$, 它表示$mS(x)$的整数部分, 于是有$0\leq J(x)\leq m-1$, 易知$J(x)\leq mS(x)<J(x)+1$. 从而$\frac{J(x)}{m}\leq S(x)<\frac{J(x)+1}{m}$, $K(x)+\frac{J(x)}{m}\leq K(x)+S(x)< K(x)+\frac{J(x)+1}{m}$.
 
 \begin{itemize}
-    \item[{\bf\hei 1.}]{\bf\hei 即$K(x)+\frac{J(x)}{m}\leq T(x)\leq K(x)+\frac{J(x)+1}{m}$}
+    \item[{\bf\hei 1.}]{\bf\hei 即$K(x)+\frac{J(x)}{m}\leq T(x)< K(x)+\frac{J(x)+1}{m}$}
 \end{itemize}
 
 \begin{itemize}
@@ -1662,20 +1662,20 @@ $Z=v^{K(x)+\frac{J(x)+1}{m}}$
 \begin{align*}
     A_{x}^{(m)} & =E(Z)                                                                                            \\
                 & =E(v^{K(x)}\frac{J(x)+1}{m})                                                                     \\
-                & =\sum_{k=0}^{\infty}\sum_{j=1}^{m-1}v^{k+\frac{j+1}{m}}P(K(x)=k,J(x)=j)                          \\
-                & =\sum_{k=0}^{\infty}\sum_{j=1}^{m-1}v^{k+\frac{j+1}{m}}P(k+\frac{j}{m}\leq T(x)<k+\frac{j+1}{m}) \\
-                & =\sum_{k=0}^{\infty}\sum_{j=1}^{m-1}v^{k+\frac{j+1}{m}}{}_{k+\frac{j+1}{m}|\frac{1}{m}}q_{x}
+                & =\sum_{k=0}^{\infty}\sum_{j=0}^{m-1}v^{k+\frac{j+1}{m}}P(K(x)=k,J(x)=j)                          \\
+                & =\sum_{k=0}^{\infty}\sum_{j=0}^{m-1}v^{k+\frac{j+1}{m}}P(k+\frac{j}{m}\leq T(x)<k+\frac{j+1}{m}) \\
+                & =\sum_{k=0}^{\infty}\sum_{j=0}^{m-1}v^{k+\frac{j+1}{m}}{}_{k+\frac{j+1}{m}|\frac{1}{m}}q_{x}
 \end{align*}
+\begin{itemize}
+    \item[{\bf\hei 4.}]{\bf\hei 在UDD假设下, $A_{x}^{(m)}$与$\overline A_{x}$, $A_{x}$之间的关系:}
+\end{itemize}
 
-在UDD假设下, $A_{X}^{(m)}$与$\overline A_{x}$, $A_{x}$之间的关系:
 \begin{proposition}
-    在UDD假设下, $K(x)$与$J(x)$独立, 且$P(J(x)=1)=\frac{1}{m}$, $j=0, 1, ..., m-1.$
+    在UDD假设下, $K(x)$与$J(x)$独立, 且$P(J(x)=j)=\frac{1}{m}$, $j=0, ..., m-1.$
 \end{proposition}
 
 \proof
-在UDD假设下, $K(x)$与$S(x)$独立, 且$S(x)\sim U(0,1)$\newline
-所以$K(x)$与$[mS(x)]=J(X)$独立. \newline
-又因$S(x)\sim U(0,1)$,所以J(X)取$0, 1, \dots, m-1$的概率相同, 皆为$\frac{1}{m}$.
+在UDD假设下, $K(x)$与$S(x)$独立, 且$S(x)\sim U(0,1)$, 所以$K(x)$与$[mS(x)]=J(x)$独立. 又因$S(x)\sim U(0,1)$,所以$J(x)$取$0, 1, \dots, m-1$的概率相同, 皆为$\frac{1}{m}$.
 \qed
 
 \begin{proposition}
@@ -1714,30 +1714,29 @@ $A_{x}^{(m)}=E(v^{K(x)+\frac{J(x)+1}{m}})$, 利用上一题, 有: \newline
     \item[{\bf\hei 1.}]{\bf\hei 支付额与支付方式: }
 \end{itemize}
 
-在死亡年度末支付$b_{k(x)+1}$元保险金.
+在死亡年度末支付$b_{K(x)+1}$元保险金.
 
 \begin{itemize}
     \item[{\bf\hei 2.}]{\bf\hei 支付额现值为: }
 \end{itemize}
 
-$Z=b_{k(x)+1}v^{(K(x)+1)}$
+$Z=b_{K(x)+1}v^{(K(x)+1)}$
 
 \begin{itemize}
     \item[{\bf\hei 3.}]{\bf\hei 精算现值: }
 \end{itemize}
-\begin{align*}
-    E(Z)=E(b_{K(x)+1}v^{K(x)+1})=\sum_{k=0}^{\infty}b_{k+1}v^{k+1}{}_{k|}q_{x}
-\end{align*}
+
+$E(Z)=E(b_{K(x)+1}v^{K(x)+1})=\sum_{k=0}^{\infty}b_{k+1}v^{k+1}{}_{k|}q_{x}$
 
 \begin{itemize}
-    \item[{\bf\hei 4.}]{\bf\hei 当$b_{k(x)+1}$时, 得到标准递增的死亡年末支付的终身寿险}
+    \item[{\bf\hei 4.}]{\bf\hei 当$b_{K(x)+1} = K(x)+1$时, 得到标准递增的死亡年末支付的终身寿险}
 \end{itemize}
 
 (1)支付额现值: $E(Z)=(K(x)+1)v^{K(x)+1}$
 
-(2)精算现值记为$1A_{x}$:
+(2)精算现值记为$IA_{x}$:
 \begin{align*}
-    1A_{x} & =\sum_{k=0}^{\infty}b_{k+1}v^{k+1}{}_{k|}q_{x}               \\
+    IA_{x} & =\sum_{k=0}^{\infty}b_{k+1}v^{k+1}{}_{k|}q_{x}               \\
            & =\sum_{k=0}^{\infty}(k+1)v^{k+1}{}_{k|}q_{x}                 \\
            & =\sum_{k=0}^{\infty}(\sum_{j=0}^{k}v^{k+1}){}_{k|}q_{x}      \\
            & =\sum_{j=0}^{\infty}(\sum_{k=j}^{\infty}v^{k+1}{}_{k|}q_{x}) \\
@@ -1745,7 +1744,7 @@ $Z=b_{k(x)+1}v^{(K(x)+1)}$
 \end{align*}
 
 即\begin{align*}
-    1A_{x}=\sum_{k=0}^{\infty}(k+1)v^{k-1}{}_{k|}q_{x}=\sum_{j=0}^{\infty}{}_{j|}A_{x}
+    IA_{x}=\sum_{k=0}^{\infty}(k+1)v^{k-1}{}_{k|}q_{x}=\sum_{j=0}^{\infty}{}_{j|}A_{x}
 \end{align*}
 
 \begin{itemize}
@@ -1756,7 +1755,7 @@ $Z=b_{k(x)+1}v^{(K(x)+1)}$
     \item[{\bf\hei 1.}]{\bf\hei 支付额与支付方式: }
 \end{itemize}
 
-在死亡时立即支付$b_{T(x)}$元保证金
+在死亡时立即支付$b_{T(x)}$元保证金.
 
 \begin{itemize}
     \item[{\bf\hei 2.}]{\bf\hei 支付现值: }
@@ -1776,10 +1775,7 @@ $Z=b_{T(x)}v^{T(x)}$
 \end{align*}
 
 \begin{itemize}
-    \item[{\bf\hei 4.}]{\bf\hei 若\begin{align*}
-                    b_{T}(x)=\sum_{k=0}^{\infty}(k+1)I_{\{k\leq T(x)<k+1\}}
-                \end{align*}
-                ,即在第(k+1)年死亡, 则死亡时立即支付k+1元, 则得到标准递增的死亡立即支付的终身寿险. }
+    \item[{\bf\hei 4.}]{\bf\hei 若$b_{T}(x)=\sum_{k=0}^{\infty}(k+1)I_{\{k\leq T(x)<k+1\}}$, 即在第(k+1)年死亡, 则死亡时立即支付k+1元, 则得到标准递增的死亡立即支付的终身寿险. }
 \end{itemize}
 
 (1)支付额现值:
@@ -1795,8 +1791,9 @@ $Z=b_{T(x)}v^{T(x)}$
                         & =\sum_{k=0}^{\infty}\left(k+1\right)E\left(v^{T(x)}\right]_{\{k\leq T\left(x\right)\leq k+1\}}        \\
                         & =\sum_{k=0}^{\infty}\left(k+1\right)\int_{k}^{k+1}v^{t}{}_{t}P_{x}\mu_{x}(t)dt
 \end{align*}
+
 \begin{itemize}
-    \item[{\bf\hei 5.}]当$b_T(x)=T(x)$时，得到{\bf\hei 连续递增}的{\bf\hei 死亡立即支付}的终身寿险
+    \item[{\bf\hei 5.}]{\bf\hei 当$b_T(x)=T(x)$时, 得到连续递增的死亡立即支付的终身寿险}
 \end{itemize}
 
 (1)支付现值
@@ -1869,7 +1866,7 @@ $Z=b_{T(x)}v^{T(x)}$
 
 现值$\ddot a_{\annu n}=1+v+v^2+...+v^{n-1}=\frac{1-v^n}{1-v}=\frac{1-v^n}{d}$
 
-其中，$d=1-v=1-\frac{1}{1+i}=\frac{i}{1+i}$,为贴现率。
+其中, $d=1-v=1-\frac{1}{1+i}=\frac{i}{1+i}$,为贴现率。
 \begin{itemize}
     \item[{\bf\hei 2.}]永久期初年金
 \end{itemize}
@@ -1883,7 +1880,7 @@ $Z=b_{T(x)}v^{T(x)}$
     \item[{\bf\hei 1.}]支付方式
 \end{itemize}
 
-只要(x)活着，则每年年初支付1元；若(x)已近死亡，则停止支付。
+只要(x)活着, 则每年年初支付1元; 若(x)已近死亡, 则停止支付。
 \begin{itemize}
     \item[{\bf\hei 2.}]最后支付时刻为K(x)
 \end{itemize}
@@ -1924,15 +1921,15 @@ $Z=b_{T(x)}v^{T(x)}$
 \begin{itemize}
     \item[{\bf\hei 1.}]支付方式
 \end{itemize}
-若个体$(x)$在$n$年内死亡，则在他活着时，每年年初支付1元；若$(x)$在$n$年内未死，则每年初支付1元，直到第$n$年。
+若个体$(x)$在$n$年内死亡, 则在他活着时, 每年年初支付1元; 若$(x)$在$n$年内未死, 则每年初支付1元, 直到第$n$年。
 
 \begin{itemize}
     \item[{\bf\hei 2.}]支付额总现值$Z$
 \end{itemize}
 
-(1)$T(x)<n$，(即$K(x)+1\leqslant n$),$Z=\ddot a_{\annu {K(x)+1}}$
+(1)$T(x)<n$, (即$K(x)+1\leqslant n$),$Z=\ddot a_{\annu {K(x)+1}}$
 
-(2)$T(x)\geqslant n$，(即$K(x)+1>n$),$Z=\ddot a_{\annu {n}}$
+(2)$T(x)\geqslant n$, (即$K(x)+1>n$),$Z=\ddot a_{\annu {n}}$
 
 所以$Z=\ddot a_{\annu {(K(x)+1)\land n}}=1+v+v^2+...+v^{(K(x)+1)\land n}$
 \begin{itemize}
@@ -1977,7 +1974,7 @@ $Z=\ddot a_{\annu {(K(x)+1)\land n}}=\frac{1-v^{(K(x)+1)\land n}}{d}$,$v^{(K(x)+
         \item[{\bf\hei 一.}]{\bf\hei 利率的定义}
     \end{itemize}
 
-    设年利率为$i$.
+    设年利率为$i$, $m$为正整数.
 
     \textbf{贴现因子}记为$v$, 定义为$v=\frac{1}{1+i}$.
 
@@ -1985,6 +1982,9 @@ $Z=\ddot a_{\annu {(K(x)+1)\land n}}=\frac{1-v^{(K(x)+1)\land n}}{d}$,$v^{(K(x)+
 
     \textbf{利息力}记为$\delta$, 定义为$\delta=\ln(1+i)$.
 
+    \textbf{名义利率}记为$i^{(m)}$, 定义为$i^{(m)}=m[(1+i)^{\frac{1}{m}}-1]$.
+
+    \textbf{名义贴现率}记为$d^{(m)}$, 定义为$d^{(m)}=m[1-(1-d)^{\frac{1}{m}}]$.
 \end{appendix}
 
 \end{document}
