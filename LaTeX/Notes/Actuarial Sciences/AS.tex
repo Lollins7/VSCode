@@ -985,16 +985,15 @@ $$
         0,if\,\,T\left( x \right) <n            \\
     \end{array} \right.$
 \begin{itemize}
-    \item[{\bf\hei 三.}]{\bf\hei 精算现值EZ}
+    \item[{\bf\hei 三.}]{\bf\hei 精算现值$EZ$}
 \end{itemize}
-\begin{align*}
-    E\left( Z \right) =E\left( v^nI_{\left\{ T\left( x \right) \geqslant n \right\}} \right) =v^nE\left( I_{\left\{ T\left( x \right) \geqslant n \right\}} \right)
-    =v^nP\left( T\left( x \right) \geqslant n \right) =v^n\cdot{}_np_x
-\end{align*}
 
-n年期生存保险的精算现值记为$A_{x:\annu{n}^1}$或$_nE_x$
+$E\left( Z \right) =E\left( v^nI_{\left\{ T\left( x \right) \geqslant n \right\}} \right) =v^nE\left( I_{\left\{ T\left( x \right) \geqslant n \right\}} \right)
+    =v^nP\left( T\left( x \right) \geqslant n \right) =v^n\cdot{}_np_x$
 
-所以$A_{x:}\frac{1}{\annu{n}}\equiv {}_nE_x=v^n\cdot{}_np_x$
+$n$年期生存保险的精算现值记为$A_{x:\annu{n}^1}$或$_nE_x$
+
+所以$A_{x:\annu{n}^1} = {}_nE_x=v^n\cdot{}_np_x$
 \begin{itemize}
     \item[{\bf\hei 四.}]{\bf\hei 二阶矩}
 \end{itemize}
@@ -1063,23 +1062,23 @@ $$_nE_x=v^k\cdot {}_kp_x\cdot {}_{n-k}E_{x+k}=(\frac{1}{i+1})^k\cdot\frac{l_{x+k
 
 \begin{proposition}
     $\forall 0\leqslant k\leqslant n$, 有
-    \begin{align}\label{4}
+    \begin{align}\label{eq2.3}
         \overline{A}_{x:\annu{n}}^1=\overline{A}_{x:}^1{}_{\annu k}+{}_kE_x\cdot\overline{A}_{x+k:}^1{}_{\annu {n-k}}
     \end{align}
-    \begin{align}\label{5}
+    \begin{align}\label{eq2.4}
         l_x\cdot\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot l_{x+t}\cdot \mu_{x}(t)dt}
     \end{align}
 \end{proposition}
 
 
 \proof
-$(2.4)$
+(\ref{eq2.3})
 \begin{align*}
-    \overline{A}_{x:\annu{n}}^1 & =\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt} = \int_0^{k}{v^{t}\cdot  _tp_x\cdot \mu_{x}(t)dt} +\int_k^{n}{v^{t}\cdot  _tp_x\cdot \mu_{x}(t)dt}                                                    \\
-                                & = \overline{A}_{x:}^1{}_{\annu k} +\int_0^{n-k}{v^{t+k}\cdot  _{t+k}p_x\cdot \mu_{x+k}(t)dt}= \overline{A}_{x:}^1{}_{\annu k} +\int_0^{n-k}{v^{k}\cdot v^{t}  _{t}p_x\cdot{}_{t}p_{x+k}\mu_{x+k}(t)dt} \\
-                                & =\overline{A}_{x:}^1{}_{\annu k} +v^{k}\cdot {}_{k}p_x\int_0^{n-k}{ v^{t} \cdot{}_{t}p_{x+k}\mu_{x+k}(t)dt}=\overline{A}_{x:}^1{}_{\annu k}+_kE_x\cdot\overline{A}_{x+k:}^1{}_{\annu{n-k}}             \\
+    \overline{A}_{x:\annu{n}}^1 & =\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt} = \int_0^{k}{v^{t}\cdot  _tp_x\cdot \mu_{x}(t)dt} +\int_k^{n}{v^{t}\cdot  _tp_x\cdot \mu_{x}(t)dt}                                                     \\
+                                & = \overline{A}_{x:}^1{}_{\annu k} +\int_0^{n-k}{v^{t+k}\cdot  _{t+k}p_x\cdot \mu_{x+k}(t)dt}= \overline{A}_{x:}^1{}_{\annu k} +\int_0^{n-k}{v^{k}\cdot v^{t} {}_{k}p_x\cdot{}_{t}p_{x+k}\mu_{x+k}(t)dt} \\
+                                & =\overline{A}_{x:}^1{}_{\annu k} +v^{k}\cdot {}_{k}p_x\int_0^{n-k}{ v^{t} \cdot{}_{t}p_{x+k}\mu_{x+k}(t)dt}=\overline{A}_{x:}^1{}_{\annu k}+_kE_x\cdot\overline{A}_{x+k:}^1{}_{\annu{n-k}}              \\
 \end{align*}
-$(2.5)$
+(\ref{eq2.4})
 $$\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt}=\int_0^{n}{v^{t}\cdot \frac{l_{x+t}}{l_x}\cdot \mu_{x}(t)dt}$$
 
 所以$l_x\cdot\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot l_{x+t}\cdot \mu_{x}(t)dt}$.
@@ -1137,7 +1136,7 @@ $$\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt}=\i
     \item[{\bf\hei 2.}]{\bf\hei 支付现值$Z$}
 \end{itemize}
 
-$$Z=v^{K(x)+1}I_{\{T(x)<n\}}$$
+$Z=v^{K(x)+1}I_{\{T(x)<n\}}$
 
 \begin{itemize}
     \item[{\bf\hei 3.}]{\bf\hei 精算现值记为$A_{x:\annu{n}}^1$}
@@ -1158,7 +1157,6 @@ $P(K(x)\leq T(x) < K(x)+1) = {}_{k|}q_x$, 故$A_{x:\annu{n}}^1 = E(Z) = \sum_{k=
 \begin{itemize}
     \item[{\bf\hei 4.}]{\bf\hei $Z$的方差$DZ$}
 \end{itemize}
-
 $$DZ = {}^2A_{x:\annu{n}}^1 - (A_{x:\annu{n}}^1)^2$$
 其中${}^2A_{x:\annu{n}}^1 = \sum_{k=0}^{n-1}v^{2(k+1)}{}_{k|}q_x$
 
@@ -1634,9 +1632,9 @@ ${}_{m|}\overline{A}_{x:\annu{n}}^1={}_{m}{E}_{x}\cdot \overline{A}_{x+m:\annu{n
 
 $Z=v^{K(x)+1}I_{\{m\leq T(x)\leq m+n\}}=v^{K(x)+1}I_{\{m\leq K(x)\leq m+n\}}$
 
-${}_{m|}\overline{A}_{x:\annu{n}}^1=E(Z)=\sum_{k=m}^{m+n-1}v^{k+1}{}_{k|}{q}_{x}$
+${}_{m|}{A}_{x:\annu{n}}^1=E(Z)=\sum_{k=m}^{m+n-1}v^{k+1}{}_{k|}{q}_{x}$
 
-${}_{m|}\overline{A}_{x:\annu{n}}^1={}_{m}{E}_{x}\cdot \overline{A}_{x+m:\annu{n}}^1$
+${}_{m|}{A}_{x:\annu{n}}^1={}_{m}{E}_{x}\cdot {A}_{x+m:\annu{n}}^1$
 
 
 
@@ -1661,7 +1659,7 @@ $Z=v^{K(x)+\frac{J(x)+1}{m}}$
 \end{itemize}
 \begin{align*}
     A_{x}^{(m)} & =E(Z)                                                                                            \\
-                & =E(v^{K(x)}\frac{J(x)+1}{m})                                                                     \\
+                & =E(v^{K(x)+\frac{J(x)+1}{m}})                                                                    \\
                 & =\sum_{k=0}^{\infty}\sum_{j=0}^{m-1}v^{k+\frac{j+1}{m}}P(K(x)=k,J(x)=j)                          \\
                 & =\sum_{k=0}^{\infty}\sum_{j=0}^{m-1}v^{k+\frac{j+1}{m}}P(k+\frac{j}{m}\leq T(x)<k+\frac{j+1}{m}) \\
                 & =\sum_{k=0}^{\infty}\sum_{j=0}^{m-1}v^{k+\frac{j+1}{m}}{}_{k+\frac{j+1}{m}|\frac{1}{m}}q_{x}
@@ -1686,8 +1684,8 @@ $Z=v^{K(x)+\frac{J(x)+1}{m}}$
 $A_{x}^{(m)}=E(v^{K(x)+\frac{J(x)+1}{m}})$, 利用上一题, 有: \newline
 \begin{align*}
     A_{x}^{(m)} & =E(v^{K(x)+1}\cdot v^{\frac{J(x)+1}{m}-1})                                                                        \\
-                & = E(v^{K(x)+1})\cdot E(v^{\frac{K(x)+1}{m}-1})                                                                    \\
-                & =A_{x}\cdot\sum_{j=0}^{m-1}v^{\frac{K(x)+1}{m-1}}\cdot\frac{1}{m}                                                 \\
+                & = E(v^{K(x)+1})\cdot E(v^{\frac{J(x)+1}{m}-1})                                                                    \\
+                & =A_{x}\cdot\sum_{j=0}^{m-1}v^{\frac{j+1}{m}}\cdot\frac{1}{m}                                                      \\
                 & =A_{x}\cdot\frac{1}{m}\cdot v^{\frac{1}{m}-1}\cdot\sum_{j=0}^{m-1}v^{\frac{2}{m}}                                 \\
                 & =A_{x}\cdot\frac{1}{m}\cdot v^{\frac{1}{m}-1}\cdot\frac{1-(v^{\frac{1}{m}})^{m}}{1-(v^{\frac{1}{m}})^{m}}         \\
                 & =A\times\frac{1}{m}\cdot(\frac{1}{1+i})^{\frac{1}{m}-1}\cdot\frac{\frac{1}{1+i}}{1-(\frac{1}{1+i})^{\frac{1}{m}}} \\
@@ -1775,7 +1773,7 @@ $Z=b_{T(x)}v^{T(x)}$
 \end{align*}
 
 \begin{itemize}
-    \item[{\bf\hei 4.}]{\bf\hei 若$b_{T}(x)=\sum_{k=0}^{\infty}(k+1)I_{\{k\leq T(x)<k+1\}}$, 即在第(k+1)年死亡, 则死亡时立即支付k+1元, 则得到标准递增的死亡立即支付的终身寿险. }
+    \item[{\bf\hei 4.}]{\bf\hei 若$b_{T}(x)=\sum_{k=0}^{\infty}(k+1)I_{\{k\leq T(x)<k+1\}}$, 即在第$(k+1)$年死亡, 则死亡时立即支付$k+1$元, 则得到标准递增的死亡立即支付的终身寿险. }
 \end{itemize}
 
 (1)支付额现值:
@@ -1788,8 +1786,8 @@ $Z=b_{T(x)}v^{T(x)}$
 \begin{align*}
     (I\overline{A})_{x} & =E(Z)                                                                                                 \\
                         & =E\left(\sum_{k=0}^{\infty}\left(k+1\right)I_{\{k\leq T\left(x\right)\leq k+1\}}\cdot v^{T(x)}\right) \\
-                        & =\sum_{k=0}^{\infty}\left(k+1\right)E\left(v^{T(x)}\right]_{\{k\leq T\left(x\right)\leq k+1\}}        \\
-                        & =\sum_{k=0}^{\infty}\left(k+1\right)\int_{k}^{k+1}v^{t}{}_{t}P_{x}\mu_{x}(t)dt
+                        & =\sum_{k=0}^{\infty}\left(k+1\right)E\left(v^{T(x)}I_{\{k\leq T\left(x\right)\leq k+1\}}\right)       \\
+                        & =\sum_{k=0}^{\infty}\left(k+1\right)\int_{k}^{k+1}v^{t}{}_{t}p_{x}\mu_{x}(t)dt
 \end{align*}
 
 \begin{itemize}
@@ -1830,9 +1828,9 @@ $Z=b_{T(x)}v^{T(x)}$
 \end{exs}
 
 \begin{exs}
-    设个体$(x)$买了一份10年期死亡定期寿险, 支付现值为$Z_1=v^{T(x)}I_{\{T(x)<10\}}$ 和1份延期10年的死亡终身寿险, 支付现值为$Z_2=v^{T(x)}I_{\{T(x)\ge 10\}}$.
+    设个体$(x)$买了一份$10$年期死亡定期寿险, 支付现值为$Z_1=v^{T(x)}I_{\{T(x)<10\}}$ 和$1$份延期$10$年的死亡终身寿险, 支付现值为$Z_2=v^{T(x)}I_{\{T(x)\ge 10\}}$.
 
-    设$u=0.02, \delta=0.08$, 求该保险的精算现值$\overline {A}_{x:\annu{10}}^1,  {}_{10|}\overline {A}_{x},  D(Z_1),   D(Z_2),   COV(Z_1,Z_2)$.
+    设$u=0.02, \delta=0.08$, 求该保险的精算现值$\overline {A}_{x:\annu{10}}^1, {}_{10|}\overline {A}_{x}, D(Z_1), D(Z_2), Cov(Z_1,Z_2)$.
 \end{exs}
 
 \begin{exs}
@@ -1846,7 +1844,7 @@ $Z=b_{T(x)}v^{T(x)}$
 \end{exs}
 
 \begin{exs}
-    设某人生日正好是1月1日, 在他满50周岁生日那天, 他上某保险公司购买一份终身的养老保险. 保单约定从他满60周岁开始, 只要他活着, 每年生日那天他就会去保险公司, 保险公司支付他10000元养老金, 直到他死亡为止(注: 他如果死亡了, 再也不会出现在保险公司, 保险公司也就不用给钱了). 假设他的余命$T(50)$服从[0,50]上的均匀分布, 利率$i=0.05.$
+    设某人生日正好是$1$月$1$日, 在他满$50$周岁生日那天, 他上某保险公司购买一份终身的养老保险. 保单约定从他满$60$周岁开始, 只要他活着, 每年生日那天他就会去保险公司, 保险公司支付他$10000$元养老金, 直到他死亡为止(注: 他如果死亡了, 再也不会出现在保险公司, 保险公司也就不用给钱了). 假设他的余命$T(50)$服从$[0,50]$上的均匀分布, 利率$i=0.05.$
 
     (1) 写出保险公司所有支付额的总现值$Z$;
 
@@ -1860,13 +1858,14 @@ $Z=b_{T(x)}v^{T(x)}$
 \begin{itemize}
     \item[{\bf\hei 一.}]{\bf\hei 期初年金}
 \end{itemize}
+
 \begin{itemize}
     \item[{\bf\hei 1.}]$n$年期期初年金
 \end{itemize}
 
 现值$\ddot a_{\annu n}=1+v+v^2+...+v^{n-1}=\frac{1-v^n}{1-v}=\frac{1-v^n}{d}$
 
-其中, $d=1-v=1-\frac{1}{1+i}=\frac{i}{1+i}$,为贴现率。
+其中, $d=1-v=1-\frac{1}{1+i}=\frac{i}{1+i}$,为贴现率.
 \begin{itemize}
     \item[{\bf\hei 2.}]永久期初年金
 \end{itemize}
@@ -1880,48 +1879,59 @@ $Z=b_{T(x)}v^{T(x)}$
     \item[{\bf\hei 1.}]支付方式
 \end{itemize}
 
-只要(x)活着, 则每年年初支付1元; 若(x)已近死亡, 则停止支付。
+只要$(x)$活着, 则每年年初支付$1$元; 若$(x)$已近死亡, 则停止支付.
+
 \begin{itemize}
-    \item[{\bf\hei 2.}]最后支付时刻为K(x)
+    \item[{\bf\hei 2.}]最后支付时刻为$K(x)$
 \end{itemize}
+
 \begin{itemize}
     \item[{\bf\hei 3.}]支付额总现值
 \end{itemize}
-\begin{align*}
-    Z=1+v+v^2+...+v^{K(x)}=\ddot a_{\annu {K(x)+1}}=\sum_{j=0}^{K\left( x \right)}{v^j}
-\end{align*}
+
+$Z=1+v+v^2+...+v^{K(x)}=\ddot a_{\annu {K(x)+1}}=\sum_{j=0}^{K\left( x \right)}{v^j}$
+
 \begin{itemize}
     \item[{\bf\hei 4.}]精算现值用$\ddot a_x$表示
 \end{itemize}
+
 \begin{align*}
-    \ddot a_x & =EZ =E(\ddot a_{\annu {K(x)+1}})=E(\sum_{j=0}^{K\left( x \right)}{v^j})                        \\
-              & =\sum_{j=0}^{\infty}{v^j}E(I_{\{j\leqslant K(x)\}})=\sum_{j=0}^{\infty}{v^j}P(j\leqslant K(x)) \\
-              & =\sum_{j=0}^{\infty}{v^j}{}_j P_x                                                              \\
+    \ddot a_x & =E(\ddot a_{\annu {K(x)+1}})=E(\sum_{j=0}^{K\left( x \right)}{v^j}) \\
+              & = \sum_{k=0}^{\infty}[\sum_{j=0}^{k}{v^j}P(K(x) = k)]               \\
+              & = \sum_{j=0}^{\infty}v^j[\sum_{k=j}^{\infty}P(K(x) = k)]            \\
+              & =\sum_{j=0}^{\infty}{v^j}P(K(x) \geqslant j)                        \\
+              & =\sum_{j=0}^{\infty}{v^j}{}_j P_x                                   \\
 \end{align*}
 
-因为$Z=\ddot a_{\annu {K(x)+1}}=\frac{1-v^{K(x)+1}}{d}$,所以$\ddot a_x=EZ=E(\ddot a_{\annu {K(x)+1}})=E(\frac{1-v^{K(x)+1}}{d})$
+因为$Z=\ddot a_{\annu {K(x)+1}}=\frac{1-v^{K(x)+1}}{d}$,所以$\ddot a_x=EZ=E(\ddot a_{\annu {K(x)+1}})=E(\frac{1-v^{K(x)+1}}{d})$.
 
-所以$\ddot a_{\annu {K(x)+1}}=\frac{1-E(V^{K(x)+1}}{d}=\frac{1-A_x}{d}$
+所以$\ddot a_{\annu {K(x)+1}}=\frac{1-E(v^{K(x)+1})}{d}=\frac{1-A_x}{d}$.
 
 \begin{itemize}
     \item[{\bf\hei 5.}]终身初期死亡生存年金和死亡年末支付的终身寿险之间的关系
 \end{itemize}
+
 \begin{align*}
     A_x+d \ddot a_x=1
 \end{align*}
+
 \begin{itemize}
     \item[{\bf\hei 6.}]支付现值$Z$的方差
 \end{itemize}
+
 \begin{align*}
     DZ=D(\ddot a_{\annu {K(x)+1}})=D(\frac{1-v^{K(x)+1}}{d})=\frac{D(v^{K(x)+1})}{d^2}=\frac{{}^2A_x-(A_x)^2}{d^2}
 \end{align*}
+
 \begin{itemize}
     \item[{\bf\hei 三.}]{\bf\hei $n$年期初生存年金}
 \end{itemize}
+
 \begin{itemize}
     \item[{\bf\hei 1.}]支付方式
 \end{itemize}
-若个体$(x)$在$n$年内死亡, 则在他活着时, 每年年初支付1元; 若$(x)$在$n$年内未死, 则每年初支付1元, 直到第$n$年。
+
+若个体$(x)$在$n$年内死亡, 则在他活着时, 每年年初支付$1$元; 若$(x)$在$n$年内未死, 则每年初支付$1$元, 直到第$n$年.
 
 \begin{itemize}
     \item[{\bf\hei 2.}]支付额总现值$Z$
@@ -1936,10 +1946,12 @@ $Z=b_{T(x)}v^{T(x)}$
     \item[{\bf\hei 3.}]精算现值用$\ddot a_{x:}{}_{\annu n}$表示
 \end{itemize}
 \begin{align*}
-    \ddot a_{x:}{}_{\annu n} & E(\ddot a_{\annu {(K(x)+1)\land n}})=E(\sum_{j=0}^{(K(x)+1)\land n}{v^j})=\sum_{j=0}^{K(x)\land(n-1)}{v^j}                               \\
-                             & =E(\sum_{j=0}^{\infty}{v^j}I_{\{j\leqslant K(x)\land(n-1)\}})=\sum_{j=0}^{\infty}{v^j}E(I_{\{j\leqslant K(x)\}}I_{\{j\leqslant (n-1)\}}) \\
-                             & =\sum_{j=0}^{n-1}{v^j}P(T(x)\geqslant j)=\sum_{j=0}^{n-1}{v^j}{}_j P_x                                                                   \\
+    \ddot a_{x:}{}_{\annu n} & = E(\ddot a_{\annu {(K(x)+1)\land n}})=E(\sum_{j=0}^{K(x)\land (n-1)}{v^j}) \\
+                             & =E(\sum_{j=0}^{\infty}{v^j}I_{\{j\leqslant K(x)\land(n-1)\}})               \\
+                             & =\sum_{j=0}^{\infty}{v^j}E(I_{\{j\leqslant K(x)\}}I_{\{j\leqslant (n-1)\}}) \\
+                             & =\sum_{j=0}^{n-1}{v^j}P(T(x)\geqslant j)=\sum_{j=0}^{n-1}{v^j}{}_j p_x      \\
 \end{align*}
+
 \begin{itemize}
     \item[{\bf\hei 4.}]$A_{x:}{}_{\annu n}$与$\ddot a_{x:}{}_{\annu n}$的关系
 \end{itemize}
@@ -1951,12 +1963,16 @@ $Z=b_{T(x)}v^{T(x)}$
 \proof
 $Z=\ddot a_{\annu {(K(x)+1)\land n}}=\frac{1-v^{(K(x)+1)\land n}}{d}$,$v^{(K(x)+1)\land n}$是$n$年期生死合险的支付现值
 
-所以有$\ddot a_{x:}{}_{\annu n}=\frac{1-A_{x:}{}_{\annu n}}{d}$,所以(1)得证
+(1)
+
+所以有$\ddot a_{x:}{}_{\annu n}=\frac{1-A_{x:}{}_{\annu n}}{d}$, 得证
+
+(2)
+
 \begin{align*}
-    D(\ddot a_{\annu {(K(x)+1)\land n}})=D(\frac{1-v^{(K(x)+1)\land n}}{d}=\frac{D(v^{(K(x)+1)\land n})}{d^2}=\frac{{}^2A_{x:}{}_{\annu n}-(A_{x:}{}_{\annu n})^2}{d^2}
+    D(\ddot a_{\annu {(K(x)+1)\land n}})=D(\frac{1-v^{(K(x)+1)\land n}}{d})=\frac{D(v^{(K(x)+1)\land n})}{d^2}=\frac{{}^2A_{x:}{}_{\annu n}-(A_{x:}{}_{\annu n})^2}{d^2}
 \end{align*}
 
-故(2)得证.
 \qed
 
 
