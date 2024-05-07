@@ -47,7 +47,7 @@
 \def\z{\left}
 \def\y{\right}
 \def\no{\nonumber}
-\def\mbe{\mathbb{E}}
+\def\mbe{E}
 \def\mbp{\mathbb{P}}
 \def\ka{{\kappa_1}}
 \usepackage{indentfirst}
@@ -1975,6 +1975,244 @@ $Z=\ddot a_{\annu {(K(x)+1)\land n}}=\frac{1-v^{(K(x)+1)\land n}}{d}$,$v^{(K(x)+
 
 \qed
 
+\begin{itemize}
+    \item[{\bf\hei 5.}] $\ddot{a}_x = \ddot{a}_{x:\annu{n}} + {}_{n}E_x \ddot{a}_{x+n}$
+\end{itemize}
+
+\proof
+\begin{align*}
+    \ddot{a}_x & = \sum_{j=0}^{\infty} v^j \cdot {}_{j} p_x                                                   \\
+               & = \ddot{a}_{x: \annu{n}} + \sum_{j=n}^{\infty} v^j \cdot {}_{j} p_x                          \\
+               & = \ddot{a}_{x: \annu{n}} + v^n \cdot {}_{n} p_x \sum_{j=0}^{\infty} v^j \cdot {}_{j} p_{x+n} \\
+               & = \ddot{a}_{x: \annu{n}} + {}_{n}E_x \ddot{a}_{x+n}
+\end{align*}
+得证.\qed
+
+\begin{itemize}
+    \item[{\bf\hei 6.}] $l_{x}\ddot a_{x}=l_{x}\ddot a_{x:\annu n}+v^{n}l_{x+n}\ddot a_{x+n}$
+\end{itemize}
+
+该等式的含义：左端表示初始时刻有$l_x$个$(x)$岁的个体, 各买一份终身期初生存年金, 保险公司共收到保费$l_{x}\ddot a_{x}$元, 右端表示在收到保费后, 保险公司将其中的$l_{x}\ddot a_{x:\annu n}$为$l_x$为$l_x$个人各买一份$n$年期期初生存年金, 保证$n$年内死去的人可以领到年金, 剩余的部分拿去投资, 在第$n$年末, 还有$l_{x+n}$个人活着, 保险公司给他们每人买一份终身期初生存年金, 共需$l_{x+n}\ddot a_{x+n}$元, 总现值保险公司收入的现值应等于支出的总现值, 即推出该公式.
+
+\begin{remark}
+    现行的养老保险其实就是保费分期缴纳的延期终身期初生存年金.
+\end{remark}
+
+\begin{itemize}
+    \item[{\bf\hei 四.}]{\bf\hei 延期$n$年的终身期初生存年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}] 支付方式
+\end{itemize}
+
+若个体$(x)$在$n$年内死亡, 即$T(x)<n(\iff K(x)+1\leq n)$, 则不予任何支付, 若$(x)$在$n$年内未死, 则从第$n+1$年年初开始, 只要他还活着, 每年初支付1元.
+
+\begin{itemize}
+    \item[{\bf\hei2.}] 支付现值$Z$
+\end{itemize}
+$$Z =
+    \begin{cases}
+        0,                 & K(x)+1\leq n \\
+        \sum^{K(x)}_{j=n}, & K(x)+1>n.
+    \end{cases}
+$$
+
+当$K(x)+1>n$时, $Z=\sum^{K(x)}_{j=n}v^{j}=\sum^{K(x)}_{j=0}v^{j}-\sum^{n-1}_{j=0}v^{j}=\ddot a\annu{K(x)+1}-\ddot a\annu n$ ,故$Z=\ddot a\annu{K(x)+1}-\ddot a\annu{(K(x)+1)\land n}$
+
+\begin{itemize}
+    \item[{\bf\hei3.}] 精算现值用$_{n|}\ddot a_{x}$表示
+\end{itemize}
+\begin{align*}
+    _{n|}\ddot a_{x} & =E(Z)=E(\ddot a\annu{K(x)+1}-\ddot a\annu{(K(x)+1)\land n})                                           \\
+                     & =\ddot a_{x}-\ddot a_{x:\annu n}=\sum^{\infty}_{j=0}v^{j}{}_{j}p_{x}-\sum^{n-1}_{j=0}v^{j}{}_{j}p_{x} \\
+                     & =\sum^{\infty}_{j=n}v^{j}{}_{j}p_{x} ={}_{n}E_{x}\ddot a_{x+n}
+\end{align*}
+
+\begin{remark}
+    $_{n|}\ddot a_{x}=\ddot a_{x}-\ddot a_{x:\annu n}={}_{n}E_{x}\ddot a_{x+n}=\sum^{\infty}_{j=n}v^{j}{}_{j}p_{x}$.
+\end{remark}
+
+\begin{itemize}
+    \item[{\bf\hei 五.}]{\bf\hei $n$年期确定型生存年金(期初)}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei1.}] 支付方式
+\end{itemize}
+
+若个体$(x)$在$n$年内死亡, 即$T(x)<n(\iff K(x)+1\leq n)$, 则从第$1$年到第$n$年,每年初支付$1$元; 若$(x)$在$n$年内未死,即$K(x)+1>n$,则只要他话着,每年初支付$1$元.
+
+\begin{itemize}
+    \item[{\bf\hei2.}] 支付现值
+\end{itemize}
+$$
+    Z=
+    \begin{cases}
+        \ddot a_{\annu n}, & K(x)+1\leq n \\
+        \ddot a_{K(x)+1},  & K(x)+1>n
+    \end{cases}\\
+    =\ddot a_{\annu{(K(x)+1)\lor n}}\text{, 其中}a\lor b=\max\{a,b\}.
+$$
+
+\begin{itemize}
+    \item[{\bf\hei3.}] 精算现值用$\ddot a_{\overline{x:\annu n}}$表示
+\end{itemize}
+
+$\ddot a_{\overline{x:\annu n}}=E(\ddot a_{\annu{(K(x)+1)\lor n}})=E(\ddot a _{\annu{K(x)+1}} - \ddot a_{\annu{(K(x)+1)\land n}} + \ddot a_{\annu n})=_{n|} \ddot a_{x}+\ddot a_{\annu n}$
+
+$\ddot a_{\overline{x:\annu n}}=_{n|}\ddot a_{x}+\ddot a_{\annu n}=\sum^{\infty}_{j=n}v^{j}{}_{j}p_{x}+\sum^{n-1}_{j=0}v^{j}$
+
+\section{期末生存年金}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 终身期末生存年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}] 支付方式
+\end{itemize}
+
+只要$(x)$还活着, 则每年末支付$1$元.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}] 支付现值
+\end{itemize}
+
+$Z = a_{\annu{K(x)}} = v+v^{2}+...+v^{K(x)}=\sum^{K(x)}_{j=1}v^{j}=\sum^{K(x)}_{j=0}v^{j}-1=\ddot a_{\annu{K(x)+1}}-1$
+
+\begin{itemize}
+    \item[{\bf\hei 3.}] 精算现值
+\end{itemize}
+
+$a_{x}=E(\ddot a_{K(x)+1})-1=\ddot a_{x}-1$
+
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei $n$年期期末生存年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei1.}] 支付方式
+\end{itemize}
+
+若$T(x)<n(K(x)<n)$, 则只要$(x)$活着, 每年末支付1元, 若$T(x)\geq n(K(x)\geq n)$, 则前$n$年每年末支付1元.
+$$
+    Z=
+    \begin{cases}
+        v + v^2 + \ldots + v^{K(x)} = a_{\annu {K(x)}}, & \text{若 } K(x) < n    \\
+        v + v^2 + \ldots + v^n = a_{\annu n},           & \text{若 } K(x) \geq n
+    \end{cases}, \\
+    \text{所以 } Z = a_{\annu {K(x) \land n}}
+$$
+
+\begin{itemize}
+    \item[{\bf\hei3.}] 精算现值
+\end{itemize}
+
+$$
+    \begin{aligned}
+        a_{x:\annu n} & = E(Z) = E\left(a_{\annu{K(x)\land n}}\right)                                                              \\
+                      & = E(\sum_{j=0}^{K(x)\land n} v^j) = \sum_{j=1}^{\infty} v^j I_{\{j \leq (K(x)\land n)\}}                   \\
+                      & = \sum_{j=1}^{\infty} v^j I_{\{j \leq K(x)\}} I_{\{j \leq n\}} = \sum_{j=1}^{n} v^j E(I_{\{j \leq K(x)\}}) \\
+                      & = \sum_{j=1}^{n} v^j P(K(x)\geq j)                                                                         \\
+                      & = \sum^{n}_{j=1}v^{j}{}_jp_x.
+    \end{aligned}
+$$
+
+$$
+    \begin{aligned}
+        a_{x:\annu n}=\ddot a_{x:\annu n}-1+v^{n}{}_{n}p_x
+    \end{aligned}
+$$
+
+
+\begin{itemize}
+    \item[{\bf\hei 三.}]{\bf\hei 延期$n$年的终身期末生存年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei1.}] 支付方式
+\end{itemize}
+
+若$T(x)<n(K(x) < n)$, 则不予任何支付, 若$T(x)\geq n(K(x)\geq n)$, 则从第$n+1$年开始, 每年年末支付1元, 直到死亡.
+
+\begin{itemize}
+    \item[{\bf\hei2.}] 支付现值
+\end{itemize}
+$$
+    Z=
+    \begin{cases}
+        0,                           & \text{若 } K(x) < n    \\
+        a_{\annu{K(x)}}-a_{\annu n}, & \text{若 } K(x) \geq n
+    \end{cases},
+    \text{所以 } Z =a_{\annu {K(x)}} - a_{\annu {K(x) \land n}}
+$$
+\begin{itemize}
+    \item[{\bf\hei3.}] 精算现值
+\end{itemize}
+$$
+    \begin{aligned}
+        _{n|}a_{x} & = E(Z) = E\left(a_{\annu {K(x)}} - a_{\annu {K(x) \land n}}\right)   \\
+                   & = a_{x}-a_{x:\annu n}                                                \\
+                   & = \sum^{\infty}_{j=1}v^{j}{}_{j}p_{x}-\sum^{n}_{j=1}v^{j}{}_{j}p_{x} \\
+                   & = \sum_{j=n+1}^{\infty}v^{j}{}_{j}p_{x}                              \\
+                   & = {}_{n}E_{x}a_{x+n}.
+    \end{aligned}
+$$
+
+\begin{itemize}
+    \item[{\bf\hei 四.}]{\bf\hei $n$年期确定型终身期末生存年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei1.}] 支付方式
+\end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{0.png}
+    \label{fig:example}
+\end{figure}
+
+\begin{itemize}
+    \item[{\bf\hei2.}] 支付现值
+\end{itemize}
+
+$$
+    Z=
+    \begin{cases}
+        a_{\annu n},     & \text{若 } K(x) < n    \\
+        a_{\annu{K(x)}}, & \text{若 } K(x) \geq n
+    \end{cases},
+    \text{所以 } Z = a_{\annu {K(x)\lor n}}
+$$
+易知：$a_{\annu{K(x)\lor n}}+a_{\annu{K(x)\land n}}=a_{\annu {K(x)}}+a_{\annu{n}}$
+\begin{itemize}
+    \item[{\bf\hei 3.}] 精算现值
+\end{itemize}
+
+$$
+    \begin{aligned}
+        a_{\overline{x:\annu{n}}} & = E(a_{\annu {K(x) \lor n}})                                 \\
+                                  & = a_{\annu n} + E(a_{\annu{K(x)}} - a_{\annu{K(x) \land n}}) \\
+                                  & = a_{\annu n} + {}_{n|}a_{x}.
+    \end{aligned}
+$$
+
+\section{作业}
+\begin{exs}
+    $$
+        {}_{n|}\ddot{a}_x = {}_nE_x\ddot{a}_{x+n}
+    $$
+    证明并解释等式
+    $$
+        l_x \cdot {}_{n|}\ddot{a}_x = v^n l_{x+n} \ddot{a}_{x+n}
+    $$
+    的含义.
+\end{exs}
+
+\begin{exs}
+    已知：$\ddot{a}_{50} = 13.2688$, $\ddot{a}_{52} = 12.8876$, $l_{50} = 8950900$, $l_{52} = 8840768$, $i = 0.06$。求: ${}_{2|}\ddot{a}_{50}$, ${}_{2|}a_{50}$, $\ddot{a}_{50:\annu{2}}$, $a_{50:\annu{2}}$.
+\end{exs}
 
 \begin{thebibliography}{99}
     %\addtolength{\itemsep}{-0.5em}
