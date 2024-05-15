@@ -1144,7 +1144,7 @@ $Z=v^{K(x)+1}I_{\{T(x)<n\}}$
 
 它的分布列如下,
 \begin{center}
-    \begin{tabular}{ c|c|c|c|c|c }
+    \begin{tabular}{ |c|c|c|c|c|c |}
         \hline
         $Z$ & $v^1$ & $v^2$      & $v^3$      & $\cdots$ & $v^n$        \\
         \hline
@@ -1853,6 +1853,7 @@ $Z=b_{T(x)}v^{T(x)}$
     (3) 求$D(Z).$
 \end{exs}
 
+
 \chapter{生存年金}
 \section{期初生存年金}
 \begin{itemize}
@@ -2164,7 +2165,7 @@ $$
 \end{itemize}
 
 \begin{itemize}
-    \item[{\bf\hei1.}] 支付方式
+    \item[{\bf\hei 1.}] 支付方式
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -2174,7 +2175,7 @@ $$
 \end{figure}
 
 \begin{itemize}
-    \item[{\bf\hei2.}] 支付现值
+    \item[{\bf\hei 2.}] 支付现值
 \end{itemize}
 
 $$
@@ -2198,6 +2199,169 @@ $$
     \end{aligned}
 $$
 
+\section[每年分成$m$个区间的生存年金]{每年分成$m$个区间的生存年金\footnote{本节内容在考试中不涉及计算.}}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 每年分成$m$个区间, 每个区间支付$\frac1m$元的年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}] 期初支付
+\end{itemize}
+\begin{align*}
+    \ddot{a}_{\annu{n}}^{(m)} = \frac1m + \frac1m v^{\frac1m} + \ldots + \frac1mv^{\frac{mn-1}m} = \frac1m \cdot \frac{1-v^n}{1-v^{\frac1m}} = \frac{1-v^n}{d^{(m)}}
+\end{align*}
+其中$d^{(m)} = m(1-v^{\frac1m})$.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}] 期末支付
+\end{itemize}
+\begin{align*}
+    a_{\annu{n}}^{(m)} = \frac1m v^{\frac1m} + \frac1m v^{\frac2m} + \ldots + \frac1mv^{\frac{mn}m} = \frac1m \cdot (\frac{1}{1+i})^{\frac1m} \cdot \frac{1-v^n}{1-v^{\frac1m}} = \frac{1-v^n}{i^{(m)}}
+\end{align*}
+其中$i^{(m)} = m[(1+i)^{\frac1m}-1]$.
+
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 每年分成$m$次支付的终身起初生存年金}
+\end{itemize}
+
+$J(x) = [mS(x)] \Rightarrow K(x) + \frac{J(x)}{m} \leq T(x) < K(x) + \frac{J(x)+1}{m}$
+
+\begin{itemize}
+    \item[{\bf\hei 1.}] 支付方式
+\end{itemize}
+
+将每年划分为$m$个等长小区间, 只要$(x)$活着, 则每期期初支付$\frac1m$元.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}] 支付现值
+\end{itemize}
+
+$Z = \frac1m(1+v^{\frac1m} + v^{\frac2m} + \ldots + v^{K(x)+\frac{J(x)}{m}}) = \ddot a_{\annu{K(x)+\frac{J(x)+1}{m}}}^{(m)} = \frac{1-v^{K(x)+\frac{J(x)+1}{m}}}{d^{(m)}}$
+
+\begin{itemize}
+    \item[{\bf\hei 3.}] 精算现值
+\end{itemize}
+\begin{align*}
+    \ddot{a}_{\annu{n}}^{(m)} & = E(\ddot a_{\annu{K(x)+\frac{J(x)+1}{m}}}^{(m)})                                                                             \\
+                              & = E(\frac1m \sum_{j=0}^{mK(x)+J(x)} (v^\frac{1}m)^j)                                                                          \\
+                              & = \frac1m \sum_{j=0}^{\infty} v^\frac{j}m P(K(x)+\frac{J(x)}m \geq \frac{j}{m})                                               \\
+                              & = \frac1m \sum_{j=0}^{\infty} v^\frac{j}m P(T(x)\geq \frac{j}{m}) = \frac1m \sum_{j=0}^{\infty} v^\frac{j}m {}_{\frac{j}m}p_x
+\end{align*}
+
+\begin{itemize}
+    \item [{\bf\hei 4.}] $\ddot a_{\annu{x}}^{(m)}$与$A_{\annu{x}}^{(m)}$的关系
+\end{itemize}
+
+$d^{(m)}\ddot a_{\annu{x}}^{(m)} + A_{\annu{x}}^{(m)} = 1$
+
+\proof 由$\ddot a_{\annu{x}}^{(m)} = E(\frac{1-v^{K(x)+\frac{J(x)+1}{m}}}{d^{(m)}}) = \frac{1-A_x^{(m)}}{d^{(m)}}$\qed
+
+\begin{itemize}
+    \item[{\bf\hei 三.}]{\bf\hei 每年分成$m$次支付的终身期末生存年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}] 支付方式
+\end{itemize}
+
+每年等分为$m$个区间, 只要$(x)$还活着, 每个区间末支付$\frac1m$元.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}] 支付现值
+\end{itemize}
+
+$Z = \frac1m(v^{\frac1m} + v^{\frac2m} + \ldots + v^{K(x)+\frac{J(x)}{m}}) = \ddot a_{\annu{K(x)+\frac{J(x)+1}{m}}}^{(m)} - \frac1m$
+
+\begin{itemize}
+    \item [{\bf\hei 3.}] 精算现值
+\end{itemize}
+
+$a_x^{(m)} = \ddot a_x^{(m)} - \frac1m$
+
+\begin{itemize}
+    \item[{\bf\hei 4.}] $a_{x}^{(m)}$与$A_{x}^{(m)}$的关系
+\end{itemize}
+
+$i^{(m)}a_{x}^{(m)} + (1+\frac{i^{(m)}}m)A_{x}^{(m)} = 1$
+
+\begin{itemize}
+    \item[{\bf\hei 5.}] 在UDD假设下, 如何计算$\ddot a_{x}^{(m)}$
+\end{itemize}
+
+根据公式$d^{(m)}a_x^{(m)} + A_x^{(m)} = 1$, $A_x^{(m)} = \frac{i}{i^{(m)}}A_x$, $d \ddot a_x + A_x = 1$, 可以推得$\ddot a_x^{(m)} = \frac{id}{i^{(m)}d^{(m)}}\ddot a_x - \frac{i - i^{(m)}}{i^{(m)}d^{(m)}}$
+
+\section{连续生存年金}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 连续年金}
+\end{itemize}
+
+设年金函数(年金的支付速率)为$f(t)$, 则在$[t,t+dt]$内支付的额度为$f(t)dt$, 其现值为$v^tf(t)dt$, 所以在$[0,n]$内支付的总现值为$\int_0^n v^tf(t)dt$. 特别地, 若$f(t) \equiv 1$, 则$\overline{a}_{\annu n} = \frac{1-v^n}{\delta}$.
+
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 连续的终身生存年金(以下总假定年金支付速率为$1$)}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}] 支付方式
+\end{itemize}
+
+年金连续支付, 直到$(x)$死亡.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}] 支付现值
+\end{itemize}
+
+最后支付时刻为$T(x)$, 所以$Z = \overline{a}_{\annu{T(x)}} = \int_0^{T(x)} v^tdt = \frac{1-v^{T(x)}}{\delta}$.
+
+\begin{itemize}
+    \item[{\bf\hei 3.}] 精算现值
+\end{itemize}
+
+\begin{align*}
+    \overline{a}_x & = E(\overline{a}_{\annu{T(x)}}) = E(\int_0^{T(x)} v^tdt) \\
+                   & = E(\int_0^{\infty} v^tI_{\{t \leq T(x)\}}dt)            \\
+                   & = \int_0^{\infty} v^tP(t \leq T(x))dt                    \\
+                   & = \int_0^{\infty} v^t{}_{t}p_xdt
+\end{align*}
+
+\begin{itemize}
+    \item[{\bf\hei 4.}] $\overline{a}_x$与$\overline{A}_x$的关系
+\end{itemize}
+
+{\rm\bf(i)} $\delta \overline{a}_x + \overline{A}_x = 1$
+
+{\rm\bf(ii)} $D(\overline{a}_{\annu{T(x)}}) = \frac{{}^2\overline{A}_x - (\overline{A}_x)^2}{\delta^2}$
+
+\proof (i) $\overline{a}_x = E(\overline{a}_{\annu{T(x)}}) = E(\frac{1-v^{T(x)}}{\delta}) = \frac{1-\overline{A}_x}{\delta}$
+
+(ii) $D(\overline{a}_{\annu{T(x)}}) = D(\frac{1-v^{T(x)}}{\delta}) = \frac{D(v^{T(x)})}{\delta^2} = \frac{{}^2\overline{A}_x - (\overline{A}_x)^2}{\delta^2}$\qed
+
+\begin{example}
+    设死亡力为$\mu$, 利息力为$\delta$, 求$\overline{a}_x, \overline{A}_x, D(\overline{a}_{\annu{T(x)}})$.
+\end{example}
+\solution $\overline{a}_x = \int_0^{\infty} v^t {}_tp_xdt = \int_0^{\infty} e^{-\delta t}e^{-\int_{x}^{x+t}\mu(s)ds}dt = \int_0^{\infty} e^{-\mu t}e^{-\delta t}dt = \frac{1}{\mu+\delta}$
+
+$\overline{A}_x = \int_0^{\infty} v^t {}_tp_x\mu_x(t)dt = \int_0^{\infty} e^{-\delta t}e^{-\int_{x}^{x+t}\mu(s)ds}\mu dt = \int_0^{\infty} e^{-\mu t}e^{-\delta t}\mu dt = \frac{\mu}{\mu+\delta}$
+
+${}^2A_x = \frac{\mu}{\mu+2\delta}$, 故$D(\overline{a}_{\annu{T(x)}}) = \frac{{}^2\overline{A}_x - (\overline{A}_x)^2}{\delta^2} = \frac{1}{\delta^2}[\frac{\mu}{\mu+2\delta} - (\frac{\mu}{\mu+\delta})^2]$\qed
+
+\begin{itemize}
+    \item[{\bf\hei 5.}]性质
+\end{itemize}
+
+$\frac{d}{dx}\overline{a}_x = (\mu(x)+\delta)\overline{a}_x-1$
+
+\proof
+\begin{align*}
+    \frac{d}{dx}\overline{a}_x
+     & = \frac{d}{dx}(\int_0^{\infty} v^t{}_tp_x dt)                                              \\
+     & = \int_0^{\infty} v^t{}_tp_x(\mu(x) - \mu(x+t)) dt                                         \\
+     & = \mu(x)\int_0^{\infty} v^t{}_tp_x dt - \int_0^{\infty} v^t{}_tp_x\mu_x(t) dt              \\
+     & = \mu(x)\overline{a}_x - \overline{A}_x  = \mu(x)\overline{a}_x - (1-\delta\overline{a}_x) \\
+     & = (\mu(x)+\delta)\overline{a}_x-1
+\end{align*}
+\qed
+
 \section{作业}
 \begin{exs}
     $$
@@ -2213,6 +2377,28 @@ $$
 \begin{exs}
     已知：$\ddot{a}_{50} = 13.2688$, $\ddot{a}_{52} = 12.8876$, $l_{50} = 8950900$, $l_{52} = 8840768$, $i = 0.06$。求: ${}_{2|}\ddot{a}_{50}$, ${}_{2|}a_{50}$, $\ddot{a}_{50:\annu{2}}$, $a_{50:\annu{2}}$.
 \end{exs}
+
+
+\begin{exs}
+    设某人生日正好是$1$月$1$日, 在他满$50$周岁生日那天, 他上某保险公司购买一份终身的养老保险. 保单约定从他满$60$周岁开始, 只要他活着, 每年生日那天他就会去保险公司, 保险公司支付他$10000$元养老金, 直到他死亡为止(注: 他如果死亡了, 再也不会出现在保险公司, 保险公司也就不用给钱了). 假设他的余命$T(50)$服从$[0,50]$上的均匀分布, 利率$i=0.05.$
+
+    (1) 写出保险公司所有支付额的总现值$Z$;
+
+    (2) 求出精算现值$E(Z)$(注: 直观上$E(Z)$就是他在购买养老保险时应该交的保费);
+
+    (3) 求$D(Z).$
+\end{exs}
+
+\begin{exs}
+    某人现年$20$岁, 利率$i = 0.05$, 设他的余命$T(20)$服从$[0, 70]$上的均分分布, 他购买一份连续的终身生存年金, 设年金的支付速率$f(t) \equiv 1$.
+
+    (1) 写出该年金的支付现值$Z$;
+
+    (2) 计算精算现值$E(Z)$;
+
+    (3) 求支付现值$Z$的方差$D(Z)$.
+\end{exs}
+
 
 \begin{thebibliography}{99}
     %\addtolength{\itemsep}{-0.5em}
