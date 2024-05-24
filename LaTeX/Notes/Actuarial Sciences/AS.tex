@@ -76,6 +76,35 @@
 }}
 
 \begin{document}
+\thispagestyle{empty}
+\begin{center}
+    {\bf\Large \heiti 精算学拓展训练作业}
+
+\end{center}
+\vspace{.5cm}
+
+
+{\large
+开学初就曾通知过大家, 精算学需要提交一份``大作业". 给大家一个月时间完成大作业,
+请{\red\bf 在6月20日前将大作业交给我}. 大作业采用手写版(纸质版)或电子版(打印版)都行. 如果是纸质版直接交给我, 如果是电子版, 请通过QQ传给我. 大作业不要忘记写上自己的姓名和学号.
+
+\vspace{.3cm}
+
+{\bf\heiti 大作业可以采取以下一些形式:}
+\begin{itemize}
+    \item[{\bf1.}] 如果你将来有可能从事统计学或者数学研究工作, 请在国内外精算学相关期刊上下载一篇你感兴趣的和精算学相关的论文, 阅读之后, 写一篇读书报告. 国外比较知名的精算学期刊有Insurance: Mathematics and Economics、 ASTIN Bulletin-The Journal of The International Actuarial Association、 Scandinavian Actuarial Journal、 North American Actuarial Journal 等等. 国内精算学相关期刊有《应用概率统计》、《统计与精算》、《精算通讯》等等.
+
+    \item[{\bf2.}] 如果你决定采用第一种方式完成大作业, 满怀激情地下载了一篇精算学相关的论文, 但发现太难了, 很难读懂, 写不出一篇像样的读书报告, 感觉到一种乘兴而来败兴而归的沮丧,  你可以节选论文中相对比较完整的部分内容, 将原文进行翻译, 作为大作业. 如果是原文是中文, 则翻译成英文; 如果原文是英文, 则翻译成中文. 大作业上需包含原文和译文, 以便我对照检查翻译是否正确.
+
+
+    \item[{\bf3.}] 如果你觉得前两种方式太麻烦, 而且你也不打算考研究生, 你也可以选择精算学教材上的一个或者几个知识点, 深入学习, 然后写一篇学习总结交给我. 这种方式无疑对期末考试会有一定帮助, 所以也是很好的选择.
+
+    \item[{\bf4.}] 如果你有自己的想法, 想到其他特别的方式完成大作业, 只要大作业的内容和精算学紧密相关, 也行.
+\end{itemize}
+
+
+}
+\newpage
 
 \theoremstyle{definition}\newtheorem{definition}{\noindent\mbox{\bf\hei 定义}}[chapter]
 \newtheorem{assumption}{\noindent\mbox{Assumption}}[chapter]
@@ -429,7 +458,7 @@ $s_{T(x)}(t)=e^{-\int_0^t\mu_x(s)ds}.$ 又因为$\mu_x(t)=\mu(x+t),$ 故
 $$\frac{d(_tp_x)}{dt}=\frac{d(\mathrm{e}^{-\int_{0}^{t}\mu_x(s)ds})}{dt}=\mathrm{e}^{-\int_{0}^{t}\mu_x(s)ds}({-\int_{0}^{t}\mu_x(s)ds})^{\prime}_t=-_tp_x\mu_x(t).$$
 
 (ii) 利用等式${}_tp_x=e^{-\int_{x}^{x+t}\mu_x(s)ds},$ 有
-$$\frac{d(_tp_x)}{dx}=(e^{-\int_{x}^{x+t}\mu_x(s)ds})^{\prime}=e^{-\int_{x}^{x+t}\mu(s)ds}({-\int_{x}^{x+t}\mu(s)ds})^{\prime}_x= {}_tp_x(\mu(x)-\mu(x+t)).$$
+$$\frac{d(_tp_x)}{dx}=(e^{-\int_{x}^{x+t}\mu(s)ds})^{\prime}=e^{-\int_{x}^{x+t}\mu(s)ds}({-\int_{x}^{x+t}\mu(s)ds})^{\prime}_x= {}_tp_x(\mu(x)-\mu(x+t)).$$
 命题证毕.
 \qed
 
@@ -679,11 +708,11 @@ $$\int_0^tsl_{x+s}\mu(x+s)ds+tl_{x+t}=\int_0^tl_{x+s}ds.$$
 \end{proposition}
 \proof 由$L_x$的定义可知
 \begin{align*}
-    L_x & =l_xE(T(x)\wedge1)                                                     \\
-        & =l_xE(T(x)\wedge1)I_{\{T(x)<1\}})+l_xE(T(x)\wedge 1)I_{\{T(x)\ge 1\}}) \\
-        & =l_xE(T(x)*I_{\{T(x)<1\}})+l_xE(1*I_{\{T(x)\ge 1}\})                   \\
-        & =l_xP(T(x)<1)E(T(x)|T(x)<1)+l_xP(T(x)\ge 1)                            \\
-        & =l_xq_xa(x)+l_xp_x                                                     \\
+    L_x & =l_xE(T(x)\wedge1)                                                       \\
+        & =l_xE((T(x)\wedge1)I_{\{T(x)<1\}})+l_xE((T(x)\wedge 1)I_{\{T(x)\ge 1\}}) \\
+        & =l_xE(T(x)*I_{\{T(x)<1\}})+l_xE(1*I_{\{T(x)\ge 1\}})                     \\
+        & =l_xP(T(x)<1)E(T(x)|T(x)<1)+l_xP(T(x)\ge 1)                              \\
+        & =l_xq_xa(x)+l_xp_x                                                       \\
         & =d_xa(x)+l_{x+1}.
 \end{align*}
 证毕. \qed
@@ -889,7 +918,7 @@ $$
                                                           & =\frac{l_{0}(l_{0}-1)}{16}-\frac{l_{0}^{2}}{16}                                                                          \\
                                                           & =-\frac{l_{0}}{16}.
 \end{align*}
-(对于$\sum^{l_{0}}_{k=1}\sum_{j\neq k}E(I_{\{0\leq x_{k}\leq 3\}}\cdot I_{\{3\leq x_{k}\leq 6\}}) = \frac{l_{0}(l_{0}-1)}{16}$的理解: 其中$\sum^{l_{0}}_{k=1}\sum_{j\neq k} = l_0(l_0-1)$, 而$p(I_{c\leq x_{k}\leq c+3}) = \frac14$, 故$I_{0\leq x_{k}\leq 3}$与$I_{3\leq x_{k}\leq 6}$同时取1的概率为$\frac{1}{16}$.)
+(对于$\sum^{l_{0}}_{k=1}\sum_{j\neq k}E(I_{\{0\leq x_{k}\leq 3\}}\cdot I_{\{3\leq x_{k}\leq 6\}}) = \frac{l_{0}(l_{0}-1)}{16}$的理解: 其中$\sum^{l_{0}}_{k=1}\sum_{j\neq k} = l_0(l_0-1)$, 而$p(I_{c\leq x_{k}\leq c+3}) = \frac14$, 故$I_{0\leq x_{k}\leq 3}$与$I_{3\leq x_{k}\leq 6}$同时取1 的概率为$\frac{1}{16}$.)
 
 求出协方差即可求相关系数:
 \begin{align*}
@@ -1023,7 +1052,7 @@ $$_nE_x=v^k\cdot {}_kp_x\cdot {}_{n-k}E_{x+k}=(\frac{1}{i+1})^k\cdot\frac{l_{x+k
 \begin{remark}
     等式$(1+i)^k\cdot l_x\cdot {}_nE_x=l_{x+k}\cdot {}_{n-k}E_{x+k}$ 的含义是:
 
-    在0时刻, $l_x$个人各自买了一份n年期的生存保险, 保费总额为$l_x\cdot {}_nE_x$, k年后, 这笔钱的积累值为$(1+i)^k\cdot l_x\cdot {}_nE_x$,若此时保险公司破产不干了, 他分给在k时刻还活着的$l_{x+k}$个人每人$_{n-k}E_{x+k}$元, 这正好够每个人去重新买一份$n-k$ 年期的生存保险.
+    在$0$时刻, $l_x$个人各自买了一份$n$年期的生存保险, 保费总额为$l_x\cdot {}_nE_x$, $k$年后, 这笔钱的积累值为$(1+i)^k\cdot l_x\cdot {}_nE_x$,若此时保险公司破产不干了, 他分给在$k$时刻还活着的$l_{x+k}$个人每人$_{n-k}E_{x+k}$元, 这正好够每个人去重新买一份$n-k$ 年期的生存保险.
 \end{remark}
 \section{$n$年期(定期)死亡保险}
 
@@ -1144,7 +1173,7 @@ $Z=v^{K(x)+1}I_{\{T(x)<n\}}$
 
 它的分布列如下,
 \begin{center}
-    \begin{tabular}{ |c|c|c|c|c|c |}
+    \begin{tabular}{ c|c|c|c|c|c }
         \hline
         $Z$ & $v^1$ & $v^2$      & $v^3$      & $\cdots$ & $v^n$        \\
         \hline
@@ -1152,7 +1181,7 @@ $Z=v^{K(x)+1}I_{\{T(x)<n\}}$
         \hline
     \end{tabular}
 \end{center}
-$P(K(x)\leq T(x) < K(x)+1) = {}_{k|}q_x$, 故$A_{x:\annu{n}}^1 = E(Z) = \sum_{k=0}^{n-1}v^{k+1}{}_{k|}q_x$
+$P(k\leq T(x) < k+1) = {}_{k|}q_x$, 故$A_{x:\annu{n}}^1 = E(Z) = \sum_{k=0}^{n-1}v^{k+1}{}_{k|}q_x$
 
 \begin{itemize}
     \item[{\bf\hei 4.}]{\bf\hei $Z$的方差$DZ$}
@@ -1209,14 +1238,14 @@ $$DZ = {}^2A_{x:\annu{n}}^1 - (A_{x:\annu{n}}^1)^2$$
     \item[{\bf\hei 三.}]{\bf\hei 死亡年末支付与死亡立即支付的关系}
 \end{itemize}
 \begin{proposition}
-    设死亡力均匀分布假设成立, 则$\overline{A}_{x:\annu{n}}^1 = \frac{i}{\delta}A_{x:\annu{n}}^1$.
+    设死亡力均匀分布假设(UDD)成立, 则$\overline{A}_{x:\annu{n}}^1 = \frac{i}{\delta}A_{x:\annu{n}}^1$.
 \end{proposition}
 
 \proof
 \begin{align*}
     \overline{A}_{x:\annu{n}}^1 & = E(v^{T(x)}\cdot I_{T(x) < n})                               \\
                                 & = E(v^{K(x)+1}\cdot I_{T(x) < n}\cdot v^{S(x)-1})             \\
-                                & = E(v^{K(x)+1}\cdot I_{T(x) < n})E(\cdot v^{S(x)-1})          \\
+                                & = E(v^{K(x)+1}\cdot I_{T(x) < n})E(v^{S(x)-1})                \\
                                 & = A_{x:\annu{n}}^1\cdot \int_{0}^{1}e^{-\delta(s-1)}\cdot 1ds \\
                                 & = \frac{i}{\delta}A_{x:\annu{n}}^1
 \end{align*}
@@ -1880,7 +1909,7 @@ $Z=b_{T(x)}v^{T(x)}$
     \item[{\bf\hei 1.}]支付方式
 \end{itemize}
 
-只要$(x)$活着, 则每年年初支付$1$元; 若$(x)$已近死亡, 则停止支付.
+只要$(x)$活着, 则每年年初支付$1$元; 若$(x)$已经死亡, 则停止支付.
 
 \begin{itemize}
     \item[{\bf\hei 2.}]最后支付时刻为$K(x)$
@@ -1938,11 +1967,11 @@ $Z=1+v+v^2+...+v^{K(x)}=\ddot a_{\annu {K(x)+1}}=\sum_{j=0}^{K\left( x \right)}{
     \item[{\bf\hei 2.}]支付额总现值$Z$
 \end{itemize}
 
-(1)$T(x)<n$, (即$K(x)+1\leqslant n$),$Z=\ddot a_{\annu {K(x)+1}}$
+(1)$T(x)<n$, (即$K(x)+1\leqslant n$),$Z=\ddot a_{\annu {K(x)+1}}$;
 
-(2)$T(x)\geqslant n$, (即$K(x)+1>n$),$Z=\ddot a_{\annu {n}}$
+(2)$T(x)\geqslant n$, (即$K(x)+1>n$),$Z=\ddot a_{\annu {n}}$;
 
-所以$Z=\ddot a_{\annu {(K(x)+1)\land n}}=1+v+v^2+...+v^{(K(x)+1)\land n}$
+所以$Z=\ddot a_{\annu {(K(x)+1)\land n}}=1+v+v^2+...+v^{(K(x))\land (n-1)}$
 \begin{itemize}
     \item[{\bf\hei 3.}]精算现值用$\ddot a_{x:}{}_{\annu n}$表示
 \end{itemize}
@@ -1966,7 +1995,7 @@ $Z=\ddot a_{\annu {(K(x)+1)\land n}}=\frac{1-v^{(K(x)+1)\land n}}{d}$,$v^{(K(x)+
 
 (1)
 
-所以有$\ddot a_{x:}{}_{\annu n}=\frac{1-A_{x:}{}_{\annu n}}{d}$, 得证
+所以有$\ddot a_{x:}{}_{\annu n}=\frac{1-A_{x:}{}_{\annu n}}{d}$, 得证.
 
 (2)
 
@@ -2298,7 +2327,7 @@ $i^{(m)}a_{x}^{(m)} + (1+\frac{i^{(m)}}m)A_{x}^{(m)} = 1$
 设年金函数(年金的支付速率)为$f(t)$, 则在$[t,t+dt]$内支付的额度为$f(t)dt$, 其现值为$v^tf(t)dt$, 所以在$[0,n]$内支付的总现值为$\int_0^n v^tf(t)dt$. 特别地, 若$f(t) \equiv 1$, 则$\overline{a}_{\annu n} = \frac{1-v^n}{\delta}$.
 
 \begin{itemize}
-    \item[{\bf\hei 一.}]{\bf\hei 连续的终身生存年金(以下总假定年金支付速率为$1$)}
+    \item[{\bf\hei 二.}]{\bf\hei 连续的终身生存年金(以下总假定年金支付速率为$1$)}
 \end{itemize}
 
 \begin{itemize}
@@ -2343,7 +2372,7 @@ $i^{(m)}a_{x}^{(m)} + (1+\frac{i^{(m)}}m)A_{x}^{(m)} = 1$
 
 $\overline{A}_x = \int_0^{\infty} v^t {}_tp_x\mu_x(t)dt = \int_0^{\infty} e^{-\delta t}e^{-\int_{x}^{x+t}\mu(s)ds}\mu dt = \int_0^{\infty} e^{-\mu t}e^{-\delta t}\mu dt = \frac{\mu}{\mu+\delta}$
 
-${}^2A_x = \frac{\mu}{\mu+2\delta}$, 故$D(\overline{a}_{\annu{T(x)}}) = \frac{{}^2\overline{A}_x - (\overline{A}_x)^2}{\delta^2} = \frac{1}{\delta^2}[\frac{\mu}{\mu+2\delta} - (\frac{\mu}{\mu+\delta})^2]$\qed
+${}^2\overline{A}_x = \frac{\mu}{\mu+2\delta}$, 故$D(\overline{a}_{\annu{T(x)}}) = \frac{{}^2\overline{A}_x - (\overline{A}_x)^2}{\delta^2} = \frac{1}{\delta^2}[\frac{\mu}{\mu+2\delta} - (\frac{\mu}{\mu+\delta})^2]$\qed
 
 \begin{itemize}
     \item[{\bf\hei 5.}]性质
@@ -2362,7 +2391,246 @@ $\frac{d}{dx}\overline{a}_x = (\mu(x)+\delta)\overline{a}_x-1$
 \end{align*}
 \qed
 
+\begin{itemize}
+    \item[{\bf\hei 三.}]{\bf\hei $n$年期连续生存年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}] 支付方式
+\end{itemize}
+
+若个体$(x)$在$n$年内死亡$(T(x)<n)$, 则支付到死亡为止;
+
+若个体$(x)$在$n$年内未死, 则支付到$n$为止;
+
+\begin{itemize}
+    \item[{\bf\hei 2.}] 支付现值
+\end{itemize}
+
+最后支付时刻为$T(x)\wedge n$, 所以$Z = \overline{a}_{\annu{T(x)\wedge n}} = \int_0^{T(x)\wedge n} v^tdt = \frac{1-v^{T(x)\wedge n}}{\delta}$.
+
+注: $v^{T(x)\wedge n}$为$n$年期死亡立即支付的生死合险的支付现值.
+\begin{itemize}
+    \item[{\bf\hei 3.}] 精算现值用$\overline{a}_{x:\annu{n}}$表示
+\end{itemize}
+
+\begin{align*}
+    \overline{a}_{x:\annu{n}} & = E(Z)=E(\overline{a}_{\annu{T(x)\wedge n}})           \\
+                              & = E(\int_0^{T(x)\wedge n} v^tdt)                       \\
+                              & = E(\int_0^{\infty} v^tI_{\{t < T(x)\wedge n\}}dt)     \\
+                              & = \int_0^{\infty} v^tE(I_{\{t < T(x)\wedge n\}})dt     \\
+                              & = \int_0^{\infty} v^tE(I_{\{t< T(x)\} } I_{\{t<n\}})dt \\
+                              & = \int_0^{\infty} v^tI_{\{t<n\}} E(I_{\{t< T(x)\} })dt \\
+                              & = \int_0^{n} v^tP(T(x) >t )dt                          \\
+                              & = \int_0^{n} v^t{}_{t}p_xdt
+\end{align*}
+
+所以$\overline{a}_{x:\annu{n}}= \int_0^{n} v^t{}_{t}p_xdt$.
+\begin{itemize}
+    \item[{\bf\hei 4.}] $\overline{a}_{x:\annu{n}}$与$\overline{A}_{x:\annu{n}}$的关系
+\end{itemize}
+
+{\rm\bf(i)} $\delta \overline{a}_{x:\annu{n}} + \overline{A}_{x:\annu{n}} = 1$
+
+{\rm\bf(ii)} $D(\overline{a}_{\annu{T(x)\wedge n}}) = \dfrac{{}^2\overline{A}_{x:\annu{n}} - (\overline{A}_{x:\annu{n}})^2}{\delta^2}$
+
+\proof (i) $\overline{a}_{x:\annu{n}} = E(\overline{a}_{\annu{T(x)\wedge n}}) = E(\frac{1-v^{T(x)\wedge n}}{\delta}) = \dfrac{1-\overline{A}_{x:\annu{n}}}{\delta}$.
+
+(ii) $ D(\overline{a}_{\annu{T(x)\wedge n}}) = \dfrac{D(v^{T(x)\wedge n})}{{\delta^2}} = \dfrac{{}^2\overline{A}_{x:\annu{n}}-(\overline{A}_{x:\annu{n}})^2}{{\delta^2}}$.
+\qed
+\begin{itemize}
+    \item[{\bf\hei 5.}] 性质
+\end{itemize}
+
+{\rm\bf(i)} $\overline{a}_{x} = \overline{a}_{x:\annu{n}} +{}_nE_x\overline{a}_{x+n}\Leftrightarrow l_x\overline{a}_{x}=l_x\overline{a}_{x:\annu{n}}+v^nl_{x+n}
+    \overline{a}_{x+n}$
+
+{\rm\bf(ii)} $\forall 0\le m\le n, $有$
+    \overline{a}_{x:\annu{n}}  = \overline{a}_{x:\annu{m}} +{}_mE_x\overline{a}_{x+m:\annu{n-m}} $
+
+$\Leftrightarrow l_x\overline{a}_{x:\annu{n}} =l_x\overline{a}_{x:\annu{m}}+v^ml_{x+n}
+    \overline{a}_{x+m:\annu{n-m}}$.
+
+\proof (ii)  $\forall 0\le m\le n, $有
+\begin{align*}
+    \overline{a}_{x:\annu{n}} & = \int_0^{n} v^t{}_{t}p_xdt                                                  \\
+                              & = \int_0^{m} v^t{}_{t}p_xdt+\int_m^{n} v^t{}_{t}p_xdt                        \\
+                              & = \overline{a}_{x:\annu{m}}+ \int_0^{n-m} v^{t+m}{}_{t+m}p_xdt               \\
+                              & = \overline{a}_{x:\annu{m}}+ v^{m}{}_{m}p_x\int_0^{n-m} v^{t}{}_{t}p_{x+m}dt \\
+                              & = \overline{a}_{x:\annu{m}}+ {}_mE_x\overline{a}_{x+m:\annu{n-m}}
+\end{align*}
+\qed
+\begin{itemize}
+    \item[{\bf\hei 6.}] 精算终值及其含义
+\end{itemize}
+
+问题：初始时刻，有$l_x$个$(x)$岁的个体，只要还活着，则每个人都连续地缴纳生存年金，在$n$时刻，每个人能分到多少钱?
+
+在$t$时刻，有$l_{x+t}$人活着，他们在$[t, t+dt]$内缴纳的钱共有$l_{x+t}\cdot 1dt$, 这笔钱的现值为$v^tl_{x+t}dt$.此时所有人在$[0, n]$ 内缴纳的总现值有$ \int_0^{n} v^tl_{x+t}dt$.
+
+所以，$n$时刻账户余额为$(1+i)^n\int_0^{n} v^tl_{x+t}dt=\int_0^{n} v^{t-n}l_{x+t}dt$, 这笔钱平均分给$n$时刻还活着的$l_{x+n}$人，每个人分得$\int_0^{n} v^{t-n}l_{x+t}dt/{l_{x+n}}$元, 易知$\dfrac{\int_0^{n} v^{t-n}l_{x+t}dt}{l_{x+n}}=\dfrac{\int_0^{n} v^{t-n}{}_tp_xdt}{{}_np_x}=\dfrac{\int_0^{n} v^{t}{}_tp_xdt}{v^n{}_np_x}=\dfrac{ \overline{a}_{x:\annu{n}}}{{}_nE_x}$.
+
+所以，$n$时刻还活着的$l_{x+n}$人每人分得$\dfrac{ \overline{a}_{x:\annu{n}}}{{}_nE_x}$元，记$\overline{S}_{x:\annu{n}}=\dfrac{ \overline{a}_{x:\annu{n}}}{{}_nE_x}$, 称其为$n$年期连续生存年仅的精算终值.
+
+注: $l_{x+n}\overline{S}_{x:\annu{n}}=\int_0^{n} (1+i)^{n-t}l_{x+t}dt$.
+
+
+\begin{itemize}
+    \item[{\bf\hei 四.}]{\bf\hei 延期$n$年的终身连续生存年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei1.}] 支付方式
+\end{itemize}
+
+若个体$(x)$在$n$年内死亡, 即$(T(x)<n)$, 则不予任何支付;
+
+若个体$(x)$在$n$年内未死, 即$(T(x)\ge n)$, 则从$n$时刻开始支付生存年金，直到死为止.
+
+
+\begin{itemize}
+    \item[{\bf\hei2.}] 支付现值
+\end{itemize}
+
+$Z=\begin{cases}
+        0,                   & \text{若 } T(x) < n    \\
+        \int_n^{T(x)} v^tdt, & \text{若 } T(x) \geq n
+    \end{cases}$, 即
+
+$\begin{aligned}
+        Z =\int_n^{T(x)} v^tdtI_{\{T(x)\ge n\}} =(\overline{a}_{\annu{T(x)}}-\overline{a}_{\annu n})I_{\{T(x)\ge n\}} =\overline{a}_{\annu {T(x)}} - \overline{a}_{\annu {T(x) \land n}}
+    \end{aligned}$
+
+\begin{itemize}
+    \item[{\bf\hei3.}] 精算现值用$_{n|}\overline{a}_{x}$表示
+\end{itemize}
+$$
+    \begin{aligned}
+        _{n|}\overline{a}_{x} & = E(Z)                                                                 \\
+                              & = E(\overline{a}_{\annu {T(x)}} - \overline{a}_{\annu {T(x) \land n}}) \\
+                              & = \overline a_{x}-\overline a_{x:\annu n}                              \\
+                              & = \int_0^{\infty}v^{t}{}_tp_xdt-\int_0^{n} v^{t}{}_tp_xdt              \\
+                              & =\int_n^{\infty}v^{t}{}_tp_xdt.                                        \\
+    \end{aligned}
+$$
+
+\begin{itemize}
+    \item[{\bf\hei 4.}] 性质
+\end{itemize}
+
+{\rm\bf(i)} $_{n|}\overline{a}_{x}=\int_n^{\infty}v^{t}{}_tp_xdt$
+
+{\rm\bf(ii)} $_{n|}\overline{a}_{x}=\overline{a}_{x}-\overline{a}_{x:\annu{n}}$
+
+{\rm\bf(iii)} $_{n|}\overline{a}_{x}={}_nE_x\overline{a}_{x+n}\Leftrightarrow l_x\overline{a}_{x}=l_x\overline{a}_{x:\annu{n}}+v^nl_{x+n}
+    \overline{a}_{x+n}$
+
+\proof
+$$
+    \begin{aligned}
+        _{n|}\overline{a}_{x} & = \int_n^{\infty}v^{t}{}_tp_xdt                     \\
+                              & = \int_0^{\infty}v^{t+n}{}_{t+n}p_xdt               \\
+                              & =v^{n}{}_{n}p_x \int_0^{\infty}v^{t}{}_{t}p_{x+n}dt \\
+                              & =_nE_x\overline{a}_{x+n}
+    \end{aligned}
+$$
+\begin{itemize}
+    \item[{\bf\hei 五.}]{\bf\hei $n$年期确定型连续生存年金}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}] 支付方式
+\end{itemize}
+
+若个体$(x)$在$n$年内死亡, 即$T(x)<n$, 则年金连续支付到$n$为止;
+
+若个体$(x)$在$n$年内未死, 即$T(x)\ge n$, 则年金连续支付到死为止.
+
+\begin{itemize}
+    \item[{\bf\hei 2.}] 支付现值
+\end{itemize}
+
+$Z=\overline {a}_{\annu{T(x)\lor n}}=\int_0^{{T(x)\lor n}}v^tdt$,
+
+易知$\overline {a}_{\annu{T(x)\lor n}}+\overline {a}_{\annu{T(x)\land n}}=\overline {a}_{\annu{T(x)}}+\overline {a}_{\annu{n}}$, 所以$Z=\overline {a}_{\annu{T(x)\lor n}}=\overline {a}_{\annu{T(x)}}-\overline {a}_{\annu{T(x)\land n}}+\overline {a}_{\annu{n}}$.
+
+\begin{itemize}
+    \item[{\bf\hei 3.}] 精算现值用$\overline a_{\overline{x:\annu{n}}}$
+\end{itemize}
+$$
+    \begin{aligned}
+        \overline a_{\overline{x:\annu{n}}}
+         & =EZ                                                                                        \\
+         & =E(\overline a_{\annu {T(x) }}-\overline a_{\annu {T(x) \land n}})+\overline a_{\annu {n}} \\
+         & ={}_{n|}\overline{a}_{x}+\overline a_{\annu {n}}
+        .
+    \end{aligned}
+$$
+
+\section{小结}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 支付额总现值}
+\end{itemize}
+
+\begin{center}
+    \begin{tabular}{ |c|c|c|c| }
+        \hline
+                 & 期初生存年金                                                                 & 期末生存年金                                                           & 连续生存年金                                                           \\
+        \hline
+        终身       & $\ddot a_{\annu{K(x)+1}} = \sum_{j=0}^{K(x)}{v^j}$                     & $a_{\annu{K(x)}} = \sum_{j=1}^{K(x)}{v^j}$                       & $\overline{a}_{\annu{T(x)}}=\int_0^{T(x)} v^tdt$                 \\
+        \hline
+        $n$年期    & $\ddot a_{\annu{(K(x)+1)\land n}} = \sum_{j=0}^{K(x)\land (n-1)}{v^j}$ & $a_{\annu{K(x)\land n}} = \sum_{j=1}^{K(x)\land n}{v^j}$         & $  \overline{a}_{\annu{T(x)\land n}}=\int_0^{T(x)\land n} v^tdt$ \\
+        \hline
+        延期$n$年   & $\ddot a_{\annu{(K(x)+1)}} - \ddot a_{\annu{(K(x)+1)\land n}}$
+                 & $a_{\annu{K(x)}} - a_{\annu{K(x)\land n}}$                             & $\overline{a}_{\annu{T(x)}} - \overline{a}_{\annu{T(x)\land n}}$                                                                    \\
+        \hline
+
+        $n$年期确定性 & $\ddot a_{\annu{(K(x)+1)\lor n}}$                                      & $a_{\annu{K(x)\lor n}}$                                          & $\overline{a}_{\annu{T(x)\lor n}}$                               \\
+
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 精算现值}
+\end{itemize}
+
+\begin{center}
+    \begin{tabular}{ |c|c|c|c| }
+        \hline
+        $ $      & 期初生存年金                                                                & 期末生存年金                                                   & 连续生存年金                                                                                \\
+        \hline
+        终身       & $\ddot a_x=\sum_{j=0}^{\infty}{v^j{}_jp_x}$                           & $a_{x}=\ddot a_{x}-1=\sum^{\infty}_{j=1}v^{j}{}_jp_x$    & $\overline{a}_{x}=\int_0^{\infty} v^t{}_{t}p_xdt$                                     \\
+        \hline
+        $n$年期    & $\ddot a_{x:}{}_{\annu n}=\sum_{j=0}^{n-1}{v^j}{}_j p_x$              & $ \begin{aligned}
+                                                                                                     a_{x:\annu n} & =\sum^{n}_{j=1}v^{j}{}_jp_x           \\
+                                                                                                                   & =\ddot a_{x:\annu n}-1+v^{n}{}_{n}p_x
+                                                                                                 \end{aligned}$ & $  \overline{a}_{x:\annu{n}}=\int_0^{n} v^t{}_{t}p_xdt$                                                                       \\
+        \hline
+        延期$n$年   & $\begin{aligned}
+                            _{n|}\ddot a_{x} & =\ddot a_{x}-\ddot a_{x:\annu n}     \\
+                                             & ={}_{n}E_{x}\ddot a_{x+n}            \\
+                                             & =\sum^{\infty}_{j=n}v^{j}{}_{j}p_{x} \\
+                        \end{aligned}$            & $\begin{aligned}
+                                                         _{n|}a_{x} & = a_{x}-a_{x:\annu n}                  \\
+                                                                    & = {}_{n}E_{x}a_{x+n}                   \\
+                                                                    & =\sum_{j=n+1}^{\infty}v^{j}{}_{j}p_{x}
+                                                     \end{aligned}$   & $\begin{aligned}
+                                                                             _{n|}\overline{a}_{x} & =\int_n^{\infty} v^t{}_{t}p_xdt             \\
+                                                                                                   & =\overline{a}_{x}-\overline{a}_{x:\annu{n}} \\
+                                                                                                   & ={}_nE_x\overline{a}_{x+n}
+                                                                         \end{aligned}$                                                                                                    \\
+        \hline
+
+        $n$年期确定性 & $\ddot a_{\overline{x:\annu n}}={}_{n|}\ddot a_{x}+\ddot a_{\annu n}$ & $a_{\overline{x:\annu{n}}}=a_{\annu n} + {}_{n|}a_{x}$   & $\overline a_{\overline{x:\annu{n}}}={}_{n|}\overline{a}_{x}+\overline a_{\annu {n}}$ \\
+
+        \hline
+    \end{tabular}
+\end{center}
+
+
 \section{作业}
+
 \begin{exs}
     $$
         {}_{n|}\ddot{a}_x = {}_nE_x\ddot{a}_{x+n}
@@ -2399,6 +2667,15 @@ $\frac{d}{dx}\overline{a}_x = (\mu(x)+\delta)\overline{a}_x-1$
     (3) 求支付现值$Z$的方差$D(Z)$.
 \end{exs}
 
+\begin{exs}
+    \proof $E((1+i)^{T(x)\wedge n}\cdot \overline{a}_{\annu{T(x)\wedge n}})=\int_0^{n} (1+i)^{t}{}_tp_xdt$.
+\end{exs}
+
+\begin{exs}
+    已知$u=0.04, \delta=0.06, $设$(x)$买了一份10年期连续生存年金, 一份延期10年的连续终身生存年金, 一份终身连续生存年金, 支付额现值分别为$Z_1=\overline a_{\annu {T(x) \land 10}},Z_2=\overline a_{\annu {T(x) }}-\overline a_{\annu {T(x) \land 10}}, Z_3=\overline a_{\annu {T(x) }}.$
+
+    求$\overline a_{x}$, $\overline a_{{x:\annu{10}}}$, $_{10|}\overline{a}_{x}$, $D(Z_1)$, $D(Z_3)$, $Cov(Z_2,Z_3)$.
+\end{exs}
 
 \begin{thebibliography}{99}
     %\addtolength{\itemsep}{-0.5em}
