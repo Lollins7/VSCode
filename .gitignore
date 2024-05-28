@@ -15,7 +15,13 @@
 *(busy)
 *.zip
 *.bbl
+*.vrb
 *.blg
+*.xdv
+*.pyg
+*.pygtex
+*.pygstyle
+
 
 # Pycharm
 *.idea/
