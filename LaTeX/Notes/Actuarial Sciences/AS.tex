@@ -106,6 +106,8 @@
 }
 \newpage
 
+
+
 \theoremstyle{definition}\newtheorem{definition}{\noindent\mbox{\bf\hei 定义}}[chapter]
 \newtheorem{assumption}{\noindent\mbox{Assumption}}[chapter]
 \theoremstyle{remark} \newtheorem{remark}{\noindent\mbox{\bf\hei 注}}[chapter]
@@ -212,14 +214,14 @@ $$F_X'(x)=f_X(x).$$
     {\rm\bf(iii)} $s(t)=e^{-\int_0^t\mu(s)ds}.$
 
 \end{proposition}
-\proof (i)和(ii)可由死亡力$\mu(t)$的定义及(1)式直接得出. 现证明(iii). 注意到$s(0)=P(X>0)=1$及
+\proof (i)和(ii)可由死亡力$\mu(t)$的定义及(1)式直接得出. 现证明(iii). 注意到$s(0)=P(X>0)=1$ 及
 $$\mu(t)=-\frac{s'(t)}{s(t)}=-[\ln s(t)]'.$$ 所以有
 $$\ln s(t)=-\int_0^t\mu(s)ds.$$ 故$s(t)=e^{-\int_0^t\mu(s)ds},$ (iii) 得证. \qed
 
 
 \begin{remark}
     \begin{enumerate}
-        \item[{\bf(a)}] 由$s(t) = e^{-\int_{0}^{t}\mu(s)\mathrm{d}s}$及$ \mu(t) = -\frac{s'(t)}{s(t)}$ 可知, 生存函数$s(t)$ 与死亡力函数$\mu(t)$ 相互唯一确定.
+        \item[{\bf(a)}] 由$s(t) = e^{-\int_{0}^{t}\mu(s)\mathrm{d}s}$ 及$ \mu(t) = -\frac{s'(t)}{s(t)}$ 可知, 生存函数$s(t)$ 与死亡力函数$\mu(t)$ 相互唯一确定.
         \item[{\bf(b)}] 一个函数$\mu(t)$要作为死亡力, 必须满足以下两条:
             \begin{enumerate}
                 \item[ $ 1^\circ$] $\mu(t) \geq 0, ~\forall t \geq 0$ (保证$s(t)$单调递减).
@@ -240,12 +242,12 @@ $$\ln s(t)=-\int_0^t\mu(s)ds.$$ 故$s(t)=e^{-\int_0^t\mu(s)ds},$ (iii) 得证. \
 \end{example}
 
 \begin{remark}
-    由\eqref{ep}式可知, 若新生儿寿命服从以$\lambda$ 为参数的指数分布, 则死亡力$\mu(t)\equiv \lambda,$ 和$t$无关. 这表示新生儿的死亡力在任何时候都是一样的. 也就是说, 新生儿永远年轻. 这当然与实际情况不符. 所以, 指数分布作为寿命分布是有缺陷的. 但由于指数分布的计算较为简单, 所以在理论研究中, 学者们很多时候都采用指数分布作为寿命分布.
+    由\eqref{ep}式可知, 若新生儿寿命服从以$\lambda$ 为参数的指数分布, 则死亡力$\mu(t)\equiv \lambda,$ 和$t$ 无关. 这表示新生儿的死亡力在任何时候都是一样的. 也就是说, 新生儿永远年轻. 这当然与实际情况不符. 所以, 指数分布作为寿命分布是有缺陷的. 但由于指数分布的计算较为简单, 所以在理论研究中, 学者们很多时候都采用指数分布作为寿命分布.
 \end{remark}
 \begin{itemize}
     \item[{\bf\hei 三.}]{\hei\bf 整数年龄与分数年龄}
 \end{itemize}
-很多时候, 保险金都是在整数时刻支付的. 所以有必要研究整数年龄和分数年龄. 设$K(0)$为$X$的整数部分, $S(0)$为$X$的分数部分. 即
+很多时候, 保险金都是在整数时刻支付的. 所以有必要研究整数年龄和分数年龄. 设$K(0)$为$X$的整数部分, $S(0)$为$X$ 的分数部分. 即
 $$X = K(0) + S(0).$$
 记$\mathring{e}_0 = E(X),$ 它表示新生儿的期望寿命; 记$e_0 = E(K(0)),$ 它表示期望整数寿命. 易知
 \begin{equation*}
@@ -398,7 +400,7 @@ $s_{T(x)}(t)=e^{-\int_0^t\mu_x(s)ds}.$ 又因为$\mu_x(t)=\mu(x+t),$ 故
     \begin{align}
          & P(T(x)>t+u|T(x)>t)=P(T(x+t)>u).\label{tu}
     \end{align}
-    该式的含义为: 一个$x$岁的人, 在$x+t$岁还活着的条件下, 再活$u$年不死的概率与一个$x+t$岁的人再$u$年内未死的概率相等.
+    该式的含义为: 一个$x$岁的人, 在$x+t$岁还活着的条件下, 再活$u$年不死的概率与一个$x+t$ 岁的人再$u$年内未死的概率相等.
 \end{proposition}
 
 \proof 对$u,t>0,$ 由条件概率定义知
@@ -425,13 +427,13 @@ $s_{T(x)}(t)=e^{-\int_0^t\mu_x(s)ds}.$ 又因为$\mu_x(t)=\mu(x+t),$ 故
          & e_x = \sum_{k=1}^{\infty} {_kp_x}=\sum_{k=1}^{\infty} {e^{- \lambda t}}=\frac{e^{- \lambda}}{1-e^{- \lambda}}. \\
          & \mathring{e}_x=\int_{0}^{\infty}{_tp_x}dt=\int_{0}^{\infty}{e^{- \lambda t}}dt=\frac{1}{\lambda}.
     \end{align*}
-    显而易见, 这里的$\mathring e_x $和$e_x$与$x$无关, 也就是说,  所有人的剩余寿命的期望都是一样的, 和他现在的年龄无关. 这进一步说明指数分布作为寿命分布是有缺陷的.   此外, 因$\mathring{e}_x=ET(x)=\frac{1}{\lambda},$ 故指数分布的参数$\lambda$正好是期望寿命的倒数.
+    显而易见, 这里的$\mathring e_x $和$e_x$与$x$ 无关, 也就是说,  所有人的剩余寿命的期望都是一样的, 和他现在的年龄无关. 这进一步说明指数分布作为寿命分布是有缺陷的.   此外, 因$\mathring{e}_x=ET(x)=\frac{1}{\lambda},$ 故指数分布的参数$\lambda$正好是期望寿命的倒数.
 \end{example}
 
 \begin{itemize}
     \item[{\bf\hei 三.}]{\bf\hei 一些精算学表示法}
 \end{itemize}
-注意到 $ S_{T(x)}(t)=P(T(x)>t)$表示个体$ (x)$在$t$年后还活着的概率; 而$F_{T(x)}(t)=P(T(x)\le t)$表示个体$(x)$在$t$年内死去的概率. 这些记号都很复杂, 书写比较困难. 故精算学中需引入一些简单的记号.
+注意到 $ S_{T(x)}(t)=P(T(x)>t)$表示个体$ (x)$在$t$年后还活着的概率; 而$F_{T(x)}(t)=P(T(x)\le t)$ 表示个体$(x)$在$t$ 年内死去的概率. 这些记号都很复杂, 书写比较困难. 故精算学中需引入一些简单的记号.
 
 
 定义如下几个记号:
@@ -458,7 +460,7 @@ $s_{T(x)}(t)=e^{-\int_0^t\mu_x(s)ds}.$ 又因为$\mu_x(t)=\mu(x+t),$ 故
 $$\frac{d(_tp_x)}{dt}=\frac{d(\mathrm{e}^{-\int_{0}^{t}\mu_x(s)ds})}{dt}=\mathrm{e}^{-\int_{0}^{t}\mu_x(s)ds}({-\int_{0}^{t}\mu_x(s)ds})^{\prime}_t=-_tp_x\mu_x(t).$$
 
 (ii) 利用等式${}_tp_x=e^{-\int_{x}^{x+t}\mu_x(s)ds},$ 有
-$$\frac{d(_tp_x)}{dx}=(e^{-\int_{x}^{x+t}\mu(s)ds})^{\prime}=e^{-\int_{x}^{x+t}\mu(s)ds}({-\int_{x}^{x+t}\mu(s)ds})^{\prime}_x= {}_tp_x(\mu(x)-\mu(x+t)).$$
+$$\frac{d(_tp_x)}{dx}=(e^{-\int_{x}^{x+t}\mu_x(s)ds})^{\prime}=e^{-\int_{x}^{x+t}\mu(s)ds}({-\int_{x}^{x+t}\mu(s)ds})^{\prime}_x= {}_tp_x(\mu(x)-\mu(x+t)).$$
 命题证毕.
 \qed
 
@@ -536,8 +538,8 @@ $
 $ 为示性函数.
 
 令 \begin{align*}
-    l_x     & \overset{def}{=}E\z(\mathscr L(x)\y), \text{ 它表示在}x\text{岁还活着的期望人数};         \\
-    {}_td_x & \overset{def}{=}E\z({}_t\mathscr D_x \y),\text{ 它表示在}[x,x+t)\text{内死去人数的期望}.
+    l_x     & \overset{def}{=}E(\mathscr L(x)), \text{ 它表示在}x\text{岁还活着的期望人数};         \\
+    {}_td_x & \overset{def}{=}E({}_t\mathscr D_x ),\text{ 它表示在}[x,x+t)\text{内死去人数的期望}.
 \end{align*}
 
 
@@ -588,7 +590,7 @@ $${}_nd_x=l_x-l_{x+n}=-\int_{x}^{x+n}\frac{d(l_y)}{dy}dy=\int_{x}^{x+n}l_y\mu(y)
 补充:
 $${}_td_x=\int_x^{x+t} l_yu(y)dy.$$
 
-等式含义:左端表示在$[x,x+h]$内死去的人数, $u(y)dy=-\dfrac{s'(y)}{s(y)}dy=-\dfrac{d(s(y))}{s(y)}=\dfrac{s(y)-s(y+\Delta y)}{s(y)}.$所以$u(y)dy$表示一个人在$y$岁还活着的条件下,在$[y,y+dy]$ 内死去的概率,于是$l_yu(y)dy$表示在$[y,y+dy]$内死去的人数.对$y$积分(求和)可知$\int_x^{x+t}l_yu(y)dy$表示在$[x,x+t]$内死去的人数.
+等式含义:左端表示在$[x,x+h]$内死去的人数, $u(y)dy=-\dfrac{s'(y)}{s(y)}dy=-\dfrac{d(s(y))}{s(y)}=\dfrac{s(y)-s(y+\Delta y)}{s(y)}.$ 所以$u(y)dy$ 表示一个人在$y$岁还活着的条件下,在$[y,y+dy]$ 内死去的概率,于是$l_yu(y)dy$ 表示在$[y,y+dy]$内死去的人数.对$y$积分(求和)可知$\int_x^{x+t}l_yu(y)dy$表示在$[x,x+t]$内死去的人数.
 
 所以右端=左端.
 \section{生命表的元素}
@@ -680,12 +682,12 @@ $$\int_0^tsl_{x+s}\mu(x+s)ds+tl_{x+t}=\int_0^tl_{x+s}ds.$$
 
 表达式$\int_0^tsl_{x+s}\mu(x+s)ds+tl_{x+t}$的含义如下:
 
-\noindent 一方面, 在$x+s$岁活着的人有$l_{x+s}$个, 每个人在$[x+s,x+s+ds]$内死去的概率为$\mu(x+s)ds,$ 所以, 在$[x+s,x+s+ds]$内死去的人数为$l_{x+s}\mu(x+s)ds$, 他们每个人在$[x,x+t]$内活$s$年, 所以在$x+s$岁死去的人在$[x,x+t]$内活的总时间为$sl_{x+s}\mu(x+s)ds,$ 再对$s$在$(0,t)$求积分(求和)可知, $\int_0^tsl_{x+s}\mu(x+s)ds+tl_{x+t}$表示在$[x,x+t]$内死去的人在这段时间内活过的总时间. 另一方面在$x+t$ 岁还活着的人有$l_{x+t},$ 每个人在$[x,x+t)$内活了$t$岁, 他们在$[x,x+t)$内总共活了$tl_{x+t}$岁.
+\noindent 一方面, 在$x+s$岁活着的人有$l_{x+s}$ 个, 每个人在$[x+s,x+s+ds]$内死去的概率为$\mu(x+s)ds,$ 所以, 在$[x+s,x+s+ds]$内死去的人数为$l_{x+s}\mu(x+s)ds$, 他们每个人在$[x,x+t]$内活$s$年, 所以在$x+s$岁死去的人在$[x,x+t]$ 内活的总时间为$sl_{x+s}\mu(x+s)ds,$ 再对$s$在$(0,t)$求积分(求和)可知, $\int_0^tsl_{x+s}\mu(x+s)ds+tl_{x+t}$表示在$[x,x+t]$内死去的人在这段时间内活过的总时间. 另一方面在$x+t$ 岁还活着的人有$l_{x+t},$ 每个人在$[x,x+t)$内活了$t$ 岁, 他们在$[x,x+t)$内总共活了$tl_{x+t}$ 岁.
 
 综合以上分析, $\int_0^tsl_{x+s}\mu(x+s)ds+tl_{x+t}$表示所有人在$[x,x+t]$内活过的总时间, 这是一个复杂的公式, 但它有一个简单的表达$\int_0^tl_{x+s}ds.$
 
 \begin{itemize}
-    \item[{\bf\hei 二.}]{\bf\hei $a(x):$ 一个$x$岁的人在1年内死去的条件下, 在$[x,x+t)$内活过的期望时间}
+    \item[{\bf\hei 二.}]{\bf\hei $a(x):$ 一个$x$岁的人在1年内死去的条件下, 在$[x,x+t)$ 内活过的期望时间}
 \end{itemize}
 
 个体$(x)$的余命为$T(x)$, 所以$$a(x)=E(T(x)|T(x)\le1).$$
@@ -708,11 +710,11 @@ $$\int_0^tsl_{x+s}\mu(x+s)ds+tl_{x+t}=\int_0^tl_{x+s}ds.$$
 \end{proposition}
 \proof 由$L_x$的定义可知
 \begin{align*}
-    L_x & =l_xE(T(x)\wedge1)                                                       \\
-        & =l_xE((T(x)\wedge1)I_{\{T(x)<1\}})+l_xE((T(x)\wedge 1)I_{\{T(x)\ge 1\}}) \\
-        & =l_xE(T(x)*I_{\{T(x)<1\}})+l_xE(1*I_{\{T(x)\ge 1\}})                     \\
-        & =l_xP(T(x)<1)E(T(x)|T(x)<1)+l_xP(T(x)\ge 1)                              \\
-        & =l_xq_xa(x)+l_xp_x                                                       \\
+    L_x & =l_xE(T(x)\wedge1)                                                     \\
+        & =l_xE(T(x)\wedge1)I_{\{T(x)<1\}})+l_xE(T(x)\wedge 1)I_{\{T(x)\ge 1\}}) \\
+        & =l_xE(T(x)*I_{\{T(x)<1\}})+l_xE(1*I_{\{T(x)\ge 1}\})                   \\
+        & =l_xP(T(x)<1)E(T(x)|T(x)<1)+l_xP(T(x)\ge 1)                            \\
+        & =l_xq_xa(x)+l_xp_x                                                     \\
         & =d_xa(x)+l_{x+1}.
 \end{align*}
 证毕. \qed
@@ -741,7 +743,7 @@ $${}_nm_x=\dfrac{{}_nq_x}{\int_0^n{}_tp_xdt}=\dfrac{{}_nd_x/l_x}{\int_0^n\dfrac{
     \item[{\bf\hei 五.}]{\bf\hei $Y_x\triangleq\int_0^{\infty}T_{x+s}ds$}
 \end{itemize}
 
-生命表中包含$q_x,l_x,d_x,L_x,T_x,\mathring{e}_0$等元素. 总的来说, 利用生命表可以计算出生存概率${}_kp_x,$ 死亡概率${}_kq_x$、${}_{k|j}q_x$等.
+生命表中包含$q_x,l_x,d_x,L_x,T_x,\mathring{e}_0$ 等元素. 总的来说, 利用生命表可以计算出生存概率${}_kp_x,$ 死亡概率${}_kq_x$、${}_{k|j}q_x$等.
 \newpage
 
 \section{分数年龄上的死亡假设}
@@ -751,7 +753,7 @@ $${}_nm_x=\dfrac{{}_nq_x}{\int_0^n{}_tp_xdt}=\dfrac{{}_nd_x/l_x}{\int_0^n\dfrac{
 
 $_{k}P_{x}=\frac{l_{x+k}}{l_{x}},$若$k$为整数, 可查生命表计算$_{k}P_{x},$例如: $_{2}P_{20}=\frac{l_{22}}{l_{20}}.$
 
-但如果$k$不是整数, 例如: $_{2.5}P_{20}=\frac{l_{22.5}}{20},$求$l_{22.5}$的值. 发现无法查表得出.
+但如果$k$不是整数, 例如: $_{2.5}P_{20}=\frac{l_{22.5}}{20},$求$l_{22.5}$ 的值. 发现无法查表得出.
 则可以令$T(x)=K(x)+S(x),$其中K(x)是整数部分, S(x)是分数部分.
 
 关于S(x)服从的分布可以满足以下两个假设:
@@ -824,7 +826,7 @@ $_{k}P_{x}=\frac{l_{x+k}}{l_{x}},$若$k$为整数, 可查生命表计算$_{k}P_{
 
 证毕.\qed
 
-{\rm\bf(iv)}  \begin{proposition}在每一年龄年UDD假设成立时, 有
+{\rm\bf(iv)}  \begin{proposition}在每一年龄年UDD 假设成立时, 有
     $$\mathring{e}_{x}=e_{x}+\frac{1}{2}$$
     $$\text{Var}(T)=\text{Var}(K)+\frac{1}{12}$$
 \end{proposition}
@@ -881,7 +883,7 @@ $_{k}P_{x}=\frac{l_{x+k}}{l_{x}},$若$k$为整数, 可查生命表计算$_{k}P_{
 \end{proposition}
 
 \begin{example}
-    设$S(x)=1-\frac{x}{12},\ 0\leq x\leq 12$, $l_{0}$个个体相互独立, 生存函数都是$S(x)$.问:
+    设$S(x)=1-\frac{x}{12},\ 0\leq x\leq 12$, $l_{0}$个个体相互独立, 生存函数都是$S(x)$. 问:
 
     (1) 求$(_{3}\mathscr D _{0},\ _{3}\mathscr D_{3},\ _{3}\mathscr D _{6},\ _{3}\mathscr D _{9})$的联合分布;
 
@@ -891,13 +893,13 @@ $_{k}P_{x}=\frac{l_{x+k}}{l_{x}},$若$k$为整数, 可查生命表计算$_{k}P_{
 \end{example}
 
 \solution
-易知$l_{0}$个人的寿命$X_{1},X_{2},...,X_{l_{0}}\stackrel{\text{i.i.d.}}{\sim}U[0,12]$.且随机变量满足
+易知$l_{0}$个人的寿命$X_{1},X_{2},...,X_{l_{0}}\stackrel{\text{i.i.d.}}{\sim}U[0,12]$. 且随机变量满足
 $$_{3}\mathscr D _{0}=\sum^{l_{0}}_{k=1}I_{\{0\leq x_k \leq 3\}}$$
 $$_{3}\mathscr D _{3}=\sum^{l_{0}}_{k=1}I_{\{3\leq x_k \leq 6\}}$$
 $$_{3}\mathscr D _{6}=\sum^{l_{0}}_{k=1}I_{\{6\leq x_k \leq 9\}}$$
 $$_{3}\mathscr D _{9}=\sum^{l_{0}}_{k=1}I_{\{9\leq x_k \leq 12\}}$$
 
-(1)令事件$A=\{_{3}\mathscr D _{0}=k_{1},\ _{3}\mathscr D _{3}=k_{2},\ _{3}\mathscr D _{6}=k_{3},\ _{3}\mathscr D _{9}=k_{4}\}$, 若事件$A$发生, 则认为在$l_{0}$中, 有$k_{1}$人在$[0,3]$死亡; 有$k_{2}$人在$[3,6]$死亡; 有$k_{3}$人在$[6,9]$死亡; 有$k_{4}$人在$[9,12]$死亡.其中$k_{1}+k_{2}+k_{3}+k_{4}=l_{0}.$从$k_{1}+k_{2}+k_{3}+k_{4}$个人中, 选出$k_{1}$个人在$[0,3]$内死亡, 有$C_{k_{1}+k_{2}+k_{3}+k_{4}}^{k_{1}}$种选法; 从$k_{2}+k_{3}+k_{4}$个人中, 选出$k_{2}$个人在$[3,6]$内死亡, 有$C_{k_{2}+k_{3}+k_{4}}^{k_{2}}$种选法; 从$k_{3}+k_{4}$个人中, 选出$k_{3}$个人在$[6,9]$内死亡, 有$C_{k_{3}+k_{4}}^{k_{3}}$种选法...以此推出:
+(1)令事件$A=\{_{3}\mathscr D _{0}=k_{1},\ _{3}\mathscr D _{3}=k_{2},\ _{3}\mathscr D _{6}=k_{3},\ _{3}\mathscr D _{9}=k_{4}\}$, 若事件$A$发生, 则认为在$l_{0}$中, 有$k_{1}$人在$[0,3]$死亡; 有$k_{2}$ 人在$[3,6]$死亡; 有$k_{3}$ 人在$[6,9]$ 死亡; 有$k_{4}$人在$[9,12]$ 死亡.其中$k_{1}+k_{2}+k_{3}+k_{4}=l_{0}.$从$k_{1}+k_{2}+k_{3}+k_{4}$个人中, 选出$k_{1}$个人在$[0,3]$ 内死亡, 有$C_{k_{1}+k_{2}+k_{3}+k_{4}}^{k_{1}}$种选法; 从$k_{2}+k_{3}+k_{4}$个人中, 选出$k_{2}$ 个人在$[3,6]$内死亡, 有$C_{k_{2}+k_{3}+k_{4}}^{k_{2}}$ 种选法; 从$k_{3}+k_{4}$个人中, 选出$k_{3}$ 个人在$[6,9]$ 内死亡, 有$C_{k_{3}+k_{4}}^{k_{3}}$种选法...以此推出:
 $$
     P(A)=\frac{(k_{1}+k_{2}+k_{3}+k_{4})!}{k_{1}!k_{2}!k_{3}!k_{4}!}\cdot {}_{3}q_{0}^{k_{1}}\cdot {}_{3|3}q_{0}^{k_{2}}\cdot {}_{6|3}q_{0}^{k_{3}}\cdot {}_{9|3}q_{0}^{k_{4}}
 $$
@@ -918,7 +920,7 @@ $$
                                                           & =\frac{l_{0}(l_{0}-1)}{16}-\frac{l_{0}^{2}}{16}                                                                          \\
                                                           & =-\frac{l_{0}}{16}.
 \end{align*}
-(对于$\sum^{l_{0}}_{k=1}\sum_{j\neq k}E(I_{\{0\leq x_{k}\leq 3\}}\cdot I_{\{3\leq x_{k}\leq 6\}}) = \frac{l_{0}(l_{0}-1)}{16}$的理解: 其中$\sum^{l_{0}}_{k=1}\sum_{j\neq k} = l_0(l_0-1)$, 而$p(I_{c\leq x_{k}\leq c+3}) = \frac14$, 故$I_{0\leq x_{k}\leq 3}$与$I_{3\leq x_{k}\leq 6}$同时取1 的概率为$\frac{1}{16}$.)
+(对于$\sum^{l_{0}}_{k=1}\sum_{j\neq k}E(I_{\{0\leq x_{k}\leq 3\}}\cdot I_{\{3\leq x_{k}\leq 6\}}) = \frac{l_{0}(l_{0}-1)}{16}$ 的理解: 其中$\sum^{l_{0}}_{k=1}\sum_{j\neq k} = l_0(l_0-1)$, 而$p(I_{c\leq x_{k}\leq c+3}) = \frac14$, 故$I_{0\leq x_{k}\leq 3}$ 与$I_{3\leq x_{k}\leq 6}$同时取1 的概率为$\frac{1}{16}$.)
 
 求出协方差即可求相关系数:
 \begin{align*}
@@ -934,11 +936,11 @@ $$
 \end{exs}
 
 \begin{exs}
-    设$\mu(t)=\frac{1}{(t+e)(\ln (t+e))^a},t\ge0.$ 讨论$a$取何值时, $\mu(t)$可作为死亡力函数, 并求出$s_{T(x)}(t),$ $f_{T(x)}(t).$
+    设$\mu(t)=\frac{1}{(t+e)(\ln (t+e))^a},t\ge0.$ 讨论$a$取何值时, $\mu(t)$ 可作为死亡力函数, 并求出$s_{T(x)}(t),$ $f_{T(x)}(t).$
 \end{exs}
 
 \begin{exs}
-    假设新生儿的寿命为$X,$ 死亡力为$\mu(t)=\frac{a}{(t+1)},t\ge0, a>0.$ 讨论$a$何值时, $D(X)$存在并求出$D(X).$
+    假设新生儿的寿命为$X,$ 死亡力为$\mu(t)=\frac{a}{(t+1)},t\ge0, a>0.$ 讨论$a$ 何值时, $D(X)$ 存在并求出$D(X).$
 \end{exs}
 
 \begin{exs}
@@ -1002,7 +1004,7 @@ $$
 
 若被保险人在$n$年内死亡(即$T(x)<n$), 则不予任何支付;
 
-若他在$n$年内未死(即$T(x)\geqslant n$), 则在$n$时刻支付他1元保险金.
+若他在$n$年内未死(即$T(x)\geqslant n$), 则在$n$ 时刻支付他1元保险金.
 \begin{itemize}
     \item[{\bf\hei 二.}]{\bf\hei 支付现值$Z$}
 \end{itemize}
@@ -1020,7 +1022,7 @@ $$
 $E\left( Z \right) =E\left( v^nI_{\left\{ T\left( x \right) \geqslant n \right\}} \right) =v^nE\left( I_{\left\{ T\left( x \right) \geqslant n \right\}} \right)
     =v^nP\left( T\left( x \right) \geqslant n \right) =v^n\cdot{}_np_x$
 
-$n$年期生存保险的精算现值记为$A_{x:\annu{n}^1}$或$_nE_x$
+$n$年期生存保险的精算现值记为$A_{x:\annu{n}^1}$ 或$_nE_x$
 
 所以$A_{x:\annu{n}^1} = {}_nE_x=v^n\cdot{}_np_x$
 \begin{itemize}
@@ -1052,11 +1054,11 @@ $$_nE_x=v^k\cdot {}_kp_x\cdot {}_{n-k}E_{x+k}=(\frac{1}{i+1})^k\cdot\frac{l_{x+k
 \begin{remark}
     等式$(1+i)^k\cdot l_x\cdot {}_nE_x=l_{x+k}\cdot {}_{n-k}E_{x+k}$ 的含义是:
 
-    在$0$时刻, $l_x$个人各自买了一份$n$年期的生存保险, 保费总额为$l_x\cdot {}_nE_x$, $k$年后, 这笔钱的积累值为$(1+i)^k\cdot l_x\cdot {}_nE_x$,若此时保险公司破产不干了, 他分给在$k$时刻还活着的$l_{x+k}$个人每人$_{n-k}E_{x+k}$元, 这正好够每个人去重新买一份$n-k$ 年期的生存保险.
+    在0时刻, $l_x$个人各自买了一份n年期的生存保险, 保费总额为$l_x\cdot {}_nE_x$, k年后, 这笔钱的积累值为$(1+i)^k\cdot l_x\cdot {}_nE_x$,若此时保险公司破产不干了, 他分给在k 时刻还活着的$l_{x+k}$个人每人$_{n-k}E_{x+k}$ 元, 这正好够每个人去重新买一份$n-k$ 年期的生存保险.
 \end{remark}
 \section{$n$年期(定期)死亡保险}
 
-一个个体$(x)$投了一份n年期死亡保险, 约定: 若$(x)$在$n$年内死亡, 则在其死亡时刻立刻支付$1$元保险金或在其死亡年末支付$1$元保险金.
+一个个体$(x)$投了一份n年期死亡保险, 约定: 若$(x)$在$n$年内死亡, 则在其死亡时刻立刻支付$1$ 元保险金或在其死亡年末支付$1$元保险金.
 
 死亡立即支付——连续型
 
@@ -1082,7 +1084,7 @@ $$_nE_x=v^k\cdot {}_kp_x\cdot {}_{n-k}E_{x+k}=(\frac{1}{i+1})^k\cdot\frac{l_{x+k
     \item[{\bf\hei 3.}]{\bf\hei $n$年期定期寿险的精算现值记为$\overline{A}_{x:\annu{n}}^1$}
 \end{itemize}
 \begin{remark}
-    符号$\overline{A}_{x:\annu{n}}^1$中, 上划线表示死亡立即支付(连续型), 1表示保险金为1元, $x$表示保险人为$x$岁, $n$表示$n$年期死亡保险.
+    符号$\overline{A}_{x:\annu{n}}^1$中, 上划线表示死亡立即支付(连续型), 1表示保险金为1 元, $x$ 表示保险人为$x$ 岁, $n$表示$n$ 年期死亡保险.
     \begin{align*}
         \overline{A}_{x:\annu{n}}^1= & EZ=E\left( v^{T\left( x \right)}I_{\left\{ T\left( x \right) <n \right\}} \right) =\int_0^{\infty}{v^{t}I_{\left\{ t <n \right\}}\cdot f_{T(x)}(t)dt} \\
         =                            & \int_0^{n}{v^{t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}=\int_0^{n}{e^{-\delta t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}
@@ -1114,7 +1116,7 @@ $$\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt}=\i
 \qed
 \begin{remark}等式$(2.5)$的含义:
 
-    $\mu_x(t)dt$表示在$[x+t.x+t+dt]$内死去的概率, 所以$l_{x+t}\mu_x(t)dt$表示在$[x+t,x+t+dt]$内死去的人数, 在这期间内死去的人每人支付1元保险金, 共$l_{x+t}\mu_x(t)dt$ 元, 这些钱的现值为$v^t l_{x+t}\mu_x(t)dt$,于是$\int_0^n{v^t l_{x+t}\mu_x(t)dt}$表示在$[x,x+n]$内死去的人领取的保险的总现值, 这些钱应等于初始时刻的$l_x$个人的保费总额$l_x\overline{A}_{x:\annu{n}}^1$, 即$l_x\cdot\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot l_{x+t}\cdot \mu_{x}(t)dt}$
+    $\mu_x(t)dt$表示在$[x+t.x+t+dt]$内死去的概率, 所以$l_{x+t}\mu_x(t)dt$表示在$[x+t,x+t+dt]$内死去的人数, 在这期间内死去的人每人支付1元保险金, 共$l_{x+t}\mu_x(t)dt$ 元, 这些钱的现值为$v^t l_{x+t}\mu_x(t)dt$, 于是$\int_0^n{v^t l_{x+t}\mu_x(t)dt}$ 表示在$[x,x+n]$内死去的人领取的保险的总现值, 这些钱应等于初始时刻的$l_x$ 个人的保费总额$l_x\overline{A}_{x:\annu{n}}^1$, 即$l_x\cdot\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot l_{x+t}\cdot \mu_{x}(t)dt}$
 
 \end{remark}
 
@@ -1122,7 +1124,7 @@ $$\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt}=\i
     \item[{\bf\hei 5.}]{\bf\hei $Z$的方差$DZ$}
 \end{itemize}
 
-记: $^j\overline{A}_{x:\annu{n}}^1=\int_0^{\infty}{e^{-j\delta t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}$,它表示在计算$\overline{A}_{x:\annu{n}}^1$的过程中, 将$\delta$换成$j\delta$后的值($^j\overline{A}_{x:\annu{n}}^1@\delta=\overline{A}_{x:\annu{n}}^1@j\delta$)
+记: $^j\overline{A}_{x:\annu{n}}^1=\int_0^{\infty}{e^{-j\delta t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}$,它表示在计算$\overline{A}_{x:\annu{n}}^1$的过程中, 将$\delta$换成$j\delta$ 后的值($^j\overline{A}_{x:\annu{n}}^1@\delta=\overline{A}_{x:\annu{n}}^1@j\delta$)
 \begin{align*}
     E(Z^2) & =E((v^{T(x)}I_{T(x)<n})^2)=E(v^{2T(x)}I_{T(x)<n})                                   \\
            & =E(e^{-2\delta T(x)}I_{T(x)<n})=\int_0^{\infty}{e^{-2\delta t}I_{t<n}f_{T(x)}(t)dt} \\
@@ -1159,7 +1161,7 @@ $$\overline{A}_{x:\annu{n}}^1=\int_0^{n}{v^{t}\cdot{}_tp_x\cdot \mu_{x}(t)dt}=\i
     \item[{\bf\hei 1.}]{\bf\hei 支付方式和条件}
 \end{itemize}
 
-若个体$(x)$在$n$年内死亡, 则在其死亡年末支付$1$元; 若个体$(x)$在$n$年内未死, 则不予支付.
+若个体$(x)$在$n$年内死亡, 则在其死亡年末支付$1$ 元; 若个体$(x)$在$n$年内未死, 则不予支付.
 
 \begin{itemize}
     \item[{\bf\hei 2.}]{\bf\hei 支付现值$Z$}
@@ -1181,7 +1183,7 @@ $Z=v^{K(x)+1}I_{\{T(x)<n\}}$
         \hline
     \end{tabular}
 \end{center}
-$P(k\leq T(x) < k+1) = {}_{k|}q_x$, 故$A_{x:\annu{n}}^1 = E(Z) = \sum_{k=0}^{n-1}v^{k+1}{}_{k|}q_x$
+$P(K(x)\leq T(x) < K(x)+1) = {}_{k|}q_x$, 故$A_{x:\annu{n}}^1 = E(Z) = \sum_{k=0}^{n-1}v^{k+1}{}_{k|}q_x$
 
 \begin{itemize}
     \item[{\bf\hei 4.}]{\bf\hei $Z$的方差$DZ$}
@@ -1219,7 +1221,7 @@ $$DZ = {}^2A_{x:\annu{n}}^1 - (A_{x:\annu{n}}^1)^2$$
 
 等式$(1+i)l_x A_{x:\annu{n}}^1 = d_x + l_{x+1} A_{x+1:\annu{n-1}}^1$ 的含义:
 
-此式的左端表示在0时刻, $l_x$个人各自买了一份$n$年期的死亡保险, 保费总额为$l_x A_{x:\annu{n}}^1$. 一年后, 这笔钱的积累值为$(1+i)l_x A_{x:\annu{n}}^1$. 在$[0,1]$之间有$d_x$个人死去, 保险公司需给他们每人$1$元, 共$d_x$元. 若此时保险公司破产不干了, 他分给在1时刻还活着的$l_{x+1}$个人每人$A_{x+1:\annu{n-1}}^1$元, 这正好够每个人去重新买一份$n-1$年期的死亡保险.
+此式的左端表示在0时刻, $l_x$个人各自买了一份$n$ 年期的死亡保险, 保费总额为$l_x A_{x:\annu{n}}^1$. 一年后, 这笔钱的积累值为$(1+i)l_x A_{x:\annu{n}}^1$. 在$[0,1]$之间有$d_x$个人死去, 保险公司需给他们每人$1$ 元, 共$d_x$ 元. 若此时保险公司破产不干了, 他分给在1 时刻还活着的$l_{x+1}$个人每人$A_{x+1:\annu{n-1}}^1$ 元, 这正好够每个人去重新买一份$n-1$年期的死亡保险.
 
 \begin{example}[均匀分布]
     设一个$20$岁的人买了一份$10$年期的死亡保险, 设其余命$T(20)$服从$[0,80]$上的均匀分布, $i = 0.05$, 保险金死亡年末支付$10$万元, 则支付现值
@@ -1238,14 +1240,14 @@ $$DZ = {}^2A_{x:\annu{n}}^1 - (A_{x:\annu{n}}^1)^2$$
     \item[{\bf\hei 三.}]{\bf\hei 死亡年末支付与死亡立即支付的关系}
 \end{itemize}
 \begin{proposition}
-    设死亡力均匀分布假设(UDD)成立, 则$\overline{A}_{x:\annu{n}}^1 = \frac{i}{\delta}A_{x:\annu{n}}^1$.
+    设死亡力均匀分布假设成立, 则$\overline{A}_{x:\annu{n}}^1 = \frac{i}{\delta}A_{x:\annu{n}}^1$.
 \end{proposition}
 
 \proof
 \begin{align*}
     \overline{A}_{x:\annu{n}}^1 & = E(v^{T(x)}\cdot I_{T(x) < n})                               \\
                                 & = E(v^{K(x)+1}\cdot I_{T(x) < n}\cdot v^{S(x)-1})             \\
-                                & = E(v^{K(x)+1}\cdot I_{T(x) < n})E(v^{S(x)-1})                \\
+                                & = E(v^{K(x)+1}\cdot I_{T(x) < n})E(\cdot v^{S(x)-1})          \\
                                 & = A_{x:\annu{n}}^1\cdot \int_{0}^{1}e^{-\delta(s-1)}\cdot 1ds \\
                                 & = \frac{i}{\delta}A_{x:\annu{n}}^1
 \end{align*}
@@ -1694,7 +1696,7 @@ $Z=v^{K(x)+\frac{J(x)+1}{m}}$
                 & =\sum_{k=0}^{\infty}\sum_{j=0}^{m-1}v^{k+\frac{j+1}{m}}{}_{k+\frac{j+1}{m}|\frac{1}{m}}q_{x}
 \end{align*}
 \begin{itemize}
-    \item[{\bf\hei 4.}]{\bf\hei 在UDD假设下, $A_{x}^{(m)}$与$\overline A_{x}$, $A_{x}$之间的关系:}
+    \item[{\bf\hei 4.}]{\bf\hei 在UDD假设下, $A_{x}^{(m)}$与$\overline A_{x}$, $A_{x}$ 之间的关系:}
 \end{itemize}
 
 \begin{proposition}
@@ -1702,7 +1704,7 @@ $Z=v^{K(x)+\frac{J(x)+1}{m}}$
 \end{proposition}
 
 \proof
-在UDD假设下, $K(x)$与$S(x)$独立, 且$S(x)\sim U(0,1)$, 所以$K(x)$与$[mS(x)]=J(x)$独立. 又因$S(x)\sim U(0,1)$,所以$J(x)$取$0, 1, \dots, m-1$的概率相同, 皆为$\frac{1}{m}$.
+在UDD假设下, $K(x)$与$S(x)$独立, 且$S(x)\sim U(0,1)$, 所以$K(x)$与$[mS(x)]=J(x)$独立. 又因$S(x)\sim U(0,1)$, 所以$J(x)$取$0, 1, \dots, m-1$ 的概率相同, 皆为$\frac{1}{m}$.
 \qed
 
 \begin{proposition}
@@ -1802,7 +1804,7 @@ $Z=b_{T(x)}v^{T(x)}$
 \end{align*}
 
 \begin{itemize}
-    \item[{\bf\hei 4.}]{\bf\hei 若$b_{T}(x)=\sum_{k=0}^{\infty}(k+1)I_{\{k\leq T(x)<k+1\}}$, 即在第$(k+1)$年死亡, 则死亡时立即支付$k+1$元, 则得到标准递增的死亡立即支付的终身寿险. }
+    \item[{\bf\hei 4.}]{\bf\hei 若$b_{T}(x)=\sum_{k=0}^{\infty}(k+1)I_{\{k\leq T(x)<k+1\}}$, 即在第$(k+1)$ 年死亡, 则死亡时立即支付$k+1$元, 则得到标准递增的死亡立即支付的终身寿险. }
 \end{itemize}
 
 (1)支付额现值:
@@ -1828,12 +1830,12 @@ $Z=b_{T(x)}v^{T(x)}$
     Z=b_{T(x)}v^{T(x)}=T(x)v^{T(x)}
 \end{align*}
 
-(2)精算现值用$\left( \bar{I}\bar{A} \right) _x$表示
+(2)精算现值用$\left( \overline{I}\overline{A} \right) _x$ 表示
 \begin{align*}
-    \left( \bar{I}\bar{A} \right) _x & =\int_0^{\infty}t v^t\cdot {}_tp_x\cdot u_x(t)dt                    \\
-                                     & =\int_0^{\infty }(\int_0^t1ds)t v^t\cdot {}_tp_x\cdot u_x(t)dt      \\
-                                     & =\int_0^{\infty}(\int_s^{\infty}t v^t\cdot {}_tp_x\cdot u_x(t)dt)ds \\
-                                     & =\int_0^{\infty} {}_{s|}\bar{A}_x ds
+    \left( \overline{I}\overline{A} \right) _x & =\int_0^{\infty}t v^t\cdot {}_tp_x\cdot u_x(t)dt                    \\
+                                               & =\int_0^{\infty }(\int_0^t1ds)t v^t\cdot {}_tp_x\cdot u_x(t)dt      \\
+                                               & =\int_0^{\infty}(\int_s^{\infty}t v^t\cdot {}_tp_x\cdot u_x(t)dt)ds \\
+                                               & =\int_0^{\infty} {}_{s|}\overline{A}_x ds
 \end{align*}
 \section{作业}
 \begin{exs}
@@ -1841,11 +1843,11 @@ $Z=b_{T(x)}v^{T(x)}$
 \end{exs}
 
 \begin{exs}
-    你现在多少岁, 是男生还是女生? 设你现在投$1$份$5$年期定期寿险, 保险金为$10$万元, 利率$i = 0.05$, 求该保险的精算现值和支付现值的方差.(注: 保险金为年末支付.)
+    你现在多少岁, 是男生还是女生? 设你现在投$1$ 份$5$年期定期寿险, 保险金为$10$万元, 利率$i = 0.05$, 求该保险的精算现值和支付现值的方差.(注: 保险金为年末支付.)
 \end{exs}
 
 \begin{exs}
-    已知$\mu = 0.04, ~\delta = 0.05$, 对于死亡立即支付的寿险, 求精算现值, ${}^2\overline{A}_x$和支付现值的方差.
+    已知$\mu = 0.04, ~\delta = 0.05$, 对于死亡立即支付的寿险, 求精算现值, ${}^2\overline{A}_x$ 和支付现值的方差.
 \end{exs}
 
 \begin{exs}
@@ -1857,7 +1859,7 @@ $Z=b_{T(x)}v^{T(x)}$
 \end{exs}
 
 \begin{exs}
-    设个体$(x)$买了一份$10$年期死亡定期寿险, 支付现值为$Z_1=v^{T(x)}I_{\{T(x)<10\}}$ 和$1$份延期$10$年的死亡终身寿险, 支付现值为$Z_2=v^{T(x)}I_{\{T(x)\ge 10\}}$.
+    设个体$(x)$买了一份$10$年期死亡定期寿险, 支付现值为$Z_1=v^{T(x)}I_{\{T(x)<10\}}$ 和$1$ 份延期$10$ 年的死亡终身寿险, 支付现值为$Z_2=v^{T(x)}I_{\{T(x)\ge 10\}}$.
 
     设$u=0.02, \delta=0.08$, 求该保险的精算现值$\overline {A}_{x:\annu{10}}^1, {}_{10|}\overline {A}_{x}, D(Z_1), D(Z_2), Cov(Z_1,Z_2)$.
 \end{exs}
@@ -1873,7 +1875,7 @@ $Z=b_{T(x)}v^{T(x)}$
 \end{exs}
 
 \begin{exs}
-    设某人生日正好是$1$月$1$日, 在他满$50$周岁生日那天, 他上某保险公司购买一份终身的养老保险. 保单约定从他满$60$周岁开始, 只要他活着, 每年生日那天他就会去保险公司, 保险公司支付他$10000$元养老金, 直到他死亡为止(注: 他如果死亡了, 再也不会出现在保险公司, 保险公司也就不用给钱了). 假设他的余命$T(50)$服从$[0,50]$上的均匀分布, 利率$i=0.05.$
+    设某人生日正好是$1$月$1$日, 在他满$50$周岁生日那天, 他上某保险公司购买一份终身的养老保险. 保单约定从他满$60$ 周岁开始, 只要他活着, 每年生日那天他就会去保险公司, 保险公司支付他$10000$ 元养老金, 直到他死亡为止(注: 他如果死亡了, 再也不会出现在保险公司, 保险公司也就不用给钱了). 假设他的余命$T(50)$ 服从$[0,50]$ 上的均匀分布, 利率$i=0.05.$
 
     (1) 写出保险公司所有支付额的总现值$Z$;
 
@@ -1961,17 +1963,17 @@ $Z=1+v+v^2+...+v^{K(x)}=\ddot a_{\annu {K(x)+1}}=\sum_{j=0}^{K\left( x \right)}{
     \item[{\bf\hei 1.}]支付方式
 \end{itemize}
 
-若个体$(x)$在$n$年内死亡, 则在他活着时, 每年年初支付$1$元; 若$(x)$在$n$年内未死, 则每年初支付$1$元, 直到第$n$年.
+若个体$(x)$在$n$年内死亡, 则在他活着时, 每年年初支付$1$元; 若$(x)$在$n$年内未死, 则每年初支付$1$ 元, 直到第$n$ 年.
 
 \begin{itemize}
     \item[{\bf\hei 2.}]支付额总现值$Z$
 \end{itemize}
 
-(1)$T(x)<n$, (即$K(x)+1\leqslant n$),$Z=\ddot a_{\annu {K(x)+1}}$;
+(1)$T(x)<n$, (即$K(x)+1\leqslant n$),$Z=\ddot a_{\annu {K(x)+1}}$
 
-(2)$T(x)\geqslant n$, (即$K(x)+1>n$),$Z=\ddot a_{\annu {n}}$;
+(2)$T(x)\geqslant n$, (即$K(x)+1>n$),$Z=\ddot a_{\annu {n}}$
 
-所以$Z=\ddot a_{\annu {(K(x)+1)\land n}}=1+v+v^2+...+v^{(K(x))\land (n-1)}$
+所以$Z=\ddot a_{\annu {(K(x)+1)\land n}}=1+v+v^2+...+v^{(K(x)+1)\land n}$
 \begin{itemize}
     \item[{\bf\hei 3.}]精算现值用$\ddot a_{x:}{}_{\annu n}$表示
 \end{itemize}
@@ -1991,11 +1993,11 @@ $Z=1+v+v^2+...+v^{K(x)}=\ddot a_{\annu {K(x)+1}}=\sum_{j=0}^{K\left( x \right)}{
 (2)$D(\ddot a_{\annu {(K(x)+1)\land n}})=\frac{{}^2A_{x:}{}_{\annu n}-(A_{x:}{}_{\annu n})^2}{d^2}$
 
 \proof
-$Z=\ddot a_{\annu {(K(x)+1)\land n}}=\frac{1-v^{(K(x)+1)\land n}}{d}$,$v^{(K(x)+1)\land n}$是$n$年期生死合险的支付现值
+$Z=\ddot a_{\annu {(K(x)+1)\land n}}=\frac{1-v^{(K(x)+1)\land n}}{d}$,$v^{(K(x)+1)\land n}$ 是$n$年期生死合险的支付现值
 
 (1)
 
-所以有$\ddot a_{x:}{}_{\annu n}=\frac{1-A_{x:}{}_{\annu n}}{d}$, 得证.
+所以有$\ddot a_{x:}{}_{\annu n}=\frac{1-A_{x:}{}_{\annu n}}{d}$, 得证
 
 (2)
 
@@ -2022,7 +2024,7 @@ $Z=\ddot a_{\annu {(K(x)+1)\land n}}=\frac{1-v^{(K(x)+1)\land n}}{d}$,$v^{(K(x)+
     \item[{\bf\hei 6.}] $l_{x}\ddot a_{x}=l_{x}\ddot a_{x:\annu n}+v^{n}l_{x+n}\ddot a_{x+n}$
 \end{itemize}
 
-该等式的含义：左端表示初始时刻有$l_x$个$(x)$岁的个体, 各买一份终身期初生存年金, 保险公司共收到保费$l_{x}\ddot a_{x}$元, 右端表示在收到保费后, 保险公司将其中的$l_{x}\ddot a_{x:\annu n}$为$l_x$为$l_x$个人各买一份$n$年期期初生存年金, 保证$n$年内死去的人可以领到年金, 剩余的部分拿去投资, 在第$n$年末, 还有$l_{x+n}$个人活着, 保险公司给他们每人买一份终身期初生存年金, 共需$l_{x+n}\ddot a_{x+n}$元, 总现值保险公司收入的现值应等于支出的总现值, 即推出该公式.
+该等式的含义: 左端表示初始时刻有$l_x$个$(x)$岁的个体, 各买一份终身期初生存年金, 保险公司共收到保费$l_{x}\ddot a_{x}$ 元, 右端表示在收到保费后, 保险公司将其中的$l_{x}\ddot a_{x:\annu n}$为$l_x$ 为$l_x$ 个人各买一份$n$年期期初生存年金, 保证$n$ 年内死去的人可以领到年金, 剩余的部分拿去投资, 在第$n$年末, 还有$l_{x+n}$个人活着, 保险公司给他们每人买一份终身期初生存年金, 共需$l_{x+n}\ddot a_{x+n}$ 元, 总现值保险公司收入的现值应等于支出的总现值, 即推出该公式.
 
 \begin{remark}
     现行的养老保险其实就是保费分期缴纳的延期终身期初生存年金.
@@ -2036,7 +2038,7 @@ $Z=\ddot a_{\annu {(K(x)+1)\land n}}=\frac{1-v^{(K(x)+1)\land n}}{d}$,$v^{(K(x)+
     \item[{\bf\hei 1.}] 支付方式
 \end{itemize}
 
-若个体$(x)$在$n$年内死亡, 即$T(x)<n(\iff K(x)+1\leq n)$, 则不予任何支付, 若$(x)$在$n$年内未死, 则从第$n+1$年年初开始, 只要他还活着, 每年初支付1元.
+若个体$(x)$在$n$年内死亡, 即$T(x)<n(\iff K(x)+1\leq n)$, 则不予任何支付, 若$(x)$在$n$年内未死, 则从第$n+1$ 年年初开始, 只要他还活着, 每年初支付1元.
 
 \begin{itemize}
     \item[{\bf\hei2.}] 支付现值$Z$
@@ -2048,7 +2050,7 @@ $$Z =
     \end{cases}
 $$
 
-当$K(x)+1>n$时, $Z=\sum^{K(x)}_{j=n}v^{j}=\sum^{K(x)}_{j=0}v^{j}-\sum^{n-1}_{j=0}v^{j}=\ddot a\annu{K(x)+1}-\ddot a\annu n$ ,故$Z=\ddot a\annu{K(x)+1}-\ddot a\annu{(K(x)+1)\land n}$
+当$K(x)+1>n$时, $Z=\sum^{K(x)}_{j=n}v^{j}=\sum^{K(x)}_{j=0}v^{j}-\sum^{n-1}_{j=0}v^{j}=\ddot a\annu{K(x)+1}-\ddot a\annu n$ , 故$Z=\ddot a\annu{K(x)+1}-\ddot a\annu{(K(x)+1)\land n}$
 
 \begin{itemize}
     \item[{\bf\hei3.}] 精算现值用$_{n|}\ddot a_{x}$表示
@@ -2071,7 +2073,7 @@ $$
     \item[{\bf\hei1.}] 支付方式
 \end{itemize}
 
-若个体$(x)$在$n$年内死亡, 即$T(x)<n(\iff K(x)+1\leq n)$, 则从第$1$年到第$n$年,每年初支付$1$元; 若$(x)$在$n$年内未死,即$K(x)+1>n$,则只要他话着,每年初支付$1$元.
+若个体$(x)$在$n$年内死亡, 即$T(x)<n(\iff K(x)+1\leq n)$, 则从第$1$年到第$n$年,每年初支付$1$ 元; 若$(x)$在$n$ 年内未死,即$K(x)+1>n$,则只要他话着,每年初支付$1$元.
 
 \begin{itemize}
     \item[{\bf\hei2.}] 支付现值
@@ -2124,7 +2126,7 @@ $a_{x}=E(\ddot a_{K(x)+1})-1=\ddot a_{x}-1$
     \item[{\bf\hei1.}] 支付方式
 \end{itemize}
 
-若$T(x)<n(K(x)<n)$, 则只要$(x)$活着, 每年末支付1元, 若$T(x)\geq n(K(x)\geq n)$, 则前$n$年每年末支付1元.
+若$T(x)<n(K(x)<n)$, 则只要$(x)$活着, 每年末支付1 元, 若$T(x)\geq n(K(x)\geq n)$, 则前$n$ 年每年末支付1 元.
 $$
     Z=
     \begin{cases}
@@ -2215,7 +2217,7 @@ $$
     \end{cases},
     \text{所以 } Z = a_{\annu {K(x)\lor n}}
 $$
-易知：$a_{\annu{K(x)\lor n}}+a_{\annu{K(x)\land n}}=a_{\annu {K(x)}}+a_{\annu{n}}$
+易知: $a_{\annu{K(x)\lor n}}+a_{\annu{K(x)\land n}}=a_{\annu {K(x)}}+a_{\annu{n}}$
 \begin{itemize}
     \item[{\bf\hei 3.}] 精算现值
 \end{itemize}
@@ -2324,7 +2326,7 @@ $i^{(m)}a_{x}^{(m)} + (1+\frac{i^{(m)}}m)A_{x}^{(m)} = 1$
     \item[{\bf\hei 一.}]{\bf\hei 连续年金}
 \end{itemize}
 
-设年金函数(年金的支付速率)为$f(t)$, 则在$[t,t+dt]$内支付的额度为$f(t)dt$, 其现值为$v^tf(t)dt$, 所以在$[0,n]$内支付的总现值为$\int_0^n v^tf(t)dt$. 特别地, 若$f(t) \equiv 1$, 则$\overline{a}_{\annu n} = \frac{1-v^n}{\delta}$.
+设年金函数(年金的支付速率)为$f(t)$, 则在$[t,t+dt]$内支付的额度为$f(t)dt$, 其现值为$v^tf(t)dt$, 所以在$[0,n]$ 内支付的总现值为$\int_0^n v^tf(t)dt$. 特别地, 若$f(t) \equiv 1$, 则$\overline{a}_{\annu n} = \frac{1-v^n}{\delta}$.
 
 \begin{itemize}
     \item[{\bf\hei 二.}]{\bf\hei 连续的终身生存年金(以下总假定年金支付速率为$1$)}
@@ -2372,7 +2374,7 @@ $i^{(m)}a_{x}^{(m)} + (1+\frac{i^{(m)}}m)A_{x}^{(m)} = 1$
 
 $\overline{A}_x = \int_0^{\infty} v^t {}_tp_x\mu_x(t)dt = \int_0^{\infty} e^{-\delta t}e^{-\int_{x}^{x+t}\mu(s)ds}\mu dt = \int_0^{\infty} e^{-\mu t}e^{-\delta t}\mu dt = \frac{\mu}{\mu+\delta}$
 
-${}^2\overline{A}_x = \frac{\mu}{\mu+2\delta}$, 故$D(\overline{a}_{\annu{T(x)}}) = \frac{{}^2\overline{A}_x - (\overline{A}_x)^2}{\delta^2} = \frac{1}{\delta^2}[\frac{\mu}{\mu+2\delta} - (\frac{\mu}{\mu+\delta})^2]$\qed
+${}^2A_x = \frac{\mu}{\mu+2\delta}$, 故$D(\overline{a}_{\annu{T(x)}}) = \frac{{}^2\overline{A}_x - (\overline{A}_x)^2}{\delta^2} = \frac{1}{\delta^2}[\frac{\mu}{\mu+2\delta} - (\frac{\mu}{\mu+\delta})^2]$\qed
 
 \begin{itemize}
     \item[{\bf\hei 5.}]性质
@@ -2399,9 +2401,9 @@ $\frac{d}{dx}\overline{a}_x = (\mu(x)+\delta)\overline{a}_x-1$
     \item[{\bf\hei 1.}] 支付方式
 \end{itemize}
 
-若个体$(x)$在$n$年内死亡$(T(x)<n)$, 则支付到死亡为止;
+若个体$(x)$在$n$年内死亡$(T(x)<n)$, 则支付到死亡为止；
 
-若个体$(x)$在$n$年内未死, 则支付到$n$为止;
+若个体$(x)$在$n$年内未死, 则支付到$n$为止；
 
 \begin{itemize}
     \item[{\bf\hei 2.}] 支付现值
@@ -2442,7 +2444,9 @@ $\frac{d}{dx}\overline{a}_x = (\mu(x)+\delta)\overline{a}_x-1$
     \item[{\bf\hei 5.}] 性质
 \end{itemize}
 
-{\rm\bf(i)} $\overline{a}_{x} = \overline{a}_{x:\annu{n}} +{}_nE_x\overline{a}_{x+n}\Leftrightarrow l_x\overline{a}_{x}=l_x\overline{a}_{x:\annu{n}}+v^nl_{x+n}
+{\rm\bf(i)} $\overline{a}_{x} = \overline{a}_{x:\annu{n}} +{}_nE_x\overline{a}_{x+n}$
+
+$\Leftrightarrow l_x\overline{a}_{x}=l_x\overline{a}_{x:\annu{n}}+v^nl_{x+n}
     \overline{a}_{x+n}$
 
 {\rm\bf(ii)} $\forall 0\le m\le n, $有$
@@ -2464,13 +2468,13 @@ $\Leftrightarrow l_x\overline{a}_{x:\annu{n}} =l_x\overline{a}_{x:\annu{m}}+v^ml
     \item[{\bf\hei 6.}] 精算终值及其含义
 \end{itemize}
 
-问题：初始时刻，有$l_x$个$(x)$岁的个体，只要还活着，则每个人都连续地缴纳生存年金，在$n$时刻，每个人能分到多少钱?
+问题: 初始时刻，有$l_x$个$(x)$岁的个体，只要还活着，则每个人都连续地缴纳生存年金，在$n$时刻，每个人能分到多少钱?
 
-在$t$时刻，有$l_{x+t}$人活着，他们在$[t, t+dt]$内缴纳的钱共有$l_{x+t}\cdot 1dt$, 这笔钱的现值为$v^tl_{x+t}dt$.此时所有人在$[0, n]$ 内缴纳的总现值有$ \int_0^{n} v^tl_{x+t}dt$.
+在$t$时刻，有$l_{x+t}$人活着，他们在$[t, t+dt]$ 内缴纳的钱共有$l_{x+t}\cdot 1dt$, 这笔钱的现值为$v^tl_{x+t}dt$. 此时所有人在$[0, n]$ 内缴纳的总现值有$ \int_0^{n} v^tl_{x+t}dt$.
 
-所以，$n$时刻账户余额为$(1+i)^n\int_0^{n} v^tl_{x+t}dt=\int_0^{n} v^{t-n}l_{x+t}dt$, 这笔钱平均分给$n$时刻还活着的$l_{x+n}$人，每个人分得$\int_0^{n} v^{t-n}l_{x+t}dt/{l_{x+n}}$元, 易知$\dfrac{\int_0^{n} v^{t-n}l_{x+t}dt}{l_{x+n}}=\dfrac{\int_0^{n} v^{t-n}{}_tp_xdt}{{}_np_x}=\dfrac{\int_0^{n} v^{t}{}_tp_xdt}{v^n{}_np_x}=\dfrac{ \overline{a}_{x:\annu{n}}}{{}_nE_x}$.
+所以，$n$时刻账户余额为$(1+i)^n\int_0^{n} v^tl_{x+t}dt=\int_0^{n} v^{t-n}l_{x+t}dt$, 这笔钱平均分给$n$ 时刻还活着的$l_{x+n}$ 人，每个人分得$\int_0^{n} v^{t-n}l_{x+t}dt/{l_{x+n}}$ 元, 易知$\dfrac{\int_0^{n} v^{t-n}l_{x+t}dt}{l_{x+n}}=\dfrac{\int_0^{n} v^{t-n}{}_tp_xdt}{{}_np_x}=\dfrac{\int_0^{n} v^{t}{}_tp_xdt}{v^n{}_np_x}=\dfrac{ \overline{a}_{x:\annu{n}}}{{}_nE_x}$.
 
-所以，$n$时刻还活着的$l_{x+n}$人每人分得$\dfrac{ \overline{a}_{x:\annu{n}}}{{}_nE_x}$元，记$\overline{S}_{x:\annu{n}}=\dfrac{ \overline{a}_{x:\annu{n}}}{{}_nE_x}$, 称其为$n$年期连续生存年仅的精算终值.
+所以，$n$时刻还活着的$l_{x+t}$人每人分得$\dfrac{ \overline{a}_{x:\annu{n}}}{{}_nE_x}$元，记$\overline{S}_{x:\annu{n}}=\dfrac{ \overline{a}_{x:\annu{n}}}{{}_nE_x}$, 称其为$n$ 年期连续生存年仅的精算终值.
 
 注: $l_{x+n}\overline{S}_{x:\annu{n}}=\int_0^{n} (1+i)^{n-t}l_{x+t}dt$.
 
@@ -2483,24 +2487,26 @@ $\Leftrightarrow l_x\overline{a}_{x:\annu{n}} =l_x\overline{a}_{x:\annu{m}}+v^ml
     \item[{\bf\hei1.}] 支付方式
 \end{itemize}
 
-若个体$(x)$在$n$年内死亡, 即$(T(x)<n)$, 则不予任何支付;
+若个体$(x)$在$n$年内死亡, 即$(T(x)<n)$, 则不予任何支付；
 
-若个体$(x)$在$n$年内未死, 即$(T(x)\ge n)$, 则从$n$时刻开始支付生存年金，直到死为止.
+若个体$(x)$在$n$年内未死, 即$(T(x)\ge n)$, 则从$n$时刻开始支付生存年金，直到死为止；
 
 
 \begin{itemize}
     \item[{\bf\hei2.}] 支付现值
 \end{itemize}
-
-$Z=\begin{cases}
-        0,                   & \text{若 } T(x) < n    \\
-        \int_n^{T(x)} v^tdt, & \text{若 } T(x) \geq n
-    \end{cases}$, 即
-
-$\begin{aligned}
-        Z =\int_n^{T(x)} v^tdtI_{\{T(x)\ge n\}} =(\overline{a}_{\annu{T(x)}}-\overline{a}_{\annu n})I_{\{T(x)\ge n\}} =\overline{a}_{\annu {T(x)}} - \overline{a}_{\annu {T(x) \land n}}
-    \end{aligned}$
-
+$$
+    Z=
+    \begin{cases}
+        0,                    & \text{若 } T(x) < n    \\
+        \int_n^{T(x)n} v^tdt, & \text{若 } T(x) \geq n
+    \end{cases}$$
+$$
+    \begin{aligned}
+        \text{即}Z & =\int_n^{T(x)} v^tdtI_{\{T(x)\ge n\}}                              \\ &=(\overline{a}_{\annu{T(x)}}-\overline{a}_{\annu n})I_{\{T(x)\ge n\}}\\
+                  & =\overline{a}_{\annu {T(x)}} - \overline{a}_{\annu {T(x) \land n}}
+    \end{aligned}
+$$
 \begin{itemize}
     \item[{\bf\hei3.}] 精算现值用$_{n|}\overline{a}_{x}$表示
 \end{itemize}
@@ -2514,15 +2520,12 @@ $$
     \end{aligned}
 $$
 
-\begin{itemize}
-    \item[{\bf\hei 4.}] 性质
-\end{itemize}
-
 {\rm\bf(i)} $_{n|}\overline{a}_{x}=\int_n^{\infty}v^{t}{}_tp_xdt$
 
 {\rm\bf(ii)} $_{n|}\overline{a}_{x}=\overline{a}_{x}-\overline{a}_{x:\annu{n}}$
 
-{\rm\bf(iii)} $_{n|}\overline{a}_{x}={}_nE_x\overline{a}_{x+n}\Leftrightarrow l_x\overline{a}_{x}=l_x\overline{a}_{x:\annu{n}}+v^nl_{x+n}
+{\rm\bf(iii)} $_{n|}\overline{a}_{x}=_nE_x\overline{a}_{x+n}$
+$\Leftrightarrow l_x\overline{a}_{x}=l_x\overline{a}_{x:\annu{n}}+v^nl_{x+n}
     \overline{a}_{x+n}$
 
 \proof
@@ -2542,7 +2545,7 @@ $$
     \item[{\bf\hei 1.}] 支付方式
 \end{itemize}
 
-若个体$(x)$在$n$年内死亡, 即$T(x)<n$, 则年金连续支付到$n$为止;
+若个体$(x)$在$n$年内死亡, 即$T(x)<n$, 则年金连续支付到$n$为止；
 
 若个体$(x)$在$n$年内未死, 即$T(x)\ge n$, 则年金连续支付到死为止.
 
@@ -2550,19 +2553,21 @@ $$
     \item[{\bf\hei 2.}] 支付现值
 \end{itemize}
 
-$Z=\overline {a}_{\annu{T(x)\lor n}}=\int_0^{{T(x)\lor n}}v^tdt$,
+$Z=\overline {a}_{\annu{T(x)\lor n}}=\int_0^{{T(x)\lor n}}v^tdt$
 
-易知$\overline {a}_{\annu{T(x)\lor n}}+\overline {a}_{\annu{T(x)\land n}}=\overline {a}_{\annu{T(x)}}+\overline {a}_{\annu{n}}$, 所以$Z=\overline {a}_{\annu{T(x)\lor n}}=\overline {a}_{\annu{T(x)}}-\overline {a}_{\annu{T(x)\land n}}+\overline {a}_{\annu{n}}$.
+易知, $\overline {a}_{\annu{T(x)\lor n}}+\overline {a}_{\annu{T(x)\land n}}=\overline {a}_{\annu{T(x)}}+\overline {a}_{\annu{n}}$,
+
+所以$Z=\overline {a}_{\annu{T(x)\lor n}}=\overline {a}_{\annu{T(x)}}-\overline {a}_{\annu{T(x)\land n}}+\overline {a}_{\annu{n}}$.
 
 \begin{itemize}
     \item[{\bf\hei 3.}] 精算现值用$\overline a_{\overline{x:\annu{n}}}$
 \end{itemize}
+
 $$
     \begin{aligned}
-        \overline a_{\overline{x:\annu{n}}}
-         & =EZ                                                                                        \\
-         & =E(\overline a_{\annu {T(x) }}-\overline a_{\annu {T(x) \land n}})+\overline a_{\annu {n}} \\
-         & ={}_{n|}\overline{a}_{x}+\overline a_{\annu {n}}
+        \overline a_{\overline{x:\annu{n}}} & =EZ                                                                                        \\
+                                            & =E(\overline a_{\annu {T(x) }}-\overline a_{\annu {T(x) \land n}})+\overline a_{\annu {n}} \\
+                                            & =_{n|}\overline{a}_{x}+\overline a_{\annu {n}}
         .
     \end{aligned}
 $$
@@ -2630,7 +2635,6 @@ $$
 
 
 \section{作业}
-
 \begin{exs}
     $$
         {}_{n|}\ddot{a}_x = {}_nE_x\ddot{a}_{x+n}
@@ -2643,12 +2647,12 @@ $$
 \end{exs}
 
 \begin{exs}
-    已知：$\ddot{a}_{50} = 13.2688$, $\ddot{a}_{52} = 12.8876$, $l_{50} = 8950900$, $l_{52} = 8840768$, $i = 0.06$。求: ${}_{2|}\ddot{a}_{50}$, ${}_{2|}a_{50}$, $\ddot{a}_{50:\annu{2}}$, $a_{50:\annu{2}}$.
+    已知: $\ddot{a}_{50} = 13.2688$, $\ddot{a}_{52} = 12.8876$, $l_{50} = 8950900$, $l_{52} = 8840768$, $i = 0.06$。 求: ${}_{2|}\ddot{a}_{50}$, ${}_{2|}a_{50}$, $\ddot{a}_{50:\annu{2}}$, $a_{50:\annu{2}}$.
 \end{exs}
 
 
 \begin{exs}
-    设某人生日正好是$1$月$1$日, 在他满$50$周岁生日那天, 他上某保险公司购买一份终身的养老保险. 保单约定从他满$60$周岁开始, 只要他活着, 每年生日那天他就会去保险公司, 保险公司支付他$10000$元养老金, 直到他死亡为止(注: 他如果死亡了, 再也不会出现在保险公司, 保险公司也就不用给钱了). 假设他的余命$T(50)$服从$[0,50]$上的均匀分布, 利率$i=0.05.$
+    设某人生日正好是$1$月$1$日, 在他满$50$周岁生日那天, 他上某保险公司购买一份终身的养老保险. 保单约定从他满$60$ 周岁开始, 只要他活着, 每年生日那天他就会去保险公司, 保险公司支付他$10000$ 元养老金, 直到他死亡为止(注: 他如果死亡了, 再也不会出现在保险公司, 保险公司也就不用给钱了). 假设他的余命$T(50)$ 服从$[0,50]$ 上的均匀分布, 利率$i=0.05.$
 
     (1) 写出保险公司所有支付额的总现值$Z$;
 
@@ -2666,16 +2670,579 @@ $$
 
     (3) 求支付现值$Z$的方差$D(Z)$.
 \end{exs}
-
 \begin{exs}
-    \proof $E((1+i)^{T(x)\wedge n}\cdot \overline{a}_{\annu{T(x)\wedge n}})=\int_0^{n} (1+i)^{t}{}_tp_xdt$.
-\end{exs}
+    证明:
 
+    $E((1+i)^{T(x)\wedge n}\cdot \overline{a}_{\annu{T(x)\wedge n}})=\int_0^{n} (1+i)^{t}{}_tp_xdt$.
+\end{exs}
 \begin{exs}
     已知$u=0.04, \delta=0.06, $设$(x)$买了一份10年期连续生存年金, 一份延期10年的连续终身生存年金, 一份终身连续生存年金, 支付额现值分别为$Z_1=\overline a_{\annu {T(x) \land 10}},Z_2=\overline a_{\annu {T(x) }}-\overline a_{\annu {T(x) \land 10}}, Z_3=\overline a_{\annu {T(x) }}.$
 
-    求$\overline a_{x}$, $\overline a_{{x:\annu{10}}}$, $_{10|}\overline{a}_{x}$, $D(Z_1)$, $D(Z_3)$, $Cov(Z_2,Z_3)$.
+    求$\overline a_{x},\overline a_{{x:\annu{10}}}, _{10|}\overline{a}_{x},D(Z_1), D(Z_3), COV(Z_2,Z_3)$.
 \end{exs}
+
+\chapter{净保费理论}
+\section{平衡准则}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 平衡准则}
+\end{itemize}
+
+投保人缴纳保费的精算现值等于保险人支付保险金的精算现值.
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 保险人签单损量}
+\end{itemize}
+
+$L=$保险人支付保险金的现值$~-~$投保人缴纳保费的现值
+
+由平衡准则, 有$E(L)=0$.
+
+\begin{itemize}
+    \item[{\bf\hei 三.}]{\bf\hei 年均衡净保费}
+\end{itemize}
+\begin{itemize}
+    \item[{\bf\hei 1.}] 若保费按年分期缴纳, 每年缴纳的数额一样, 则称每年缴纳的保费额为年均净保费.
+\end{itemize}
+\begin{itemize}
+    \item[{\bf\hei 2.}] 若保费按固定的速率连续缴纳, 则称保费缴纳的速率为年均净保费.
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 四.}]{\bf\hei 保费的其他准则}
+\end{itemize}
+
+\begin{itemize}
+    \item[{\bf\hei 1.}] 指数准则
+\end{itemize}
+
+给定$a>0$, 由$E(e^{aL})=1$来确定保费.
+
+注: 指数准则适用于规避风险的保险人, 因为(Jensen不等式):
+$$1=E(e^{aL})>e^{E(aL)}\Rightarrow E(aL)<0\Rightarrow E(L)<0$$
+所以该准则对保险公司有利.
+
+\begin{itemize}
+    \item[{\bf\hei2.}] 分位数准则
+\end{itemize}
+
+先给定一个$\alpha\in (0,1)$, $P(L>0)\leqslant\alpha$.
+
+\begin{example}
+    设个体$(x)$买了一份死亡年末支付1元的终身死亡保险, 设$_{k| }q_x=0.2,k=0,1,2,3,4$. 保费每年年初等额分期缴纳, 分别在$(1)$平衡准则$(2)$指数准则$(a=0.1)$$(3)$分位数准则$\alpha=0.2$之下, 来计算年均衡净保费$P(i=0.06)$
+\end{example}
+\solution $T(x)=S(x)+K(x)$, 保险支付的保险金的现值为$v^{K(x)+1}$
+
+投保人缴纳的保费总现值为$P\ddot a_{\annu {K(x)+1}}$
+
+所以签单损失量为:
+\begin{align*}
+    L & =v^{K(x)+1}-P\ddot a_{\annu {K(x)+1}}\\
+    & =v^{K(x)+1}-P\cdot\frac{1-v^{K(x)+1}}{d} \\
+      & =(1+\frac{P}{d})v^{K(x)+1}-\frac{P}{d}
+\end{align*}
+
+(1)平衡准则之下
+$$E(L)=E(v^{K(x)+1})-PE(\ddot a_{\annu {K(x)+1}})=A_x-P\ddot a_{x}=0$$
+
+所以$P=\frac{A_x}{\ddot a_{x}}=\frac{dA_x}{1-A_x}$
+$$
+    A_x  =\sum_{k=0}^{\infty }{v^{k+1}{}_{k|}q_x}=\sum_{k=0}^4{v^{k+1}0.2}=0.2\sum_{k=1}^{5}{v^k}=0.2a_{\annu 5}=0.84247276\\
+$$
+
+所以$P=\frac{A_x}{\ddot a_{x}}=\frac{dA_x}{1-A_x}=0.3027$
+
+(2)指数准则以及(3)分数准则作业完成
+\qed
+
+\begin{itemize}
+    \item[{\bf\hei 五.}]{\bf\hei 平衡准则的基础理论——强大数定律}
+\end{itemize}
+
+设由$n$个年龄相同的人, 设他们的余命$i.i.d.$(independent and identically distributed), 他们共同购买了一份相同的寿险, 设保险人支付保险金的现值分别为$Y_1,Y_2,...,Y_n$, 则有$Y_1,Y_2,...,Y_n~i.i.d.$,显然有$E(Y_i)<\infty$, 则由强大数定律, 有:
+
+$$P(\{w:\underset{n\rightarrow \infty}{\lim}\frac{\sum_{i=1}^{n}{Y_i}}{n}=E(Y_i)\})=1$$
+
+即$\frac{1}{n}\sum_{i=1}^n{Y_i}\rightarrow E(Y_i) ~a.s.n\rightarrow\infty$
+
+所以在公平条件下, 每个人应支付相同的保费$E(Y_i)$元.
+\section{趸交净保费}
+1.若保费是在签定保险单时一次缴清, 将其中净保费的部分称为趸交净保费, 通常用$P$表示.
+
+2.易知签单损失量为$L=$保险人支付保险金的现值-$P$.
+
+由平衡准则, $E(L)=0$, 知$P=E($保险人支付保险金的现值$)=$对应险种的精算现值
+
+
+\section{完全连续险种}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 定义: 称保费连续缴纳, 保险金死亡立即支付的险种为完全连续险种}
+\end{itemize}
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 各种寿险与生存年金均衡净保费的计算}
+\end{itemize}
+1.终身死亡保费
+
+终身死亡保险的年均净保费记为$\overline{P}\left( \overline{A}_x \right)$
+
+保险人支付保险金的现值为$v^{T(x)}$
+
+投保人缴纳的保费的总现值为$\overline{P}\left( \overline{A}_x \right)\overline a_{\annu {T(x)}}$
+
+所以签单损失量$L=v^{T(x)}-\overline{P}\left( \overline{A}_x \right)\overline a_{\annu {T(x)}}$
+
+$$E(L)=E(v^{T(x)}-\overline{P}\left( \overline{A}_x \right)\overline a_{\annu {T(x)}})=\overline A_x-\overline{P}\left( \overline{A}_x \right)\overline a_{x}=0$$
+
+于是$\overline{P}\left( \overline{A}_x \right)=\frac{\overline A_x}{\overline a_x}$
+
+又因为$\overline A_x+\delta \overline a_x=1$, 所以$\overline{P}\left( \overline{A}_x \right)=\frac{\delta\overline A_x}{1-\overline A_x}=\frac{1}{\overline a_x}-\delta$
+
+结论: $\overline{P}\left( \overline{A}_x \right)=\frac{\overline A_x}{\overline a_x}=\frac{\delta\overline A_x}{1-\overline A_x}=\frac{1}{\overline a_x}-\delta$
+
+$L=v^{T(x)}-\overline{P}\left( \overline{A}_x \right)\overline a_{\annu {T(x)}}=v^{T(x)}-\overline{P}\left( \overline{A}_x \right)\frac{1-v^{T(x)}}{\delta}=(1+\frac{\overline{P}\left( \overline{A}_x \right)}{\delta})v^{T(x)}-\frac{\overline{P}\left( \overline{A}_x \right)}{\delta}$
+
+于是
+\begin{align*}
+    DL & =D((1+\frac{\overline{P}\left( \overline{A}_x \right)}{\delta})v^{T(x)}-\frac{\overline{P}\left( \overline{A}_x \right)}{\delta})
+    =(1+\frac{\overline{P}\left( \overline{A}_x \right)}{\delta})^2D(v^{T(x)})                                                                                                                                      \\
+       & =(1+\frac{\overline{P}\left( \overline{A}_x \right)}{\delta})^2 [^2\overline A_x-(\overline A_x)^2]=(\frac{\delta\overline a_x+\overline A_x}{\delta \overline a_x})^2 [^2\overline A_x-(\overline A_x)^2] \\
+       & =\frac{^2\overline A_x-(\overline A_x)^2}{(\delta\overline a_x)^2}=\frac{^2\overline A_x-(\overline A_x)^2}{(1-\overline A_x)^2}                                                                           \\
+\end{align*}
+
+注: 对完全连续的终身寿险:
+
+$$L=v^{T(x)}-\overline{P}\left( \overline{A}_x \right)\overline a_{\annu {T(x)}}=(1+\frac{\overline{P}\left( \overline{A}_x \right)}{\delta})v^{T(x)}-\frac{\overline{P}\left( \overline{A}_x \right)}{\delta}$$
+
+年均衡净保费$\overline{P}\left( \overline{A}_x \right)=\frac{\overline A_x}{\overline a_x}=\frac{\delta\overline A_x}{1-\overline A_x}=\frac{1}{\overline a_x}-\delta$
+
+$$DL=\frac{^2\overline A_x-(\overline A_x)^2}{(\delta\overline a_x)^2}=\frac{^2\overline A_x-(\overline A_x)^2}{(1-\overline A_x)^2}$$
+\begin{example}
+    死亡力$\mu=0.05$, 利息力$\delta=0.05$
+\end{example}
+
+$$\overline A_x=\frac{\mu}{\mu+\delta}=\frac{1}{2},^2\overline A_x=\frac{\mu}{\mu+2\delta}=\frac{1}{3},\overline{P}\left( \overline{A}_x \right)=\frac{\delta\overline A_x}{1-\overline A_x}=0.05$$
+$$DL=\frac{^2\overline A_x-(\overline A_x)^2}{(1-\overline A_x)^2}=\frac{\frac{1}{3}-(\frac{1}{2})^2}{(1-\frac{1}{2})^2}=\frac{1}{3}$$
+
+2.完全连续的生死合险的年均衡净保费
+
+保险人支付的保险金现值为$V^{T(x)\land n}$，保费的现值为$\overline{P}(\overline{A_{x:\annu {n}}})$，$\overline{a}_{\annu{T(x)\land n}}$，其中$\overline{P}(\overline{A_{x:\annu {n}}})$为生死合险的年均衡净保费，签单损失量为:$$L=v^{T(x)\land n}-\overline{P}(\overline{A_{x:\annu {n}}})\overline{a}_{\annu{T(x)\land n}}=(1+\frac{\overline{P}(\overline{A_{x:\annu {n}}})}{\delta})v^{T(x)\land n}-\frac{\overline{P}(\overline{A_{x:\annu {n}}})}{\delta}$$.
+
+在平衡准则下，\begin{align*}
+    0 = E(L) = & E(V^{T(x)\land n}-\overline{P}(\overline{A_{x:\annu {n}}})\overline{a}_{\annu{T(x)\land n}})  \\
+    =          & \overline{A}_{x:\annu{n}} - \overline{P}(\overline{A_{x:\annu {n}}})\overline{a}_{x:\annu{n}}
+\end{align*}
+我们可以推出:
+\begin{align*}
+    \overline{P}(\overline{A_{x:\annu {n}}}) = \frac{\overline{A}_{x:\annu n}}{\overline{a}_{x:\annu n}}
+\end{align*}
+由$\delta \overline{a}_{x:\annu n} + \overline{A}_{x:\annu n}=1$，可以得到:
+\begin{align*}
+    \overline{P}(\overline{A}_{x:\annu {n}}) & = \frac{\overline{A}_{x:\annu n}}{\overline{a}_{x:\annu n}}          \\
+                                             & = \frac{1}{\overline{a}_{x:\annu n}} - \delta                        \\
+                                             & = \frac{\delta \overline{A}_{x:\annu n}}{1-\overline{A}_{x:\annu n}}
+\end{align*}
+
+显然:
+
+\begin{align*}
+    D(L) & = D\left((1+\frac{\overline{P}(\overline{A}_{x:\annu {n}})}{\delta})v^{T(x) \land n}-\frac{\overline{P}(\overline{A}_{x:\annu {n}})}{\delta}\right) \\
+         & = \left(
+    1-\frac{\overline{P}(\overline{A_{x:\annu {n}}})}{\delta}
+    \right)^{2}\cdot D(V^{T(x)\land n})                                                                                                                        \\
+         & = \left(
+    1+\frac{\overline{A}_{x:\annu n}}{\delta \overline{a}_{x:\annu n}}
+    \right)^{2}\cdot
+    \left[
+        ^{2}\overline{A}_{x:\annu n} - (\overline{A}_{x:\annu n})^{2}
+    \right]                                                                                                                                                    \\
+         & = \frac{^{2}\overline{A}_{x:\annu n}-(\overline{A}_{x:\annu n})^{2}}{(1-\overline{A}_{x:\annu n})^{2}}
+\end{align*}
+
+3.缴费期为$h$年的$n$年期定期寿险($h<n$)
+
+(1)年均衡净保费记为$_{h}\overline{P}(\overline{A}^{1}_{x:\annu n
+    })$.
+
+(2)签字损失量: 最后的缴费时刻为$T(x)\land h$
+$$L=v^{T(x)}I_{\{T(x)<n\}}-_{h}\overline{P}^{1}_{x:\annu n}\overline{a}_{\annu{T(x)\land h}}$$
+
+(3)
+\begin{align*}
+    0 & = E(L) = \overline{A}^{1}_{x:\annu n} - _{h}\overline{P}(\overline{A}^{1}_{x:\annu n}) \overline{a}_{\annu{x:h} }     \\
+      & \equiv _{h}\overline{P}(\overline{A}^{1}_{x:\annu n})=\frac{\overline{A}^{1}_{x:\annu n}}{\overline{a}_{\annu{x:h}}}.
+\end{align*}
+
+\begin{align*}
+    \text{某险种的年均衡净保费}=\frac{\text{该险种的精算现值}}{\text{缴费期对应的生存年金}}
+\end{align*}
+
+4.其他险种的年均净保费
+
+(1)缴费期为$h$年的终身寿险: $_{h}\overline{P}(\overline{A}_{x})=\frac{\overline{A}_{x}}{\overline{a}_{x:\annu h}}$
+
+(2)缴费期为$h$年的延$n$年期终身生存年金: $_{h}\overline{P}(_{n|}\overline{a}_{x})=\frac{_{n|}\overline{a}_{x}}{\overline{a}_{x:\annu h}}$
+
+(3)延期$n$年的终身生存年金: $\overline{P}(_{n|}\overline{a}_{x})=\frac{_{n|}\overline{a}_{x}}{\overline{a}_{x:\annu n}}$
+
+(4)延期$n$年的终身死亡保险: $\overline{P}(_{n|}\overline{A}_{x})=\frac{_{n}\overline{A}_{x}}{\overline{a}_{x:\annu n}}$
+
+\section{完全离散险种}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 保费等额分期缴纳}
+\end{itemize}
+保险金死亡年末支付的险种称为完全离散险种.
+
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 完全离散终身寿险}
+\end{itemize}
+
+1. 年均衡净保费记为$P_{x}$，保险金现值为$V^{k(x)+1}$
+
+保费的总现值为$P_{x}\ddot{a}_{\annu{K(x)+1}}$.
+
+2. 签单损失量L可以视为保险金现值和保费的总现值的差值，又有$\ddot{a}_{K(x)+1}=\frac{1-V^(K(x)+1)}{d}$，显然:
+$$L = (1+\frac{P_{x}}{d})V^{K(x)+1}-\frac{P_{x}}{d}$$
+
+3. 平衡准则下，$$0=E(L)=E(V^{K(x)+1}-P_{x}\ddot{a}_{\annu{K(x)+1}})$$
+
+$$0=A_{x}-P_{x}\ddot{a}_{x} \equiv P_{x}=\frac{A_{x}}{\ddot{a}_{x}}$$
+
+又因为$A_{x}+d\ddot{a}_{x}=1$，所以$P_{x}=\frac{A_{x}}{\ddot{a}_{x}}=\frac{dA_{x}}{1-A_{x}}=\frac{1}{\ddot{a}_{x}}-d$
+
+4.
+\begin{align*}
+    D(L) & = D((1+\frac{P_{x}}{d})V^{K(x)+1}-\frac{P_{x}}{d})  \\
+         & = (1+\frac{P_{x}}{d})^{2}D(V^{K(x)+1})              \\
+         & = \frac{^{2}A_{x}-(A_{x})^{2}}{(d\ddot{a}_{x})^{2}} \\
+         & = \frac{^{2}A_{x}-(A_{x})^{2}}{(1-A_{x})^{2}}       \\
+\end{align*}
+
+\begin{example}
+    某人现年50岁，买了一份完全离散的终身寿险，假设$T(50)\sim U[0,50)$，$i=0.05$，求年均衡净保费$P_{x}$，并计算签单损失量$L$的方差.
+\end{example}
+\solution
+\begin{align*}
+    P_{50}        & =\frac{A_{50}}{\ddot{a}_{50}}                                           \\
+    A_{50}        & =\sum^{\infty}_{K=0}V^{K+1}_{K|}q_{50}                                  \\
+                  & =\sum^{49}_{K=0}V^{K+1}\frac{1}{50}                                     \\
+                  & =\frac{1}{50}\sum^{50}_{K=1}V^{K}                                       \\
+                  & \approx 0.3651185                                                       \\
+    \ddot{a}_{50} & =\sum^{\infty}_{K=0}V^{K}_{K}P_{50}=\sum^{49}_{K=0}V^{K}\frac{50-K}{50} \\
+                  & \text{本题可以不计算，感兴趣的读者可以自行计算}                                             \\
+    P_{50}        & =\frac{dA_{50}}{1-A_{50}}=0.02738558                                    \\
+    D(L)          & =\frac{^{2}A_{50}-(A_{50})^{2}}{(1-A_{50})^2}\approx 0.1496662.
+\end{align*}
+
+\begin{itemize}
+    \item[{\bf\hei 三.}]{\bf\hei 完全离散的生死合险}
+\end{itemize}
+
+1. 年均衡净保费记为$P_{x:\annu n}$.
+
+2. 签单损失量: $L=V^{(K(x)+1)\land n}-P_{x:\annu n}\ddot{a}_{\annu {(K(x)+1)\land n}}$.
+
+3. 平衡准则下，$E(L)=0=A_{x:\annu n}-P_{x:\annu n}\ddot{a}_{x:\annu n}$
+\begin{align*}
+    \Rightarrow P_{x:\annu n} & =\frac{A_{x:\annu n}}{\ddot{a}_{x:\annu n}} \\
+                              & =\frac{dA_{x:\annu n}}{1-A_{x:\annu n}}     \\
+                              & =\frac{1}{\ddot a_{x:\annu n}}-d
+\end{align*}.
+
+4. $D(L)=\frac{ ^{2}A_{x:\annu n}-(A_{x:\annu n})^{2}}{(1-A_{x:\annu n})^{2}}$
+
+\begin{align*}
+    \text{完全离散险种的年均衡净保费}=\frac{\text{对应险种的精算现值}}{\text{对应缴纳期的期初生存年金}}
+\end{align*}
+
+\begin{itemize}
+    \item[{\bf\hei 四.}]{\bf\hei 其他完全离散险种}
+\end{itemize}
+
+1. 缴费期为$n$年的终身死亡保险:
+$_{h}P(A_{x})=\frac{A_{x}}{\ddot{a}_{x:\annu n}}$.
+
+2. $n$年期生存保险:
+$P_{x:\annu n}^{\ \ 1}=\frac{A_{x:\annu n}^{\ \ 1}}{\ddot a_{x:\annu n}}$.
+
+3. 延期$n$年的终身期初生存年金:
+$P(_{n|\ddot a_{x}})=\frac{_{n|}\ddot a_{x}}{\ddot{a}_{x:\annu n}}$.
+
+4. 缴费期为$h$年的$n$年期死亡保险:
+$_{n}P^{1}_{x:\annu n}=\frac{A^{1}_{x:\annu n}}{a_{x:\annu h}}$.
+
+\section{作业}
+\begin{exs}
+    完成例4.1
+\end{exs}
+\begin{exs}
+    某人现年$20$岁, 买了一份完全连续的终身寿险, 设$\delta=0.05$, 死亡立即支付保险金$10000$元,且其余命服从$[0,80]$上的均匀分布.
+
+    (1)写出签单损失量$L$
+
+    (2)在平衡准则下求年均衡净保费
+
+    (3)求D(L)
+\end{exs}
+\chapter{净准备金理论}
+
+在$t$时刻, 保险公司为了能够支付未来需要支付的保险金而准备的资金成为$t$时刻的净准备金.
+\section{确定准备金的准则}
+\begin{itemize}
+    \item[{\bf\hei 1.}]{\bf\hei 未来损失量}
+\end{itemize}
+
+在$t$时刻的未来损失量记为$_tL$, 若在$t$时刻个体$(x)$还活着, 即$T(x)>t$, 则$_tL=$未来需支付的保险金在$t$时刻的现值 减去 未来支付的保费在$t$时刻的总现值.
+
+若$t$时刻$(x)$已经死亡, $_tL=0$
+
+(1)对完全连续的终身寿险
+
+设年均衡净保费为$\overline{P}( \overline{A}_x )=\frac{\overline A_x}{\overline a_x}$
+$${}_tL=(v^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t}})I_{\{T(x)>t\}}$$
+
+(2)对完全离散的终身寿险
+
+设年均衡净保费为$P_x=\frac{A_x}{\ddot{a}_x}$
+$${}_tL=(v^{K(x)+1-k}-\overline{P}_x \overline a_{\annu {K(x)+1-k}})I_{\{K(x)>k\}}$$
+
+\begin{itemize}
+    \item[{\bf\hei  2.}]{\bf\hei 确定准备金的三个准则}
+\end{itemize}
+
+$t$时刻的准备金用${}_tV$表示
+
+(1)平衡准则: ${}_tV=E({}_tL|T(x)>t)$
+
+(2)指数准则: 给定$a>0$, 则$e^{a\cdot{}_tV}=E(a\cdot{}_tV|T(x)>t)$
+
+(3)分位数准则: 给定水平$\alpha\in(0,1)$, 则$P({}_tL>{}_tV|T(x)>t)=\alpha$
+
+注: (1)(分位数准则)保险人越怕风险, 则$\alpha$越小, $_tV$越大即净准备金额越大;
+
+(2) 指数准则下, ${}_tV=\frac{1}{a}\ln E(a\cdot{}_tV|T(x)>t)$
+
+\begin{align*}
+    \frac{\partial {}_tV}{\partial a} & = \frac{\frac{1}{E(e^{a{}_tL}|T( x ) >t )}E( e^{a{}_tL}|T( x ) >t ) a-\ln E( e^{a{}_tL}|T( x ) >t )}{a^2}      \\
+                                      & =\frac{E( e^{a{}_tL}{}_tL|T( x ) >t )}{aE( e^{a{}_tL}|T( x ) >t )}-\frac{\ln E( e^{a{}_tL}|T( x ) >t )}{a^2}>0 \\
+\end{align*}
+
+所以: $a$越大, 准备金${}_tV$越大, 保险人越怕风险;
+
+(3)指数准则下,
+\begin{align}
+    {}_tV & =\frac{1}{a}\ln E(a\cdot{}_tV|T(x)>t)>\frac{1}{a}E(\ln a\cdot {}_tV|T(x)>t)\no \\
+          & =E(_tL_x|T(x)>t)={}_t\widetilde{V}=\text{平衡准则下的净准备金.}
+\end{align}
+
+
+即指数准则适用于规避风险的保险人, 事实上, $\underset{a\downarrow 0}{\lim}{}_tV={}_t\widetilde{V}.$
+
+\section{完全连续险种在平衡准则下的净准备金}
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 平衡准则下完全连续的终身寿险的净准备金}
+\end{itemize}
+
+1.未来损失量
+\begin{align*}
+    {}_tL & =(v^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t}})I_{\{T(x)>t\}}                                      \\
+          & =[(1+\frac{\overline{P}( \overline{A}_x )}{\delta})v^{T(x)-t}-\frac{\overline{P}( \overline{A}_x )}{\delta}] I_{\{T(x)>t\}} \\
+          & =[\frac{1}{\delta\overline{a_x}}v^{T(x)-t}-\frac{\overline{P}( \overline{A}_x )}{\delta}]I_{\{T(x)>t\}}                     \\
+\end{align*}
+
+2. 在平衡准则下
+\begin{align*}
+    _tV(\overline A_x) & =E({}_tL_x|T(x)>t)                                                                                \\
+                       & =E((v^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t}})I_{\{T(x)>t\}}|T(x)>t)  \\
+                       & =E((v^{X-(x+t)}-\overline{P}( \overline{A}_x )\overline a_{\annu {X-(x+t)}})I_{\{T(x)>t\}}|X>x+t) \\
+                       & =E((v^{T(x+t)}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x+t)}}))                       \\
+                       & =E(v^{T(x+t)})-\overline{P}( \overline{A}_x )E(\overline a_{\annu {T(x+t)}})                      \\
+                       & =\overline A_{x+t}-\overline{P}( \overline{A}_x )\overline a_{x+t}                                \\
+                       & =\overline A_{x+t}-\frac{\overline A_x}{\overline a_x}\overline a_{x+t}                           \\
+                       & =1-\delta\overline a_{x+t}-\frac{1-\delta \overline a_x}{\overline a_x}\overline a_{x+t}          \\
+                       & =\frac{\overline a_x-\overline a_{x+t}}{\overline a_x}.
+\end{align*}
+3. 未来损失量$_tL$的方差
+\begin{align*}
+    D(_tL|T(x)>t) & =D([\frac{1}{\delta\overline{a}_x}v^{T(x)-t}-\frac{\overline{P}( \overline{A}_x )}{\delta}]I_{\{T(x)>t\}}|T(x)>t)        \\
+                  & =D([\frac{1}{\delta\overline{a}_x}v^{X-(x+t)}-\frac{\overline{P}( \overline{A}_x )}{\delta}]I_{\{T(x)>t\}}|X>x+t)        \\
+                  & =D(\frac{1}{\delta\overline{a}_x}v^{T(x+t)}-\frac{\overline{P}( \overline{A}_x )}{\delta})                               \\
+                  & =\frac{1}{(\delta\overline a_x)^2}D(v^{T(x+t)}=\frac{^2\overline A_{x+t}-(\overline A_{x+t})^2}{(\delta\overline a_x)^2} \\\end{align*}
+
+\begin{example}
+    设$\mu(t)=\mu$, 利息力为$\delta$, 某个个体$(x)$买了一份完全连续的终身寿险.
+
+    (1)求$_tP_x$; (2)写出签单损失量$L$;
+
+    (3)求年均衡净保费; (4)$DL$;
+
+    (5)写出$t$时刻的未来损失量${}_tL$;
+
+    (6)求$t$时刻的净准备金$_tV(\overline A_x)$;
+
+    (7)求$D({}_tL).$
+
+\end{example}
+\solution
+(1) $_tP_x=e^{-\int_x^{x+t}\mu(s)ds}=e^{-\int_x^{x+t}\mu ds}=e^{-\mu t}.$
+
+(2) $L=v^{T(x)}-\overline P(\overline A_x)\overline a_{\annu {T(x)}}.$
+
+(3) $0=EL=\overline A_x-\overline P(\overline A_x)\overline a_x$, 故$\overline P(\overline A_x)=\frac{\overline A_x}{\overline a_x},$
+
+注意到$\overline A_x=\frac{\mu}{\mu+\delta}$, $\overline a_x=\frac{1}{\mu+\delta},$
+故$\overline P(\overline A_x)=\frac{\overline A_x}{\overline a_x}=\mu.$
+
+(4)$DL=\frac{^2\overline A_{x}-(\overline A_{x})^2}{(\delta\overline a_x)^2}=\frac{^2\overline A_{x}-(\overline A_{x})^2}{(1-\delta\overline A_x)^2}=\frac{\frac{\mu}{\mu+2\delta}-(\frac{\mu}{\mu+\delta})^2}{(1-\frac{\mu}{\mu+\delta})^2}.$
+
+(5)$t$时刻的未来损失量
+$${}_tL=(v^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t}})I_{\{T(x)>t\}}.$$
+
+(6)$t$时刻的净准备金$ {}_tV(\overline A_x)=\frac{\overline a_{x}-\overline a_{x+t}}{\overline a_x}=0.$
+
+(7)$D({}_tL)=\frac{^2\overline A_{x+t}-(\overline A_{x+t})^2}{(1-\delta\overline A_x)^2}=\frac{\frac{\mu}{\mu+2\delta}-(\frac{\mu}{\mu+\delta})^2}{(1-\frac{\mu}{\mu+\delta})^2}.$
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 完全连续的生死合险在平衡准则下的净准备金}
+\end{itemize}
+
+
+
+1.未来损失量
+\begin{align*}
+    _tL & =(v^{T(x)\land n-t}-\overline P(A_{x:\annu n})\overline{a}_{\annu {T(x)\land n-t}}I_{\{T(x)>t\}}             \\
+        & =(v^{(T(x)-t)\land(n-t)}-\overline P(A_{x:\annu n})\overline{a}_{\annu {(T(x)-t)\land(n-t)}})I_{\{T(x)>t\}}. \\
+\end{align*}
+
+2. 在平衡准则下
+\begin{align*}
+    {}_t\overline V(\overline A_{x:\annu n}) & =E(_tL|T(x)>t)                                                                                                              \\
+                                             & =E(v^{(T(x)-t)\land(n-t)}-\overline P(A_{x:\annu n})\overline{a}_{\annu {(T(x)-t)\land(n-t)}})                              \\
+                                             & =\overline A_{x+t:}{}\annu {n-t}-\overline P(\overline A_{x:}{}\annu n)\overline a_{x+t:}{}\annu {n-t}                      \\
+                                             & =\overline A_{x+t:}{}\annu {n-t}-\frac{\overline A_{x:}{}\annu n}{\overline a_{x:}{}\annu n}\overline a_{x+t:}{}\annu {n-t} \\
+                                             & =\frac{\overline a_{x:}{}\annu n-\overline a_{x+t:}{}\annu {n-t}}{\overline a_{x:}{}\annu n}.
+\end{align*}
+3. 未来损失量${}_tL$的方差
+\begin{align*}
+    D(_tL|T(x)>t) & =D((1+\frac{\overline P(\overline A_{x:}{}\annu n)}{\delta})v^{(T(x)-t)\land(n-t)}-\frac{\overline P(\overline A_{x:}{}\annu n)}{\delta}|T(x)>t) \\
+                  & =D(\frac{1}{\delta\overline a_{x:}{}\annu n}v^{(T(x)-t)\land(n-t)})=\frac{D(v^{(T(x)-t)\land(n-t)})}{(\delta\overline a_{x:}{}\annu n)^2}        \\
+                  & =\frac{^2\overline A_{x+t:}{}\annu {n-t}-\overline A_{x+t:}{}\annu {n-t}}{(\delta \overline a_{x:}{}\annu {n})^2}                                \\
+                  & =\frac{^2\overline A_{x+t:}{}\annu {n-t}-\overline A_{x+t:}{}\annu {n-t}}{(1- \overline A_{x:}{}\annu {n})^2}.
+\end{align*}
+
+\section{完全离散险种的净准备金}
+
+\begin{itemize}
+    \item[{\bf\hei 一.}]{\bf\hei 平衡准则下完全连续的终身寿险的净准备金}
+\end{itemize}
+回忆一下, 在平衡准则下, 完全离散终身寿险的年均衡净保费$P_x=\frac{A_x}{\ddot a_x}.$
+
+
+1.未来损失量
+\begin{align*}
+    {}_kL & =(v^{K(x)-k+1}-P_x \ddot a_{\annu {K(x)-k+1}})I_{\{K(x)\ge k\}}      \\
+          & =[(1+\frac{P_x }{d})v^{K(x)-k+1}-\frac{P_x}{d}] I_{\{K(x)\ge k\}}    \\
+          & =[\frac{1}{d\ddot a_x}v^{K(x)-k+1}-\frac{P_x }{d}]I_{\{K(x)\ge k\}}. \\
+\end{align*}
+
+2. 在平衡准则下
+\begin{align*}
+    {}_kV(A_x) & =E({}_kL|T(x)>k)                                                          \\
+               & =E((v^{K(x)-k+1}-P_x \ddot a_{\annu {K(x)-k+1}})I_{\{K(x)\ge k\}}|T(x)>k) \\
+               & =E((v^{K(x)-k+1}-P_x \ddot a_{\annu {K(x)-k+1}})I_{\{K(x)\ge k\}}|X>x+k)  \\
+               & =E(v^{K(x+k)+1}-P_x \ddot a_{\annu {K(x+k)+1}})                           \\
+               & =E(v^{K(x+k)+1})-P_x E(\ddot a_{\annu {K(x+k)+1}})                        \\
+               & = A_{x+k}-P_x\ddot a_{x+t}                                                \\
+               & = A_{x+k}-\frac{ A_x}{\ddot a_x}\ddot a_{x+k}                             \\
+               & =1-d\ddot a_{x+k}-\frac{1-d \dot a_x}{\dot a_x}\dot a_{x+k}               \\
+               & =\frac{\ddot a_x-\ddot a_{x+k}}{\ddot a_x}.
+\end{align*}
+
+3. 未来损失量$_kL$的方差
+\begin{align*}
+    D(_kL|T(x)>k) & =D([\frac{1}{d\ddot a_x}v^{K(x)-k+1}-\frac{P_x }{d}]I_{\{K(x)\ge k\}}|T(x)>k)                  \\
+                  & =D([\frac{1}{d\ddot a_x}v^{K(x)-k+1}-\frac{P_x }{d}]I_{\{K(x)\ge k\}}|X>x+k)                   \\
+                  & =D(\frac{1}{d\ddot a_x}v^{K(x+k)+1}-\frac{P_x }{d})
+    =\frac{1}{(d\ddot a_x)^2}D(v^{K(x+k)+1})                                                                       \\
+                  & =\frac{{}^2 A_{x+k}-( A_{x+k})^2}{(d\ddot a_x)^2}=\frac{{}^2 A_{x+k}-( A_{x+k})^2}{(1-A_x)^2}. \\\end{align*}
+
+
+\begin{itemize}
+    \item[{\bf\hei 二.}]{\bf\hei 完全离散的生死合险在平衡准则下的净准备金}
+\end{itemize}
+
+回忆一下, 在平衡准则下, 完全离散终身寿险的年均衡净保费$P_{x:}{}\annu{n}=\frac{A_{x:}{}\annu{n}}{\ddot a_{x:}{}\annu{n}}.$
+
+
+1.未来损失量
+\begin{align*}
+    {}_kL & =(v^{(K(x)-k+1)\wedge (n-k)}-P_{x:}{}\annu{n} \ddot a_{\annu {(K(x)-k+1)\wedge (n-k)}})I_{\{K(x)\ge k\}}     \\
+          & =[(1+\frac{P_{x:}{}\annu{n} }{d})v^{(K(x)-k+1)\wedge (n-k)}-\frac{P_{x:}{}\annu{n}}{d}] I_{\{K(x)\ge k\}}    \\
+          & =[\frac{1}{d\ddot a_{x:}{}\annu{n}}v^{(K(x)-k+1)\wedge (n-k)}-\frac{P_{x:}{}\annu{n} }{d}]I_{\{K(x)\ge k\}}.
+\end{align*}
+
+2. 在平衡准则下
+\begin{align*}
+    {}_kV(A_{x:}{}\annu{n}) & =E({}_kL|T(x)>k)                                                                                                   \\
+                            & =E((v^{(K(x)-k+1)\wedge (n-k)}-P_{x:}{}\annu{n} \ddot a_{\annu {(K(x)-k+1)\wedge (n-k)}})I_{\{K(x)\ge k\}}|T(x)>k) \\
+                            & =E((v^{(K(x)-k+1)\wedge (n-k)}-P_{x:}{}\annu{n} \ddot a_{\annu {(K(x)-k+1)\wedge (n-k)}})I_{\{K(x)\ge k\}}|X>x+k)  \\
+                            & =E(v^{((K(x+k)+1)\wedge (n-k))}-P_{x:}{}\annu{n}\ddot a_{\annu {((K(x+k)+1)\wedge (n-k)}})                         \\
+                            & =E(v^{((K(x+k)+1)\wedge (n-k)})-P_x E(\ddot a_{\annu {((K(x+k)+1)\wedge (n-k)}})                                   \\
+                            & = A_{x+k:}{}\annu{n-k}-P_{x:}{}\annu{n}\ddot a_{x+k:}{}\annu{n-k}                                                  \\
+                            & = A_{x+k:}{}\annu{n-k}-\frac{A_{x:}{}\annu{n}}{\ddot a_{x:}{}\annu{n}}\ddot a_{x+k:}{}\annu{n-k}                   \\
+                            & =1-d\ddot a_{x+k:}{}\annu{n-k}-\frac{1-d \ddot a_{x:}{}\annu{n}}{\ddot a_x}\ddot a_{x+k:}{}\annu{n-k}              \\
+                            & =\frac{\ddot a_{x:}{}\annu{n}-\ddot a_{x+k:}{}\annu{n-k}}{\ddot a_{x:}{}\annu{n}}.
+\end{align*}
+
+3. 未来损失量$_kL$的方差
+\begin{align*}
+    D(_kL & |T(x)>k)=D([\frac{1}{d\ddot a_{x:}{}\annu{n}}v^{(K(x)-k+1)\wedge (n-k)}-\frac{P_{x:}{}\annu{n} }{d}]I_{\{K(x)\ge k\}}|T(x)>k)                                                \\
+          & =D([\frac{1}{d\ddot a_{x:}{}\annu{n}}v^{(K(x)-k+1)\wedge (n-k)}-\frac{P_{x:}{}\annu{n} }{d}]I_{\{K(x)\ge k\}}|X>x+k)                                                         \\
+          & =D(\frac{1}{d\ddot a_{x:}{}\annu{n}}v^{(K(x+k)+1)\wedge (n-k)}-\frac{P_{x:}{}\annu{n} }{d})
+    =\frac{1}{(d\ddot a_{x:}{}\annu{n})^2}D(v^{(K(x)-k+1)\wedge (n-k)})                                                                                                                  \\
+          & =\frac{{}^2 A_{x+k:}{}\annu{n-k}-( A_{x+k:}{}\annu{n-k})^2}{(d\ddot a_{x:}{}\annu{n})^2}=\frac{{}^2 A_{x+k:}{}\annu{n-k}-( A_{x+k:}{}\annu{n-k})^2}{(1-A_{x:}{}\annu{n})^2}. \\\end{align*}
+
+\section{作业}
+
+\begin{exs}
+    某人现年50岁, 其余命$T(50)\sim U[0,50).$ 利息力$\delta=0.05.$ 他买了一份完全连续的终身死亡保险.
+
+    (1) 写出签单损失量 $L;$
+
+    (2) 在平衡准则下计算年均衡净保费;
+
+    (3) 求$D(L);$
+
+    (4) 写出10年后的未来损失量$_{10}L;$
+
+    (5) 在平衡准则下计算十年后的净准备金${}_{10}\overline V(\overline A_{50});$
+
+    (6) 计算$D({}_{10}L).$
+\end{exs}
+
+\begin{exs}
+    某人现年50岁, 设${}_{k|}q_{50}=\frac{1}{2^{k+1}},k=0,1,2,...$ 利率$i=0.05.$ 他买了一份完全离散的终身死亡保险.
+
+    (1) 写出签单损失量 $L;$
+
+    (2) 在平衡准则下计算年均衡净保费;
+
+    (3) 求$D(L);$
+
+    (4) 写出10年后的未来损失量$_{10}L;$
+
+    (5) 在平衡准则下计算十年后的净准备金${}_{10}V( A_{50});$
+
+    (6) 计算$D({}_{10}L).$
+\end{exs}
+
+\solution (1) $L = v^{K(x)+1}-P_x\ddot a_{\annu{K(x)+1}}$
+
+(2) $E(L) = 0 \Rightarrow P_x = \frac{A_x}{\ddot a}_x = \frac{dA_x}{1-A_x}$
+
+$P_{20} = \frac{dA_{20}}{1-A_{20}}
+           =\frac{v(1-v)/(2-v)}{1-v/(2-v)}
+           =\frac{v(1-v)}{2-2v}=\frac{v}{2}$
+
+(3) $D(L) = \frac{{}^2A_x-(A_x)^2}{(1-A_x)^2}
+        =\frac{\frac{v^2}{2-v^2}-(\frac{v}{2-v})^2}{1-\frac{v}{2-v}}$
+
 
 \begin{thebibliography}{99}
     %\addtolength{\itemsep}{-0.5em}
@@ -2683,6 +3250,9 @@ $$
     \bibitem{zz} 吴岚, 黄海, 何洋波/编著: 《金融数学引论》第二版, 北京大学出版社, 2013.
 
 \end{thebibliography}
+
+\mainmatter
+
 
 \begin{appendix}
     \chapter{利息理论基础知识}
@@ -2695,7 +3265,7 @@ $$
 
     \textbf{贴现因子}记为$v$, 定义为$v=\frac{1}{1+i}$.
 
-    \textbf{贴现率}记为$d$, 定义为$d=1-v=i$.
+    \textbf{贴现率}记为$d$, 定义为$d=1-v=\frac{i}{1+i}$.
 
     \textbf{利息力}记为$\delta$, 定义为$\delta=\ln(1+i)$.
 
