@@ -338,7 +338,7 @@ $T(x)$的分布表示在已知事件$\{X>x\}$发生的条件下, $X-x$的分布.
 \end{align*}
 
 \begin{definition}
-    称$\mu_x(t) = -\frac{s_{T(x)}'(t)}{s_{T(x)}(t)}$为$X$岁个体在$t$ 年后的死亡力函数.
+    称$\mu_x(t) = -\frac{s_{T(x)}'(t)}{s_{T(x)}(t)}$为$x$岁个体在$t$年后的死亡力函数.
 \end{definition}
 
 \begin{proposition}\label{p21} 我们有
@@ -424,14 +424,14 @@ $s_{T(x)}(t)=e^{-\int_0^t\mu_x(s)ds}.$ 又因为$\mu_x(t)=\mu(x+t),$ 故
 \begin{itemize}
     \item[{\bf\hei 三.}]{\bf\hei 一些精算学表示法}
 \end{itemize}
-注意到 $ S_{T(x)}(t)=P(T(x)>t)$表示个体$ (x)$在$t$年后还活着的概率; 而$F_{T(x)}(t)=P(T(x)\le t)$ 表示个体$(x)$在$t$ 年内死去的概率. 这些记号都很复杂, 书写比较困难. 故精算学中需引入一些简单的记号.
+注意到 $ s_{T(x)}(t)=P(T(x)>t)$表示个体$ (x)$在$t$年后还活着的概率; 而$F_{T(x)}(t)=P(T(x)\le t)$ 表示个体$(x)$在$t$ 年内死去的概率. 这些记号都很复杂, 书写比较困难. 故精算学中需引入一些简单的记号.
 
 
 定义如下几个记号:
 \begin{enumerate}
-    \item[$\mathring 1.$] 用$_tp_{x}\stackrel{\text{def}}{=}P(T(x)>t)=S_{T(x)}(t)$
+    \item[$\mathring 1.$] 用$_tp_{x}\stackrel{\text{def}}{=}P(T(x)>t)=s_{T(x)}(t)$
         表示个体$(x)$在$t$年后还活着的概率. 显然有
-        $$ {}_tp_x=S_{T(x)}(t)=\mathrm{e}^{-\int_{0}^{t}\mu_x(s)\mathrm{d}s}=\mathrm{e}^{-\int_{0}^{t}\mu(x+s)\mathrm{d}s}=\mathrm{e}^{-\int_{x}^{x+t}\mu(s)\mathrm{d}s}.$$
+        $$ {}_tp_x=s_{T(x)}(t)=\mathrm{e}^{-\int_{0}^{t}\mu_x(s)\mathrm{d}s}=\mathrm{e}^{-\int_{0}^{t}\mu(x+s)\mathrm{d}s}=\mathrm{e}^{-\int_{x}^{x+t}\mu(s)\mathrm{d}s}.$$
     \item[$\mathring 2.$] 用$_tq_{x}\stackrel{\text{def}}{=}P(T(x)\leq t)=F_{T(x)}(t)$
         表示一个$x$岁的人在$t$年内死亡的概率. 易知
         $$_tp_{x}+{}_tq_{x}=1.$$
@@ -503,7 +503,7 @@ $$\frac{d(_tp_x)}{dx}=\z(e^{-\int_{x}^{x+t}\mu_x(s)ds}\y)^{\prime}_x=e^{-\int_{x
     {e_x}          & =E(K(x))=\sum_{k=0}^{\infty}kP(K(x)=k)                                                      \\
                    & =\sum_{k=0}^{\infty}k[P(T(x)\geq k)-P(T(x)\geq k+1)]                                        \\
                    & =\sum_{k=0}^{\infty}k\cdot{}_kp_x-\sum_{k=0}^{\infty}k\cdot{}_{k+1}p_x=\sum_{k=0}^{\infty}{_{k+1}p_x} \\
-                   & =\sum_{k=0}^{\infty}{_kp_x}.
+                   & =\sum_{k=1}^{\infty}{_kp_x}.
 \end{align*}
 
 \section{随机生存群}
@@ -639,7 +639,7 @@ $$E(X|A)\overset{def}{=}\frac{E(XI_A)}{EI_A}=\frac{E(XI_A)}{P(A)}.$$
 \begin{proposition} 如下结论成立:
     \begin{align*}
         {}_tL_x & =l_xE(T(x)\wedge t)                 \\
-                & =\int_0^t sl_{x+s}u(x+s)ds+tl_{x+t} \\
+                & =\int_0^t sl_{x+s}\mu(x+s)ds+tl_{x+t} \\
                 & =\int_0^tl_{x+s}ds
     \end{align*}
 \end{proposition}
@@ -812,7 +812,7 @@ $${}_nm_x=\dfrac{{}_nq_x}{\int_0^n{}_tp_xdt}=\dfrac{{}_nd_x/l_x}{\int_0^n\dfrac{
     \item [$\mathring 5.$] $\mu_{x}(t)=\frac{q_{x}}{1-tq_x}$
 
           \proof 基于第四个结论, 我们有\begin{align*}
-              \mu_{x}(t) & =\frac{f_{T(x)(t)}}{S_{T(x)}(t)} =\frac{q_{x}}{_{t}p_{x}} =\frac{q_{x}}{1-{}_{t}q_{x}} =\frac{q_{x}}{1-tq_{x}}.
+              \mu_{x}(t) & =\frac{f_{T(x)(t)}}{s_{T(x)}(t)} =\frac{q_{x}}{_{t}p_{x}} =\frac{q_{x}}{1-{}_{t}q_{x}} =\frac{q_{x}}{1-tq_{x}}.
           \end{align*}
           证毕.\qed
 \end{enumerate}
@@ -826,7 +826,7 @@ $${}_nm_x=\dfrac{{}_nq_x}{\int_0^n{}_tp_xdt}=\dfrac{{}_nd_x/l_x}{\int_0^n\dfrac{
 考虑条件概率$P(S(x) \leq t \mid K(x) = k)$, 有
 \begin{align*}
     P(S(x) \leq t \mid K(x) = k) & = \frac{P(S(x) \leq t, K(x) = k)}{P(K(x) = k)}                                                                          \\
-                                 & = \frac{_{k|t}q_{x}}{_{k|}q_{x}} = \frac{_{k}p_{x}\,_{t}q_{x+k}}{_{k}q_{x}\,q_{x+k}} = \frac{_{t}q_{x+k}}{q_{x+k}} = t.
+                                 & = \frac{_{k|t}q_{x}}{_{k|}q_{x}} = \frac{_{k}p_{x}\,_{t}q_{x+k}}{_{k}p_{x}\,q_{x+k}} = \frac{_{t}q_{x+k}}{q_{x+k}} = t.
 \end{align*}
 因此, $K(x)$与$S(x)$相互独立, 且$S(x)$服从$[0,1]$上的均匀分布. 证毕.\qed
 
@@ -857,7 +857,7 @@ $${}_nm_x=\dfrac{{}_nq_x}{\int_0^n{}_tp_xdt}=\dfrac{{}_nd_x/l_x}{\int_0^n\dfrac{
 \end{align}
 则称生存函数在年龄段$[x,x+1)$满足\textbf{常数死亡力假设}.
 
-{\rm\bf2.} 常数死亡力下设下的一些结论
+{\rm\bf2.} 常数死亡力假设下的一些结论
 
  \begin{proposition}设在年龄段$[x,x+1)$常数死亡力假设成立, 则对$t\in (0,1)$, 有
     \begin{enumerate}
@@ -964,7 +964,7 @@ $$
 \end{exs}
 
 \begin{exs}
-    设$i$为复利率, $v=\frac{1}{1+i}$为贴现因子, $\delta=\ln (1+i)$为利息力.
+    设$i$为复利率, $\nu=\frac{1}{1+i}$为贴现因子, $\delta=\ln (1+i)$为利息力.
 
     (1) 设$\mu_{x}(t)\equiv \mu =0.05, \delta\equiv 0.04$,
     求 $$E(\nu^{T(x)}),\ D(\nu^{T(x)}),\ E\z(\int_{0}^{T(x)}\nu^{t}dt\y),\ D\z(\int_{0}^{T(x)}\nu^{t}dt\y)$$.
@@ -1017,12 +1017,12 @@ $$
     \item[{\bf\hei 二.}]{\bf\hei 支付现值$Z$}
 \end{itemize}
 
-若$T(x)<n$, 则$Z=0$; 若$T(x)\geqslant n$, 则$Z=1\cdot \nu^n=\nu^n$, 其中贴现因子$v=\frac{1}{i+1}.$
+若$T(x)<n$, 则$Z=0$; 若$T(x)\geqslant n$, 则$Z=1\cdot \nu^n=\nu^n$, 其中贴现因子$\nu=\frac{1}{i+1}.$
 
-即$Z=\nu^nI_{\left\{ T\left( x \right) \geqslant n, \right\}}=\left\{ \begin{array}{c}
-        \nu^n, \text{ 若}\,\,T\left( x \right) \geqslant n. \\
-        0,\text{ 若}\,\,T\left( x \right) <n            \\
-    \end{array} \right.$
+即$$Z=\nu^nI_{\left\{ T\left( x \right) \geqslant n \right\}}=\left\{ \begin{array}{ll}
+        \nu^n, &\text{若}\,\,T\left( x \right) \geqslant n, \\
+        0,&\text{若}\,\,T\left( x \right) <n .           \\
+    \end{array} \right.$$
 \begin{itemize}
     \item[{\bf\hei 三.}]{\bf\hei 精算现值$EZ$}
 \end{itemize}
@@ -1176,7 +1176,9 @@ $$\overline{A}_{x:}^1{}_{\annu{n}}=\int_0^{n}{\nu^{t}\cdot{}_tp_x\cdot \mu_{x}(t
     \item[{\bf\hei 1.}]{\bf\hei 支付方式和条件}
 \end{itemize}
 
-若个体$(x)$在$n$年内死亡, 则在其死亡年末支付$1$元; 若个体$(x)$在$n$年内未死, 则不予支付.
+若个体$(x)$在$n$年内死亡, 则在其死亡年末支付$1$元; 
+
+若个体$(x)$在$n$年内未死, 则不予支付.
 
 \begin{itemize}
     \item[{\bf\hei 2.}]{\bf\hei 支付现值$Z$}
@@ -1214,9 +1216,9 @@ $$DZ =EZ^2-(EZ)^2= {}^2A_{x:}^1{}_{\annu{n}} - (A_{x:}^1{}_{\annu{n}})^2,$$
     A_{x:}^1{}_{\annu{n}}=A_{x:}^1{}_{\annu m}+{}_mE_x\cdot A_{x+m:}^1{}_{\annu {n-m}}.
 \end{align}
 \end{proposition}
-注意到当$m=1$时, $A_{x:}^1{}_{\annu{1}} = vq_x,~{}_1E_x = vp_x$, 所以由\eqref{eq2.5}立即可得
+注意到当$m=1$时, $A_{x:}^1{}_{\annu{1}} = \nu q_x,~{}_1E_x = \nu p_x$, 所以由\eqref{eq2.5}立即可得
     \begin{align}
-    &A_{x:}^1{}_{\annu{n}}=vq_x+vp_x\cdot A_{x:}^1{}_{\annu{n-1}},\no\\
+    &A_{x:}^1{}_{\annu{n}}=\nu q_x+\nu p_x\cdot A_{x:}^1{}_{\annu{n-1}},\no\\
 &(1+i)l_x A_{x:}^1{}_{\annu{n}} = d_x + l_{x+1} A_{x+1:}^1{}_{\annu{n-1}}.\no
 \end{align}
 
@@ -1289,9 +1291,7 @@ $Z = \nu^{T(x)}.$
     \item[{\bf\hei 3.}]{\bf\hei 精算现值用$\overline{A}_x$表示}
 \end{itemize}
 
-$
-    \overline{A}_x=E(Z)=\int_0^\infty \nu^t{}_tp_x\mu_x(t)\mathrm{d}t.
-$
+$\overline{A}_x=E(Z)=\int_0^\infty \nu^t{}_tp_x\mu_x(t)\mathrm{d}t.$
 
 \begin{itemize}
     \item[{\bf\hei 4.}]{\bf\hei $Z$的方差$DZ$}
@@ -1379,7 +1379,7 @@ $Z=\nu^{K(x)+1}$.
 
 {\rm\bf(i)} \begin{align}{A}_x = {A}_{x:}^1{}_{\annu{n}} + {}_nE_{x}\cdot {A}_{x+n};\end{align}
 
-{\rm\bf(ii)} \begin{align}{A}_x = vq_x + v p_x\cdot {A}_{x+1};\end{align}
+{\rm\bf(ii)} \begin{align}{A}_x = \nu q_x + \nu p_x\cdot {A}_{x+1};\end{align}
 
 {\rm\bf(iii)} \begin{align}(1+i){A}_x = q_x + p_x\cdot {A}_{x+1};\end{align}
 
@@ -1529,7 +1529,7 @@ $D(Z)=D(Z_1)+D(Z_2)-2{A}_{x:}^1{}_{\annu{n}}\cdot
 
 {\rm\bf(i)} \begin{align}{A}_{x:}{}\annu{n} = {A}_{x:}^1{}_{\annu{m}} + {}_mE_x{A}_{{x+m}:}{}\annu{n-m};\end{align}
 
-{\rm\bf(ii)} \begin{align}{A}_{x:}{}\annu{n} = vq_x + vp_x {A}_{{x+1}:}{}{\annu{n-1}};\end{align}
+{\rm\bf(ii)} \begin{align}{A}_{x:}{}\annu{n} = \nu q_x + \nu p_x {A}_{{x+1}:}{}{\annu{n-1}};\end{align}
 
 {\rm\bf(iii)} \begin{align}(1+i){l}_x {A}_{x:}{}\annu{n} = d_x +{l}_{x+1}  {A}_{{x+1}:}{}\annu{n-1}.\end{align}
 
@@ -1915,12 +1915,12 @@ $Z=b_{T(x)}\nu^{T(x)}.$
     \item[{\bf\hei 1.}]$n$年期期初年金
 \end{itemize}
 
-\noindent 现值$$\ddot a_{\annu n}=1+v+\nu^2+...+\nu^{n-1}=\frac{1-\nu^n}{1-v}=\frac{1-\nu^n}{d},$$
-其中, $d=1-v=1-\frac{1}{1+i}=\frac{i}{1+i}$,为贴现率.
+\noindent 现值$$\ddot a_{\annu n}=1+\nu+\nu^2+...+\nu^{n-1}=\frac{1-\nu^n}{1-\nu}=\frac{1-\nu^n}{d},$$
+其中, $d=1-\nu=1-\frac{1}{1+i}=\frac{i}{1+i}$,为贴现率.
 \begin{itemize}
     \item[{\bf\hei 2.}]永久期初年金
 \end{itemize}
-现值$$a_{\annu {\infty}}=1+v+\nu^2+...+\nu^n+...=\frac{1}{1-v}=\frac{1}{d}.$$
+现值$$a_{\annu {\infty}}=1+\nu+\nu^2+...+\nu^n+...=\frac{1}{1-\nu}=\frac{1}{d}.$$
 \begin{itemize}
     \item[{\bf\hei 二.}]{\bf\hei 终身期初生存年金}
 \end{itemize}
@@ -1939,7 +1939,7 @@ $Z=b_{T(x)}\nu^{T(x)}.$
     \item[{\bf\hei 3.}]支付额总现值
 \end{itemize}
 
-$Z=1+v+\nu^2+...+\nu^{K(x)}=\ddot a_{\annu {K(x)+1}}=\sum_{j=0}^{K\left( x \right)}{\nu^j}.$
+$Z=1+\nu+\nu^2+...+\nu^{K(x)}=\ddot a_{\annu {K(x)+1}}=\sum_{j=0}^{K\left( x \right)}{\nu^j}.$
 
 \begin{itemize}
     \item[{\bf\hei 4.}]精算现值用$\ddot a_x$表示
@@ -1991,7 +1991,7 @@ $1$元, 直到第$n$年.
 
 (2) $T(x)\geqslant n$(即$K(x)+1>n$)时, $Z=\ddot a_{\annu {n}}.$
 
-于是$$Z=\ddot a_{\annu {(K(x)+1)\land n}}=1+v+\nu^2+...+\nu^{(K(x)+1)\land n}.$$
+于是$$Z=\ddot a_{\annu {(K(x)+1)\land n}}=1+\nu+\nu^2+...+\nu^{(K(x)+1)\land n}.$$
 \begin{itemize}
     \item[{\bf\hei 3.}]精算现值用$\ddot a_{x:}{}{\annu n}$表示
 \end{itemize}
@@ -2149,7 +2149,7 @@ $$a_{x}=E(\ddot a_{K(x)+1})-1=\ddot a_{x}-1=\sum_{j=1}^{\infty}\nu^j{}_jp_x.$$
         \nu + \nu^2 + \ldots + \nu^n = a_{\annu n},           & \text{若 } K(x) \geq n.
     \end{cases}
 $$
-故 $$Z = a_{\annu {K(x) \land n}}$$
+故 $$Z = a_{\annu {K(x) \land n}}.$$
 \begin{itemize}
     \item[{\bf\hei3.}] 精算现值$a_{x:}{}\annu n$
 \end{itemize}
@@ -2255,7 +2255,7 @@ $$
     \item[{\bf\hei 2.}] 期末支付
 \end{itemize}
 \begin{align*}
-    a_{\annu{n}}^{(m)} = \frac1m \nu^{\frac1m} + \frac1m \nu^{\frac2m} + \ldots + \frac1m\nu^{\frac{mn}m} = \frac1m \cdot (\frac{1}{1+i})^{\frac1m} \cdot \frac{1-\nu^n}{1-\nu^{\frac1m}} = \frac{1-\nu^n}{i^{(m)}},
+    a_{\annu{n}}^{(m)} = \frac1m \nu^{\frac1m} + \frac1m \nu^{\frac2m} + \ldots + \frac1mv^{\frac{mn}m} = \frac1m \cdot (\frac{1}{1+i})^{\frac1m} \cdot \frac{1-\nu^n}{1-\nu^{\frac1m}} = \frac{1-\nu^n}{i^{(m)}},
 \end{align*}
 其中$i^{(m)} = m[(1+i)^{\frac1m}-1]$为每年换算$m$次的名义利率.
 
@@ -2512,7 +2512,7 @@ $$
     Z=
     \begin{cases}
         0,                           & \text{若 } T(x) < n ,   \\
-         \int_n^{T(x)n} \nu^tdt, & \text{若 } T(x) \geq n.
+         \int_n^{T(x)} \nu^tdt, & \text{若 } T(x) \geq n.
     \end{cases}$$
 即$$
     \begin{aligned}
@@ -2582,7 +2582,7 @@ $$
         &={}_{n|}\overline{a}_{x}+\overline a_{\annu {n}}.
     \end{aligned}
 $$
-
+\newpage
 \begin{itemize}
     \item[{\bf\hei 六.}]{\bf\hei 小结}
 \end{itemize}
@@ -2616,70 +2616,6 @@ $$
         \hline
     \end{tabular}
 \end{center}
-
-% 下面这部分也算小结，回头有时间我补充一下。
-% \section{小结}
-% \begin{itemize}
-%     \item[{\bf\hei 一.}]{\bf\hei 支付额总现值}
-% \end{itemize}
-
-% \begin{center}
-%     \begin{tabular}{ |c|c|c|c| }
-%         \hline
-%                  & 期初生存年金                                                                 & 期末生存年金                                                           & 连续生存年金                                                           \\
-%         \hline
-%         终身       & $\ddot a_{\annu{K(x)+1}} = \sum_{j=0}^{K(x)}{v^j}$                     & $a_{\annu{K(x)}} = \sum_{j=1}^{K(x)}{v^j}$                       & $\overline{a}_{\annu{T(x)}}=\int_0^{T(x)} v^tdt$                 \\
-%         \hline
-%         $n$年期    & $\ddot a_{\annu{(K(x)+1)\land n}} = \sum_{j=0}^{K(x)\land (n-1)}{v^j}$ & $a_{\annu{K(x)\land n}} = \sum_{j=1}^{K(x)\land n}{v^j}$         & $  \overline{a}_{\annu{T(x)\land n}}=\int_0^{T(x)\land n} v^tdt$ \\
-%         \hline
-%         延期$n$年   & $\ddot a_{\annu{(K(x)+1)}} - \ddot a_{\annu{(K(x)+1)\land n}}$
-%                  & $a_{\annu{K(x)}} - a_{\annu{K(x)\land n}}$                             & $\overline{a}_{\annu{T(x)}} - \overline{a}_{\annu{T(x)\land n}}$                                                                    \\
-%         \hline
-
-%         $n$年期确定性 & $\ddot a_{\annu{(K(x)+1)\lor n}}$                                      & $a_{\annu{K(x)\lor n}}$                                          & $\overline{a}_{\annu{T(x)\lor n}}$                               \\
-
-%         \hline
-%     \end{tabular}
-% \end{center}
-
-% \begin{itemize}
-%     \item[{\bf\hei 二.}]{\bf\hei 精算现值}
-% \end{itemize}
-
-% \begin{center}
-%     \begin{tabular}{ |c|c|c|c| }
-%         \hline
-%         $ $      & 期初生存年金                                                                & 期末生存年金                                                   & 连续生存年金                                                                                \\
-%         \hline
-%         终身       & $\ddot a_x=\sum_{j=0}^{\infty}{v^j{}_jp_x}$                           & $a_{x}=\ddot a_{x}-1=\sum^{\infty}_{j=1}v^{j}{}_jp_x$    & $\overline{a}_{x}=\int_0^{\infty} v^t{}_{t}p_xdt$                                     \\
-%         \hline
-%         $n$年期    & $\ddot a_{x:}{}_{\annu n}=\sum_{j=0}^{n-1}{v^j}{}_j p_x$              & $ \begin{aligned}
-%                                                                                                      a_{x:\annu n} & =\sum^{n}_{j=1}v^{j}{}_jp_x           \\
-%                                                                                                                    & =\ddot a_{x:\annu n}-1+v^{n}{}_{n}p_x
-%                                                                                                  \end{aligned}$ & $  \overline{a}_{x:\annu{n}}=\int_0^{n} v^t{}_{t}p_xdt$                                                                       \\
-%         \hline
-%         延期$n$年   & $\begin{aligned}
-%                             _{n|}\ddot a_{x} & =\ddot a_{x}-\ddot a_{x:\annu n}     \\
-%                                              & ={}_{n}E_{x}\ddot a_{x+n}            \\
-%                                              & =\sum^{\infty}_{j=n}v^{j}{}_{j}p_{x} \\
-%                         \end{aligned}$            & $\begin{aligned}
-%                                                          _{n|}a_{x} & = a_{x}-a_{x:\annu n}                  \\
-%                                                                     & = {}_{n}E_{x}a_{x+n}                   \\
-%                                                                     & =\sum_{j=n+1}^{\infty}v^{j}{}_{j}p_{x}
-%                                                      \end{aligned}$   & $\begin{aligned}
-%                                                                              _{n|}\overline{a}_{x} & =\int_n^{\infty} v^t{}_{t}p_xdt             \\
-%                                                                                                    & =\overline{a}_{x}-\overline{a}_{x:\annu{n}} \\
-%                                                                                                    & ={}_nE_x\overline{a}_{x+n}
-%                                                                          \end{aligned}$                                                                                                    \\
-%         \hline
-
-%         $n$年期确定性 & $\ddot a_{\overline{x:\annu n}}={}_{n|}\ddot a_{x}+\ddot a_{\annu n}$ & $a_{\overline{x:\annu{n}}}=a_{\annu n} + {}_{n|}a_{x}$   & $\overline a_{\overline{x:\annu{n}}}={}_{n|}\overline{a}_{x}+\overline a_{\annu {n}}$ \\
-
-%         \hline
-%     \end{tabular}
-% \end{center}
-
-
 \section{作业}
 \begin{exs}
     证明并解释等式
@@ -2793,7 +2729,7 @@ $$
 $$P\z({w:\underset{n\rightarrow \infty}{\lim}\frac{\sum_{i=1}^{n}{Y_i}}{n}=E(Y_1})\y)=1,$$ 即
 $$\frac{1}{n}\sum_{i=1}^n{Y_i}\rightarrow E(Y_1)\text{ a.s. }n\rightarrow\infty.$$
 所以在公平条件下, 每个人应支付相同的保费$E(Y_1)$元.
-\section{趸(dǔn)交净保费}
+\section{趸交净保费}
 1.若保费是在签定保险单时一次缴清, 则将其中净保费的部分称为趸交净保费, 通常用$P$表示.
 
 2.如前所述, 签单损失量$L=$``保险人支付保险金的现值"减去趸交净保费$P.$
@@ -2904,8 +2840,9 @@ D(L) &= D\left(\z(1+\frac{\overline{P}(\overline{A}_{x:}{}\annu {n})}{\delta}\y)
 (i) 年均衡净保费记为${}_{h}\overline{P}(\overline{A}^{1}_{x:
 }{}_{\annu n})$.
 
-(ii) 签字损失量: 最后的缴费时刻为$T(x)\land h,$ 故签单损失量为
-$$L=\nu^{T(x)}I_{\{T(x)<n\}}-{}_{h}\overline{P}^{1}_{x:}{}_{\annu n}\overline{a}_{\annu{T(x)\land h}}.$$
+(ii) 签单损失量: 最后的缴费时刻为$T(x)\land h,$ 故签单损失量为
+$$L=\nu^{T(x)}I_{\{T(x)<n\}}-{}_{h}\overline{P}(\overline{A}^{1}_{x:
+}{}_{\annu n})\overline{a}_{\annu{T(x)\land h}}.$$
 
 (iii) 在平衡准则下,
 \begin{align*}
@@ -2922,8 +2859,9 @@ $$L=\nu^{T(x)}I_{\{T(x)<n\}}-{}_{h}\overline{P}^{1}_{x:}{}_{\annu n}\overline{a}
 \end{remark}
 
 \begin{itemize}
-  \item[{\bf\heiti 4.}] {\bf\heiti 其他完全连续险种的年均净保费}
+  \item{\bf\heiti 4.} {\bf\heiti 其他完全连续险种的年均净保费}
 \end{itemize}
+
 
 (i) 缴费期为$h$年的终身寿险: $_{h}\overline{P}(\overline{A}_{x})=\frac{\overline{A}_{x}}{\overline{a}_{x:}{}\annu h}.$
 
@@ -2931,7 +2869,7 @@ $$L=\nu^{T(x)}I_{\{T(x)<n\}}-{}_{h}\overline{P}^{1}_{x:}{}_{\annu n}\overline{a}
 
 (iii) 延期$n$年的终身生存年金: $\overline{P}(_{n|}\overline{a}_{x})=\frac{_{n|}\overline{a}_{x}}{\overline{a}_{x:}{}\annu n}.$
 
-(iv) 延期$n$年的终身死亡保险: $\overline{P}(_{n|}\overline{A}_{x})=\frac{_{n}\overline{A}_{x}}{\overline{a}_{x:}{}\annu n}.$
+(iv) 延期$n$年的终身死亡保险: $\overline{P}(_{n|}\overline{A}_{x})=\frac{_{n|}\overline{A}_{x}}{\overline{a}_{x:}{}\annu n}.$
 
 \section{完全离散险种的年均衡净保费}
 \begin{itemize}
@@ -2943,12 +2881,12 @@ $$L=\nu^{T(x)}I_{\{T(x)<n\}}-{}_{h}\overline{P}^{1}_{x:}{}_{\annu n}\overline{a}
     \item[{\bf\hei 二.}]{\bf\hei 完全离散终身寿险}
 \end{itemize}
 
-1. 年均衡净保费记为$P_{x}$, 保险金现值为$\nu^{K(x)+1},$
+1. 年均衡净保费记为$P_{x}$, 保险金现值为$\nu^{k(x)+1},$
 投保人所缴纳保费的总现值为$P_{x}\ddot{a}_{\annu{K(x)+1}}$.
 
 2. 签单损失量
-$$L=\nu^{K(x)+1}-P_{x}\ddot{a}_{\annu{K(x)+1}}.$$
-又因$\ddot{a}_{\annu{K(x)+1}}=\frac{1-\nu^{K(x)+1}}{d},$ 故
+$$L=\nu^{k(x)+1}-P_{x}\ddot{a}_{\annu{K(x)+1}}.$$
+又因$\ddot{a}_{\annu{K(x)+1}}=\frac{1-\nu^(K(x)+1)}{d},$ 故
 $$L = \z(1+\frac{P_{x}}{d}\y)\nu^{K(x)+1}-\frac{P_{x}}{d}.$$
 
 3. 平衡准则下, $$0=E(L)=E(\nu^{K(x)+1}-P_{x}\ddot{a}_{\annu{K(x)+1}})=A_{x}-P_{x}\ddot{a}_{x}. $$
@@ -3017,7 +2955,7 @@ $P_{x:}\overset{1}{{}\annu n}=\frac{A_{x:}\overset{1}{{}\annu n}}{\ddot a_{x:}{}
 $P({}_{n|}\ddot a_{x})=\frac{{}_{n|}\ddot a_{x}}{\ddot{a}_{x:}{}\annu n}$.
 
 4. 缴费期为$h$年的$n$年期死亡保险:
-${}_{h}P^{1}_{x:}{}_{\annu n}=\frac{A^{1}_{x:}{}\annu n}{a_{x:}{}{\scriptsize \annu h}}$.
+${}_{h}P^{1}_{x:}{}_{\annu n}=\frac{A^{1}_{x:}{}\annu n}{\ddot a_{x:}{}{\scriptsize \annu h}}$.
 
 \section{作业}
 \begin{exs}
@@ -3042,7 +2980,7 @@ ${}_{h}P^{1}_{x:}{}_{\annu n}=\frac{A^{1}_{x:}{}\annu n}{a_{x:}{}{\scriptsize \a
 
 在$t$时刻的未来损失量记为$_tL$.
 
- 若在$t$时刻个体$(x)$还活着, 即$T(x)>t$, 则$${}_tL=\text{``未来需支付的保险金在$t$时刻的现值"减去 ``未来支付的保费在}t\text{时刻的总现值".}$$
+ 若在$t$时刻个体$(x)$还活着, 即$T(x)>t$, 则$${}_tL=\text{``未来需支付的保险金在$t$时刻的现值"减去 ``未来支付的保费在}t\text{时刻的总现值.}$$
 
 若$t$时刻$(x)$已经死亡, 则${}_tL=0.$
 
@@ -3139,14 +3077,14 @@ $t$时刻的准备金用${}_tV$表示.
 注意到$\overline A_x=\frac{\mu}{\mu+\delta}$, $\overline a_x=\frac{1}{\mu+\delta},$
 故$\overline P(\overline A_x)=\frac{\overline A_x}{\overline a_x}=\mu.$
 
-(4)$DL=\frac{^2\overline A_{x}-(\overline A_{x})^2}{(\delta\overline a_x)^2}=\frac{^2\overline A_{x}-(\overline A_{x})^2}{(1-\delta\overline A_x)^2}=\frac{\frac{\mu}{\mu+2\delta}-(\frac{\mu}{\mu+\delta})^2}{(1-\frac{\mu}{\mu+\delta})^2}.$
+(4)$DL=\frac{^2\overline A_{x}-(\overline A_{x})^2}{(\delta\overline a_x)^2}=\frac{^2\overline A_{x}-(\overline A_{x})^2}{(1-\overline A_x)^2}=\frac{\frac{\mu}{\mu+2\delta}-(\frac{\mu}{\mu+\delta})^2}{(1-\frac{\mu}{\mu+\delta})^2}.$
 
 (5) $t$时刻的未来损失量
 $${}_tL=\z(\nu^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t}}\y)I_{\{T(x)>t\}}.$$
 
 (6) $t$时刻的净准备金$ {}_tV(\overline A_x)=\frac{\overline a_{x}-\overline a_{x+t}}{\overline a_x}=0.$
 
-(7) $D({}_tL)=\frac{^2\overline A_{x+t}-(\overline A_{x+t})^2}{(1-\delta\overline A_x)^2}=\frac{\frac{\mu}{\mu+2\delta}-(\frac{\mu}{\mu+\delta})^2}{(1-\frac{\mu}{\mu+\delta})^2}.$ \qed
+(7) $D({}_tL)=\frac{^2\overline A_{x+t}-(\overline A_{x+t})^2}{(1-\overline A_x)^2}=\frac{\frac{\mu}{\mu+2\delta}-(\frac{\mu}{\mu+\delta})^2}{(1-\frac{\mu}{\mu+\delta})^2}.$ \qed
 
 
 \begin{itemize}
@@ -3174,14 +3112,14 @@ $${}_tL=\z(\nu^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t
 \begin{align*}
     D(_tL|T(x)>t) &=D\z(\z(1+\frac{\overline P(\overline A_{x:}{}\annu n)}{\delta}\y)\nu^{(T(x)-t)\land(n-t)}-\frac{\overline P(\overline A_{x:}{}\annu n)}{\delta}|T(x)>t\y)\\
                         &=D\z(\frac{1}{\delta\overline a_{x:}{}\annu n}\nu^{(T(x)-t)\land(n-t)}|T(x)>t\y)=\frac{D(\nu^{T(x+t)\land(n-t)})}{(\delta\overline a_{x:}{}\annu n)^2}\\
-                        &=\frac{^2\overline A_{x+t:}{}\annu {n-t}-\overline A_{x+t:}{}\annu {n-t}}{(\delta \overline a_{x:}{}\annu {n})^2}\\
-                        &=\frac{^2\overline A_{x+t:}{}\annu {n-t}-\overline A_{x+t:}{}\annu {n-t}}{(1- \overline A_{x:}{}\annu {n})^2}.
+                        &=\frac{^2\overline A_{x+t:}{}\annu {n-t}-\z(\overline A_{x+t:}{}\annu {n-t}\y)^2}{(\delta \overline a_{x:}{}\annu {n})^2}\\
+                        &=\frac{^2\overline A_{x+t:}{}\annu {n-t}-\z(\overline A_{x+t:}{}\annu {n-t}\y)^2}{(1- \overline A_{x:}{}\annu {n})^2}.
                                        \end{align*}
 
 \section{完全离散险种的净准备金}
 
 \begin{itemize}
-    \item[{\bf\hei 一.}]{\bf\hei 平衡准则下完全连续的终身寿险的净准备金}
+    \item[{\bf\hei 一.}]{\bf\hei 平衡准则下完全离散终身寿险的净准备金}
 \end{itemize}
 回忆一下, 在平衡准则下, 完全离散终身寿险的年均衡净保费$P_x=\frac{A_x}{\ddot a_x}.$
 
@@ -3200,7 +3138,7 @@ $${}_tL=\z(\nu^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t
                         &=E\z(\z(\nu^{K(x)-k+1}-P_x \ddot a_{\annu {K(x)-k+1}}\y)I_{\{K(x)\ge k\}}|X>x+k\y)\\
                         &=E\z(\nu^{K(x+k)+1}-P_x \ddot a_{\annu {K(x+k)+1}}\y)\\
                         &=E\z(\nu^{K(x+k)+1}\y)-P_x E\z(\ddot a_{\annu {K(x+k)+1}}\y)\\
-                        &= A_{x+k}-P_x\ddot a_{x+t}\\
+                        &= A_{x+k}-P_x\ddot a_{x+k}\\
                         &= A_{x+k}-\frac{ A_x}{\ddot a_x}\ddot a_{x+k}\\
                         &=1-d\ddot a_{x+k}-\frac{1-d \ddot a_x}{\ddot a_x}\ddot a_{x+k}\\
                         &=\frac{\ddot a_x-\ddot a_{x+k}}{\ddot a_x}.
@@ -3211,33 +3149,8 @@ $${}_tL=\z(\nu^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t
                         &=D\z(\z[\frac{1}{d\ddot a_x}\nu^{K(x)-k+1}-\frac{P_x }{d}\y]I_{\{K(x)\ge k\}}|X>x+k\y)\\
                         &=D\z(\frac{1}{d\ddot a_x}\nu^{K(x+k)+1}-\frac{P_x }{d}\y)
                         =\frac{1}{(d\ddot a_x)^2}D(\nu^{K(x+k)+1})\\
-                        &=\frac{{}^2 A_{x+k}-( A_{x+k})^2}{(d\ddot a_x)^2}=\frac{{}^2 A_{x+k}-( A_{x+k})^2}{(1-A_x)^2}.\\ 
-\end{align*}
+                        &=\frac{{}^2 A_{x+k}-( A_{x+k})^2}{(d\ddot a_x)^2}=\frac{{}^2 A_{x+k}-( A_{x+k})^2}{(1-A_x)^2}.\\                 \end{align*}
 
-\begin{example}
-    某人现年$20$岁, 设${}_{k|}q_{20}=\frac{1}{2^{k+1}},k=0,1,2,...$ 利率$i=0.05.$ 考虑$5$年后的净准备金. (1) 写出签单损失量 $L;$ (2) 在平衡准则下计算年均衡净保费; (3) 求$D(L);$ (4) 写出$5$年后的未来损失量$_{5}L;$ (5) 在平衡准则下计算$5$年后的净准备金${}_{5}V( A_{20});$ (6) 计算$D({}_{5}L|T(20)\geq 5).$
-\end{example}
-\solution
-(1) $L = \nu^{K(x)+1} - P_x\ddot{a}_{\annu{K(x)+1}}$. 
-
-(2) $0=E(L)=A_{20}-P_{20}\ddot{a}_{20}$, 故$P_{20}=\frac{A_{20}}{\ddot{a}_{20}} = \frac{dA_{20}}{1-A_{20}}$, 
-
-注意到$A_{20}=\sum_{k=0}^{\infty}\nu^{k+1}{}_{k|}q_{20} = \sum_{k=0}^{\infty}\nu^{k+1}\frac{1}{2^{k+1}} = \frac{\nu}{2-\nu}$, 
-
-从而$P_{20}=\frac{dA_{20}}{1-A_{20}}=\frac{\nu}{2}.$
-
-(3) $D(L)=\frac{^2A_{20}-(A_{20})^2}{(1-A_{20})^2}=\frac{\frac{\nu^{2}}{2-\nu^{2}}-\left(\frac{\nu}{2-\nu}\right)^{2}}{1-\frac{\nu}{2-\nu}}$.
-
-(4) ${}_{5}L=(\nu^{K(20)+1-5}-P_{20}\ddot{a}_{\annu{K(20)+1-5}})I_{\{K(20)\geq 5\}}$.
-
-(5) ${}_{5}V(A_{20})=\frac{\ddot{a}_{20}-\ddot{a}_{25}}{\ddot{a}_{20}}$, 其中$\ddot{a}_{20}=\frac{1-A_{20}}{d}$, $\ddot{a}_{25}=\frac{1-A_{25}}{d}$,
-
-$A_{25}=\sum_{k=0}^{\infty}\nu^{k+1}{}_{k|}q_{25} = \sum_{k=0}^{\infty}\nu^{k+1}\frac{1}{2^{k+1}} = A_{20}$, 
-
-于是$\ddot{a}_{25}=\frac{1-A_{25}}{d} = \frac{1-A_{20}}{d} = \ddot{a}_{20}$, 所以${}_{5}V(A_{20})=0$.
-
-(6) $D({}_{5}L|T(20)\geq 5)=\frac{^2A_{25}-(A_{25})^2}{(1-A_{20})^2} = \frac{^2A_{20}-(A_{20})^2}{(1-A_{20})^2} = D(L)$.
-\qed
 
 \begin{itemize}
     \item[{\bf\hei 二.}]{\bf\hei 完全离散的生死合险在平衡准则下的净准备金}
@@ -3273,9 +3186,37 @@ $A_{25}=\sum_{k=0}^{\infty}\nu^{k+1}{}_{k|}q_{25} = \sum_{k=0}^{\infty}\nu^{k+1}
                         =\frac{1}{(d\ddot a_{x:}{}\annu{n})^2}D\z(\nu^{(K(x)-k+1)\wedge (n-k)}\y)\\
                         &=\frac{{}^2 A_{x+k:}{}\annu{n-k}-( A_{x+k:}{}\annu{n-k})^2}{(d\ddot a_{x:}{}\annu{n})^2}=\frac{{}^2 A_{x+k:}{}\annu{n-k}-( A_{x+k:}{}\annu{n-k})^2}{(1-A_{x:}{}\annu{n})^2}.\\                 \end{align*}
 
+
+
+\begin{example}\label{l5.2}某人现年$20$岁, 设${}_{k|}q_{20}=\frac{1}{2^{k+1}},k=0,1,2,...,$ 利率$i=0.05.$ 考虑$5$年后的净准备金. (1) 写出签单损失量 $L;$ (2) 在平衡准则下计算年均衡净保费; (3) 求$D(L);$ (4) 写出$5$年后的未来损失量$_{5}L;$ (5) 在平衡准则下计算$5$年后的净准备金${}_{5}V( A_{20});$ (6) 计算$D({}_{5}L|T(20)\geq 5).$ (提示: 由几何分布具有无记忆性可推导出${}_{k|}q_{25}=\frac{1}{2^{k+1}},k=0,1,2,....$)
+\end{example}
+\solution
+(1) $L = \nu^{K(x)+1} - P_x\ddot{a}_{\annu{K(x)+1}}$.
+
+(2) $0=E(L)=A_{20}-P_{20}\ddot{a}_{20}$, 故$P_{20}=\frac{A_{20}}{\ddot{a}_{20}} = \frac{dA_{20}}{1-A_{20}}$,
+
+注意到$A_{20}=\sum_{k=0}^{\infty}\nu^{k+1}{}_{k|}q_{20} = \sum_{k=0}^{\infty}\nu^{k+1}\frac{1}{2^{k+1}} = \frac{\nu}{2-\nu}$,
+
+从而$P_{20}=\frac{dA_{20}}{1-A_{20}}=\frac{\nu}{2}.$
+
+(3) $D(L)=\frac{^2A_{20}-(A_{20})^2}{(1-A_{20})^2}=\frac{\frac{\nu^{2}}{2-\nu^{2}}-\left(\frac{\nu}{2-\nu}\right)^{2}}{1-\frac{\nu}{2-\nu}}$.
+
+(4) ${}_{5}L=\z(\nu^{K(20)+1-5}-P_{20}\ddot{a}_{\annu{K(20)+1-5}}\y)I_{\{K(20)\geq 5\}}$.
+
+(5) ${}_{5}V(A_{20})=\frac{\ddot{a}_{20}-\ddot{a}_{25}}{\ddot{a}_{20}}$, 其中$\ddot{a}_{20}=\frac{1-A_{20}}{d}$, $\ddot{a}_{25}=\frac{1-A_{25}}{d}$,
+
+$A_{25}=\sum_{k=0}^{\infty}\nu^{k+1}{}_{k|}q_{25} = \sum_{k=0}^{\infty}\nu^{k+1}\frac{1}{2^{k+1}} = A_{20}$,
+
+于是$\ddot{a}_{25}=\frac{1-A_{25}}{d} = \frac{1-A_{20}}{d} = \ddot{a}_{20}$, 所以${}_{5}V(A_{20})=0$.
+
+(6) $D({}_{5}L|T(20)\geq 5)=\frac{^2A_{25}-(A_{25})^2}{(1-A_{20})^2} = \frac{^2A_{20}-(A_{20})^2}{(1-A_{20})^2} = D(L)$.
+\qed
+
+
 \section{作业}
 
-\begin{exs} 请解释为什么例\ref{l5.1}中的净准备金会等于0.
+
+\begin{exs} 请解释为什么例\ref{l5.1}与例\ref{l5.2}中的净准备金会等于0.
 \end{exs}
 \begin{exs}
   某人现年50岁, 其余命$T(50)\sim U[0,50).$ 利息力$\delta=0.05.$ 他买了一份完全连续的终身死亡保险.
@@ -3294,7 +3235,7 @@ $A_{25}=\sum_{k=0}^{\infty}\nu^{k+1}{}_{k|}q_{25} = \sum_{k=0}^{\infty}\nu^{k+1}
 \end{exs}
 
 \begin{exs}
-  某人现年50岁, 设${}_{k|}q_{50}=\frac{1}{2^{k+1}},k=0,1,2,...$ 利率$i=0.05.$ 他买了一份完全离散的终身死亡保险.
+  某人现年50岁, 其余命$T(50)\sim U[0,50),$ 利息力$\delta=0.05.$ 他买了一份完全离散的终身死亡保险.
 
   (1) 写出签单损失量 $L;$
 
@@ -3304,18 +3245,19 @@ $A_{25}=\sum_{k=0}^{\infty}\nu^{k+1}{}_{k|}q_{25} = \sum_{k=0}^{\infty}\nu^{k+1}
 
   (4) 写出10年后的未来损失量$_{10}L;$
 
-  (5) 在平衡准则下计算10年后的净准备金${}_{10}V( A_{50});$
+  (5) 在平衡准则下计算十年后的净准备金${}_{10}V( A_{50});$
 
   (6) 计算$D({}_{10}L).$
-
-  (提示: 由几何分布具有无记忆性可推导出${}_{k|}q_{60}=\frac{1}{2^{k+1}},k=0,1,2,....$)
+ 
 \end{exs}
+
+
 
 \backmatter
 
 \chapter{致谢}
 
-本讲义由陈锦功、王子颉、林嘉瑞、夏婧彤、徐婷婷等几名同学协助录入, 在此对几位同学表示感谢.
+本讲义由陈锦功、林嘉瑞、王子颉、夏婧彤、徐婷婷等几名同学协助录入, 在此对几位同学表示感谢. 另外, 陈晨同学仔细阅读了讲义并矫正了一些打印错误, 也对陈晨同学表示感谢.
 
 \newpage
 \addcontentsline{toc}{chapter}{参考文献}
@@ -3338,9 +3280,9 @@ $A_{25}=\sum_{k=0}^{\infty}\nu^{k+1}{}_{k|}q_{25} = \sum_{k=0}^{\infty}\nu^{k+1}
 %
 %    设年利率为$i$, $m$为正整数.
 %
-%    \textbf{贴现因子}记为$v$, 定义为$v=\frac{1}{1+i}$.
+%    \textbf{贴现因子}记为$\nu$, 定义为$\nu=\frac{1}{1+i}$.
 %
-%    \textbf{贴现率}记为$d$, 定义为$d=1-v=\frac{i}{1+i}$.
+%    \textbf{贴现率}记为$d$, 定义为$d=1-\nu=\frac{i}{1+i}$.
 %
 %    \textbf{利息力}记为$\delta$, 定义为$\delta=\ln(1+i)$.
 %

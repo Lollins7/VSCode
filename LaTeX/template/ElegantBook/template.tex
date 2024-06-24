@@ -1,0 +1,64 @@
+\documentclass[lang=cn,10pt]{elegantbook}
+\usepackage{subcaption}
+
+
+\newcommand\bv[1]{\boldsymbol{#1}}
+\newcommand\mb[1]{\mathbb{#1}}
+\newcommand\mc[1]{\mathcal{#1}}
+
+\title{Actuarial Sciences Review}
+% \subtitle{Elegant\LaTeX{} 经典之作}
+
+\author{Lollins}
+% \institute{AHNU}
+\date{\today}
+% \version{4.3}
+\bioinfo{单位}{安徽师范大学数学与统计学院}
+
+\extrainfo{唯有热爱可抵岁月长！
+}
+
+\setcounter{tocdepth}{3}
+
+\cover{star.jpg}
+
+\logo{logo.jpg}
+
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+% 修改标题页的橙色带
+\definecolor{customcolor}{RGB}{135, 206, 235}
+\colorlet{coverlinecolor}{customcolor}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+	\Huge\textbf{前言}
+\end{center}
+\par
+这里是前言。
+
+\begin{flushright}
+	\begin{tabular}{c}
+		Lollins \\
+		\today
+	\end{tabular}
+\end{flushright}
+
+\newpage
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\chapter{第一章}
+
+\section{第一节}
+
+\end{document}
