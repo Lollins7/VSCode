@@ -52,9 +52,11 @@
 	\Huge\textbf{前言}
 \end{center}
 \par
-由于king哥已经弄好了一份精美的精算学pdf电子笔记，若我再做精算学上课笔记，实乃多余。故我决定做一份精算学复习资料，主要是对精算学的一些重要知识点进行总结\footnote{本文不涉及一些细节上证明以及推导，想了解公式由来的读者直接阅读king哥群里的pdf即可。}，以便于大家复习。
+由于king哥已经制作好了一份精美且完整的精算学pdf电子笔记, 若我再做精算学上课笔记, 实乃多余. 故我决定做一份精算学复习资料, 主要是对精算学的一些重要知识点进行总结\footnote{本文不涉及一些细节上证明以及推导, 想了解公式由来的读者直接阅读king哥群里的pdf即可. }, 以便大家复习使用. 
 
-随着这学期的期末考试结束，大家的大学生涯基本也算是告一段落了。愿大家都能顺利通过考试，也祝大家顺利毕业，前程似锦！
+当然本笔记只是king电子笔记的简略版, 会有很多不完善且内容不全的地方, 所以本笔记的内容也仅仅只到达了能让大家通过期末考试的水平, 如果想要高分通过这门课, 强烈建议爆肝king的电子笔记!!!!
+
+在这里, 愿大家都能顺利通过这学期的各门考试, 也祝大家顺利毕业, 前程似锦, 来年都能收到心仪高校的录取通知书!
 
 \begin{flushright}
 	\begin{tabular}{c}
@@ -89,9 +91,9 @@
 	\item 计算题: $4\times 10 = 40$分; (前四章一章一题)
 	\item 综合题: $1\times 12 = 12$分. (重点复习第五章的例题)
 \end{enumerate}
-\begin{remark}
-	连续分布就考指数, 离散分布就考均匀, 生死合险不考, 每年分成$m$个区间不考. 
-\end{remark}
+% \begin{remark}
+% 	连续分布就考指数, 离散分布就考均匀, 生死合险不考, 每年分成$m$个区间不考. 
+% \end{remark}
 
 \chapter{生存分布}
 
@@ -721,7 +723,7 @@ $Z=\nu^{K(x)+1}I_{\{T(x)<n\}}$.
 \section{生死合险(两全保险)}
 
 \section{延期终身死亡保险}
-\subsection{死亡立即支付的延期终身死亡保险}
+% \subsection{死亡立即支付的延期终身死亡保险}
 % \begin{definition}
 % 	若个体$(x)$在$m$年内死亡(即$T(x)<m$), 则不予任何支付;
 
@@ -748,25 +750,32 @@ $Z=\nu^{K(x)+1}I_{\{T(x)<n\}}$.
 
 \section{变额人寿保险}
 
-% \section{小结}
-% \subsection{寿险小结}
-% \begin{center}
-%     \begin{tabular}{c|c|c|c}
-%         \hline
-%         & 期初寿险 & 期末寿险 & 连续寿险 \\
-%         \hline
-%         终身 & $\ddot a_{\annu{K(x)+1}} = \sum_{j=0}^{K(x)}{\nu^j}$ & $a_{\annu{K(x)}} = \sum_{j=1}^{K(x)}{\nu^j}$ & $\overline{a}_{\annu{T(x)}}=\int_0^{T(x)} \nu^tdt$ \\
-%         \hline
-%         $n$年期 & $\ddot a_{\annu{(K(x)+1)\land n}} = \sum_{j=0}^{K(x)\land (n-1)}{\nu^j}$ & $a_{\annu{K(x)\land n}} = \sum_{j=1}^{K(x)\land n}{\nu^j}$ & $  \overline{a}_{\annu{T(x)\land n}}=\int_0^{T(x)\land n} \nu^tdt$ \\
-%         \hline
-%         延期$n$年 & $\ddot a_{\annu{(K(x)+1)}} - \ddot a_{\annu{(K(x)+1)\land n}}$ & $a_{\annu{K(x)}} - a_{\annu{K(x)\land n}}$ & $\overline{a}_{\annu{T(x)}} - \overline{a}_{\annu{T(x)\land n}}$  \\
-%         \hline
-%         $n$年期确定性 & $\ddot a_{\annu{(K(x)+1)\lor n}}$ & $a_{\annu{K(x)\lor n}}$ & $\overline{a}_{\annu{T(x)\lor n}}$  \\  
-%         \hline
-%     \end{tabular}
-% \end{center}
+\section{小结}
+\subsection{寿险支付现值}
+\begin{center}
+    \begin{tabular}{c|c|c}
+        \hline
+        & 期末寿险 & 连续寿险 \\
+        \hline
+        终身 & $\nu^{K(x)+1}$ & $\nu^{T(x)}$ \\
+        \hline
+        $n$年期 & $\nu^{K(x)+1}I_{\{K(x)<n\}}$ & $ \nu^{T(x)}I_{\{T(x)<n\}} $ \\
+        \hline
+    \end{tabular}
+\end{center}
 
-
+\subsection{寿险精算现值}
+\begin{center}
+    \begin{tabular}{c|c|c}
+        \hline
+        & 期末寿险 & 连续寿险 \\
+        \hline
+        终身 & ${A}_x=\sum_{k=0}^{\infty }{\nu^{k+1}{}_{k|}q_x}$ & $\overline{A}_x=\int_0^{\infty}{\nu^{t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}$ \\
+        \hline
+        $n$年期 & ${A}_{x:}^1{}_{{}\annu{n}}=\sum_{k=0}^{n-1}{\nu^{k+1}{}_{k|}q_x}$ & $\overline{A}_{x:}^1{}_{{}\annu{n}}=\int_0^{n}{\nu^{t}\cdot {}_tp_x\cdot \mu_{x}(t)dt}$ \\
+        \hline
+    \end{tabular}
+\end{center}
 
 \chapter{生存年金}
 在本章最后一章节给出了各种生存年金的定义公式及精算现值, 故在前面几个章节仅给出一些命题与性质. 
@@ -847,7 +856,7 @@ ${}^2A_x = \frac{\mu}{\mu+2\delta}$, 故$D(\overline{a}_{\annu{T(x)}}) = \frac{{
 
 
 \section{小结}
-\subsection{生存年金支付现值小结}
+\subsection{生存年金支付现值}
 \begin{center}
     \begin{tabular}{c|c|c|c}
         \hline
@@ -864,13 +873,13 @@ ${}^2A_x = \frac{\mu}{\mu+2\delta}$, 故$D(\overline{a}_{\annu{T(x)}}) = \frac{{
     \end{tabular}
 \end{center}
 
-\subsection{生存年金精算现值小结}
+\subsection{生存年金精算现值}
 \begin{center}
     \begin{tabular}{ c|c|c|c }
         \hline
         $ $ & 期初生存年金& 期末生存年金      & 连续生存年金   \\
          \hline
-        终身& $\ddot a_x=\sum_{j=0}^{\infty}{\nu^j_jp_x}$ & $a_{x}=\ddot a_{x}-1=\sum^{\infty}_{j=1}\nu^{j}{}_jp_x$      & $\overline{a}_{x}=\int_0^{\infty} \nu^t{}_{t}p_xdt$           \\
+        终身& $\ddot a_x=\sum_{j=0}^{\infty}{\nu^j{}_jp_x}$ & $a_{x}=\ddot a_{x}-1=\sum^{\infty}_{j=1}\nu^{j}{}_jp_x$      & $\overline{a}_{x}=\int_0^{\infty} \nu^t{}_{t}p_xdt$           \\
         \hline
           $n$年期& $\ddot a_{x:}{}{\annu n}=\sum_{j=0}^{n-1}{\nu^j}{}_j p_x$ & $ \begin{aligned}
           a_{x:}{}\annu n&=\sum^{n}_{j=1}\nu^{j}{}_jp_x\\
@@ -949,15 +958,12 @@ ${}^2A_x = \frac{\mu}{\mu+2\delta}$, 故$D(\overline{a}_{\annu{T(x)}}) = \frac{{
 \end{definition}
 \subsection{完全连续的终身死亡保险}
 \begin{proposition}
-    (i) 年均衡净保费记为${}_{h}\overline{P}(\overline{A}^{1}_{x:}{}_{\annu n})$.
-    
-    (ii) 签单损失量为
-$$L=\nu^{T(x)}-\overline{P}\left( \overline{A}_x \right)\overline a_{\annu {T(x)}}=(1+\frac{\overline{P}\left( \overline{A}_x \right)}{\delta})\nu^{T(x)}-\frac{\overline{P}\left( \overline{A}_x \right)}{\delta}.$$
-
-(iii) 年均衡净保费为$$\overline{P}\left( \overline{A}_x \right)=\frac{\overline A_x}{\overline a_x}=\frac{\delta\overline A_x}{1-\overline A_x}=\frac{1}{\overline a_x}-\delta.$$
-
-(iv) 签单损失量$L$的方差为
+    \begin{itemize}
+        \item 签单损失量为$L=\nu^{T(x)}-\overline{P}\left( \overline{A}_x \right)\overline a_{\annu {T(x)}}=(1+\frac{\overline{P}\left( \overline{A}_x \right)}{\delta})\nu^{T(x)}-\frac{\overline{P}\left( \overline{A}_x \right)}{\delta}$;
+        \item 年均衡净保费为$\overline{P}\left( \overline{A}_x \right)=\frac{\overline A_x}{\overline a_x}=\frac{\delta\overline A_x}{1-\overline A_x}=\frac{1}{\overline a_x}-\delta$;
+        \item 签单损失量$L$的方差为
 $$DL=\frac{^2\overline A_x-(\overline A_x)^2}{(\delta\overline a_x)^2}=\frac{^2\overline A_x-(\overline A_x)^2}{(1-\overline A_x)^2}.$$
+    \end{itemize}
 \end{proposition}
 
 \begin{example}
@@ -976,23 +982,14 @@ $$DL=\frac{^2\overline A_x-(\overline A_x)^2}{(\delta\overline a_x)^2}=\frac{^2\
 
 \subsection{缴费期为$h$年的完全连续的$n$年期定期寿险$(h\le n)$}
 \begin{proposition}
-    (i) 年均衡净保费记为${}_{h}\overline{P}(\overline{A}^{1}_{x:}{}_{\annu n})$.
-
-(ii) 签单损失量: 最后的缴费时刻为$T(x)\land h,$ 故签单损失量为
-$$L=\nu^{T(x)}I_{\{T(x)<n\}}-{}_{h}\overline{P}(\overline{A}^{1}_{x:
-}{}_{\annu n})\overline{a}_{\annu{T(x)\land h}}.$$
-
-(iii) 在平衡准则下,
-\begin{align*}
-0 &= E(L) = \overline{A}^{1}_{x:}{}_{\annu n} - {}_{h}\overline{P}(\overline{A}^{1}_{x:}{}_{\annu n}) \overline{a}_{x: }{}{\annu{h}}.
-\end{align*}
-从而
-\begin{align*}
-& {}_{h}\overline{P}(\overline{A}^{1}_{x:}{}_{\annu n})=\frac{\overline{A}^{1}_{x:}{}_{\annu n}}{\overline{a}_{x:}{}{\annu{h}}}.
-\end{align*}
+    \begin{itemize}
+        \item 签单损失量: 最后的缴费时刻为$T(x)\land h,$ 故$L=\nu^{T(x)}I_{\{T(x)<n\}}-{}_{h}\overline{P}(\overline{A}^{1}_{x:}{}_{\annu n})\overline{a}_{\annu{T(x)\land h}}$;
+        \item 年均衡净保费为${}_{h}\overline{P}(\overline{A}^{1}_{x:}{}_{\annu n})=\frac{\overline{A}^{1}_{x:}{}_{\annu n}}{\overline{a}_{x:}{}{\annu{h}}}.$
+    \end{itemize}
 \end{proposition}
 
-\begin{remark} 一般地,
+\begin{remark}
+    一般地,
     \begin{align*}
   \text{某险种的年均衡净保费}=\frac{\text{该险种的精算现值}}{\text{缴费期对应的生存年金}}.
   \end{align*}
@@ -1001,13 +998,12 @@ $$L=\nu^{T(x)}I_{\{T(x)<n\}}-{}_{h}\overline{P}(\overline{A}^{1}_{x:
 \subsection{其他完全连续险种的年均净保费}
 
 \begin{proposition}
-    (i) 缴费期为$h$年的终身寿险: $_{h}\overline{P}(\overline{A}_{x})=\frac{\overline{A}_{x}}{\overline{a}_{x:}{}\annu h}.$
-
-(ii) 缴费期为$h$年的延$n$年期终身生存年金: $_{h}\overline{P}(_{n|}\overline{a}_{x})=\frac{_{n|}\overline{a}_{x}}{\overline{a}_{x:}{}{\annu h}}.$
-
-(iii) 延期$n$年的终身生存年金: $\overline{P}(_{n|}\overline{a}_{x})=\frac{_{n|}\overline{a}_{x}}{\overline{a}_{x:}{}\annu n}.$
-
-(iv) 延期$n$年的终身死亡保险: $\overline{P}(_{n|}\overline{A}_{x})=\frac{_{n|}\overline{A}_{x}}{\overline{a}_{x:}{}\annu n}.$
+    \begin{enumerate}
+        \item 缴费期为$h$年的终身寿险: $_{h}\overline{P}(\overline{A}_{x})=\frac{\overline{A}_{x}}{\overline{a}_{x:}{}\annu h}$; 
+        \item 缴费期为$h$年的延$n$年期终身生存年金: $_{h}\overline{P}(_{n|}\overline{a}_{x})=\frac{_{n|}\overline{a}_{x}}{\overline{a}_{x:}{}{\annu h}}$;
+        \item 延期$n$年的终身生存年金: $\overline{P}(_{n|}\overline{a}_{x})=\frac{_{n|}\overline{a}_{x}}{\overline{a}_{x:}{}\annu n}$;
+        \item 延期$n$年的终身死亡保险: $\overline{P}(_{n|}\overline{A}_{x})=\frac{_{n|}\overline{A}_{x}}{\overline{a}_{x:}{}\annu n}$.
+    \end{enumerate}
 \end{proposition}
 
 
@@ -1018,27 +1014,14 @@ $$L=\nu^{T(x)}I_{\{T(x)<n\}}-{}_{h}\overline{P}(\overline{A}^{1}_{x:
 
 \subsection{完全离散终身寿险}
 \begin{proposition}
-    1. 年均衡净保费记为$P_{x}$, 保险金现值为$\nu^{k(x)+1},$
-投保人所缴纳保费的总现值为$P_{x}\ddot{a}_{\annu{K(x)+1}}$.
-
-2. 签单损失量
-$$L=\nu^{k(x)+1}-P_{x}\ddot{a}_{\annu{K(x)+1}}.$$
-又因$\ddot{a}_{\annu{K(x)+1}}=\frac{1-\nu^(K(x)+1)}{d},$ 故
-$$L = (1+\frac{P_{x}}{d})\nu^{K(x)+1}-\frac{P_{x}}{d}.$$
-
-3. 平衡准则下, $$0=E(L)=E(\nu^{K(x)+1}-P_{x}\ddot{a}_{\annu{K(x)+1}})=A_{x}-P_{x}\ddot{a}_{x}. $$
-于是,
-$$P_{x}=\frac{A_{x}}{\ddot{a}_{x}}.$$
-
-注意到$A_{x}+d\ddot{a}_{x}=1,$ 从而有$$P_{x}=\frac{A_{x}}{\ddot{a}_{x}}=\frac{dA_{x}}{1-A_{x}}=\frac{1}{\ddot{a}_{x}}-d.$$
-
-4. 签单损失量的方差
-\begin{align*}
-D(L) &= D((1+\frac{P_{x}}{d})\nu^{K(x)+1}-\frac{P_{x}}{d})\\
-&= (1+\frac{P_{x}}{d})^{2}D(\nu^{K(x)+1})\\
-&= \frac{{}^{2}A_{x}-(A_{x})^{2}}{(d\ddot{a}_{x})^{2}}\\
-&= \frac{{}^{2}A_{x}-(A_{x})^{2}}{(1-A_{x})^{2}}.
-\end{align*}
+    \begin{itemize}
+        \item 签单损失量$L=\nu^{k(x)+1}-P_{x}\ddot{a}_{\annu{K(x)+1}}= (1+\frac{P_{x}}{d})\nu^{K(x)+1}-\frac{P_{x}}{d}$;
+        \item 年均衡净保费记为$P_{x}=\frac{A_{x}}{\ddot{a}_{x}}=\frac{dA_{x}}{1-A_{x}}=\frac{1}{\ddot{a}_{x}}-d$;
+        \item 签单损失量的方差
+        \begin{align*}
+        D(L) = \frac{{}^{2}A_{x}-(A_{x})^{2}}{(d\ddot{a}_{x})^{2}}= \frac{{}^{2}A_{x}-(A_{x})^{2}}{(1-A_{x})^{2}}.
+        \end{align*}
+    \end{itemize}
 \end{proposition}
 
 \begin{example}
@@ -1060,20 +1043,16 @@ D(L) &= D((1+\frac{P_{x}}{d})\nu^{K(x)+1}-\frac{P_{x}}{d})\\
 
 \subsection{其他完全离散险种的年均衡净保费}
 \begin{proposition}
-    1. 缴费期为$n$年的终身死亡保险:
-${}_{n}P(A_{x})=\frac{A_{x}}{\ddot{a}_{x:}{}\annu n}$.
-
-2. $n$年期生存保险:
-$P_{x:}\overset{1}{{}\annu n}=\frac{A_{x:}\overset{1}{{}\annu n}}{\ddot a_{x:}{}\annu n}$.
-
-3. 延期$n$年的终身期初生存年金:
-$P({}_{n|}\ddot a_{x})=\frac{{}_{n|}\ddot a_{x}}{\ddot{a}_{x:}{}\annu n}$.
-
-4. 缴费期为$h$年的$n$年期死亡保险:
-${}_{h}P^{1}_{x:}{}_{\annu n}=\frac{A^{1}_{x:}{}\annu n}{\ddot a_{x:}{}{\scriptsize \annu h}}$.
+    \begin{enumerate}
+        \item 缴费期为$n$年的终身死亡保险: ${}_{n}P(A_{x})=\frac{A_{x}}{\ddot{a}_{x:}{}\annu n}$;
+        \item $n$年期生存保险: $P_{x:}\overset{1}{{}\annu n}=\frac{A_{x:}\overset{1}{{}\annu n}}{\ddot a_{x:}{}\annu n}$; 
+        \item 延期$n$年的终身期初生存年金: $P({}_{n|}\ddot a_{x})=\frac{{}_{n|}\ddot a_{x}}{\ddot{a}_{x:}{}\annu n}$;
+        \item 缴费期为$h$年的$n$年期死亡保险: ${}_{h}P^{1}_{x:}{}_{\annu n}=\frac{A^{1}_{x:}{}\annu n}{\ddot a_{x:}{}{\scriptsize \annu h}}$.
+    \end{enumerate}
 \end{proposition}
 
-\begin{remark}一般地,
+\begin{remark}
+    一般地,
     \begin{align*}
   \text{完全离散险种的年均衡净保费}=\frac{\text{对应险种的精算现值}}{\text{缴费期对应的期初生存年金}}.
   \end{align*}
@@ -1082,44 +1061,45 @@ ${}_{h}P^{1}_{x:}{}_{\annu n}=\frac{A^{1}_{x:}{}\annu n}{\ddot a_{x:}{}{\scripts
 \chapter{净准备金理论}
 \section{确定净准备金的准则}
 \begin{definition}[未来损失量]
-    在$t$时刻的未来损失量记为$_tL$.
-
- 若在$t$时刻个体$(x)$还活着, 即$T(x)>t$, 则$${}_tL=\text{``未来需支付的保险金在$t$时刻的现值"减去 ``未来支付的保费在}t\text{时刻的总现值.}$$
+    在$t$时刻的未来损失量记为$_tL$. 若在$t$时刻个体$(x)$还活着, 即$T(x)>t$, 则$${}_tL=\text{``未来需支付的保险金在$t$时刻的现值"减去 ``未来支付的保费在}t\text{时刻的总现值.}$$
 
 若$t$时刻$(x)$已经死亡, 则${}_tL=0.$
+
+\begin{enumerate}
+    \item 对完全连续的终身寿险, 年均衡净保费为$\overline{P}( \overline{A}_x )=\frac{\overline A_x}{\overline a_x},$
+    $${}_tL=(\nu^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t}})I_{\{T(x)>t\}}.$$
+    \item 对完全离散的终身寿险, 年均衡净保费为$P_x=\frac{A_x}{\ddot{a}_x},$
+    $${}_tL=(\nu^{K(x)+1-k}-\overline{P}_x \overline a_{\annu {K(x)+1-k}})I_{\{K(x)>k\}}.$$
+\end{enumerate}
 \end{definition}
 
 \begin{proposition}
     $t$时刻的准备金用${}_tV$表示.
-
-(i) 平衡准则: ${}_tV=E({}_tL|T(x)>t).$
-
-(ii) 指数准则: 给定$a>0$, 由$$e^{a\cdot{}_tV}=E(e^{a\cdot{}_tL}|T(x)>t)$$确定净准备金${}_tV.$
-
-(iii) 分位数准则: 给定水平$\alpha\in(0,1)$, 由$$P({}_tL>{}_tV|T(x)>t)=\alpha$$确定净准备金${}_tV.$
+\begin{itemize}
+    \item 平衡准则: ${}_tV=E({}_tL|T(x)>t)$;
+    \item 指数准则: 给定$a>0$, 由$e^{a\cdot{}_tV}=E(e^{a\cdot{}_tL}|T(x)>t)$确定净准备金${}_tV$;
+    \item 分位数准则: 给定水平$\alpha\in(0,1)$, 由$P({}_tL>{}_tV|T(x)>t)=\alpha$确定净准备金${}_tV.$
+\end{itemize}
 \end{proposition}
 
 \begin{remark}
-    (i) 分位数准则下, 保险人越怕风险, 则$\alpha$越小, ${}_tV$越大即净准备金额越大.
-  
-  (ii) 指数准则下, $${}_tV=\frac{1}{a}\ln E(e^{a\cdot{}_tL}|T(x)>t).$$
-  对$a$求偏导数得
-  \begin{align*}
-      \frac{\partial {}_tV}{\partial a} &= \frac{\frac{a}{E(e^{a\cdot {}_tL}|T( x ) >t )}E( e^{a\cdot {}_tL}{}_tL|T( x ) >t )-\ln E( e^{a\cdot {}_tL}|T( x ) >t )}{a^2} >0. \\
-  \end{align*}
-  
-  所以, $a$越大, 净准备金${}_tV$越大, 保险人越怕风险.
-  
-  (iii) 指数准则下,
-  \begin{align*}
-     {}_tV&=\frac{1}{a}\ln E(e^{a\cdot{}_tV}|T(x)>t)>\frac{1}{a}E(\ln e^{ a\cdot {}_tV}|T(x)>t)\\
-     &=E(_tL_x|T(x)>t)={}_t\widetilde{V}=\text{平衡准则下的净准备金.}
-  \end{align*}
-  
-  即指数准则适用于规避风险的保险人.
-  
-  事实上, 容易验证 $\lim_{a\downarrow 0}{}_tV={}_t\widetilde{V}.$
-  \end{remark}
+    \begin{enumerate}
+        \item 分位数准则下, 保险人越怕风险, 则$\alpha$越小, ${}_tV$越大即净准备金额越大;
+        \item 指数准则下, $${}_tV=\frac{1}{a}\ln E(e^{a\cdot{}_tL}|T(x)>t).$$
+        对$a$求偏导数得
+        \begin{align*}
+            \frac{\partial {}_tV}{\partial a} &= \frac{\frac{a}{E(e^{a\cdot {}_tL}|T( x ) >t )}E( e^{a\cdot {}_tL}{}_tL|T( x ) >t )-\ln E( e^{a\cdot {}_tL}|T( x ) >t )}{a^2} >0. \\
+        \end{align*}
+        
+        所以, $a$越大, 净准备金${}_tV$越大, 保险人越怕风险. 并且
+        \begin{align*}
+           {}_tV&=\frac{1}{a}\ln E(e^{a\cdot{}_tV}|T(x)>t)>\frac{1}{a}E(\ln e^{ a\cdot {}_tV}|T(x)>t)\\
+           &=E(_tL_x|T(x)>t)={}_t\widetilde{V}=\text{平衡准则下的净准备金.}
+        \end{align*}
+        
+        即指数准则适用于规避风险的保险人. 事实上, 容易验证 $\lim_{a\downarrow 0}{}_tV={}_t\widetilde{V}.$
+    \end{enumerate}
+\end{remark}
 
 \section{完全连续险种在平衡准则下的净准备金}
 \subsection{平衡准则下完全连续的终身寿险的净准备金}
@@ -1134,49 +1114,41 @@ ${}_{h}P^{1}_{x:}{}_{\annu n}=\frac{A^{1}_{x:}{}\annu n}{\ddot a_{x:}{}{\scripts
 2. 在平衡准则下
 \begin{align*}
     {}_t\overline V(\overline A_x)&=E({}_tL_x|T(x)>t) \\
-                        &=E ( (\nu^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t}} )I_{\{T(x)>t\}}|T(x)>t )\\
-                        &=E ( (\nu^{X-(x+t)}-\overline{P}( \overline{A}_x )\overline a_{\annu {X-(x+t)}} )I_{\{T(x)>t\}}|X>x+t )\\
-                        &=E (\nu^{T(x+t)}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x+t)}} )\\
                         &=E(\nu^{T(x+t)})-\overline{P}( \overline{A}_x )E(\overline a_{\annu {T(x+t)}})\\
                         &=\overline A_{x+t}-\overline{P}( \overline{A}_x )\overline a_{x+t}\\
-                        &=\overline A_{x+t}-\frac{\overline A_x}{\overline a_x}\overline a_{x+t}\\
-                        &=1-\delta\overline a_{x+t}-\frac{1-\delta \overline a_x}{\overline a_x}\overline a_{x+t}\\
                         &=\frac{\overline a_x-\overline a_{x+t}}{\overline a_x}.
 \end{align*}
 3. 未来损失量$_tL$的方差
 \begin{align*}
-    D(_tL|T(x)>t) &=D ( [\frac{1}{\delta\overline{a}_x}\nu^{T(x)-t}-\frac{\overline{P}( \overline{A}_x )}{\delta} ]I_{\{T(x)>t\}}|T(x)>t )\\
-                        &=D ( [\frac{1}{\delta\overline{a}_x}\nu^{X-(x+t)}-\frac{\overline{P}( \overline{A}_x )}{\delta} ]I_{\{T(x)>t\}}|X>x+t )\\
-                        &=D (\frac{1}{\delta\overline{a}_x}\nu^{T(x+t)}-\frac{\overline{P}( \overline{A}_x )}{\delta} )\\
-                        &=\frac{1}{(\delta\overline a_x)^2}D(\nu^{T(x+t)})=\frac{^2\overline A_{x+t}-(\overline A_{x+t})^2}{(\delta\overline a_x)^2}.                 \end{align*}
+    D(_tL|T(x)>t) =\frac{1}{(\delta\overline a_x)^2}D(\nu^{T(x+t)})=\frac{^2\overline A_{x+t}-(\overline A_{x+t})^2}{(\delta\overline a_x)^2}=\frac{^2\overline A_{x+t}-(\overline A_{x+t})^2}{(1-\overline{A}_x)^2}. 
+\end{align*}
 \end{proposition}
 
 \begin{example}\label{l5.1}
     设$\mu(t)=\mu$, 利息力为$\delta$, 某个体$(x)$买了一份完全连续的终身寿险.
-    (1) 求${}_tp_x$; (2) 写出签单损失量$L$;  (3) 在平衡准则下求年均衡净保费; (4) 求$DL$;
-    (5) 写出$t$时刻的未来损失量${}_tL$;
-    (6) 在平衡准则下求$t$时刻的净准备金$_tV(\overline A_x)$;
-    (7) 求$D({}_tL).$
-
+    \begin{enumerate}[(1)]
+        \item 求${}_tp_x$;
+        \item 写出签单损失量$L$;
+        \item 在平衡准则下求年均衡净保费;
+        \item 求$DL$;
+        \item 写出$t$时刻的未来损失量${}_tL$;
+        \item 在平衡准则下求$t$时刻的净准备金$_tV(\overline A_x)$;
+        \item 求$D({}_tL).$
+    \end{enumerate}
 \end{example}
 \begin{solution}
-(1) $_tp_x=e^{-\int_x^{x+t}\mu(s)ds}=e^{-\int_x^{x+t}\mu ds}=e^{-\mu t},\ t\ge 0.$
-
-(2) $L=\nu^{T(x)}-\overline P(\overline A_x)\overline a_{\annu {T(x)}}.$
-
-(3) $0=EL=\overline A_x-\overline P(\overline A_x)\overline a_x$, 故$\overline P(\overline A_x)=\frac{\overline A_x}{\overline a_x},$
+    \begin{enumerate}[(1)]
+        \item $_tp_x=e^{-\int_x^{x+t}\mu(s)ds}=e^{-\int_x^{x+t}\mu ds}=e^{-\mu t},\ t\ge 0.$
+        \item $L=\nu^{T(x)}-\overline P(\overline A_x)\overline a_{\annu {T(x)}}.$
+        \item $0=EL=\overline A_x-\overline P(\overline A_x)\overline a_x$, 故$\overline P(\overline A_x)=\frac{\overline A_x}{\overline a_x},$
 
 注意到$\overline A_x=\frac{\mu}{\mu+\delta}$, $\overline a_x=\frac{1}{\mu+\delta},$
 故$\overline P(\overline A_x)=\frac{\overline A_x}{\overline a_x}=\mu.$
-
-(4)$DL=\frac{^2\overline A_{x}-(\overline A_{x})^2}{(\delta\overline a_x)^2}=\frac{^2\overline A_{x}-(\overline A_{x})^2}{(1-\overline A_x)^2}=\frac{\frac{\mu}{\mu+2\delta}-(\frac{\mu}{\mu+\delta})^2}{(1-\frac{\mu}{\mu+\delta})^2}.$
-
-(5) $t$时刻的未来损失量
-$${}_tL= (\nu^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t}} )I_{\{T(x)>t\}}.$$
-
-(6) $t$时刻的净准备金$ {}_tV(\overline A_x)=\frac{\overline a_{x}-\overline a_{x+t}}{\overline a_x}=0.$
-
-(7) $D({}_tL)=\frac{^2\overline A_{x+t}-(\overline A_{x+t})^2}{(1-\overline A_x)^2}=\frac{\frac{\mu}{\mu+2\delta}-(\frac{\mu}{\mu+\delta})^2}{(1-\frac{\mu}{\mu+\delta})^2}.$ 
+        \item $DL=\frac{^2\overline A_{x}-(\overline A_{x})^2}{(\delta\overline a_x)^2}=\frac{^2\overline A_{x}-(\overline A_{x})^2}{(1-\overline A_x)^2}=\frac{\frac{\mu}{\mu+2\delta}-(\frac{\mu}{\mu+\delta})^2}{(1-\frac{\mu}{\mu+\delta})^2}.$
+        \item $t$时刻的未来损失量${}_tL= (\nu^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t}} )I_{\{T(x)>t\}}.$
+        \item $t$时刻的净准备金$ {}_tV(\overline A_x)=\frac{\overline a_{x}-\overline a_{x+t}}{\overline a_x}=0.$
+        \item $D({}_tL)=\frac{^2\overline A_{x+t}-(\overline A_{x+t})^2}{(1-\overline A_x)^2}=\frac{\frac{\mu}{\mu+2\delta}-(\frac{\mu}{\mu+\delta})^2}{(1-\frac{\mu}{\mu+\delta})^2}.$ 
+    \end{enumerate}
 \end{solution}
 
 \section{完全离散险种的净准备金}
@@ -1191,49 +1163,44 @@ $${}_tL= (\nu^{T(x)-t}-\overline{P}( \overline{A}_x )\overline a_{\annu {T(x)-t}
 
 2. 在平衡准则下
 \begin{align*}
-    {}_kV(A_x)&=E({}_kL|T(x)>k) \\
-                        &=E((\nu^{K(x)-k+1}-P_x \ddot a_{\annu {K(x)-k+1}})I_{\{K(x)\ge k\}}|T(x)>k)\\
-                        &=E ( (\nu^{K(x)-k+1}-P_x \ddot a_{\annu {K(x)-k+1}} )I_{\{K(x)\ge k\}}|X>x+k )\\
-                        &=E (\nu^{K(x+k)+1}-P_x \ddot a_{\annu {K(x+k)+1}} )\\
-                        &=E (\nu^{K(x+k)+1} )-P_x E (\ddot a_{\annu {K(x+k)+1}} )\\
-                        &= A_{x+k}-P_x\ddot a_{x+k}\\
-                        &= A_{x+k}-\frac{ A_x}{\ddot a_x}\ddot a_{x+k}\\
-                        &=1-d\ddot a_{x+k}-\frac{1-d \ddot a_x}{\ddot a_x}\ddot a_{x+k}\\
-                        &=\frac{\ddot a_x-\ddot a_{x+k}}{\ddot a_x}.
+    {}_kV(A_x)  &=E({}_kL|T(x)>k) \\
+                &=E (\nu^{K(x+k)+1} )-P_x E (\ddot a_{\annu {K(x+k)+1}} )\\
+                &= A_{x+k}-P_x\ddot a_{x+k}\\
+                &=\frac{\ddot a_x-\ddot a_{x+k}}{\ddot a_x}.
 \end{align*}
 3. 未来损失量$_kL$的方差
 \begin{align*}
-    D(_kL|T(x)>k) &=D ( [\frac{1}{d\ddot a_x}\nu^{K(x)-k+1}-\frac{P_x }{d} ]I_{\{K(x)\ge k\}}|T(x)>k )\\
-                        &=D ( [\frac{1}{d\ddot a_x}\nu^{K(x)-k+1}-\frac{P_x }{d} ]I_{\{K(x)\ge k\}}|X>x+k )\\
-                        &=D (\frac{1}{d\ddot a_x}\nu^{K(x+k)+1}-\frac{P_x }{d} )
-                        =\frac{1}{(d\ddot a_x)^2}D(\nu^{K(x+k)+1})\\
-                        &=\frac{{}^2 A_{x+k}-( A_{x+k})^2}{(d\ddot a_x)^2}=\frac{{}^2 A_{x+k}-( A_{x+k})^2}{(1-A_x)^2}.\\                 \end{align*}
+    D(_kL|T(x)>k) =\frac{1}{(d\ddot a_x)^2}D(\nu^{K(x+k)+1}) = \frac{{}^2 A_{x+k}-( A_{x+k})^2}{(d\ddot a_x)^2}=\frac{{}^2 A_{x+k}-( A_{x+k})^2}{(1-A_x)^2}.  \end{align*}
 \end{proposition}
 
-\begin{example}\label{l5.2}某人现年$20$岁, 设${}_{k|}q_{20}=\frac{1}{2^{k+1}},k=0,1,2,...,$ 利率$i=0.05.$ 考虑$5$年后的净准备金. (1) 写出签单损失量 $L;$ (2) 在平衡准则下计算年均衡净保费; (3) 求$D(L);$ (4) 写出$5$年后的未来损失量$_{5}L;$ (5) 在平衡准则下计算$5$年后的净准备金${}_{5}V( A_{20});$ (6) 计算$D({}_{5}L|T(20)\geq 5).$ (提示: 由几何分布具有无记忆性可推导出${}_{k|}q_{25}=\frac{1}{2^{k+1}},k=0,1,2,....$)
+\begin{example}\label{l5.2}某人现年$20$岁, 设${}_{k|}q_{20}=\frac{1}{2^{k+1}},k=0,1,2,...,$ 利率$i=0.05.$ 考虑$5$年后的净准备金. 
+    \begin{enumerate}[(1)]
+        \item 写出签单损失量 $L;$
+        \item 在平衡准则下计算年均衡净保费;
+        \item 求$D(L);$
+        \item 写出$5$年后的未来损失量$_{5}L;$
+        \item 在平衡准则下计算$5$年后的净准备金${}_{5}V( A_{20});$
+        \item 计算$D({}_{5}L|T(20)\geq 5).$
+    \end{enumerate}
+    (提示: 由几何分布具有无记忆性可推导出${}_{k|}q_{25}=\frac{1}{2^{k+1}},k=0,1,2,....$)
 \end{example}
 \begin{solution}
-(1) $L = \nu^{K(x)+1} - P_x\ddot{a}_{\annu{K(x)+1}}$.
-
-(2) $0=E(L)=A_{20}-P_{20}\ddot{a}_{20}$, 故$P_{20}=\frac{A_{20}}{\ddot{a}_{20}} = \frac{dA_{20}}{1-A_{20}}$,
+    \begin{enumerate}[(1)]
+        \item $L = \nu^{K(x)+1} - P_x\ddot{a}_{\annu{K(x)+1}}$.
+        \item $0=E(L)=A_{20}-P_{20}\ddot{a}_{20}$, 故$P_{20}=\frac{A_{20}}{\ddot{a}_{20}} = \frac{dA_{20}}{1-A_{20}}$,
 
 注意到$A_{20}=\sum_{k=0}^{\infty}\nu^{k+1}{}_{k|}q_{20} = \sum_{k=0}^{\infty}\nu^{k+1}\frac{1}{2^{k+1}} = \frac{\nu}{2-\nu}$,
 
 从而$P_{20}=\frac{dA_{20}}{1-A_{20}}=\frac{\nu}{2}.$
-
-(3) $D(L)=\frac{^2A_{20}-(A_{20})^2}{(1-A_{20})^2}=\frac{\frac{\nu^{2}}{2-\nu^{2}}-\left(\frac{\nu}{2-\nu}\right)^{2}}{1-\frac{\nu}{2-\nu}}$.
-
-(4) ${}_{5}L= (\nu^{K(20)+1-5}-P_{20}\ddot{a}_{\annu{K(20)+1-5}} )I_{\{K(20)\geq 5\}}$.
-
-(5) ${}_{5}V(A_{20})=\frac{\ddot{a}_{20}-\ddot{a}_{25}}{\ddot{a}_{20}}$, 其中$\ddot{a}_{20}=\frac{1-A_{20}}{d}$, $\ddot{a}_{25}=\frac{1-A_{25}}{d}$,
+        \item $D(L)=\frac{^2A_{20}-(A_{20})^2}{(1-A_{20})^2}=\frac{\frac{\nu^{2}}{2-\nu^{2}}-\left(\frac{\nu}{2-\nu}\right)^{2}}{1-\frac{\nu}{2-\nu}}$.
+        \item ${}_{5}L= (\nu^{K(20)+1-5}-P_{20}\ddot{a}_{\annu{K(20)+1-5}} )I_{\{K(20)\geq 5\}}$.
+        \item ${}_{5}V(A_{20})=\frac{\ddot{a}_{20}-\ddot{a}_{25}}{\ddot{a}_{20}}$, 其中$\ddot{a}_{20}=\frac{1-A_{20}}{d}$, $\ddot{a}_{25}=\frac{1-A_{25}}{d}$,
 
 $A_{25}=\sum_{k=0}^{\infty}\nu^{k+1}{}_{k|}q_{25} = \sum_{k=0}^{\infty}\nu^{k+1}\frac{1}{2^{k+1}} = A_{20}$,
 
 于是$\ddot{a}_{25}=\frac{1-A_{25}}{d} = \frac{1-A_{20}}{d} = \ddot{a}_{20}$, 所以${}_{5}V(A_{20})=0$.
-
-(6) $D({}_{5}L|T(20)\geq 5)=\frac{^2A_{25}-(A_{25})^2}{(1-A_{20})^2} = \frac{^2A_{20}-(A_{20})^2}{(1-A_{20})^2} = D(L)$.
+        \item $D({}_{5}L|T(20)\geq 5)=\frac{^2A_{25}-(A_{25})^2}{(1-A_{20})^2} = \frac{^2A_{20}-(A_{20})^2}{(1-A_{20})^2} = D(L)$.
+    \end{enumerate}
 \end{solution}
-
-
 
 \end{document}
