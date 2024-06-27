@@ -235,9 +235,9 @@ $$X = K(0) + S(0).$$
 \begin{solution}
 	我们有$\mu(t)\equiv\lambda,$ 且
     \begin{align*}
-         & s(t)=e^{-\lambda t},t>0.                                                                                       \\
-         & F_{T(x)}=1-\frac{s(x+t)}{s(x)}=1-e^{- \lambda t}=F_x(t).   \\
-         & f_{T(x)}(t)={F'}_{T(x)}(t)=\lambda e^{- \lambda t}=f_x(t),t>0.  \\
+         & s(t)=e^{-\lambda t},t>0.  \\
+         & F_{T(x)}=1-\frac{s(x+t)}{s(x)}=1-e^{- \lambda t}=F_X(t).   \\
+         & f_{T(x)}(t)={F'}_{T(x)}(t)=\lambda e^{- \lambda t}=f_X(t),t>0.  \\
          & s_{T(x)}(t)=\frac{s(x+t)}{s(x)}=e^{-\lambda t}=s(t),t>0. \\
          & \mu_x(t)=\mu(x+t)\equiv\mu,t>0. \\
          & e_x = \sum_{k=1}^{\infty} {_kp_x}=\sum_{k=1}^{\infty} {e^{- \lambda k}}=\frac{e^{- \lambda}}{1-e^{- \lambda}}. \\
@@ -466,7 +466,7 @@ $$
     P(A)=\frac{(k_{1}+k_{2}+k_{3}+k_{4})!}{k_{1}!k_{2}!k_{3}!k_{4}!}\cdot {}_{3}q_{0}^{k_{1}}\cdot {}_{3|3}q_{0}^{k_{2}}\cdot {}_{6|3}q_{0}^{k_{3}}\cdot {}_{9|3}q_{0}^{k_{4}}.
 $$
 
-(2) 对于一个二项分布$B(n, p)$, 其期望$E[X] = np$, 方差$\text{Var}(X) = np(1-p)$.
+(2) 对于一个二项分布$B(n, p)$, 其期望$E(X) = np$, 方差$\text{Var}(X) = np(1-p)$.
 
 因此, 对于每个随机变量$_{3}\mathscr D_{k}$有
 
@@ -968,15 +968,15 @@ $$DL=\frac{^2\overline A_x-(\overline A_x)^2}{(\delta\overline a_x)^2}=\frac{^2\
 
 \begin{example}
     设死亡力$\mu=0.05$, 利息力$\delta=0.05.$
- \end{example}
- \begin{solution}
+\end{example}
+\begin{solution}
     我们有
- $$\overline A_x=\frac{\mu}{\mu+\delta}=\frac{1}{2},\ {}^2\overline A_x=\frac{\mu}{\mu+2\delta}=\frac{1}{3}.$$
- 从而
- \begin{align*}
-   &\overline{P}\left( \overline{A}_x \right)=\frac{\delta\overline A_x}{1-\overline A_x}=0.05,\\
- &DL=\frac{^2\overline A_x-(\overline A_x)^2}{(1-\overline A_x)^2}=\frac{\frac{1}{3}-(\frac{1}{2})^2}{(1-\frac{1}{2})^2}=\frac{1}{3}.
- \end{align*}
+$$\overline A_x=\frac{\mu}{\mu+\delta}=\frac{1}{2},\ {}^2\overline A_x=\frac{\mu}{\mu+2\delta}=\frac{1}{3}.$$
+从而
+\begin{align*}
+    &\overline{P}\left( \overline{A}_x \right)=\frac{\delta\overline A_x}{1-\overline A_x}=0.05,\\
+    &DL=\frac{^2\overline A_x-(\overline A_x)^2}{(1-\overline A_x)^2}=\frac{\frac{1}{3}-(\frac{1}{2})^2}{(1-\frac{1}{2})^2}=\frac{1}{3}.
+\end{align*}
 
 \end{solution}
 
@@ -1015,7 +1015,7 @@ $$DL=\frac{^2\overline A_x-(\overline A_x)^2}{(\delta\overline a_x)^2}=\frac{^2\
 \subsection{完全离散终身寿险}
 \begin{proposition}
     \begin{itemize}
-        \item 签单损失量$L=\nu^{k(x)+1}-P_{x}\ddot{a}_{\annu{K(x)+1}}= (1+\frac{P_{x}}{d})\nu^{K(x)+1}-\frac{P_{x}}{d}$;
+        \item 签单损失量$L=\nu^{K(x)+1}-P_{x}\ddot{a}_{\annu{K(x)+1}}= (1+\frac{P_{x}}{d})\nu^{K(x)+1}-\frac{P_{x}}{d}$;
         \item 年均衡净保费记为$P_{x}=\frac{A_{x}}{\ddot{a}_{x}}=\frac{dA_{x}}{1-A_{x}}=\frac{1}{\ddot{a}_{x}}-d$;
         \item 签单损失量的方差
         \begin{align*}
