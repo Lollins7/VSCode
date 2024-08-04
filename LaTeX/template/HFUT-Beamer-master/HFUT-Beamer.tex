@@ -7,6 +7,7 @@
 \usepackage{booktabs}
 \usepackage{layout}
 \usepackage{minted}
+\usepackage{calligra} % 加载 calligra 字体
 \usepackage[natbib=true]{biblatex}
 
 % biblatex 数据库
@@ -36,7 +37,7 @@
 
 \newcommand{\contactinfo}{
   \begin{center}
-    \href{mailto:jieyu8258@gmail.com}{jieyu8258@gmail.comemail}
+    Email: \href{mailto:jieyu8258@gmail.com}{jieyu8258@gmail.comemail}
   \end{center}
 }
 
@@ -45,7 +46,6 @@
 % \subtitle{副标题}
 \author{王子颉}
 \institute{School of Computer and Informatics, HFUT}
-% \href{mailto:jieyu8258@gmail.com}{jieyu8258@gmail.comemail}
 \date{\today}
 
 \begin{document}
@@ -245,8 +245,9 @@
 	参考文献列表通常比较长，一帧幻灯片通常无法满足其空间需求。这时候需要给\texttt{frame}环境添加\texttt{[allowframebreaks]}选项。
 \end{frame}
 
+\section{结束}
 \begin{frame}[allowframebreaks]
-	\frametitle{参考书目}
+	\frametitle{参考文献}
 	{
 		\tiny
 		\nocite{*}
@@ -254,12 +255,13 @@
 	}
 \end{frame}
 
-\begin{frame}{HFUTTUG需要你！}
-	\centering
+\begin{frame}
+	\begin{center}
+    {\Huge\calligra Thanks for your attention!}
+    \vspace{1cm}
 
-	我们在：\url{https://github.com/HFUTTUG}，欢迎进行贡献！
-
-	向\href{mailto:hfuttug@163.com}{hfuttug@163.com}发邮件以加入我们
+    {\Huge Q \& A}
+  \end{center}
 \end{frame}
 
 \end{document}
