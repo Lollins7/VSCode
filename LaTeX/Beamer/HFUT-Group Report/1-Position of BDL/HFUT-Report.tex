@@ -34,6 +34,13 @@
 \usepackage{algorithmicx,algpseudocode}
 \floatname{algorithm}{算法}
 
+\newcommand{\contactinfo}{
+  \begin{center}
+    \href{mailto:jieyu8258@gmail.com}{jieyu8258@gmail.comemail}
+  \end{center}
+}
+
+
 \title{汇报}
 % \subtitle{副标题}
 \author{王子颉}
@@ -44,6 +51,7 @@
 
 \begin{frame}
 	\maketitle
+	\contactinfo
 \end{frame}
 
 \begin{frame}{目录}
@@ -61,7 +69,6 @@
 	\end{itemize}
 
 \end{frame}
-
 
 \begin{frame}[fragile,allowframebreaks]{主题}
 	\enableindent
@@ -197,27 +204,6 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{简单动画}
-	同样的事情也可以用\mintinline{tex}{\uncover}命令做到
-
-	\begin{semiverbatim}
-		\uncover<1->{\alert<0>{int main (void)}}
-		\uncover<1->{\alert<0>{\{}}
-		\uncover<1->{\alert<1>{  \alert<4>{std::}vector<bool> is_prime (100, true);}}
-		\uncover<1->{\alert<1>{  for (int i = 2; i < 100; i++)}}
-		\uncover<2->{\alert<2>{  if (is_prime[i])}}
-		\uncover<2->{\alert<0>{  \{}}
-		\uncover<3->{\alert<3>{    \alert<4>{std::}cout << i << " ";}}
-		\uncover<3->{\alert<3>{    for (int j = i; j < 100;}}
-		\uncover<3->{\alert<3>{      is_prime [j] = false, j+=i);}}
-		\uncover<2->{\alert<0>{  \}}}
-		\uncover<1->{\alert<0>{  return 0;}}
-		\uncover<1->{\alert<0>{\}}}
-	\end{semiverbatim}
-	\visible<4->{Note the use of \alert{\texttt{std::}}.}
-
-\end{frame}
-
 \section{引用}
 
 \begin{frame}{引用最好用\BibLaTeX{}}
@@ -259,20 +245,12 @@
 \end{frame}
 
 \begin{frame}[allowframebreaks]
-	\frametitle{参考书目}
+	\frametitle{参考文献}
 	{
 		\tiny
 		\nocite{*}
 		\printbibliography[heading=none]
 	}
-\end{frame}
-
-\begin{frame}{HFUTTUG需要你！}
-	\centering
-
-	我们在：\url{https://github.com/HFUTTUG}，欢迎进行贡献！
-
-	向\href{mailto:hfuttug@163.com}{hfuttug@163.com}发邮件以加入我们
 \end{frame}
 
 \end{document}
