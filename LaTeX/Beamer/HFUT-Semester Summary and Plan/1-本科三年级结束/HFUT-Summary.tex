@@ -1,0 +1,98 @@
+\documentclass[aspectratio=169]{beamer}
+% 默认使用hfut-sx主题，可以自由更换
+\usetheme{hfut-CambridgeUS}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{layout}
+\usepackage{minted}
+\usepackage{calligra} % 加载 calligra 字体
+\usepackage[natbib=true]{biblatex}
+
+% biblatex 数据库
+\addbibresource{ref.bib}
+
+% 幻灯片分页时从第二页开始打印“（续）”
+\setbeamertemplate{frametitle continuation}[from second]
+
+% 每一节开始的时候打印目录
+\AtBeginSection[]
+{
+  \begin{frame}{目录}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+
+\newcommand{\BibTeX}{\textsc{Bib}\TeX{}}
+\newcommand{\BibLaTeX}{\textsc{Bib}\LaTeX{}}
+\newcommand{\Beamer}{\textsc{Beamer}}
+\newcommand{\enableindent}{\setlength{\parskip}{6pt}\setlength{\parindent}{2em}}
+% algorithm
+\usepackage{algorithm}
+\usepackage{algorithmicx,algpseudocode}
+\floatname{algorithm}{算法}
+
+\newcommand{\contactinfo}{
+  \begin{center}
+    Email: \href{mailto:jieyu8258@gmail.com}{jieyu8258@gmail.comemail}
+  \end{center}
+}
+
+
+\title{本学期总结与下学期规划}
+% \subtitle{副标题}
+\author{王子颉}
+\institute{School of Computer and Informatics, HFUT}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+	\maketitle
+	\contactinfo
+\end{frame}
+
+\begin{frame}{目录}
+	\tableofcontents
+\end{frame}
+
+\section{本学期总结}
+
+\begin{frame}
+  \begin{itemize}
+    \item 完成了本学期的专业课学习，成功拿到保研名额并进入了胡老师的课题组。\pause
+    \item 听从胡老师的建议，看完了李沐的《动手学习深度学习》课程，动手敲了里面的一些代码，对深度学习里的一些基础网络架构有了一定了解。\pause
+    \item 初步的完成了毕业论文撰写，后续更多的时间跟进课题组的工作。
+  \end{itemize}
+\end{frame}
+
+\section{下学期规划}
+
+\begin{frame}
+  \begin{itemize}
+    \item 继续深入学习深度学习相关的知识，包括但不限于网络架构、优化算法、损失函数等。\pause
+    \item 跟进课题组的工作，完成课题组的任务。\pause
+    \item 继续完善毕业论文，争取在下学期初完成论文的撰写。
+  \end{itemize}
+\end{frame}
+
+\section{结束}
+% \begin{frame}[allowframebreaks]
+% 	\frametitle{参考文献}
+% 	{
+% 		\tiny
+% 		\nocite{*}
+% 		\printbibliography[heading=none]
+% 	}
+% \end{frame}
+
+\begin{frame}
+	\begin{center}
+    {\Huge\calligra Thanks for your attention!}
+  \end{center}
+\end{frame}
+
+\end{document}
